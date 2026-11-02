@@ -1,0 +1,197 @@
+[
+  {
+    "id": "q1",
+    "type": "cloze",
+    "theme": "Corporate Sleight of Hand",
+    "passage": "Big Tobacco pulled off the ultimate economic paradox: convincing rational consumers to enter a lifelong contract of biological ________, paying handsomely for the privilege of setting their own longevity on fire.",
+    "blank": "depreciation",
+    "options": ["depreciation", "appreciation", "arbitrage", "solvency"],
+    "hint": "Noun: the reduction in value or physical wear-and-tear of an asset over time",
+    "first_letter": "d",
+    "punchline": "In financial bookkeeping, cars depreciate. Smokers, however, accelerate the write-down of their own lungs while paying tobacco executives a fat dividend.",
+    "vocab": {
+      "word": "depreciation",
+      "phonetic": "/dɪˌpriːʃiˈeɪʃn/",
+      "meaning": "n. 折旧，贬值；（比喻）生理机能与身体价值的加速衰退"
+    }
+  },
+  {
+    "id": "q2",
+    "type": "cloze",
+    "theme": "Neurological Hijacking",
+    "passage": "A cigarette does not alleviate stress; it merely temporarily resolves the acute chemical ________ engineered by the preceding one. It is the arsonist posing heroically as the firefighter.",
+    "blank": "deficit",
+    "options": ["deficit", "surplus", "equilibrium", "dividend"],
+    "hint": "Noun: a shortage or deficiency, especially in resources or balance",
+    "first_letter": "d",
+    "punchline": "Smoking to relieve tension is like wearing tight shoes size 5 just to enjoy the ecstatic relief when you finally take them off.",
+    "vocab": {
+      "word": "deficit",
+      "phonetic": "/ˈdefɪsɪt/",
+      "meaning": "n. 亏空，赤字；化学缺陷"
+    }
+  },
+  {
+    "id": "q3",
+    "type": "true_false",
+    "theme": "The 'Light' Cigarette Illusion",
+    "passage": "'Light' and 'low-tar' cigarettes were hailed by marketing gurus as a prudent compromise. In reality, smokers instinctively inhale deeper and cover ventilation holes, leaving their net toxic intake utterly ________.",
+    "blank": "unaltered",
+    "options": ["unaltered", "halved", "eliminated", "mitigated"],
+    "statement": "True or False: Switching to 'mild' or 'light' cigarettes yields quantifiable cardiovascular safety benefits.",
+    "correct_boolean": false,
+    "hint": "Adjective: remaining completely unchanged despite the clever packaging illusion",
+    "punchline": "Marketing a 'light' cigarette is akin to promoting a low-sodium guillotine: the cosmetic rebranding does remarkably little to alter the lethal outcome.",
+    "vocab": {
+      "word": "unaltered",
+      "phonetic": "/ʌnˈɔːltəd/",
+      "meaning": "adj. 未改变的，依旧如初的"
+    }
+  },
+  {
+    "id": "q4",
+    "type": "cloze",
+    "theme": "Fiscal Folly & Opportunity Cost",
+    "passage": "From the perspective of classical economics, the smoker is a model of ________ behavior: paying a hefty voluntary tax today in exchange for a catastrophic surge in medical liabilities tomorrow.",
+    "blank": "myopic",
+    "options": ["myopic", "prudent", "farsighted", "ascetic"],
+    "hint": "Adjective: shortsighted, lacking long-term foresight or rational planning",
+    "first_letter": "m",
+    "punchline": "Wall Street calls it 'negative compound interest'. Every puff short-sells your future vitality at a premium price.",
+    "vocab": {
+      "word": "myopic",
+      "phonetic": "/maɪˈɒpɪk/",
+      "meaning": "adj. 目光短浅的，近视的（缺乏长远规划）"
+    }
+  },
+  {
+    "id": "q5",
+    "type": "cloze",
+    "theme": "Social Mirage",
+    "passage": "Mid-century cinema sold the cigarette as the quintessential accessory of rebellious charm. Modern reality reveals it to be a damp exile to fire escapes, enveloped in an odor of faint ________.",
+    "blank": "desperation",
+    "options": ["desperation", "aristocracy", "triumph", "exuberance"],
+    "hint": "Noun: a state of despair leading to reckless or humiliating behavior",
+    "first_letter": "d",
+    "punchline": "Nothing shatters the illusion of Humphrey Bogart cool faster than standing in freezing sleet next to a dumpster for a 3-minute hit.",
+    "vocab": {
+      "word": "desperation",
+      "phonetic": "/ˌdespəˈreɪʃn/",
+      "meaning": "n. 绝望，狼狈不堪的心境"
+    }
+  },
+  {
+    "id": "q6",
+    "type": "cloze",
+    "theme": "Cardiovascular Sabotage",
+    "passage": "Carbon monoxide binds to hemoglobin with an affinity 200 times greater than oxygen, turning one's bloodstream into a congested and oxygen-starved ________.",
+    "blank": "pipeline",
+    "options": ["pipeline", "cathedral", "sanctuary", "monument"],
+    "hint": "Noun: a conduit or channel through which vital fluids are transported",
+    "first_letter": "p",
+    "punchline": "Your heart is not an industrial boiler; forced to pump sludge through constricted capillaries, it is quietly staging an early retirement.",
+    "vocab": {
+      "word": "pipeline",
+      "phonetic": "/ˈpaɪplaɪn/",
+      "meaning": "n. 输送管道，生命补给线"
+    }
+  },
+  {
+    "id": "q7",
+    "type": "true_false",
+    "theme": "The Sunk Cost Fallacy",
+    "passage": "'I have smoked for twenty years, the damage is already done' is a textbook manifestation of the ________ fallacy. Physiological recovery begins within 20 minutes of cessation.",
+    "blank": "sunk cost",
+    "options": ["sunk cost", "efficient market", "liquidity trap", "monopoly"],
+    "statement": "True or False: After a decade of smoking, the biological benefits of quitting become statistically negligible.",
+    "correct_boolean": false,
+    "hint": "Concept: the irrational compulsion to continue an endeavor once an investment in time or money has been made",
+    "punchline": "Staying in a toxic contract because you've already lost money is not loyalty; it is financial suicide. Your bronchial cilia begin sweeping house within 48 hours.",
+    "vocab": {
+      "word": "sunk cost",
+      "phonetic": "/ˌsʌŋk ˈkɒst/",
+      "meaning": "n. 沉没成本（无法收回但常误导决策的已发支出）"
+    }
+  },
+  {
+    "id": "q8",
+    "type": "cloze",
+    "theme": "The Nicotine Trap",
+    "passage": "The cigarette filter is arguably the greatest public relations ________ in modern commerce: giving the consumer a tactile illusion of safety while doing virtually nothing to impede volatile carcinogens.",
+    "blank": "subterfuge",
+    "options": ["subterfuge", "breakthrough", "candour", "benevolence"],
+    "hint": "Noun: deceit or trickery used in order to achieve one's goal or disguise the truth",
+    "first_letter": "s",
+    "punchline": "A cellulose acetate sponge does not stop benzene. It merely gives the buyer a warm, fuzzy placebo as they inhale formaldehyde.",
+    "vocab": {
+      "word": "subterfuge",
+      "phonetic": "/ˈsʌbtəfjuːdʒ/",
+      "meaning": "n. 诡计，托词，花招"
+    }
+  },
+  {
+    "id": "q9",
+    "type": "cloze",
+    "theme": "Cognitive Bandwidth",
+    "passage": "Nicotine cravings consume executive attention, quietly ________ the mental horsepower that could otherwise be deployed toward career ambition or creative endeavors.",
+    "blank": "cannibalising",
+    "options": ["cannibalising", "amplifying", "subsidising", "fostering"],
+    "hint": "Verb: eating away or eroding a valuable internal resource from within",
+    "first_letter": "c",
+    "punchline": "You are not just spending money on tobacco; you are paying a hefty cognitive tax, allowing a dead plant to dictate your schedule every 90 minutes.",
+    "vocab": {
+      "word": "cannibalise",
+      "phonetic": "/ˈkænɪbəlaɪz/",
+      "meaning": "v. 自相残食，蚕食吞噬（原可用作高价值产出的精力）"
+    }
+  },
+  {
+    "id": "q10",
+    "type": "cloze",
+    "theme": "Olfactory Bankruptcy",
+    "passage": "Tobacco smoke paralyzes nasal sensory neurons, granting the smoker a blissful but deceptive state of ________, entirely oblivious to the stale stench that heralds their arrival.",
+    "blank": "ignorance",
+    "options": ["ignorance", "enlightenment", "sobriety", "elegance"],
+    "hint": "Noun: lack of knowledge or awareness regarding an uncomfortable reality",
+    "first_letter": "i",
+    "punchline": "You think nobody noticed that quick break downstairs? The elevator passengers are currently holding their breath out of sheer humanitarian tolerance.",
+    "vocab": {
+      "word": "ignorance",
+      "phonetic": "/ˈɪɡnərəns/",
+      "meaning": "n. 无知，浑然不知"
+    }
+  },
+  {
+    "id": "q11",
+    "type": "true_false",
+    "theme": "The Dopamine Delusion",
+    "passage": "Nicotine sparks a momentary surge in dopamine, yet brain scans prove it simultaneously down-regulates natural receptors, breeding a permanent state of emotional ________.",
+    "blank": "bankruptcy",
+    "options": ["bankruptcy", "ecstasy", "serenity", "resilience"],
+    "statement": "True or False: Smoking inherently enhances baseline happiness and contentment compared to non-smokers.",
+    "correct_boolean": false,
+    "hint": "Noun: the state of complete depletion of funds or natural joy",
+    "punchline": "It doesn't make you happier; it just takes a hostage and charges you twenty bucks a pack to negotiate temporary visitation rights with peace of mind.",
+    "vocab": {
+      "word": "down-regulate",
+      "phonetic": "/ˌdaʊn ˈreɡjuleɪt/",
+      "meaning": "v. （生物化学）下调受体活性，使自然多巴胺受钝化"
+    }
+  },
+  {
+    "id": "q12",
+    "type": "cloze",
+    "theme": "Skin & Cellular Aging",
+    "passage": "By constricting peripheral micro-vessels, chronic smoking starves epidermal cells of nourishment, producing the weathered, greyish complexion dermatologists candidly label 'smoker's ________'.",
+    "blank": "facies",
+    "options": ["facies", "glamour", "radiance", "halo"],
+    "hint": "Noun: distinctive facial appearance associated with a specific pathological condition",
+    "first_letter": "f",
+    "punchline": "Spending $100 on anti-aging retinol while puffing Marlboros is like washing a sports car with mud before taking it to the showroom.",
+    "vocab": {
+      "word": "facies",
+      "phonetic": "/ˈfeɪʃiiːz/",
+      "meaning": "n. （医学）特殊面容，病态面貌"
+    }
+  }
+]

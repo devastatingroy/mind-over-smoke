@@ -1,0 +1,18 @@
+{
+  "name": "MindOverSmoke 智熄 - 戒烟认知阻断",
+  "short_name": "智熄",
+  "description": "基于认知负荷理论与行为经济学的戒烟微干预工具",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F5F0",
+  "theme_color": "#1A3B2F",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
