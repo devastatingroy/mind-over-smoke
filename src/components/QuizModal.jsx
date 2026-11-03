@@ -166,6 +166,9 @@ export default function QuizModal({
             <span className="text-xs font-semibold text-gray-700">
               第 {currentIndex + 1} / {questions.length} 题
             </span>
+            <span className="text-[10px] text-gray-400 border border-stone-200 px-1.5 py-0.5 rounded">
+              池化 36 题随机
+            </span>
           </div>
 
           <div className="flex items-center space-x-3">

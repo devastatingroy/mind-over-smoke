@@ -25,9 +25,10 @@ export default function App() {
 
   // Start a quiz session
   const handleStartQuiz = (mode) => {
-    // Pick 3 random diverse questions
+    // Pick random questions from the pool (3 for emergency SOS, 5 for practice)
+    const count = mode === 'practice' ? 5 : 3;
     const shuffled = [...questionsData].sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 3);
+    const selected = shuffled.slice(0, count);
     setCurrentQuizQuestions(selected);
     setActiveQuizMode(mode);
   };

@@ -193,5 +193,391 @@
       "phonetic": "/ˈfeɪʃiiːz/",
       "meaning": "n. （医学）特殊面容，病态面貌"
     }
+  },
+  {
+    "id": "q13",
+    "type": "cloze",
+    "theme": "Hedonic Adaptation",
+    "passage": "The neurological trap of smoking is a masterclass in the hedonic ________: running furiously uphill simply to sustain the baseline serenity non-smokers enjoy for free.",
+    "blank": "treadmill",
+    "options": ["treadmill", "pinnacle", "cathedral", "monopoly"],
+    "hint": "Noun: an exercise device with a moving belt; a tedious, exhausting state with no real progress",
+    "first_letter": "t",
+    "punchline": "Paying $3,000 a year to run in place on a chemical conveyor belt is not leisure; it is an involuntary gym membership for your nervous system.",
+    "vocab": {
+      "word": "treadmill",
+      "phonetic": "/ˈtredmɪl/",
+      "meaning": "n. 跑步机；快感适应牢笼（徒劳折腾以维持基线）"
+    }
+  },
+  {
+    "id": "q14",
+    "type": "cloze",
+    "theme": "Corporate Empathy",
+    "passage": "Internal memos from the 1970s reveal that tobacco executives viewed youth addiction not as a tragedy, but with unvarnished ________, labeling adolescent experimenters as 'replacement smokers'.",
+    "blank": "cynicism",
+    "options": ["cynicism", "philanthropy", "humility", "remorse"],
+    "hint": "Noun: an inclination to believe that people are motivated purely by self-interest; skepticism",
+    "first_letter": "c",
+    "punchline": "They didn't see an impressionable teenager; they saw an actuarial revenue stream with lungs.",
+    "vocab": {
+      "word": "cynicism",
+      "phonetic": "/ˈsɪnɪsɪzəm/",
+      "meaning": "n. 玩世不恭，犬儒自私，冷血现实"
+    }
+  },
+  {
+    "id": "q15",
+    "type": "cloze",
+    "theme": "Negative Externalities",
+    "passage": "Economists define secondhand smoke as the quintessential negative ________: forcing unwitting bystanders to subsidise a stranger's habit with their own pulmonary health.",
+    "blank": "externality",
+    "options": ["externality", "dividend", "collateral", "surplus"],
+    "hint": "Noun: a consequence of an industrial or commercial activity that affects other parties without being reflected in costs",
+    "first_letter": "e",
+    "punchline": "Smoking in public is the biological equivalent of dumping raw sewage into a communal pool and remarking on the cloudy view.",
+    "vocab": {
+      "word": "externality",
+      "phonetic": "/ˌekstɜːˈnæləti/",
+      "meaning": "n. （经济学）外部效应，负外部性"
+    }
+  },
+  {
+    "id": "q16",
+    "type": "cloze",
+    "theme": "Hyperbolic Discounting",
+    "passage": "The irrational compulsion to smoke reflects ________ discounting: overvaluing three seconds of mild nicotine sedation today while bankrupting thirty years of healthy retirement.",
+    "blank": "hyperbolic",
+    "options": ["hyperbolic", "linear", "prudential", "equitable"],
+    "hint": "Adjective: (behavioral economics) valuing present gratification dramatically higher than future well-being",
+    "first_letter": "h",
+    "punchline": "Trading away playing with future grandchildren for three milligrams of combusted leaves is an investment strategy only a madman would underwrite.",
+    "vocab": {
+      "word": "hyperbolic",
+      "phonetic": "/ˌhaɪpəˈbɒlɪk/",
+      "meaning": "adj. 双曲折现的（过度夸大即时满足、漠视未来复利）"
+    }
+  },
+  {
+    "id": "q17",
+    "type": "cloze",
+    "theme": "The Vaping Fallacy",
+    "passage": "Promoting e-cigarettes as harmless lifestyle wellness vapor is the latest commercial ________: swapping tar-laden soot for flavored aerosol while locking the brain in the exact same servitude.",
+    "blank": "sophistry",
+    "options": ["sophistry", "altruism", "revelation", "integrity"],
+    "hint": "Noun: the use of clever but false arguments, especially with the intention of deceiving",
+    "first_letter": "s",
+    "punchline": "Strawberry-flavored chemical vapor does not make addiction gourmet; it merely paints the prison bars in pastel hues.",
+    "vocab": {
+      "word": "sophistry",
+      "phonetic": "/ˈsɒfɪstri/",
+      "meaning": "n. 诡辩，似是而非的花招"
+    }
+  },
+  {
+    "id": "q18",
+    "type": "true_false",
+    "theme": "Sleep Architecture",
+    "passage": "While smokers believe a late-night cigarette relaxes them into sleep, nocturnal nicotine withdrawal quietly fragments REM cycles, leaving sleep architecture fundamentally ________.",
+    "blank": "disrupted",
+    "options": ["disrupted", "enhanced", "consolidated", "soothed"],
+    "statement": "True or False: Nicotine acts as a benign natural sleep aid that deepens restorative REM sleep.",
+    "correct_boolean": false,
+    "hint": "Adjective: disturbed, interrupted, or shattered in natural rhythm",
+    "punchline": "Waking up exhausted after eight hours in bed isn't bad luck; your nervous system spent the night weathering chemical micro-panics.",
+    "vocab": {
+      "word": "disrupted",
+      "phonetic": "/dɪsˈrʌptɪd/",
+      "meaning": "adj. 遭受扰乱破坏的，节律失衡的"
+    }
+  },
+  {
+    "id": "q19",
+    "type": "cloze",
+    "theme": "Asymmetric Information",
+    "passage": "For half a century, cigarette conglomerates exploited information ________, burying internal laboratory data on tumors while bankrolling deceptive academic symposia.",
+    "blank": "asymmetry",
+    "options": ["asymmetry", "equilibrium", "transparency", "benevolence"],
+    "hint": "Noun: lack of equality or balance between parties, especially regarding knowledge in trade",
+    "first_letter": "a",
+    "punchline": "When an industry manufactures its own scientific 'doubt', the customer is not exercising free choice; they are consuming engineered ignorance.",
+    "vocab": {
+      "word": "asymmetry",
+      "phonetic": "/eɪˈsɪmətri/",
+      "meaning": "n. 不对称（信息不对称市场失灵）"
+    }
+  },
+  {
+    "id": "q20",
+    "type": "cloze",
+    "theme": "The Concentration Myth",
+    "passage": "The popular conviction that smoking sharpens cognitive focus is entirely ________: the puff merely dispels the brain fog triggered by mild withdrawal, resetting the intellect to where a non-smoker starts.",
+    "blank": "illusory",
+    "options": ["illusory", "profound", "verifiable", "invaluable"],
+    "hint": "Adjective: based on illusion; not real or authentic despite vivid perception",
+    "first_letter": "i",
+    "punchline": "Your cigarette doesn't give you superpowers; it merely removes the chemical handcuffs it slapped on you sixty minutes earlier.",
+    "vocab": {
+      "word": "illusory",
+      "phonetic": "/ɪˈluːsəri/",
+      "meaning": "adj. 错觉的，虚妄假象的"
+    }
+  },
+  {
+    "id": "q21",
+    "type": "cloze",
+    "theme": "Opportunity Cost",
+    "passage": "A pack-a-day habit over forty years carries an opportunity cost exceeding $250,000 when factoring in the mathematical miracle of broad-market index ________.",
+    "blank": "compounding",
+    "options": ["compounding", "stagnation", "defaulting", "depreciation"],
+    "hint": "Noun: the process where interest generates additional earnings upon itself over time",
+    "first_letter": "c",
+    "punchline": "You are not just burning tobacco leaves; you are systematically incinerating a holiday villa on the Amalfi coast.",
+    "vocab": {
+      "word": "compounding",
+      "phonetic": "/kəmˈpaʊndɪŋ/",
+      "meaning": "n. 复利滚存，指数级资本增殖"
+    }
+  },
+  {
+    "id": "q22",
+    "type": "cloze",
+    "theme": "Periodontal Carnage",
+    "passage": "By constricting capillary blood flow, tobacco smoke masks bleeding gums with ________ deception, allowing periodontal bone erosion to proceed undetected.",
+    "blank": "insidious",
+    "options": ["insidious", "wholesome", "manifest", "laudable"],
+    "hint": "Adjective: proceeding in a gradual, subtle way, but with harmful and destructive effects",
+    "first_letter": "i",
+    "punchline": "Your gums weren't healthy because they didn't bleed; they were quietly suffocating in a state of local vascular numbness.",
+    "vocab": {
+      "word": "insidious",
+      "phonetic": "/ɪnˈsɪdiəs/",
+      "meaning": "adj. 潜伏蔓延的，暗中肆虐的"
+    }
+  },
+  {
+    "id": "q23",
+    "type": "cloze",
+    "theme": "Voluntary Serfdom",
+    "passage": "Genuine personal autonomy is utterly incompatible with chemical ________: running out into winter sleet simply because a white paper cylinder demands submission.",
+    "blank": "servitude",
+    "options": ["servitude", "sovereignty", "eminence", "liberty"],
+    "hint": "Noun: the state of being completely under the control of someone or something else",
+    "first_letter": "s",
+    "punchline": "You consider yourself an uncompromising rebel? A five-cent chemical prop orders you to abandon your dinner table and stand next to a wet wheelie bin.",
+    "vocab": {
+      "word": "servitude",
+      "phonetic": "/ˈsɜːvɪtjuːd/",
+      "meaning": "n. 屈从，被奴役状态"
+    }
+  },
+  {
+    "id": "q24",
+    "type": "cloze",
+    "theme": "Risk Compensation",
+    "passage": "Many smokers treat organic salads and weekend gym visits as an emotional ________, naively trusting that a few vitamins can cancel out 4,000 toxic combustion byproducts.",
+    "blank": "talisman",
+    "options": ["talisman", "hindrance", "peril", "burden"],
+    "hint": "Noun: an object or belief thought to possess magical powers of protection against disaster",
+    "first_letter": "t",
+    "punchline": "Running five kilometres after two cigarettes is like scrubbing the Titanic's deck with antibacterial wipes to prevent the sinking.",
+    "vocab": {
+      "word": "talisman",
+      "phonetic": "/ˈtælɪzmən/",
+      "meaning": "n. 护身符；（比喻）自我麻痹的虚假心理安慰"
+    }
+  },
+  {
+    "id": "q25",
+    "type": "cloze",
+    "theme": "Social Parasitism",
+    "passage": "Once celebrated in black-and-white films as the pinnacle of glamour, the smoker in modern society faces quiet social ________, as peers instinctively reposition themselves upwind.",
+    "blank": "ostracism",
+    "options": ["ostracism", "canonisation", "veneration", "applause"],
+    "hint": "Noun: exclusion from a society or group by general consent",
+    "first_letter": "o",
+    "punchline": "Spraying expensive cologne over stale smoke doesn't mask the smell; it merely invents a suffocating fragrance named 'Eau de Ashed Rose'.",
+    "vocab": {
+      "word": "ostracism",
+      "phonetic": "/ˈɒstrəsɪzəm/",
+      "meaning": "n. 排斥，社会性疏离"
+    }
+  },
+  {
+    "id": "q26",
+    "type": "cloze",
+    "theme": "The Break Illusion",
+    "passage": "The celebrated 'smoke break' is defended as an essential pause for mindfulness, yet non-smokers achieve identical mental serenity without requiring a toxic ________.",
+    "blank": "pretext",
+    "options": ["pretext", "sacrament", "triumph", "decree"],
+    "hint": "Noun: a reason given in justification of a course of action that is not the real reason",
+    "first_letter": "p",
+    "punchline": "If you require a deadly fire-stick simply to step outside and look at the sky, your corporate workload is tough, but your cognitive excuse is pure comedy.",
+    "vocab": {
+      "word": "pretext",
+      "phonetic": "/ˈpriːtekst/",
+      "meaning": "n. 托词，借口"
+    }
+  },
+  {
+    "id": "q27",
+    "type": "cloze",
+    "theme": "Arterial Stiffening",
+    "passage": "Free radicals in combustion gas degrade elastin fibers in vessel walls, relentlessly stripping arteries of the supple ________ required to buffer cardiac pressure waves.",
+    "blank": "elasticity",
+    "options": ["elasticity", "rigidity", "petrifaction", "fragility"],
+    "hint": "Noun: the ability of an object or tissue to resume its normal shape after being stretched",
+    "first_letter": "e",
+    "punchline": "Your circulatory highways were engineered to be responsive silk ribbons; smoking systematically converts them into calcified plumbing pipes.",
+    "vocab": {
+      "word": "elasticity",
+      "phonetic": "/ˌɪlæˈstɪsəti/",
+      "meaning": "n. 弹性，血管舒缩回弹力"
+    }
+  },
+  {
+    "id": "q28",
+    "type": "cloze",
+    "theme": "Regulatory Capture",
+    "passage": "In vulnerable developing markets, multinational tobacco firms lobby fiercely for tax ________, leaving underfunded domestic public hospitals to shoulder the cancer bills.",
+    "blank": "subsidies",
+    "options": ["subsidies", "penalties", "prohibitions", "boycotts"],
+    "hint": "Noun: sums of money granted by the government to assist an industry or business to keep prices low",
+    "first_letter": "s",
+    "punchline": "Privatising the quarterly cashflow while nationalising the chemotherapy wards is Big Tobacco's most lucrative financial innovation.",
+    "vocab": {
+      "word": "subsidy",
+      "phonetic": "/ˈsʌbsədi/",
+      "meaning": "n. 财政补贴，政策红利扶持"
+    }
+  },
+  {
+    "id": "q29",
+    "type": "true_false",
+    "theme": "Brain Neuroplasticity",
+    "passage": "Within three weeks of total cessation, excess acetylcholine receptors in the brain naturally atrophy, proving that human ________ can completely dismantle chemical dependency.",
+    "blank": "neuroplasticity",
+    "options": ["neuroplasticity", "degeneration", "ossification", "paralysis"],
+    "statement": "True or False: Nicotine addiction permanently alters brain anatomy such that dopamine receptor recovery is impossible.",
+    "correct_boolean": false,
+    "hint": "Noun: the brain's inherent biological capacity to reorganize and heal synaptic pathways",
+    "punchline": "Your brain is not broken goods; it is simply waiting for you to stop poisoning its delicate electrochemical garden.",
+    "vocab": {
+      "word": "neuroplasticity",
+      "phonetic": "/ˌnjʊərəʊplæˈstɪsəti/",
+      "meaning": "n. 神经可塑性（大脑自我康复与回路重塑能力）"
+    }
+  },
+  {
+    "id": "q30",
+    "type": "cloze",
+    "theme": "Status Quo Bias",
+    "passage": "Most adults do not make a conscious daily choice to smoke; they are trapped by behavioral ________, perpetually honoring an irrational impulse formed during teenage insecurity.",
+    "blank": "inertia",
+    "options": ["inertia", "vigilance", "deliberation", "acumen"],
+    "hint": "Noun: a tendency to do nothing or to remain unchanged; resistance to movement",
+    "first_letter": "i",
+    "punchline": "Smoking today because you experimented with peer pressure at age fifteen is letting a confused, awkward child manage your life's balance sheet.",
+    "vocab": {
+      "word": "inertia",
+      "phonetic": "/ɪˈnɜːʃə/",
+      "meaning": "n. 惯性，行为惰性"
+    }
+  },
+  {
+    "id": "q31",
+    "type": "cloze",
+    "theme": "Taste Bud Resurrection",
+    "passage": "The rich complexities of high cuisine are perpetually ________ in heavy smokers, as sulfur dioxide and high temperatures dull microscopic taste buds.",
+    "blank": "dulled",
+    "options": ["dulled", "amplified", "refined", "celebrated"],
+    "hint": "Adjective: made less sharp, vivid, or perceptive",
+    "first_letter": "d",
+    "punchline": "You don't drown your food in salt and chili sauce because you have a refined palate; your tongue has simply been chemically numbed.",
+    "vocab": {
+      "word": "dulled",
+      "phonetic": "/dʌld/",
+      "meaning": "adj. 钝化的，迟钝麻木的"
+    }
+  },
+  {
+    "id": "q32",
+    "type": "cloze",
+    "theme": "The Freedom Paradox",
+    "passage": "Quitting smoking is conventionally framed as a painful ordeal of deprivation, but in neurobiological reality, it is a glorious act of ________ from chemical taxation.",
+    "blank": "emancipation",
+    "options": ["emancipation", "subjugation", "confinement", "penance"],
+    "hint": "Noun: the process of being set free from legal, social, or physiological restrictions",
+    "first_letter": "e",
+    "punchline": "You are not giving up a loyal friend; you are firing an abusive tenant who refused to pay rent while burning your carpets.",
+    "vocab": {
+      "word": "emancipation",
+      "phonetic": "/ɪˌmænsɪˈpeɪʃn/",
+      "meaning": "n. 解放，摆脱枷锁"
+    }
+  },
+  {
+    "id": "q33",
+    "type": "cloze",
+    "theme": "Immune Compromise",
+    "passage": "Within minutes of drawing smoke, the microscopic cilia lining your bronchial epithelium are instantly ________, leaving respiratory airways completely defenseless against airborne bacteria.",
+    "blank": "paralysed",
+    "options": ["paralysed", "mobilised", "fortified", "galvanised"],
+    "hint": "Adjective: rendered incapable of movement or normal cellular activity",
+    "first_letter": "p",
+    "punchline": "Smoking dismisses your pulmonary security guards and hangs an open invitation on the front door of your bronchial tree.",
+    "vocab": {
+      "word": "paralyse",
+      "phonetic": "/ˈpærəlaɪz/",
+      "meaning": "v. 使瘫痪，使麻痹停顿"
+    }
+  },
+  {
+    "id": "q34",
+    "type": "cloze",
+    "theme": "Craving Wave Dynamics",
+    "passage": "Psychological data proves that an acute craving surge is purely ________: peaking aggressively within 180 seconds before naturally collapsing if executive attention remains occupied.",
+    "blank": "ephemeral",
+    "options": ["ephemeral", "permanent", "omnipotent", "infinite"],
+    "hint": "Adjective: lasting for a very short time; fleeting and transient",
+    "first_letter": "e",
+    "punchline": "A craving is merely a temporary neurological tantrum. It cannot break bones or stop breathing; it simply evaporates the second your attention moves elsewhere.",
+    "vocab": {
+      "word": "ephemeral",
+      "phonetic": "/ɪˈfemərəl/",
+      "meaning": "adj. 短暂的，朝生暮死的，转瞬即逝的"
+    }
+  },
+  {
+    "id": "q35",
+    "type": "cloze",
+    "theme": "Moral Hazard",
+    "passage": "The comforting rationalisation that 'medical technology will cure lung cancer before I grow old' is a textbook illustration of moral ________, justifying reckless biological gamble.",
+    "blank": "hazard",
+    "options": ["hazard", "acumen", "triumph", "solvency"],
+    "hint": "Noun: lack of incentive to guard against risk when one believes they are protected from its consequences",
+    "first_letter": "h",
+    "punchline": "Gambling your lungs on future gene therapy while inhaling tar is like driving at 200 km/h blindfolded because cars have airbags.",
+    "vocab": {
+      "word": "moral hazard",
+      "phonetic": "/ˌmɒrəl ˈhæzəd/",
+      "meaning": "n. （经济学）道德风险（因以为后果可转嫁而肆意冒险）"
+    }
+  },
+  {
+    "id": "q36",
+    "type": "cloze",
+    "theme": "The Vitality Balance Sheet",
+    "passage": "The moment you extinguish your final cigarette, your physiology declares an immediate cash ________: arterial blood pressure stabilises within 20 minutes, compounding into decades of renewed vitality.",
+    "blank": "dividend",
+    "options": ["dividend", "deficit", "forfeiture", "liability"],
+    "hint": "Noun: a payment or tangible benefit resulting from a prudent investment",
+    "first_letter": "d",
+    "punchline": "Freedom from tobacco is the only investment vehicle where the returns are 100% tax-free, start paying within 20 minutes, and deposit straight into your pulse.",
+    "vocab": {
+      "word": "dividend",
+      "phonetic": "/ˈdɪvɪdend/",
+      "meaning": "n. 红利，股息；（比喻）生理健康与生命的切实回报"
+    }
   }
 ]

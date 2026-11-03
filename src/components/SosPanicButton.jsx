@@ -42,9 +42,9 @@ export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
           <ArrowRight className="w-5 h-5 text-emerald-300 group-hover:translate-x-1 transition-transform" />
         </button>
 
-        <p className="text-[11px] text-gray-400 mt-2.5 flex items-center space-x-1">
-          <Zap className="w-3 h-3 text-emerald-600" />
-          <span>0 延迟秒开 · 3道《经济学人》犀利填空题 · 离线可用</span>
+        <p className="text-[11px] text-gray-500 mt-2.5 flex items-center space-x-1.5">
+          <Zap className="w-3.5 h-3.5 text-emerald-700" />
+          <span>已扩充至 <strong>36 道</strong>《经济学人》精选题库 · 本轮随机 3 题 · 0 延迟秒开</span>
         </p>
       </div>
 
