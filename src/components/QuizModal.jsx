@@ -25,20 +25,23 @@ import { lookupWord, speakWord, cleanWord } from '../utils/phoneticDict';
 export default function QuizModal({ 
   mode, 
   questions, 
+  initialIndex = 0,
+  initialSecondsLeft = 180,
   onClose, 
   onCompleteSession, 
   isTodayDone,
   onSaveVocab,
   savedVocabIds,
-  onSwapTask
+  onSwapTask,
+  onProgress
 }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() => Math.min(initialIndex, Math.max(0, (questions?.length || 1) - 1)));
   const [selectedOption, setSelectedOption] = useState(null);
   const [typeInAnswer, setTypeInAnswer] = useState('');
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [inputMode, setInputMode] = useState('choice'); // 'choice' or 'type'
-  const [secondsLeft, setSecondsLeft] = useState(180); // 3-minute craving countdown
+  const [secondsLeft, setSecondsLeft] = useState(initialSecondsLeft); // 3-minute craving countdown
   const [isSessionFinished, setIsSessionFinished] = useState(false);
 
   // Translation & Word Phonetic inspection state
@@ -85,6 +88,13 @@ export default function QuizModal({
     }, 1000);
     return () => clearInterval(interval);
   }, [isSessionFinished]);
+
+  // Sync progress back to parent / session storage for seamless reload recovery
+  useEffect(() => {
+    if (!isSessionFinished && onProgress) {
+      onProgress({ currentIndex, secondsLeft });
+    }
+  }, [currentIndex, secondsLeft, isSessionFinished]);
 
   // Physical timer countdown
   useEffect(() => {

@@ -11,23 +11,45 @@ import {
   getReplacementTask, 
   taskStats 
 } from './utils/taskManager';
-import { getInitialState, saveState } from './utils/storage';
+import { 
+  getInitialState, 
+  saveState, 
+  getSavedSession, 
+  saveActiveSession, 
+  clearActiveSession 
+} from './utils/storage';
 import { FastForward, RotateCcw, Zap, ExternalLink, ShieldAlert } from 'lucide-react';
 
 export default function App() {
   const [state, setState] = useState(getInitialState);
 
-  // Directly enter emergency SOS intervention mode upon opening the app/icon
-  // (unless user explicitly visits with ?mode=dashboard)
+  // Restore or initialize emergency SOS session state
+  const savedSession = getSavedSession();
+
   const [activeQuizMode, setActiveQuizMode] = useState(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get('mode') === 'dashboard' ? null : 'sos';
+    if (params.get('mode') === 'dashboard') return null;
+    return savedSession?.mode || 'sos';
   });
 
   const [currentQuizQuestions, setCurrentQuizQuestions] = useState(() => {
     const params = new URLSearchParams(window.location.search);
-    return params.get('mode') === 'dashboard' ? [] : generateSessionTasks('sos');
+    if (params.get('mode') === 'dashboard') return [];
+    if (savedSession?.questions?.length) return savedSession.questions;
+    const initialTasks = generateSessionTasks('sos');
+    saveActiveSession({
+      mode: 'sos',
+      questions: initialTasks,
+      currentIndex: 0,
+      secondsLeft: 180
+    });
+    return initialTasks;
   });
+
+  const [sessionProgress, setSessionProgress] = useState(() => ({
+    currentIndex: savedSession?.currentIndex || 0,
+    secondsLeft: savedSession?.secondsLeft ?? 180
+  }));
 
   const [showVocabModal, setShowVocabModal] = useState(false);
 
@@ -43,6 +65,13 @@ export default function App() {
     const tasks = generateSessionTasks(mode);
     setCurrentQuizQuestions(tasks);
     setActiveQuizMode(mode);
+    setSessionProgress({ currentIndex: 0, secondsLeft: 180 });
+    saveActiveSession({
+      mode,
+      questions: tasks,
+      currentIndex: 0,
+      secondsLeft: 180
+    });
   };
 
   // Swap a specific task with a different one (e.g. if user is on subway and can't do push-ups)
@@ -53,12 +82,38 @@ export default function App() {
       const replacement = getReplacementTask(taskToReplace, existingIds);
       const next = [...prev];
       next[indexToSwap] = replacement;
+      saveActiveSession({
+        mode: activeQuizMode || 'sos',
+        questions: next,
+        currentIndex: sessionProgress.currentIndex,
+        secondsLeft: sessionProgress.secondsLeft
+      });
       return next;
     });
   };
 
+  // Progress update from QuizModal (e.g. index change, timer tick)
+  const handleQuizProgress = ({ currentIndex, secondsLeft }) => {
+    setSessionProgress({ currentIndex, secondsLeft });
+    if (activeQuizMode && currentQuizQuestions.length > 0) {
+      saveActiveSession({
+        mode: activeQuizMode,
+        questions: currentQuizQuestions,
+        currentIndex,
+        secondsLeft
+      });
+    }
+  };
+
+  // Close quiz session manually
+  const handleCloseQuiz = () => {
+    setActiveQuizMode(null);
+    clearActiveSession();
+  };
+
   // Complete a quiz session
   const handleCompleteSession = () => {
+    clearActiveSession();
     setState((prev) => {
       const dayIdx = prev.currentDay - 1;
       const newCompletedDays = [...prev.completedDays];
@@ -203,7 +258,10 @@ export default function App() {
         <QuizModal
           mode={activeQuizMode}
           questions={currentQuizQuestions}
-          onClose={() => setActiveQuizMode(null)}
+          initialIndex={sessionProgress.currentIndex}
+          initialSecondsLeft={sessionProgress.secondsLeft}
+          onProgress={handleQuizProgress}
+          onClose={handleCloseQuiz}
           onCompleteSession={handleCompleteSession}
           isTodayDone={isTodayDone}
           onSaveVocab={handleSaveVocab}

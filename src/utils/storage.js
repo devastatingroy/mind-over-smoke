@@ -35,3 +35,36 @@ export const saveState = (state) => {
     console.error('Failed to save state', e);
   }
 };
+
+const SESSION_STATE_KEY = 'mind_over_smoke_active_session_v1';
+
+export const getSavedSession = () => {
+  try {
+    const raw = sessionStorage.getItem(SESSION_STATE_KEY);
+    if (!raw) return null;
+    const session = JSON.parse(raw);
+    if (session && Array.isArray(session.questions) && session.questions.length > 0) {
+      return session;
+    }
+  } catch (e) {
+    console.error('Failed to parse session', e);
+  }
+  return null;
+};
+
+export const saveActiveSession = (sessionData) => {
+  try {
+    sessionStorage.setItem(SESSION_STATE_KEY, JSON.stringify(sessionData));
+  } catch (e) {
+    console.error('Failed to save session', e);
+  }
+};
+
+export const clearActiveSession = () => {
+  try {
+    sessionStorage.removeItem(SESSION_STATE_KEY);
+  } catch (e) {
+    console.error('Failed to clear session', e);
+  }
+};
+
