@@ -1,17 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import confetti from 'canvas-confetti';
 import { 
   X, 
   Timer, 
-  CheckCircle, 
-  AlertCircle, 
-  Sparkles, 
-  Bookmark, 
-  BookmarkCheck, 
+  Check, 
   ArrowRight, 
   TrendingDown,
-  Coins
+  Coins,
+  Dumbbell,
+  Scroll,
+  BookOpen,
+  Wind,
+  Shuffle,
+  Volume2,
+  Play,
+  RotateCcw,
+  Languages,
+  Sparkles,
+  Bookmark,
+  BookmarkCheck,
+  HelpCircle
 } from 'lucide-react';
+import { lookupWord, speakWord, cleanWord } from '../utils/phoneticDict';
 
 export default function QuizModal({ 
   mode, 
@@ -20,7 +29,8 @@ export default function QuizModal({
   onCompleteSession, 
   isTodayDone,
   onSaveVocab,
-  savedVocabIds 
+  savedVocabIds,
+  onSwapTask
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -31,9 +41,37 @@ export default function QuizModal({
   const [secondsLeft, setSecondsLeft] = useState(180); // 3-minute craving countdown
   const [isSessionFinished, setIsSessionFinished] = useState(false);
 
+  // Translation & Word Phonetic inspection state
+  const [showTranslation, setShowTranslation] = useState(false);
+  const [inspectedWord, setInspectedWord] = useState(null);
+
+  // Physical task state
+  const [physicalReps, setPhysicalReps] = useState(0);
+  const [timerSeconds, setTimerSeconds] = useState(30);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+
+  // Breathing task state
+  const [breathingStep, setBreathingStep] = useState(0);
+  const [breathingCycle, setBreathingCycle] = useState(1);
+
   const currentQ = questions[currentIndex] || questions[0];
 
-  // 180s countdown timer
+  // Reset task-specific states when question changes
+  useEffect(() => {
+    setSelectedOption(null);
+    setTypeInAnswer('');
+    setIsAnswered(false);
+    setIsCorrect(false);
+    setPhysicalReps(0);
+    setTimerSeconds(currentQ?.target_reps || 30);
+    setIsTimerRunning(false);
+    setBreathingStep(0);
+    setBreathingCycle(1);
+    setShowTranslation(false);
+    setInspectedWord(null);
+  }, [currentIndex, currentQ?.id]);
+
+  // 180s Craving countdown timer
   useEffect(() => {
     if (isSessionFinished) return;
     const interval = setInterval(() => {
@@ -48,32 +86,47 @@ export default function QuizModal({
     return () => clearInterval(interval);
   }, [isSessionFinished]);
 
-  // Craving wave stage text - Calming & Non-alarming
+  // Physical timer countdown
+  useEffect(() => {
+    if (!isTimerRunning || isAnswered) return;
+    const interval = setInterval(() => {
+      setTimerSeconds((prev) => {
+        if (prev <= 1) {
+          clearInterval(interval);
+          setIsTimerRunning(false);
+          setIsCorrect(true);
+          setIsAnswered(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isTimerRunning, isAnswered]);
+
+  // Craving wave stage text - Monochrome & Quiet
   const getCravingStage = () => {
     if (secondsLeft > 120) {
       return {
-        text: '冲动浪涌高发期 (Peak Wave)',
-        desc: '神经回路正在索取刺激，专注思考正在抢占工作记忆！',
-        color: 'text-stone-700 bg-stone-100 border-stone-300'
+        stageName: '峰值浪涌 (Peak Wave)',
+        desc: '注意力正被工作记忆全力接管，深呼吸保持专注。'
       };
     } else if (secondsLeft > 50) {
       return {
-        text: '生理阻断消退期 (Subsiding Wave)',
-        desc: '前额叶认知已成功占满注意力，生理渴求已显著减弱。',
-        color: 'text-teal-800 bg-teal-50 border-teal-200'
+        stageName: '冲动消退 (Subsiding)',
+        desc: '边缘系统渴求显著回落，自控力已逐步重置。'
       };
     } else {
       return {
-        text: '安全受控区 (Neutralized)',
-        desc: '神经递质渴望已回落至基线，你已夺回自控权。',
-        color: 'text-emerald-800 bg-emerald-50 border-emerald-300'
+        stageName: '受控基线 (Neutralized)',
+        desc: '神经回路已平息，你已完全夺回前额叶掌控权。'
       };
     }
   };
 
-  const stage = getCravingStage();
+  const wave = getCravingStage();
 
-  // Handle option select
+  // Handle option selection
   const handleSelectOption = (opt) => {
     if (isAnswered) return;
     setSelectedOption(opt);
@@ -82,19 +135,11 @@ export default function QuizModal({
     if (currentQ.type === 'true_false') {
       correct = (opt === currentQ.correct_boolean);
     } else {
-      correct = (opt.toLowerCase().trim() === currentQ.blank.toLowerCase().trim());
+      correct = (opt.toString().toLowerCase().trim() === currentQ.blank.toLowerCase().trim());
     }
 
     setIsCorrect(correct);
     setIsAnswered(true);
-
-    if (correct) {
-      confetti({
-        particleCount: 25,
-        spread: 45,
-        origin: { y: 0.7 }
-      });
-    }
   };
 
   // Handle typing submit
@@ -104,13 +149,42 @@ export default function QuizModal({
     const correct = typeInAnswer.toLowerCase().trim() === currentQ.blank.toLowerCase().trim();
     setIsCorrect(correct);
     setIsAnswered(true);
+  };
 
-    if (correct) {
-      confetti({
-        particleCount: 30,
-        spread: 50,
-        origin: { y: 0.7 }
-      });
+  // Word click to inspect phonetic & pronunciation
+  const handleWordClick = (rawWord) => {
+    const data = lookupWord(rawWord);
+    if (!data) return;
+    setInspectedWord(data);
+    speakWord(data.word);
+  };
+
+  // Physical rep click
+  const handleRepIncrement = () => {
+    if (isAnswered) return;
+    const nextReps = physicalReps + 1;
+    setPhysicalReps(nextReps);
+
+    if (nextReps >= currentQ.target_reps) {
+      setIsCorrect(true);
+      setIsAnswered(true);
+    }
+  };
+
+  // Instant finish physical task
+  const handleInstantCompletePhysical = () => {
+    setPhysicalReps(currentQ.target_reps);
+    setIsCorrect(true);
+    setIsAnswered(true);
+  };
+
+  // Breathing complete cycle
+  const handleNextBreathingCycle = () => {
+    if (breathingCycle < (currentQ.target_cycles || 3)) {
+      setBreathingCycle((prev) => prev + 1);
+    } else {
+      setIsCorrect(true);
+      setIsAnswered(true);
     }
   };
 
@@ -118,307 +192,688 @@ export default function QuizModal({
   const handleNext = () => {
     if (currentIndex < questions.length - 1) {
       setCurrentIndex((prev) => prev + 1);
-      setSelectedOption(null);
-      setTypeInAnswer('');
-      setIsAnswered(false);
-      setIsCorrect(false);
     } else {
       setIsSessionFinished(true);
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
       onCompleteSession();
     }
   };
 
-  const isVocabSaved = currentQ.vocab && savedVocabIds.includes(currentQ.id);
+  const isVocabSaved = currentQ.vocab && savedVocabIds?.includes(currentQ.id);
 
-  // Render text with blank
-  const renderPassage = () => {
+  // Render clickable interactive words for English passages
+  const renderInteractiveSegment = (text) => {
+    if (!text) return null;
+    const tokens = text.split(/(\s+)/);
+    return tokens.map((token, idx) => {
+      const cleaned = cleanWord(token);
+      if (!cleaned) return <span key={idx}>{token}</span>;
+      const isSelected = inspectedWord?.word === cleaned;
+      return (
+        <span
+          key={idx}
+          onClick={() => handleWordClick(cleaned)}
+          className={`cursor-pointer rounded px-0.5 transition-colors select-text ${
+            isSelected 
+              ? 'bg-stone-900 text-white font-semibold' 
+              : 'hover:bg-stone-200/80 hover:text-stone-900 decoration-stone-300 hover:underline'
+          }`}
+          title="点击查看音标与真人发音"
+        >
+          {token}
+        </span>
+      );
+    });
+  };
+
+  // Render passage with blank - Clean Editorial typography
+  const renderPassage = (interactive = false) => {
+    const isPoetic = currentQ.category === 'poetry' || currentQ.type === 'poetry' || currentQ.category === 'translation' || currentQ.type === 'translation';
     const parts = currentQ.passage.split('________');
     return (
-      <p className="font-serif text-lg leading-relaxed text-[#1A1D20] tracking-normal">
-        {parts[0]}
-        <span className={`inline-block px-2.5 py-0.5 mx-1 font-bold rounded border ${
+      <div className={`text-[#111827] leading-relaxed ${isPoetic ? 'font-serif text-xl sm:text-2xl text-center py-4 font-bold tracking-wide select-none' : 'font-serif text-lg leading-loose'}`}>
+        <span>{interactive ? renderInteractiveSegment(parts[0]) : parts[0]}</span>
+        <span className={`inline-block px-3 py-0.5 mx-1.5 font-sans font-semibold rounded transition-all duration-200 border ${
           isAnswered 
-            ? (isCorrect ? 'bg-emerald-100 text-emerald-900 border-emerald-400' : 'bg-stone-200 text-stone-800 border-stone-400')
-            : 'bg-emerald-50/70 text-emerald-950 border-emerald-300 border-dashed animate-pulse'
+            ? (isCorrect 
+                ? 'bg-stone-900 text-white border-stone-900' 
+                : 'bg-stone-200 text-stone-800 border-stone-300')
+            : 'border-stone-900 border-dashed text-stone-700 bg-stone-50/80 animate-pulse'
         }`}>
-          {isAnswered ? currentQ.blank : `[ ? ${currentQ.hint ? '· ' + currentQ.hint.slice(0, 24) + '...' : ''} ]`}
+          {isAnswered ? currentQ.blank : `[ ${currentQ.hint ? currentQ.hint.slice(0, 18) + '...' : ' ? '} ]`}
         </span>
-        {parts[1]}
-      </p>
+        <span>{interactive ? renderInteractiveSegment(parts[1]) : parts[1]}</span>
+      </div>
     );
   };
 
+  // Monochrome Category Meta Label
+  const getCategoryMeta = () => {
+    if (currentQ.category === 'translation' || currentQ.type === 'translation') {
+      return {
+        code: 'TRANSLATION',
+        label: '英译唐诗逆向还原',
+        icon: <Languages className="w-3.5 h-3.5" />
+      };
+    }
+    if (currentQ.category === 'physical' || currentQ.type === 'physical') {
+      return {
+        code: 'SOMATIC',
+        label: '躯体动作重置',
+        icon: <Dumbbell className="w-3.5 h-3.5" />
+      };
+    }
+    if (currentQ.category === 'poetry' || currentQ.type === 'poetry') {
+      return {
+        code: 'POETRY',
+        label: '唐诗心流语律',
+        icon: <Scroll className="w-3.5 h-3.5" />
+      };
+    }
+    if (currentQ.category === 'breathing' || currentQ.type === 'breathing') {
+      return {
+        code: 'VAGUS',
+        label: '迷走神经深呼吸',
+        icon: <Wind className="w-3.5 h-3.5" />
+      };
+    }
+    return {
+      code: 'COGNITIVE',
+      label: '经济学人认知阻断',
+      icon: <BookOpen className="w-3.5 h-3.5" />
+    };
+  };
+
+  const meta = getCategoryMeta();
+
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
-      <div className="bg-[#F7F5F0] rounded-2xl w-full max-w-xl border border-[#E2DFD6] shadow-2xl overflow-hidden flex flex-col my-auto max-h-[92vh]">
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
+      <div className="bg-[#FAF8F5] text-[#111827] rounded-2xl w-full max-w-xl border border-[#E5E0D8] shadow-xl overflow-hidden flex flex-col my-auto max-h-[94vh]">
         
-        {/* Top Header: Brand & Progress */}
-        <div className="bg-white border-b border-[#E2DFD6] px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <span className="bg-[#1A3B2F] text-white text-[10px] font-serif font-bold px-2 py-0.5 rounded-xs uppercase tracking-wider">
-              {mode === 'sos' ? 'SOS 认知阻断中' : '日常精读'}
+        {/* Top Masthead: Editorial Monolith */}
+        <div className="bg-white px-5 py-3.5 border-b border-[#E5E0D8] flex items-center justify-between">
+          <div className="flex items-center space-x-1.5 sm:space-x-2.5 min-w-0">
+            <span className="bg-[#8C1D24] text-white text-[9px] font-serif font-black px-1.5 py-0.5 tracking-wider uppercase shrink-0">
+              THE
             </span>
-            <span className="text-xs font-semibold text-gray-700">
-              第 {currentIndex + 1} / {questions.length} 题
+            <span className="text-xs font-serif font-bold text-stone-900 tracking-tight truncate">
+              MindOverSmoke
             </span>
-            <span className="text-[10px] text-gray-400 border border-stone-200 px-1.5 py-0.5 rounded">
-              池化 36 题随机
+            <span className="text-stone-300">/</span>
+            <span className="text-xs font-mono font-medium text-stone-500 shrink-0">
+              {currentIndex + 1}/{questions.length}
             </span>
           </div>
 
-          <div className="flex items-center space-x-3">
-            {/* Craving Timer */}
-            <div className="flex items-center space-x-1.5 text-xs font-mono font-bold text-gray-700 bg-stone-100 px-2 py-1 rounded-md">
-              <Timer className="w-3.5 h-3.5 text-[#1A3B2F]" />
+          <div className="flex items-center space-x-2 shrink-0">
+            {/* 180s Countdown Badge */}
+            <div className="flex items-center space-x-1 text-xs font-mono font-semibold text-stone-800 bg-stone-100 px-2 py-1 rounded shrink-0">
+              <Timer className="w-3.5 h-3.5 text-stone-900" />
               <span>{Math.floor(secondsLeft / 60)}:{(secondsLeft % 60).toString().padStart(2, '0')}</span>
             </div>
+
+            {/* Swap Task */}
+            {onSwapTask && !isSessionFinished && !isAnswered && (
+              <button
+                onClick={() => onSwapTask(currentIndex)}
+                className="text-[11px] font-sans text-stone-500 hover:text-black border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2 py-1 rounded transition cursor-pointer flex items-center space-x-1 shrink-0 whitespace-nowrap"
+                title="更换当前任务"
+              >
+                <Shuffle className="w-3 h-3 text-stone-400" />
+                <span>换题</span>
+              </button>
+            )}
+
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-gray-700 p-1 rounded-md hover:bg-stone-100 transition"
+              className="text-stone-400 hover:text-stone-900 p-1 rounded transition cursor-pointer"
+              title="关闭并返回看板"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
-        {/* 180s Craving Biological Wave Bar - Soothing Gradient */}
-        <div className="bg-stone-50 px-4 py-2 border-b border-[#E2DFD6]">
-          <div className="flex items-center justify-between text-[11px] mb-1">
-            <span className="flex items-center space-x-1 font-semibold text-stone-700">
-              <TrendingDown className="w-3 h-3 text-[#1A3B2F]" />
-              <span>冲动退潮曲线 (Craving Wave)</span>
+        {/* Quiet Hairline Wave Gauge */}
+        <div className="bg-[#F5F2EB] px-5 py-2 border-b border-[#E5E0D8]">
+          <div className="flex items-center justify-between text-[11px] font-sans mb-1 text-stone-600">
+            <span className="font-medium text-stone-800">
+              {wave.stageName}
             </span>
-            <span className={`px-2 py-0.5 rounded-full border text-[10px] font-medium ${stage.color}`}>
-              {stage.text}
+            <span className="font-mono text-[10px] text-stone-500">
+              {secondsLeft}s REMAINING
             </span>
           </div>
-          {/* Progress track */}
-          <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
+          <div className="w-full bg-stone-200 h-1 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-[#183654] via-[#2A5745] to-[#10B981] transition-all duration-1000"
+              className="h-full bg-stone-900 transition-all duration-1000 ease-out"
               style={{ width: `${Math.max(5, (secondsLeft / 180) * 100)}%` }}
             />
           </div>
         </div>
 
-        {/* Modal Body */}
-        <div className="p-5 overflow-y-auto space-y-5">
+        {/* Modal Main Body */}
+        <div className="p-5 sm:p-6 overflow-y-auto space-y-5">
           {!isSessionFinished ? (
             <>
-              {/* Question Theme Badge */}
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-[#183654] uppercase tracking-wider bg-slate-100 px-2.5 py-1 rounded border border-slate-200">
-                  {currentQ.theme}
-                </span>
-                {currentQ.type === 'cloze' && (
-                  <button
-                    onClick={() => setInputMode(inputMode === 'choice' ? 'type' : 'choice')}
-                    className="text-[11px] text-gray-500 hover:text-black underline cursor-pointer"
-                  >
-                    切换至{inputMode === 'choice' ? '键盘手打输入' : '选择题模式'}
-                  </button>
+              {/* Category Subhead */}
+              <div className="flex items-center justify-between text-xs text-stone-500 pb-1 border-b border-stone-200/80">
+                <div className="flex items-center space-x-1.5 font-mono text-[11px] tracking-wide text-stone-600">
+                  {meta.icon}
+                  <span>{meta.code}</span>
+                  <span>·</span>
+                  <span className="font-sans text-stone-900 font-medium">{meta.label}</span>
+                </div>
+                {currentQ.theme && (
+                  <span className="font-serif italic text-stone-500 text-[11px] hidden sm:inline">
+                    {currentQ.theme}
+                  </span>
                 )}
               </div>
 
-              {/* Passage Card */}
-              <div className="bg-white p-5 rounded-xl border border-[#E2DFD6] shadow-xs">
-                {currentQ.type === 'true_false' && (
-                  <div className="mb-3 text-xs font-serif italic text-gray-500 border-l-2 border-[#1A3B2F] pl-2.5">
-                    {currentQ.statement}
-                  </div>
-                )}
-                {renderPassage()}
-              </div>
-
-              {/* Interaction Area */}
-              {!isAnswered ? (
-                <div className="space-y-3">
-                  {currentQ.type === 'true_false' ? (
-                    <div className="grid grid-cols-2 gap-3">
-                      <button
-                        onClick={() => handleSelectOption(true)}
-                        className="py-3 px-4 bg-white hover:bg-emerald-50 active:bg-emerald-100 border-2 border-stone-200 hover:border-emerald-600 rounded-xl font-bold text-gray-800 transition text-sm flex items-center justify-center space-x-2 cursor-pointer"
-                      >
-                        <span>True (真实有效)</span>
-                      </button>
-                      <button
-                        onClick={() => handleSelectOption(false)}
-                        className="py-3 px-4 bg-white hover:bg-stone-100 active:bg-stone-200 border-2 border-stone-200 hover:border-stone-500 rounded-xl font-bold text-gray-800 transition text-sm flex items-center justify-center space-x-2 cursor-pointer"
-                      >
-                        <span>False (伪概念/谎言)</span>
-                      </button>
+              {/* ---------------- 1. REVERSE TRANSLATION TASK ---------------- */}
+              {(currentQ.category === 'translation' || currentQ.type === 'translation') && (
+                <div className="space-y-4">
+                  {/* Masterpiece English Quote Card */}
+                  <div className="bg-[#18181B] text-white p-5 rounded-xl border border-stone-800 shadow-sm relative">
+                    <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-stone-400 mb-2.5">
+                      <span>ENGLISH TRANSLATION</span>
+                      <span>{currentQ.translator}</span>
                     </div>
-                  ) : inputMode === 'choice' ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    <blockquote className="font-serif italic text-lg sm:text-xl text-stone-100 leading-relaxed border-l-2 border-[#8C1D24] pl-4 py-0.5">
+                      "{currentQ.english_text}"
+                    </blockquote>
+                  </div>
+
+                  {/* Reconstruction Passage Card */}
+                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                    <div className="text-xs text-stone-500 flex items-center justify-between">
+                      <span className="font-serif text-stone-700 font-bold">{currentQ.author} · 《{currentQ.title}》</span>
+                      <span className="text-[10px] font-mono text-stone-400">CHINESE RECONSTRUCTION</span>
+                    </div>
+
+                    <p className="text-xs text-stone-600 leading-relaxed">
+                      💡 {currentQ.prompt}
+                    </p>
+
+                    {renderPassage(false)}
+
+                    {isAnswered && (
+                      <div className="pt-2 text-center border-t border-stone-100">
+                        <div className="text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-0.5">原篇全句</div>
+                        <p className="font-serif text-lg font-bold text-stone-900">
+                          {currentQ.full_verse}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Option Grid */}
+                  {!isAnswered && (
+                    <div className="grid grid-cols-2 gap-3 pt-1">
                       {currentQ.options.map((opt) => (
                         <button
                           key={opt}
                           onClick={() => handleSelectOption(opt)}
-                          className="py-3 px-4 bg-white hover:bg-emerald-50/50 hover:border-[#1A3B2F] active:scale-[0.99] border border-stone-300 rounded-xl font-serif text-left font-medium text-[#1A1D20] transition text-sm shadow-xs flex items-center justify-between group cursor-pointer"
+                          className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-center"
                         >
-                          <span>{opt}</span>
-                          <span className="text-stone-400 group-hover:text-[#1A3B2F] text-xs font-sans">
-                            选择
-                          </span>
+                          {opt}
                         </button>
                       ))}
                     </div>
-                  ) : (
-                    <form onSubmit={handleTypeSubmit} className="space-y-2">
-                      <div className="flex space-x-2">
-                        <input
-                          type="text"
-                          value={typeInAnswer}
-                          onChange={(e) => setTypeInAnswer(e.target.value)}
-                          placeholder={`填入对应单词 (首字母: ${currentQ.first_letter || '?'})...`}
-                          className="flex-1 px-4 py-3 bg-white border border-stone-300 rounded-xl text-sm font-serif focus:outline-none focus:ring-2 focus:ring-[#1A3B2F]"
-                          autoFocus
-                        />
-                        <button
-                          type="submit"
-                          className="px-5 py-3 bg-[#1A3B2F] hover:bg-[#132C23] text-white font-bold rounded-xl text-sm transition cursor-pointer"
-                        >
-                          提交
-                        </button>
+                  )}
+
+                  {/* Bilingual Mapping Table when answered */}
+                  {isAnswered && currentQ.mapping && (
+                    <div className="bg-white p-4 rounded-xl border border-[#E5E0D8] text-xs space-y-2">
+                      <div className="font-mono text-[10px] text-stone-500 uppercase tracking-wider">
+                        BILINGUAL SEMANTIC MAPPING · 意象转码对照
                       </div>
-                      {currentQ.hint && (
-                        <p className="text-[11px] text-gray-500 italic">
-                          💡 词义线索: {currentQ.hint}
-                        </p>
-                      )}
-                    </form>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                        {currentQ.mapping.map((m, idx) => (
+                          <div key={idx} className="bg-stone-50 p-2.5 rounded border border-stone-200/80 flex items-center justify-between text-[11px]">
+                            <span className="font-serif italic text-stone-600 truncate mr-1">{m.en}</span>
+                            <span className="text-stone-400 font-mono text-[10px]">⇄</span>
+                            <span className="font-bold text-stone-900 ml-1">{m.zh}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
-              ) : (
-                /* Feedback & Punchline Card */
-                <div className="space-y-4 fade-in">
-                  <div className={`p-4 rounded-xl border flex items-start space-x-3 ${
-                    isCorrect 
-                      ? 'bg-emerald-50 border-emerald-200 text-emerald-950' 
-                      : 'bg-stone-100 border-stone-300 text-stone-900'
-                  }`}>
-                    {isCorrect ? (
-                      <CheckCircle className="w-5 h-5 text-emerald-700 mt-0.5 shrink-0" />
-                    ) : (
-                      <AlertCircle className="w-5 h-5 text-stone-600 mt-0.5 shrink-0" />
-                    )}
-                    <div className="text-sm">
-                      <p className="font-bold">
-                        {isCorrect ? '前额叶成功接管！注意力已移开' : `正确答案是: ${currentQ.blank}`}
+              )}
+
+              {/* ---------------- 2. PHYSICAL WORKOUT TASK ---------------- */}
+              {(currentQ.category === 'physical' || currentQ.type === 'physical') && (
+                <div className="space-y-4">
+                  <div className="bg-white p-6 rounded-xl border border-[#E5E0D8] shadow-xs text-center space-y-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-stone-100 text-stone-800 rounded-full border border-stone-200">
+                      <Dumbbell className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-serif font-black text-stone-900">
+                        {currentQ.title}
+                      </h3>
+                      <p className="text-xs text-stone-600 mt-1.5 max-w-md mx-auto leading-relaxed">
+                        {currentQ.instruction}
                       </p>
-                      <p className="text-xs mt-0.5 opacity-90">
-                        深度认知解码已切断边缘系统对多巴胺的即刻渴求。
-                      </p>
+                    </div>
+
+                    {/* Minimalist Progress Indicator */}
+                    <div className="bg-stone-50 p-3 rounded-lg border border-stone-200/80 max-w-sm mx-auto">
+                      <div className="flex justify-between text-xs font-mono font-semibold text-stone-700 mb-1.5">
+                        <span>进度: {physicalReps} / {currentQ.target_reps} {currentQ.unit}</span>
+                        <span>{Math.round((physicalReps / currentQ.target_reps) * 100)}%</span>
+                      </div>
+                      <div className="w-full bg-stone-200 h-2 rounded-full overflow-hidden">
+                        <div 
+                          className="h-full bg-stone-900 transition-all duration-300"
+                          style={{ width: `${Math.min(100, (physicalReps / currentQ.target_reps) * 100)}%` }}
+                        />
+                      </div>
                     </div>
                   </div>
 
-                  {/* The Economist Satirical Punchline */}
-                  <div className="bg-[#0F172A] text-white p-4 rounded-xl relative overflow-hidden shadow-sm">
-                    <div className="absolute top-0 right-0 bg-[#8C1D24] text-white text-[9px] font-serif font-bold px-2 py-0.5 uppercase tracking-widest">
-                      THE ECONOMIST VERDICT
+                  {!isAnswered ? (
+                    <div className="space-y-2.5">
+                      {currentQ.mode === 'timer' ? (
+                        <div className="space-y-3 text-center">
+                          <div className="text-4xl font-mono font-black text-stone-900 py-1">
+                            {timerSeconds}s
+                          </div>
+                          <div className="flex space-x-2">
+                            <button
+                              onClick={() => setIsTimerRunning(!isTimerRunning)}
+                              className="flex-1 py-3.5 bg-stone-900 hover:bg-black text-white font-medium rounded-xl text-sm transition cursor-pointer"
+                            >
+                              <Play className="w-4 h-4 inline mr-1.5" />
+                              <span>{isTimerRunning ? '暂停计时' : `开始 ${currentQ.target_reps || 30} 秒计时`}</span>
+                            </button>
+                            <button
+                              onClick={handleInstantCompletePhysical}
+                              className="px-4 py-3.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-medium rounded-xl text-xs transition cursor-pointer"
+                            >
+                              直接打卡
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <button
+                            onClick={handleRepIncrement}
+                            className="w-full py-4 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-bold text-base transition flex items-center justify-center space-x-2 cursor-pointer shadow-sm"
+                          >
+                            <Dumbbell className="w-4 h-4 text-stone-300" />
+                            <span>完成 1 个 · 计数 (+1)</span>
+                            <span className="text-xs bg-stone-800 px-2 py-0.5 rounded font-mono ml-2">
+                              剩 {Math.max(0, currentQ.target_reps - physicalReps)}
+                            </span>
+                          </button>
+                          
+                          <button
+                            onClick={handleInstantCompletePhysical}
+                            className="w-full py-2 text-xs text-stone-500 hover:text-stone-900 text-center cursor-pointer transition font-mono"
+                          >
+                            [ 我已一口气全部做完 · 直接打卡 ]
+                          </button>
+                        </div>
+                      )}
                     </div>
-                    <div className="text-xs text-emerald-400 font-serif font-bold uppercase tracking-wider mb-1">
-                      辛辣毒舌点评
+                  ) : null}
+                </div>
+              )}
+
+              {/* ---------------- 3. TANG POETRY RECITATION TASK ---------------- */}
+              {(currentQ.category === 'poetry' || currentQ.type === 'poetry') && (
+                <div className="space-y-4">
+                  <div className="bg-white p-6 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                    <div className="flex items-center justify-between text-xs text-stone-500 border-b border-stone-100 pb-2">
+                      <span className="font-serif font-bold text-stone-800">{currentQ.author} · 《{currentQ.title}》</span>
+                      <span className="font-mono text-[10px] text-stone-400">CLASSIC RECITATION</span>
                     </div>
-                    <blockquote className="font-serif italic text-sm text-gray-200 leading-relaxed">
+
+                    {renderPassage(false)}
+
+                    {isAnswered && (
+                      <div className="pt-2 text-center border-t border-stone-100">
+                        <div className="text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-0.5">诗词全句</div>
+                        <p className="font-serif text-lg font-bold text-stone-900">
+                          {currentQ.full_verse}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+
+                  {!isAnswered && (
+                    <div className="grid grid-cols-2 gap-3 pt-1">
+                      {currentQ.options.map((opt) => (
+                        <button
+                          key={opt}
+                          onClick={() => handleSelectOption(opt)}
+                          className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-center"
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {isAnswered && (
+                    <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/80 text-xs space-y-1">
+                      <div className="flex items-center space-x-1.5 font-bold text-stone-900">
+                        <Volume2 className="w-3.5 h-3.5 text-[#8C1D24]" />
+                        <span>【大声诵读 1 遍 · 平复胸腔焦躁】</span>
+                      </div>
+                      <p className="text-stone-700 leading-relaxed font-serif pl-5">
+                        {currentQ.recitation_guide}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/* ---------------- 4. BREATHING VAGUS TASK ---------------- */}
+              {(currentQ.category === 'breathing' || currentQ.type === 'breathing') && (
+                <div className="space-y-4">
+                  <div className="bg-white p-6 rounded-xl border border-[#E5E0D8] shadow-xs text-center space-y-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-stone-100 text-stone-800 rounded-full border border-stone-200">
+                      <Wind className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-serif font-black text-stone-900">
+                        {currentQ.title}
+                      </h3>
+                      <p className="text-xs text-stone-600 mt-1 max-w-md mx-auto leading-relaxed">
+                        第 {breathingCycle} / {currentQ.target_cycles} 轮 · 4秒吸气 → 7秒屏息 → 8秒慢呼
+                      </p>
+                    </div>
+
+                    <div className="py-4 flex flex-col items-center justify-center">
+                      <div className="w-24 h-24 rounded-full border-2 border-stone-300 bg-stone-50 flex items-center justify-center animate-pulse">
+                        <span className="font-serif text-stone-800 text-xs font-bold">
+                          深长呼吸中
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-2 text-xs">
+                      {currentQ.phases.map((ph, idx) => (
+                        <div key={idx} className="bg-stone-50 border border-stone-200/80 p-2 rounded text-center">
+                          <span className="font-bold text-stone-900 block">{ph.name} ({ph.duration}s)</span>
+                          <span className="text-[10px] text-stone-500">{ph.desc}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {!isAnswered && (
+                    <button
+                      onClick={handleNextBreathingCycle}
+                      className="w-full py-4 bg-stone-900 hover:bg-black text-white rounded-xl font-medium text-sm transition cursor-pointer"
+                    >
+                      <Check className="w-4 h-4 inline mr-1" />
+                      <span>
+                        {breathingCycle < currentQ.target_cycles 
+                          ? `完成第 ${breathingCycle} 轮 (继续第 ${breathingCycle + 1} 轮)` 
+                          : '完成 3 轮镇静呼吸'}
+                      </span>
+                    </button>
+                  )}
+                </div>
+              )}
+
+              {/* ---------------- 5. THE ECONOMIST CLOZE TASK (WITH TRANSLATION & PHONETICS) ---------------- */}
+              {(currentQ.category === 'economist' || currentQ.type === 'cloze' || currentQ.type === 'true_false') && (
+                <div className="space-y-3.5">
+                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                    {/* Header with Chinese Translation Toggle */}
+                    <div className="flex items-center justify-between pb-2 border-b border-stone-100">
+                      <span className="text-[10px] font-mono text-stone-400 uppercase tracking-wider">
+                        THE ECONOMIST PASSAGE
+                      </span>
+
+                      {/* Translation Button */}
+                      {currentQ.passage_translation && (
+                        <button
+                          onClick={() => setShowTranslation(!showTranslation)}
+                          className="text-[11px] font-sans text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2.5 py-0.5 rounded transition cursor-pointer flex items-center space-x-1"
+                          title="点击展开/收起完整中文对照翻译"
+                        >
+                          <Languages className="w-3 h-3 text-stone-500" />
+                          <span>{showTranslation ? '收起译文' : '译 · 中文翻译'}</span>
+                        </button>
+                      )}
+                    </div>
+
+                    {currentQ.type === 'true_false' && (
+                      <div className="mb-2 text-xs font-serif italic text-stone-600 border-l-2 border-stone-900 pl-2.5">
+                        {currentQ.statement}
+                      </div>
+                    )}
+
+                    {/* Passage with interactive word tap */}
+                    {renderPassage(true)}
+
+                    {/* Hint text */}
+                    <div className="flex items-center justify-between text-[11px] text-stone-400 font-sans pt-1">
+                      <span>💡 点击题干任意单词可查音标与真人发音</span>
+                      {currentQ.type === 'cloze' && (
+                        <button
+                          onClick={() => setInputMode(inputMode === 'choice' ? 'type' : 'choice')}
+                          className="text-stone-500 hover:text-black underline cursor-pointer"
+                        >
+                          {inputMode === 'choice' ? '切换打字模式' : '切换选择题'}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Word Inspector Floating Card */}
+                  {inspectedWord && (
+                    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
+                      <div className="space-y-1">
+                        <div className="flex items-center space-x-2">
+                          <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
+                            {inspectedWord.word}
+                          </span>
+                          {inspectedWord.phonetic && (
+                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                              {inspectedWord.phonetic}
+                            </span>
+                          )}
+                          <button
+                            onClick={() => speakWord(inspectedWord.word)}
+                            className="p-1 hover:bg-stone-800 rounded text-stone-300 hover:text-white transition cursor-pointer flex items-center space-x-1"
+                            title="点击发音"
+                          >
+                            <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                            <span className="text-[10px] text-stone-400 font-mono">发音</span>
+                          </button>
+                        </div>
+                        <p className="text-stone-300 text-[11px] font-sans">
+                          {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
+                          {inspectedWord.def}
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={() => setInspectedWord(null)}
+                        className="text-stone-400 hover:text-white p-1 ml-2 cursor-pointer"
+                        title="关闭"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Chinese Translation Expanded Card */}
+                  {showTranslation && currentQ.passage_translation && (
+                    <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/80 text-xs text-stone-700 leading-relaxed space-y-1.5 animate-fadeIn">
+                      <div className="font-mono text-[10px] text-stone-400 uppercase tracking-wider flex items-center justify-between">
+                        <span>CHINESE TRANSLATION · 题干中文对照</span>
+                        <span className="text-[10px] text-stone-500 font-sans">中等认知辅助</span>
+                      </div>
+                      <p className="font-sans text-stone-900 leading-relaxed text-sm">
+                        {currentQ.passage_translation}
+                      </p>
+                      {currentQ.statement_translation && (
+                        <p className="font-sans text-stone-600 border-t border-stone-200/60 pt-2 text-xs italic">
+                          判断题干：{currentQ.statement_translation}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Choices or Input */}
+                  {!isAnswered ? (
+                    <div className="space-y-3">
+                      {currentQ.type === 'true_false' ? (
+                        <div className="grid grid-cols-2 gap-3">
+                          <button
+                            onClick={() => handleSelectOption(true)}
+                            className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-bold text-stone-800 transition-colors text-sm cursor-pointer"
+                          >
+                            True (真实有效)
+                          </button>
+                          <button
+                            onClick={() => handleSelectOption(false)}
+                            className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-bold text-stone-800 transition-colors text-sm cursor-pointer"
+                          >
+                            False (伪概念/谎言)
+                          </button>
+                        </div>
+                      ) : inputMode === 'choice' ? (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {currentQ.options.map((opt) => (
+                            <button
+                              key={opt}
+                              onClick={() => handleSelectOption(opt)}
+                              className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-left font-medium text-stone-900 transition-colors text-sm shadow-2xs flex items-center justify-between cursor-pointer"
+                            >
+                              <span>{opt}</span>
+                              <span className="text-[11px] font-mono text-stone-400">选择</span>
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <form onSubmit={handleTypeSubmit} className="space-y-2">
+                          <div className="flex space-x-2">
+                            <input
+                              type="text"
+                              value={typeInAnswer}
+                              onChange={(e) => setTypeInAnswer(e.target.value)}
+                              placeholder={`填入对应单词 (首字母: ${currentQ.first_letter || '?'})...`}
+                              className="flex-1 px-4 py-3 bg-white border border-stone-300 rounded-xl text-sm font-serif focus:outline-none focus:ring-1 focus:ring-stone-900"
+                              autoFocus
+                            />
+                            <button
+                              type="submit"
+                              className="px-5 py-3 bg-stone-900 hover:bg-black text-white font-bold rounded-xl text-sm transition cursor-pointer"
+                            >
+                              提交
+                            </button>
+                          </div>
+                        </form>
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+              )}
+
+              {/* ---------------- FEEDBACK & VERDICT (SCHEME A MONOCHROME) ---------------- */}
+              {isAnswered && (
+                <div className="space-y-3.5 pt-1">
+                  {/* Subtle confirmation line */}
+                  <div className="flex items-center space-x-2 text-xs text-stone-600 px-1">
+                    <Check className="w-4 h-4 text-stone-900" />
+                    <span className="font-medium text-stone-900">
+                      {isCorrect ? '前额叶认知已成功接管' : `标准答案: ${currentQ.blank}`}
+                    </span>
+                    <span className="text-stone-300">|</span>
+                    <span className="text-stone-500 truncate">{currentQ.science_note || '注意占用阻断生效'}</span>
+                  </div>
+
+                  {/* Editorial Verdict Box */}
+                  <div className="bg-[#18181B] text-white p-4.5 rounded-xl relative shadow-xs">
+                    <div className="flex items-center justify-between mb-1.5 text-[9px] font-mono tracking-widest text-stone-400">
+                      <span className="text-[#FAFAFA] font-bold">VERDICT · 判词</span>
+                      <span className="bg-[#8C1D24] text-white px-1.5 py-0.2">ECONOMIST STYLE</span>
+                    </div>
+                    <blockquote className="font-serif italic text-sm text-stone-200 leading-relaxed border-l-2 border-[#8C1D24] pl-3 py-0.5">
                       "{currentQ.punchline}"
                     </blockquote>
                   </div>
 
-                  {/* Vocabulary & Cognitive Knowledge Card */}
+                  {/* Vocabulary knowledge (if any) */}
                   {currentQ.vocab && (
-                    <div className="bg-white p-4 rounded-xl border border-[#E2DFD6] text-xs space-y-1.5">
+                    <div className="bg-white p-3.5 rounded-xl border border-[#E5E0D8] text-xs space-y-1">
                       <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <span className="font-serif font-bold text-base text-gray-900">
-                            {currentQ.vocab.word}
-                          </span>
-                          <span className="font-mono text-gray-500 text-xs">
-                            {currentQ.vocab.phonetic}
-                          </span>
+                        <div className="flex items-center space-x-2 font-serif font-bold text-stone-900">
+                          <span>{currentQ.vocab.word}</span>
+                          <span className="font-mono text-stone-400 font-normal text-[11px]">{currentQ.vocab.phonetic}</span>
                         </div>
                         <button
                           onClick={() => onSaveVocab(currentQ)}
-                          className={`flex items-center space-x-1 px-2.5 py-1 rounded text-[11px] font-medium transition cursor-pointer ${
-                            isVocabSaved 
-                              ? 'bg-emerald-100 text-emerald-800' 
-                              : 'bg-stone-100 hover:bg-stone-200 text-gray-700'
-                          }`}
+                          className="text-[11px] font-mono text-stone-600 hover:text-black flex items-center space-x-1 cursor-pointer"
                         >
                           {isVocabSaved ? <BookmarkCheck className="w-3.5 h-3.5" /> : <Bookmark className="w-3.5 h-3.5" />}
-                          <span>{isVocabSaved ? '已收藏' : '存入武器库'}</span>
+                          <span>{isVocabSaved ? '已收藏' : '存入词库'}</span>
                         </button>
                       </div>
-                      <p className="text-gray-700 leading-relaxed font-sans">
-                        {currentQ.vocab.meaning}
-                      </p>
+                      <p className="text-stone-600 leading-relaxed">{currentQ.vocab.meaning}</p>
                     </div>
                   )}
 
-                  {/* Next Question / Finish Action */}
+                  {/* Next Step Action Button */}
                   <button
                     onClick={handleNext}
-                    className="w-full py-3.5 px-4 bg-[#1A3B2F] hover:bg-[#132C23] active:scale-[0.99] text-white rounded-xl font-bold text-sm tracking-wide shadow-sm transition flex items-center justify-center space-x-2 cursor-pointer"
+                    className="w-full py-4 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-bold text-sm tracking-wide transition flex items-center justify-center space-x-2 cursor-pointer shadow-sm"
                   >
-                    <span>{currentIndex < questions.length - 1 ? '继续下一题阻断' : '完成本次认知阻断'}</span>
+                    <span>{currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               )}
             </>
           ) : (
-            /* Session Finished Celebration View */
-            <div className="text-center py-6 space-y-5 fade-in">
-              <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto shadow-inner">
-                <Sparkles className="w-8 h-8" />
+            /* Finished State - Editorial Minimalism */
+            <div className="text-center py-8 space-y-5">
+              <div className="w-12 h-12 bg-stone-100 text-stone-900 rounded-full flex items-center justify-center mx-auto border border-stone-300">
+                <Check className="w-6 h-6" />
               </div>
 
               <div>
-                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 uppercase tracking-wider">
-                  CRAVING WAVE NEUTRALIZED
+                <span className="text-[10px] font-mono font-bold text-stone-500 uppercase tracking-widest border border-stone-200 px-2.5 py-0.5 rounded">
+                  SESSION COMPLETE
                 </span>
-                <h3 className="text-2xl font-serif font-black text-gray-900 mt-2">
-                  神经冲动已被平息！
+                <h3 className="text-2xl font-serif font-black text-stone-900 mt-2">
+                  神经冲动已平息
                 </h3>
-                <p className="text-xs text-gray-600 max-w-sm mx-auto mt-2 leading-relaxed">
-                  你刚刚成功完成了 3 道高认知英语题。在过去的 3 分钟里，急性渴求波峰已平息，你的大脑重新回到了自主掌控状态。
+                <p className="text-xs text-stone-600 max-w-sm mx-auto mt-2 leading-relaxed">
+                  在过去的 3 分钟内，通过跨语言意象解密与躯体干预，前额叶工作记忆成功抑制了边缘系统的多巴胺渴求。
                 </p>
               </div>
 
-              {/* Unlock $1 Reward Banner if today was not done */}
               {!isTodayDone ? (
-                <div className="bg-[#1A3B2F] text-white p-4 rounded-2xl shadow-md text-left relative overflow-hidden">
+                <div className="bg-[#18181B] text-white p-4 rounded-xl text-left border border-stone-800">
                   <div className="flex items-center space-x-3">
-                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center shrink-0">
-                      <Coins className="w-6 h-6 text-emerald-300" />
+                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                      <Coins className="w-5 h-5 text-stone-200" />
                     </div>
                     <div>
-                      <div className="text-[11px] font-semibold text-emerald-300 uppercase tracking-wider">
-                        契约履约奖励达成
-                      </div>
-                      <div className="text-lg font-serif font-bold mt-0.5">
-                        恭喜！今日已成功返还 $1.00
-                      </div>
-                      <div className="text-xs text-emerald-100/80 mt-0.5">
-                        资金已计入返还池，坚守承诺即可在到期时全额提取。
-                      </div>
+                      <div className="text-[10px] font-mono text-stone-400 tracking-wider">CONTRACT FULFILLED</div>
+                      <div className="text-base font-serif font-bold text-white">今日已成功履约返还 $1.00</div>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div className="bg-stone-100 p-4 rounded-xl text-xs text-gray-600">
-                  今日额度已在早前解锁，本次练习已计入总拦截次数与机能逆转统计。
+                <div className="bg-stone-50 p-3 rounded-lg border border-stone-200 text-xs text-stone-600">
+                  今日返还额度早前已解锁，本次练习已累积记录入总拦截日志。
                 </div>
               )}
 
               <button
                 onClick={onClose}
-                className="w-full py-3.5 bg-[#1A3B2F] hover:bg-[#132C23] text-white font-bold rounded-xl text-sm transition cursor-pointer"
+                className="w-full py-3.5 bg-stone-900 hover:bg-black text-white font-bold rounded-xl text-sm transition cursor-pointer"
               >
                 返回主看板
               </button>

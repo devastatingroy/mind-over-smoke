@@ -6,21 +6,21 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
   const refundedAmount = completedCount * state.refundPerDay;
 
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-[#E2DFD6] sticky top-0 z-30 shadow-xs">
-      {/* Refined Brand Accent Bar */}
-      <div className="h-1 bg-[#1A3B2F] w-full" />
+    <header className="bg-white/95 backdrop-blur-md border-b border-[#E5E0D8] sticky top-0 z-30 shadow-2xs">
+      {/* Editorial Accent Bar */}
+      <div className="h-0.5 bg-[#8C1D24] w-full" />
       
       <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2.5">
-          <div className="bg-[#8C1D24] text-white px-2 py-0.5 text-xs font-serif font-black tracking-wider uppercase rounded-xs">
+          <div className="bg-[#8C1D24] text-white px-1.5 py-0.5 text-[11px] font-serif font-black tracking-widest uppercase">
             THE
           </div>
           <div>
-            <h1 className="text-lg font-serif font-black tracking-tight text-[#1A1D20] leading-none">
+            <h1 className="text-lg font-serif font-black tracking-tight text-stone-900 leading-none">
               MindOverSmoke
             </h1>
-            <span className="text-[10px] text-gray-500 font-sans tracking-wide">
-              智熄 · 理性认知阻断舱
+            <span className="text-[10px] text-stone-500 font-mono tracking-wide">
+              智熄 · 理性认知阻断
             </span>
           </div>
         </div>
@@ -29,25 +29,25 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
           {/* Vocab book icon */}
           <button
             onClick={onOpenVocab}
-            title="认知武器库与反讽语料"
-            className="p-1.5 text-gray-600 hover:text-black hover:bg-stone-100 rounded-lg transition relative"
+            title="认知武器库与词汇"
+            className="p-1.5 text-stone-600 hover:text-black hover:bg-stone-100 rounded-lg transition relative cursor-pointer"
           >
-            <BookOpen className="w-5 h-5 text-[#1A3B2F]" />
+            <BookOpen className="w-4 h-4 text-stone-800" />
             {state.savedVocab?.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-[#1A3B2F] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
+              <span className="absolute -top-1 -right-1 bg-stone-900 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-mono font-bold">
                 {state.savedVocab.length}
               </span>
             )}
           </button>
 
           {/* Refund Progress Badge */}
-          <div className="bg-[#F7F5F0] border border-[#E2DFD6] px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs">
-            <Wallet className="w-3.5 h-3.5 text-emerald-700" />
-            <span className="font-semibold text-emerald-800">
-              已退 ${refundedAmount}
+          <div className="bg-stone-50 border border-[#E5E0D8] px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono">
+            <Wallet className="w-3.5 h-3.5 text-stone-700" />
+            <span className="font-semibold text-stone-900">
+              ${refundedAmount}
             </span>
-            <span className="text-gray-400">/</span>
-            <span className="text-gray-500 font-medium">
+            <span className="text-stone-300">/</span>
+            <span className="text-stone-500 font-normal">
               ${state.maxRefund}
             </span>
           </div>

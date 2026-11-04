@@ -1,61 +1,80 @@
 import React from 'react';
-import { Brain, ArrowRight, Zap, CheckCircle2, Shield } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Dumbbell, Scroll, Languages } from 'lucide-react';
+import { taskStats } from '../utils/taskManager';
 
 export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E2DFD6] p-5 shadow-sm">
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center space-x-1.5 text-xs font-semibold text-[#1A3B2F] uppercase tracking-wider">
-          <Shield className="w-4 h-4 text-[#1A3B2F]" />
-          <span>Cognitive Crave Shield · 前额叶注意占用</span>
+    <div className="bg-white rounded-2xl border border-[#E5E0D8] p-6 shadow-xs">
+      {/* Top Meta Bar */}
+      <div className="flex items-center justify-between pb-3 mb-4 border-b border-stone-100">
+        <div className="flex items-center space-x-2 text-[11px] font-mono tracking-wider text-stone-500 uppercase">
+          <Shield className="w-3.5 h-3.5 text-stone-900" />
+          <span>COGNITIVE CRAVE SHIELD</span>
         </div>
         {isTodayDone ? (
-          <span className="inline-flex items-center space-x-1 text-xs font-medium text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-            <CheckCircle2 className="w-3.5 h-3.5" />
-            <span>今日 $1 已解锁</span>
+          <span className="text-[11px] font-mono text-stone-700 bg-stone-100 px-2.5 py-0.5 rounded border border-stone-200">
+            今日已履约返还 $1.00
           </span>
         ) : (
-          <span className="text-xs text-stone-600 bg-stone-100 px-2.5 py-0.5 rounded-full border border-stone-200 font-medium">
+          <span className="text-[11px] font-mono text-stone-500 border border-stone-200 px-2 py-0.5 rounded">
             今日待返 $1.00
           </span>
         )}
       </div>
 
-      <div className="text-center my-4">
-        <h2 className="text-xl font-serif font-black text-[#1A1D20] tracking-tight mb-2">
+      {/* Editorial Headline & Brief */}
+      <div className="text-center my-3">
+        <h2 className="text-2xl font-serif font-black text-stone-900 tracking-tight mb-2">
           烟瘾突发？把控制权交还前额叶
         </h2>
-        <p className="text-xs text-gray-600 max-w-sm mx-auto leading-relaxed">
-          急性冲动在 <span className="font-bold text-[#1A3B2F]">180 秒</span> 内达到生理峰值后必然自然回落。
-          深吸一口气，通过英式反讽与完形填空，用专注思考平息交感神经躁动。
+        <p className="text-xs text-stone-600 max-w-md mx-auto leading-relaxed font-sans">
+          生理研究表明，急性尼古丁渴求在 <span className="font-semibold text-stone-900">180 秒</span> 内冲顶后必然自然回落。
+          已备妥 <span className="font-medium text-stone-900">英译唐诗解密</span>、<span className="font-medium text-stone-900">10个俯卧撑/平板</span> 与 <span className="font-medium text-stone-900">经济学人题库</span>，零延迟秒级接管注意力。
         </p>
       </div>
 
-      {/* Main Calming Sanctuary Button */}
+      {/* Main Single-Tone Sanctuary Action */}
       <div className="my-5 flex flex-col items-center">
         <button
           onClick={() => onStartQuiz('sos')}
-          className="animate-calm-pulse relative group w-full py-4 px-6 bg-[#1A3B2F] hover:bg-[#132C23] active:scale-[0.98] text-white rounded-xl font-serif font-bold text-lg tracking-wide shadow-lg shadow-emerald-950/20 transition-all duration-300 flex items-center justify-center space-x-3 cursor-pointer"
+          className="w-full py-4 px-6 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-serif font-bold text-lg tracking-wide transition-colors shadow-sm flex items-center justify-center space-x-2.5 cursor-pointer"
         >
-          <Brain className="w-6 h-6 text-emerald-300" />
-          <span>深呼吸 · 启动 3 分钟阻断答题</span>
-          <ArrowRight className="w-5 h-5 text-emerald-300 group-hover:translate-x-1 transition-transform" />
+          <span>启动 3 分钟急救干预</span>
+          <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform" />
         </button>
 
-        <p className="text-[11px] text-gray-500 mt-2.5 flex items-center space-x-1.5">
-          <Zap className="w-3.5 h-3.5 text-emerald-700" />
-          <span>已扩充至 <strong>36 道</strong>《经济学人》精选题库 · 本轮随机 3 题 · 0 延迟秒开</span>
-        </p>
+        {/* Clean Monochrome Feature Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-3.5 text-[11px] font-mono text-stone-500">
+          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
+            <Zap className="w-3 h-3 text-stone-700" />
+            <span>APP 图标直达</span>
+          </span>
+          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
+            <Languages className="w-3 h-3 text-stone-700" />
+            <span>英译唐诗解密</span>
+          </span>
+          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
+            <Dumbbell className="w-3 h-3 text-stone-700" />
+            <span>10个俯卧撑/平板</span>
+          </span>
+          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
+            <Scroll className="w-3 h-3 text-stone-700" />
+            <span>唐诗心流</span>
+          </span>
+          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 text-stone-400">
+            <span>池化 {taskStats.total} 项</span>
+          </span>
+        </div>
       </div>
 
-      {/* Secondary Button */}
-      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-gray-500">
+      {/* Secondary Action */}
+      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
         <span>当前无冲动，仅想强化认知？</span>
         <button
           onClick={() => onStartQuiz('practice')}
-          className="text-[#183654] hover:text-[#1A3B2F] hover:underline font-semibold flex items-center space-x-1 cursor-pointer"
+          className="text-stone-900 hover:underline font-semibold flex items-center space-x-1 cursor-pointer font-sans"
         >
-          <span>日常精读刷题</span>
+          <span>日常精读刷题 (5题)</span>
           <ArrowRight className="w-3 h-3" />
         </button>
       </div>
