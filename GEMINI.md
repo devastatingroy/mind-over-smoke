@@ -1,12 +1,17 @@
 # MindOverSmoke (智熄) - Project Rules & Mandatory Directives
 
+> **核心指引**：关于完整的 AI Agent 开发协议、代码库结构与部署架构，请务必参阅 [`AGENT_GUIDE.md`](./AGENT_GUIDE.md) 与 [`PROJECT_REQUIREMENTS.md`](./PROJECT_REQUIREMENTS.md)。  
+> 任何接手本项目的 AI Agent 必须无条件严格执行以下铁律。
+
+---
+
 ## 1. 绝对自动化部署法则 (Strict Auto-Deployment)
 * **严禁等待用户提醒部署**：每次代码修改、Bug 修复或需求调整完成，并经本地测试验证通过后，**必须立即在同一次回复前自动执行全套构建与部署**：
   1. `npm run build`
   2. `node scripts/deploy_gh_pages.js` (同步至 `mind-over-smoke` 的 `gh-pages` 分支)
   3. `node scripts/deploy_user_site.js` (同步至 `devastatingroy.github.io` 的 `main` 分支)
   4. `git push origin master` (同步源码仓库)
-* 部署完成后，在回复中明确汇报部署已生效。
+* 部署完成后，在回复中明确汇报部署已生效，生产地址为 `https://royfree.men/`。
 
 ## 2. 拒绝临时方案 (Zero Temporary Solutions)
 * 生产环境唯一官方永久域名为：**`https://royfree.men/`**。
@@ -19,7 +24,7 @@
 
 ## 4. 所有需求与规则必须强制落盘 (Persistent Documentation)
 * 用户提出的所有产品逻辑调整、审美偏好、架构决策，必须即刻持久化写入项目文档与规则文件，严禁仅保留在对话历史中。
-* 核心决策记录于 `PROJECT_REQUIREMENTS.md`，执行铁律记录于 `GEMINI.md`。
+* 核心决策记录于 `PROJECT_REQUIREMENTS.md`，执行铁律记录于 `GEMINI.md`，Agent 协同规范记录于 `AGENT_GUIDE.md`。
 
 ## 5. 题目认知挑战标准 (Cognitive Load Standards)
 * **Mode 1（英译名篇逆向还原）**：
@@ -57,5 +62,3 @@
   - 总认知阻断题量达 200 道以上，杜绝无聊重复刷题。
 * **题目质检标准**：
   - 必须符合 ChatGPT 前沿模型（o3 / GPT-5 级词法与逻辑）审校标准，确保西方汉学译本权威真实、意象咬合精准、完全契合前额叶认知阻断机制。
-
-
