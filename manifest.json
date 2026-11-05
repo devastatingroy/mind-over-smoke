@@ -1,0 +1,34 @@
+{
+  "name": "MindOverSmoke 智熄 - 戒烟认知急救阻断",
+  "short_name": "智熄急救",
+  "description": "基于认知负荷理论与行为经济学的戒烟急救微干预工具",
+  "start_url": "./?mode=sos",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F5F0",
+  "theme_color": "#1A3B2F",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "⚡ 紧急烟瘾急救 (立即阻断)",
+      "short_name": "急救阻断",
+      "description": "零延迟秒进 3 分钟阻断答题与任务",
+      "url": "./?mode=sos",
+      "icons": [{ "src": "./icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "📊 契约与健康看板",
+      "short_name": "查看看板",
+      "description": "查看戒烟返现进度与身体机能修复",
+      "url": "./?mode=dashboard",
+      "icons": [{ "src": "./icon.svg", "sizes": "any" }]
+    }
+  ]
+}
