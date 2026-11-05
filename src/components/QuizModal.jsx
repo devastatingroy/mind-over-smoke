@@ -47,6 +47,7 @@ export default function QuizModal({
   // Translation & Word Phonetic inspection state
   const [showTranslation, setShowTranslation] = useState(false);
   const [inspectedWord, setInspectedWord] = useState(null);
+  const [inspectedSource, setInspectedSource] = useState(null);
 
   // Physical task state
   const [physicalReps, setPhysicalReps] = useState(0);
@@ -76,6 +77,7 @@ export default function QuizModal({
     setBreathingCycle(1);
     setShowTranslation(false);
     setInspectedWord(null);
+    setInspectedSource(null);
     if (bodyScrollRef.current) bodyScrollRef.current.scrollTop = 0;
   }, [currentIndex, currentQ?.id]);
 
@@ -185,10 +187,11 @@ export default function QuizModal({
   };
 
   // Word click to inspect phonetic & definition (严禁自动朗读，仅显示音标与释义)
-  const handleWordClick = (rawWord) => {
+  const handleWordClick = (rawWord, source) => {
     const data = lookupWord(rawWord);
     if (!data) return;
     setInspectedWord(data);
+    setInspectedSource(source);
   };
 
   // Physical rep click
@@ -233,21 +236,21 @@ export default function QuizModal({
   const isVocabSaved = currentQ.vocab && savedVocabIds?.includes(currentQ.id);
 
   // Render clickable interactive words for English passages
-  const renderInteractiveSegment = (text, dark = false) => {
+  const renderInteractiveSegment = (text, dark = false, source = 'passage') => {
     if (!text) return null;
     const tokens = text.split(/(\s+)/);
     return tokens.map((token, idx) => {
       const cleaned = cleanWord(token);
       if (!cleaned) return <span key={idx}>{token}</span>;
-      const isSelected = inspectedWord?.word === cleaned;
+      const isSelected = inspectedWord?.word === cleaned && inspectedSource === source;
       return (
         <span
           key={idx}
-          onClick={() => handleWordClick(cleaned)}
+          onClick={() => handleWordClick(cleaned, source)}
           onKeyDown={(event) => {
             if (event.key === 'Enter' || event.key === ' ') {
               event.preventDefault();
-              handleWordClick(cleaned);
+              handleWordClick(cleaned, source);
             }
           }}
           role="button"
@@ -264,6 +267,33 @@ export default function QuizModal({
       );
     });
   };
+
+  const renderWordInspector = () => inspectedWord && (
+    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
+      <div className="space-y-1 flex-1 min-w-0 pr-2">
+        <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
+          <span className="font-serif font-bold text-base text-stone-100 tracking-wide break-all">{inspectedWord.word}</span>
+          {inspectedWord.phonetic && (
+            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+              {inspectedWord.phonetic}
+            </span>
+          )}
+        </div>
+        <p className="text-stone-300 text-[11px] font-sans max-h-20 overflow-y-auto leading-relaxed">
+          {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
+          {inspectedWord.def}
+        </p>
+      </div>
+      <button
+        onClick={() => { setInspectedWord(null); setInspectedSource(null); }}
+        className="text-stone-400 hover:text-white p-1 ml-2 cursor-pointer"
+        title="关闭"
+        aria-label="关闭单词释义"
+      >
+        <X className="w-4 h-4" />
+      </button>
+    </div>
+  );
 
   // Render passage with blank - Clean Editorial typography
   const renderPassage = (interactive = false) => {
@@ -572,34 +602,7 @@ export default function QuizModal({
                   )}
 
                   {/* Word Inspector Floating Card (in case user clicked a word) */}
-                  {inspectedWord && (
-                    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
-                      <div className="space-y-1 flex-1 min-w-0 pr-2">
-                        <div className="flex items-center space-x-2">
-                          <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
-                            {inspectedWord.word}
-                          </span>
-                          {inspectedWord.phonetic && (
-                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
-                              {inspectedWord.phonetic}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-stone-300 text-[11px] font-sans max-h-20 overflow-y-auto leading-relaxed">
-                          {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
-                          {inspectedWord.def}
-                        </p>
-                      </div>
-
-                      <button
-                        onClick={() => setInspectedWord(null)}
-                        className="text-stone-400 hover:text-white p-1 ml-2 cursor-pointer"
-                        title="关闭"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  )}
+                  {inspectedWord && inspectedSource !== 'verdict' && renderWordInspector()}
 
                   {/* Bilingual Mapping Table when answered */}
                   {isAnswered && currentQ.mapping && (
@@ -797,34 +800,7 @@ export default function QuizModal({
                   </div>
 
                   {/* Word Inspector Floating Card */}
-                  {inspectedWord && (
-                    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
-                      <div className="space-y-1 flex-1 min-w-0 pr-2">
-                        <div className="flex items-center space-x-2">
-                          <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
-                            {inspectedWord.word}
-                          </span>
-                          {inspectedWord.phonetic && (
-                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
-                              {inspectedWord.phonetic}
-                            </span>
-                          )}
-                        </div>
-                        <p className="text-stone-300 text-[11px] font-sans max-h-20 overflow-y-auto leading-relaxed">
-                          {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
-                          {inspectedWord.def}
-                        </p>
-                      </div>
-
-                      <button
-                        onClick={() => setInspectedWord(null)}
-                        className="text-stone-400 hover:text-white p-1 ml-2 cursor-pointer"
-                        title="关闭"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  )}
+                  {inspectedWord && inspectedSource !== 'verdict' && renderWordInspector()}
 
                   {/* Chinese Translation Expanded Card */}
                   {showTranslation && currentQ.passage_translation && (
@@ -894,17 +870,19 @@ export default function QuizModal({
               {isAnswered && (
                 <div className="space-y-3.5 pt-1">
                   {/* Subtle confirmation line */}
-                  <div className="flex items-center space-x-2 text-xs text-stone-600 px-1">
-                    <Check className="w-4 h-4 text-stone-900" />
-                    <span className="font-medium text-stone-900">
-                      {currentQ.mode === 'zh_to_en'
-                        ? '参考译文已揭晓 · 请对照表达与意象'
-                        : isRevealed
-                          ? '答案已揭晓 · 可对照解析'
-                          : '回答正确 · 可查看解析'}
-                    </span>
-                    <span className="text-stone-300">|</span>
-                    <span className="text-stone-500 truncate">{currentQ.science_note || '注意占用阻断生效'}</span>
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2 text-xs text-stone-600 px-1">
+                    <div className="flex items-start gap-2 shrink-0">
+                      <Check className="w-4 h-4 text-stone-900 shrink-0" />
+                      <span className="font-medium text-stone-900">
+                        {currentQ.mode === 'zh_to_en'
+                          ? '参考译文已揭晓 · 请对照表达与意象'
+                          : isRevealed
+                            ? '答案已揭晓 · 可对照解析'
+                            : '回答正确 · 可查看解析'}
+                      </span>
+                    </div>
+                    <span className="hidden sm:inline text-stone-300">|</span>
+                    <span className="text-stone-500 leading-relaxed break-words min-w-0">{currentQ.science_note || '注意占用阻断生效'}</span>
                   </div>
 
                   {/* Editorial Verdict Box */}
@@ -914,9 +892,10 @@ export default function QuizModal({
                       <span className="bg-[#8C1D24] text-white px-1.5 py-0.2">ECONOMIST STYLE</span>
                     </div>
                     <blockquote className="font-serif italic text-sm text-stone-200 leading-relaxed border-l-2 border-[#8C1D24] pl-3 py-0.5">
-                      "{currentQ.punchline}"
+                      "{renderInteractiveSegment(currentQ.punchline, true, 'verdict')}"
                     </blockquote>
                   </div>
+                  {inspectedWord && inspectedSource === 'verdict' && renderWordInspector()}
 
                   {/* Vocabulary knowledge (if any) */}
                   {currentQ.vocab && (
