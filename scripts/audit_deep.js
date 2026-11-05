@@ -89,3 +89,27 @@ for (const q of qList) {
 }
 console.log(`Economist Question Issues Found: ${qIssues.length}`);
 qIssues.forEach(i => console.log(' ', i));
+
+// Keep each visible bilingual mapping tied to the current source text.
+const normalizedEnglish = text => (text || '').toLowerCase().match(/[a-z]+/g)?.join(' ') || '';
+const normalizedChinese = text => (text || '').match(/[\u4e00-\u9fff]/g)?.join('') || '';
+const mappingIssues = [];
+for (const t of trans) {
+  const englishSource = t.mode === 'en_to_zh' ? t.english_text : t.correct_answer;
+  const chineseSource = t.mode === 'en_to_zh' ? t.correct_answer : t.chinese_verse;
+  if (!Array.isArray(t.mapping) || t.mapping.length === 0) {
+    mappingIssues.push(`${t.id}: missing mapping`);
+    continue;
+  }
+  for (const [index, pair] of t.mapping.entries()) {
+    if (!normalizedEnglish(englishSource).includes(normalizedEnglish(pair.en)) || !normalizedEnglish(pair.en)) {
+      mappingIssues.push(`${t.id} mapping ${index + 1}: English fragment absent from current translation`);
+    }
+    if (!normalizedChinese(chineseSource).includes(normalizedChinese(pair.zh)) || !normalizedChinese(pair.zh)) {
+      mappingIssues.push(`${t.id} mapping ${index + 1}: Chinese fragment absent from source`);
+    }
+  }
+}
+console.log(`Bilingual Mapping Issues Found: ${mappingIssues.length}`);
+mappingIssues.forEach(issue => console.log(' ', issue));
+if (mode1Leaks.length || mode2Leaks.length || qIssues.length || mappingIssues.length) process.exitCode = 1;

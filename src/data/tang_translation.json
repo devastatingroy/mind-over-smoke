@@ -9,7 +9,7 @@
     "author": "唐 · 杜甫",
     "title": "《春望》",
     "translator": "参考英译（意译）",
-    "english_text": "The country is broken, yet mountains and rivers remain;\nIn the city spring arrives, with grass and trees growing deep.",
+    "english_text": "The country is broken, yet mountains and rivers remain;\nSpring has come to the city, where grass and trees grow wild.",
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "国破山河在，城春草木深",
     "options": [
@@ -21,20 +21,12 @@
     "full_verse": "国破山河在，城春草木深。感时花溅泪，恨别鸟惊心。",
     "mapping": [
       {
-        "en": "The country is broken",
-        "zh": "国破"
+        "en": "The country is broken, yet mountains and rivers remain",
+        "zh": "国破山河在"
       },
       {
-        "en": "mountains and rivers remain",
-        "zh": "山河在"
-      },
-      {
-        "en": "In the city spring arrives",
-        "zh": "城春"
-      },
-      {
-        "en": "grass and trees grow deep",
-        "zh": "草木深"
+        "en": "Spring has come to the city, where grass and trees grow wild",
+        "zh": "城春草木深"
       }
     ],
     "science_note": "【纯净双语脑力占用】不给中文原句剧透，迫使大脑完全通过英文意象激活古诗长时记忆，前额叶工作记忆被彻底锁死，180秒烟瘾浪涌瞬间平息。",
@@ -55,16 +47,12 @@
     "full_verse": "长风破浪会有时，直挂云帆济沧海。",
     "mapping": [
       {
-        "en": "break the waves",
-        "zh": "破浪"
+        "en": "One day I shall ride the wind and break the waves",
+        "zh": "长风破浪会有时"
       },
       {
-        "en": "raise my cloudlike sails",
-        "zh": "挂云帆"
-      },
-      {
-        "en": "cross the vast sea",
-        "zh": "济沧海"
+        "en": "I shall raise my cloudlike sails and cross the vast sea",
+        "zh": "直挂云帆济沧海"
       }
     ],
     "science_note": "【意象辨析中等认知】在四组英文长句中辨别动词与修辞（cleave vs break / hoist cloudy sail vs hang white sails），认知负荷达到最佳黄金区间。",
@@ -92,16 +80,12 @@
     "full_verse": "莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
     "mapping": [
       {
-        "en": "rain beating against the leaves",
-        "zh": "穿林打叶"
+        "en": "Listen not to the rain beating against the forest trees",
+        "zh": "莫听穿林打叶声"
       },
       {
-        "en": "sing aloud",
-        "zh": "吟啸"
-      },
-      {
-        "en": "walk at an easy pace",
-        "zh": "徐行"
+        "en": "Why not chant and stroll along at an easy pace",
+        "zh": "何妨吟啸且徐行"
       }
     ],
     "science_note": "【注意广度重构】英文的泰然意象促使杏仁核焦躁情绪降级，激活副交感神经，帮助抵御突发心瘾。",
@@ -122,16 +106,12 @@
     "full_verse": "天生我材必有用，千金散尽还复来。",
     "mapping": [
       {
-        "en": "talent has a purpose",
-        "zh": "我材必有用"
+        "en": "Heaven gave me talent for a purpose",
+        "zh": "天生我材必有用"
       },
       {
-        "en": "a thousand pieces of gold spent",
-        "zh": "千金散尽"
-      },
-      {
-        "en": "they will come back",
-        "zh": "还复来"
+        "en": "though I spend a thousand pieces of gold, they will come back",
+        "zh": "千金散尽还复来"
       }
     ],
     "science_note": "【高阶自尊激发】通过辨析自信哲理的英文转译，刺激腹侧纹状体释放真正的内源性多巴胺，压倒尼古丁虚假奖赏。",
@@ -159,11 +139,11 @@
     "full_verse": "野火烧不尽，春风吹又生。远芳侵古道，晴翠接荒城。",
     "mapping": [
       {
-        "en": "wildfires cannot burn it away",
+        "en": "Wildfires cannot burn it out completely",
         "zh": "野火烧不尽"
       },
       {
-        "en": "spring breezes bring it back to life",
+        "en": "Spring breezes blow it back to life again",
         "zh": "春风吹又生"
       }
     ],
@@ -185,11 +165,11 @@
     "full_verse": "欲穷千里目，更上一层楼。",
     "mapping": [
       {
-        "en": "widen view a thousand miles",
+        "en": "If you desire to widen your view a thousand miles",
         "zh": "欲穷千里目"
       },
       {
-        "en": "climb up one more flight",
+        "en": "you must climb up one more flight of stairs",
         "zh": "更上一层楼"
       }
     ],
@@ -206,7 +186,7 @@
     "author": "唐 · 王维",
     "title": "《鹿柴》",
     "translator": "参考英译（意译）",
-    "english_text": "Empty mountain, no one in sight,\nYet the echoes of human voices are heard afar.",
+    "english_text": "No one in sight on the empty mountain;\nOnly the sound of human voices is heard.",
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "空山不见人，但闻人语响",
     "options": [
@@ -218,11 +198,11 @@
     "full_verse": "空山不见人，但闻人语响。返景入深林，复照青苔上。",
     "mapping": [
       {
-        "en": "empty mountain, no one in sight",
+        "en": "No one in sight on the empty mountain",
         "zh": "空山不见人"
       },
       {
-        "en": "echoes of human voices",
+        "en": "Only the sound of human voices is heard",
         "zh": "但闻人语响"
       }
     ],
@@ -244,16 +224,12 @@
     "full_verse": "借问酒家何处有？牧童遥指杏花村。",
     "mapping": [
       {
-        "en": "where a tavern can be found",
+        "en": "Where can I find an inn",
         "zh": "借问酒家何处有"
       },
       {
-        "en": "shepherd boy points afar",
-        "zh": "牧童遥指"
-      },
-      {
-        "en": "Apricot Village",
-        "zh": "杏花村"
+        "en": "A shepherd boy points toward Apricot Blossom Village",
+        "zh": "牧童遥指杏花村"
       }
     ],
     "science_note": "【故事情景重构】跨语言的生动叙事调动双侧颞叶与海马体，形成强大脑内注意力屏障，让烟瘾无隙可乘。",
@@ -281,16 +257,12 @@
     "full_verse": "春蚕到死丝方尽，蜡炬成灰泪始干。",
     "mapping": [
       {
-        "en": "silkworm spins silk till death",
+        "en": "The silkworm spins its silk until it dies",
         "zh": "春蚕到死丝方尽"
       },
       {
-        "en": "candle turns to ash",
-        "zh": "蜡炬成灰"
-      },
-      {
-        "en": "tears dried",
-        "zh": "泪始干"
+        "en": "The candle's tears dry only when it turns to ash",
+        "zh": "蜡炬成灰泪始干"
       }
     ],
     "science_note": "【隐喻深层解码】字词意象对仗激活左右大脑半球协同分析，产生高阶心流体验，使生理瘾性渴求迅速脱敏。",
@@ -311,16 +283,12 @@
     "full_verse": "但愿人长久，千里共婵娟。",
     "mapping": [
       {
-        "en": "blessed with longevity",
+        "en": "May we both live long",
         "zh": "但愿人长久"
       },
       {
-        "en": "thousand miles apart",
-        "zh": "千里"
-      },
-      {
-        "en": "moonlight elegance",
-        "zh": "婵娟"
+        "en": "and share the same moonlight, though a thousand miles apart",
+        "zh": "千里共婵娟"
       }
     ],
     "science_note": "【社会连结与戒烟契约】以亲情长久为核心意象的深度语言转码，激发戒烟的核心内在动机，效果超越单纯的意志力压抑。",
@@ -348,20 +316,12 @@
     "full_verse": "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。",
     "mapping": [
       {
-        "en": "two yellow orioles sing",
-        "zh": "两个黄鹂鸣"
+        "en": "Two yellow orioles sing amid the verdant willows",
+        "zh": "两个黄鹂鸣翠柳"
       },
       {
-        "en": "verdant willows",
-        "zh": "翠柳"
-      },
-      {
-        "en": "line of white egrets",
-        "zh": "一行白鹭"
-      },
-      {
-        "en": "azure sky",
-        "zh": "青天"
+        "en": "A line of white egrets mounts up to the azure sky",
+        "zh": "一行白鹭上青天"
       }
     ],
     "science_note": "【色彩意象视觉化】通过高饱和度的自然意境转换，刺激枕叶视觉皮层与额叶联想，瞬间冲淡单调焦躁的烟瘾反射。",
@@ -382,20 +342,12 @@
     "full_verse": "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
     "mapping": [
       {
-        "en": "in a lone boat",
-        "zh": "孤舟"
+        "en": "Alone in a small boat, an old man in a straw cloak and hat",
+        "zh": "孤舟蓑笠翁"
       },
       {
-        "en": "straw cloak and hat",
-        "zh": "蓑笠"
-      },
-      {
-        "en": "fishes alone",
-        "zh": "独钓"
-      },
-      {
-        "en": "cold river snow",
-        "zh": "寒江雪"
+        "en": "fishes on the snowy river",
+        "zh": "独钓寒江雪"
       }
     ],
     "science_note": "【超然专注度训练】孤舟垂钓意象与微观英译句法紧密咬合，大脑前额叶进入极高稳定度的定力状态，击溃尼古丁骚扰。",
@@ -423,16 +375,12 @@
     "full_verse": "独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。",
     "mapping": [
       {
-        "en": "secluded bamboo",
-        "zh": "幽篁"
+        "en": "I sit alone among secluded bamboo",
+        "zh": "独坐幽篁里"
       },
       {
-        "en": "play my zither",
-        "zh": "弹琴"
-      },
-      {
-        "en": "whistle a long note",
-        "zh": "长啸"
+        "en": "I play my zither and whistle a long note",
+        "zh": "弹琴复长啸"
       }
     ],
     "science_note": "【禅境知觉置换】以修竹明月的清幽知觉阻断多巴胺急躁渴求，神经中枢进入宁静阿尔法脑波状态。",
@@ -460,20 +408,12 @@
     "full_verse": "空山新雨后，天气晚来秋。明月松间照，清泉石上流。",
     "mapping": [
       {
-        "en": "moonlight shines",
-        "zh": "明月照"
+        "en": "Moonlight shines through the pines",
+        "zh": "明月松间照"
       },
       {
-        "en": "through the pines",
-        "zh": "松间"
-      },
-      {
-        "en": "a clear spring flows",
-        "zh": "清泉流"
-      },
-      {
-        "en": "over the stones",
-        "zh": "石上"
+        "en": "A clear spring flows over the stones",
+        "zh": "清泉石上流"
       }
     ],
     "science_note": "【自然感知重建】调动视觉与听觉联觉感知，让纯净泉水与松林意象冲洗大脑中的浑浊烟瘾联想。",
@@ -501,20 +441,12 @@
     "full_verse": "风急天高猿啸哀，渚清沙白鸟飞回。无边落木萧萧下，不尽长江滚滚来。",
     "mapping": [
       {
-        "en": "boundless forest sheds leaves",
-        "zh": "无边落木"
+        "en": "The boundless forest sheds its leaves, rustling down",
+        "zh": "无边落木萧萧下"
       },
       {
-        "en": "rustling down",
-        "zh": "萧萧下"
-      },
-      {
-        "en": "endless Yangtze River",
-        "zh": "不尽长江"
-      },
-      {
-        "en": "billowing forever",
-        "zh": "滚滚来"
+        "en": "The endless Yangtze River rolls on, billowing forever",
+        "zh": "不尽长江滚滚来"
       }
     ],
     "science_note": "【宏大时空视角重塑】以滚滚长江与苍茫天地的大格局视角，使微小琐碎的烟瘾渴求瞬间失去心理意义。",
@@ -542,16 +474,12 @@
     "full_verse": "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。",
     "mapping": [
       {
-        "en": "searched thousands of times",
+        "en": "I searched for her thousands of times in the crowded fair",
         "zh": "众里寻他千百度"
       },
       {
-        "en": "suddenly looking back",
-        "zh": "蓦然回首"
-      },
-      {
-        "en": "where lanterns were dim",
-        "zh": "灯火阑珊处"
+        "en": "Suddenly looking back, she stood where the lanterns were dim",
+        "zh": "蓦然回首，那人却在，灯火阑珊处"
       }
     ],
     "science_note": "【顿悟情绪唤醒】通过戏剧性的情感转折激活腹内侧前额叶皮层，引发深刻的自我认知觉醒。",
@@ -579,20 +507,12 @@
     "full_verse": "花间一壶酒，独酌无相亲。举杯邀明月，对影成三人。",
     "mapping": [
       {
-        "en": "raise cup to invite",
-        "zh": "举杯邀"
+        "en": "I raise my cup to invite the moon",
+        "zh": "举杯邀明月"
       },
       {
-        "en": "bright moon",
-        "zh": "明月"
-      },
-      {
-        "en": "facing shadow",
-        "zh": "对影"
-      },
-      {
-        "en": "company of three",
-        "zh": "成三人"
+        "en": "With my shadow, we make three",
+        "zh": "对影成三人"
       }
     ],
     "science_note": "【孤独感正向升华】将引发吸烟冲动的‘孤单/寂寞’转化为浪漫清澈的精神独立，彻底断绝无聊抽烟心理诱因。",
@@ -620,20 +540,12 @@
     "full_verse": "春眠不觉晓，处处闻啼鸟。夜来风雨声，花落知多少。",
     "mapping": [
       {
-        "en": "spring slumber",
-        "zh": "春眠"
+        "en": "In spring sleep, I do not notice dawn",
+        "zh": "春眠不觉晓"
       },
       {
-        "en": "unaware of dawn",
-        "zh": "不觉晓"
-      },
-      {
-        "en": "everywhere",
-        "zh": "处处"
-      },
-      {
-        "en": "chirping of birds heard",
-        "zh": "闻啼鸟"
+        "en": "Everywhere, birds are singing",
+        "zh": "处处闻啼鸟"
       }
     ],
     "science_note": "【前额叶长时记忆逆向检索】从极简英文反向映射童年长时记忆，海马体高速运转，瞬间置换烟瘾烦躁。",
@@ -661,20 +573,12 @@
     "full_verse": "三十功名尘与土，八千里路云和月。莫等闲、白了少年头，空悲切。",
     "mapping": [
       {
-        "en": "thirty years of deeds",
-        "zh": "三十功名"
+        "en": "Thirty years of deeds and dust,",
+        "zh": "三十功名尘与土"
       },
       {
-        "en": "dust",
-        "zh": "尘与土"
-      },
-      {
-        "en": "eight thousand miles",
-        "zh": "八千里路"
-      },
-      {
-        "en": "clouds and moon",
-        "zh": "云和月"
+        "en": "Eight thousand miles of clouds and moon",
+        "zh": "八千里路云和月"
       }
     ],
     "science_note": "【英雄意志共鸣】调动交感神经向浩然正气转化，彻底压灭对低级多巴胺的委琐屈从。",
@@ -702,20 +606,12 @@
     "full_verse": "昔人已乘黄鹤去，此地空余黄鹤楼。黄鹤一去不复返，白云千载空悠悠。",
     "mapping": [
       {
-        "en": "the yellow crane has flown away",
-        "zh": "黄鹤一去"
+        "en": "The yellow crane has flown away, never to return",
+        "zh": "黄鹤一去不复返"
       },
       {
-        "en": "never to return",
-        "zh": "不复返"
-      },
-      {
-        "en": "white clouds",
-        "zh": "白云"
-      },
-      {
-        "en": "drift across the empty sky",
-        "zh": "千载空悠悠"
+        "en": "For a thousand years, white clouds have drifted across the empty sky",
+        "zh": "白云千载空悠悠"
       }
     ],
     "science_note": "【哲理虚无降维】通过千载空悠的时空审视，认识到急性烟瘾不过是虚幻的心理尘埃。",
@@ -743,16 +639,12 @@
     "full_verse": "碧玉妆成一树高，万条垂下绿丝绦。不知细叶谁裁出，二月春风似剪刀。",
     "mapping": [
       {
-        "en": "who tailored slender leaves",
+        "en": "I wonder who has cut and tailored these slender leaves",
         "zh": "不知细叶谁裁出"
       },
       {
-        "en": "breeze of February",
-        "zh": "二月春风"
-      },
-      {
-        "en": "like a pair of scissors",
-        "zh": "似剪刀"
+        "en": "The spring breeze of February is like a pair of scissors",
+        "zh": "二月春风似剪刀"
       }
     ],
     "science_note": "【自然微观美感再激活】激活顶叶空间形态认知，以春风碧玉的细腻生机取代单调有毒的吞云吐雾。",
@@ -780,20 +672,12 @@
     "full_verse": "采菊东篱下，悠然见南山。山气日夕佳，飞鸟相与还。",
     "mapping": [
       {
-        "en": "plucking chrysanthemums",
-        "zh": "采菊"
+        "en": "Plucking chrysanthemums beneath the eastern hedge",
+        "zh": "采菊东篱下"
       },
       {
-        "en": "eastern hedge",
-        "zh": "东篱下"
-      },
-      {
-        "en": "leisurely gaze",
-        "zh": "悠然见"
-      },
-      {
-        "en": "southern mountains",
-        "zh": "南山"
+        "en": "Leisurely, I gaze upon the southern mountains",
+        "zh": "悠然见南山"
       }
     ],
     "science_note": "【副交感自主神经激活】田园恬淡意象促使下丘脑降低促肾上腺皮质激素释放，快速平复交感过度兴奋。",
@@ -821,16 +705,12 @@
     "full_verse": "会当凌绝顶，一览众山小。",
     "mapping": [
       {
-        "en": "mount to the summit",
-        "zh": "凌绝顶"
+        "en": "One day I shall climb to the very summit",
+        "zh": "会当凌绝顶"
       },
       {
-        "en": "single glance",
-        "zh": "一览"
-      },
-      {
-        "en": "all mountains dwarfed",
-        "zh": "众山小"
+        "en": "And see how small the other mountains look",
+        "zh": "一览众山小"
       }
     ],
     "science_note": "【意志力制高点重构】将自我认知从被动忍受瘾性折磨提升至意志力主宰的至高境界。",
@@ -858,16 +738,12 @@
     "full_verse": "试问卷帘人，却道海棠依旧。知否，知否？应是绿肥红瘦。",
     "mapping": [
       {
-        "en": "I ask the maid rolling up the blinds",
+        "en": "I ask the maid as she rolls up the blinds",
         "zh": "试问卷帘人"
       },
       {
-        "en": "she says",
-        "zh": "却道"
-      },
-      {
-        "en": "the crabapple blossoms are unchanged",
-        "zh": "海棠依旧"
+        "en": "She says the crabapple blossoms are unchanged",
+        "zh": "却道海棠依旧"
       }
     ],
     "science_note": "【微观叙事情景代入】多模态情景语言解码唤醒前额叶执行功能，彻底截断单调吸烟神经回路。",
@@ -887,7 +763,7 @@
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "举头望明月，低头思故乡",
     "options": [
-      "抬头望明月，低头思故乡",
+      "举头望明月，低头思故乡",
       "床前明月光，疑是地上霜",
       "露从今夜白，月是故乡明",
       "海上生明月，天涯共此时"
@@ -895,11 +771,11 @@
     "full_verse": "床前明月光，疑是地上霜。举头望明月，低头思故乡。",
     "mapping": [
       {
-        "en": "raising head gaze moon",
+        "en": "Raising my head, I gaze at the bright moon",
         "zh": "举头望明月"
       },
       {
-        "en": "bowing head think homeland",
+        "en": "Bowing my head, I think of my distant homeland",
         "zh": "低头思故乡"
       }
     ],
@@ -928,20 +804,12 @@
     "full_verse": "落霞与孤鹜齐飞，秋水共长天一色。",
     "mapping": [
       {
-        "en": "sunset clouds fly",
-        "zh": "落霞齐飞"
+        "en": "Sunset clouds and a lone wild duck fly together",
+        "zh": "落霞与孤鹜齐飞"
       },
       {
-        "en": "a lone wild duck",
-        "zh": "孤鹜"
-      },
-      {
-        "en": "autumn waters",
-        "zh": "秋水"
-      },
-      {
-        "en": "blend with the endless sky",
-        "zh": "共长天一色"
+        "en": "Autumn waters blend with the endless sky",
+        "zh": "秋水共长天一色"
       }
     ],
     "science_note": "【旷世高饱和审美冲击】以极致文学美感激活大脑奖赏中枢，产生高质量内源性多巴胺，压倒尼古丁虚假满足。",
@@ -969,16 +837,12 @@
     "full_verse": "山重水复疑无路，柳暗花明又一村。",
     "mapping": [
       {
-        "en": "mountains and streams seem to block the path",
+        "en": "Mountains rise and streams wind; I fear the path is gone",
         "zh": "山重水复疑无路"
       },
       {
-        "en": "dark willows and bright flowers",
-        "zh": "柳暗花明"
-      },
-      {
-        "en": "another village appears",
-        "zh": "又一村"
+        "en": "Past dark willows and bright flowers, another village appears",
+        "zh": "柳暗花明又一村"
       }
     ],
     "science_note": "【心理韧性认知重塑】在戒断阻抗的关键节点提供‘峰回路转’的心理暗示，增强自我效能感。",
@@ -1006,11 +870,11 @@
     "full_verse": "山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。",
     "mapping": [
       {
-        "en": "a mountain with an immortal is famous",
+        "en": "A mountain need not be high to be famous if an immortal lives there",
         "zh": "山不在高，有仙则名"
       },
       {
-        "en": "a river with a dragon is wondrous",
+        "en": "A river need not be deep to be wondrous if a dragon dwells within it",
         "zh": "水不在深，有龙则灵"
       }
     ],
@@ -1039,11 +903,11 @@
     "full_verse": "海上生明月，天涯共此时。",
     "mapping": [
       {
-        "en": "a bright moon rises over the sea",
+        "en": "A bright moon rises over the sea",
         "zh": "海上生明月"
       },
       {
-        "en": "we share this moment from afar",
+        "en": "Far apart as we are, we share this moment",
         "zh": "天涯共此时"
       }
     ],
@@ -1072,11 +936,11 @@
     "full_verse": "横看成岭侧成峰，远近高低各不同。不识庐山真面目，只缘身在此山中。",
     "mapping": [
       {
-        "en": "a range from the front, a peak from the side",
+        "en": "From the front, it looks like a range; from the side, a peak",
         "zh": "横看成岭侧成峰"
       },
       {
-        "en": "a different view from every position",
+        "en": "Near or far, high or low, it never looks the same",
         "zh": "远近高低各不同"
       }
     ],
@@ -1105,16 +969,12 @@
     "full_verse": "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
-        "en": "gibbons call without cease",
+        "en": "The gibbons call without cease from both banks",
         "zh": "两岸猿声啼不住"
       },
       {
-        "en": "my light boat has passed",
-        "zh": "轻舟已过"
-      },
-      {
-        "en": "ten thousand mountains",
-        "zh": "万重山"
+        "en": "My light boat has already passed ten thousand mountains",
+        "zh": "轻舟已过万重山"
       }
     ],
     "science_note": "【突破阻力心理赋能】以‘轻舟已过万重山’的畅快意象击碎戒断焦虑，感受意志力穿透阻力的巅峰快感。",
@@ -1142,16 +1002,12 @@
     "full_verse": "远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。",
     "mapping": [
       {
-        "en": "stop my carriage to admire the maples",
+        "en": "I stop my carriage to admire the maple woods at dusk",
         "zh": "停车坐爱枫林晚"
       },
       {
-        "en": "frost-red leaves outshine",
-        "zh": "霜叶红于"
-      },
-      {
-        "en": "spring flowers",
-        "zh": "二月花"
+        "en": "Frost-red leaves outshine the flowers of spring",
+        "zh": "霜叶红于二月花"
       }
     ],
     "science_note": "【高阶审美替代】以明艳深红与深秋傲霜的崇高美学冲淡焦油带来的生理浊滞感。",
@@ -1179,11 +1035,11 @@
     "full_verse": "先天下之忧而忧，后天下之乐而乐。",
     "mapping": [
       {
-        "en": "be first to worry for the world",
+        "en": "Be first to worry for the world,",
         "zh": "先天下之忧而忧"
       },
       {
-        "en": "be last to share in its joys",
+        "en": "And last to share in its joys",
         "zh": "后天下之乐而乐"
       }
     ],
@@ -1212,16 +1068,12 @@
     "full_verse": "人间四月芳菲尽，山寺桃花始盛开。长恨春归无觅处，不知转入此中来。",
     "mapping": [
       {
-        "en": "spring flowers have faded by the fourth month",
+        "en": "By the fourth month, spring flowers have faded in the world below",
         "zh": "人间四月芳菲尽"
       },
       {
-        "en": "peach blossoms at the mountain temple",
-        "zh": "山寺桃花"
-      },
-      {
-        "en": "just beginning to bloom",
-        "zh": "始盛开"
+        "en": "At the mountain temple, peach blossoms are just beginning to bloom",
+        "zh": "山寺桃花始盛开"
       }
     ],
     "science_note": "【认知重塑生命周期】暗示戒烟后的身体正如高山幽寺之桃花，生命机能将迎来迟来却更加璀璨的新生。",
@@ -1249,16 +1101,12 @@
     "full_verse": "安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。",
     "mapping": [
       {
-        "en": "a mansion with ten thousand rooms",
+        "en": "If only I had a mansion with ten thousand rooms,",
         "zh": "安得广厦千万间"
       },
       {
-        "en": "shelter poor scholars",
-        "zh": "大庇天下寒士"
-      },
-      {
-        "en": "bring smiles to their faces",
-        "zh": "俱欢颜"
+        "en": "To shelter every poor scholar in the land and bring smiles to their faces",
+        "zh": "大庇天下寒士俱欢颜"
       }
     ],
     "science_note": "【社会契约与博爱激活】在对全人类的大爱共情中，抑制狭隘的自我毁灭冲动。",
@@ -1286,16 +1134,12 @@
     "full_verse": "鸟宿池边树，僧敲月下门。",
     "mapping": [
       {
-        "en": "birds roost by the pond",
+        "en": "Birds roost among the trees around the quiet pond",
         "zh": "鸟宿池边树"
       },
       {
-        "en": "a monk knocks at the gate",
-        "zh": "僧敲"
-      },
-      {
-        "en": "beneath the moon",
-        "zh": "月下门"
+        "en": "A wandering monk knocks on the gate beneath the moonlight",
+        "zh": "僧敲月下门"
       }
     ],
     "science_note": "【专注力细化推敲】通过微观动词意象推敲占用前额叶工作记忆，烟瘾信号无隙可乘。",
@@ -1323,11 +1167,11 @@
     "full_verse": "醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。",
     "mapping": [
       {
-        "en": "trim the lamp and gaze at my sword",
+        "en": "Drunk, I trim the lamp and gaze at my sword",
         "zh": "醉里挑灯看剑"
       },
       {
-        "en": "bugles sounding from camp to camp",
+        "en": "In dreams, I hear bugles sounding from camp to camp",
         "zh": "梦回吹角连营"
       }
     ],
@@ -1356,16 +1200,12 @@
     "full_verse": "对酒当歌，人生几何！譬如朝露，去日苦多。慨当以慷，忧思难忘。",
     "mapping": [
       {
-        "en": "sing over wine: how short is life?",
+        "en": "I sing over wine: how short is life",
         "zh": "对酒当歌，人生几何"
       },
       {
-        "en": "like morning dew",
-        "zh": "譬如朝露"
-      },
-      {
-        "en": "days passed in sorrow",
-        "zh": "去日苦多"
+        "en": "Like morning dew, it vanishes; too many days have passed in sorrow",
+        "zh": "譬如朝露，去日苦多"
       }
     ],
     "science_note": "【生命终局时间感知】意识到人生本如朝露般短暂，促使大脑前额叶坚决停止一切加速折旧生命的愚蠢行为。",
@@ -1393,11 +1233,11 @@
     "full_verse": "独怜幽草涧边生，上有黄鹂深树鸣。春潮带雨晚来急，野渡无人舟自横。",
     "mapping": [
       {
-        "en": "spring rain swells the river at dusk",
+        "en": "At dusk, spring rain swells the river and quickens its current",
         "zh": "春潮带雨晚来急"
       },
       {
-        "en": "an empty boat drifts sideways",
+        "en": "At the deserted ferry, an empty boat drifts sideways",
         "zh": "野渡无人舟自横"
       }
     ],
@@ -1426,11 +1266,11 @@
     "full_verse": "日照香炉生紫烟，遥看瀑布挂前川。飞流直下三千尺，疑是银河落九天。",
     "mapping": [
       {
-        "en": "flying downwards three thousand feet",
+        "en": "Flying downwards straight through three thousand feet",
         "zh": "飞流直下三千尺"
       },
       {
-        "en": "Silver River tumbling Ninth Heaven",
+        "en": "Could it be the Silver River tumbling down from the Ninth Heaven",
         "zh": "疑是银河落九天"
       }
     ],
@@ -1459,11 +1299,11 @@
     "full_verse": "沉舟侧畔千帆过，病树前头万木春。今日听君歌一曲，暂凭杯酒长精神。",
     "mapping": [
       {
-        "en": "a thousand sails pass the sunken boat",
+        "en": "A thousand sails pass by the sunken boat",
         "zh": "沉舟侧畔千帆过"
       },
       {
-        "en": "ten thousand trees greet spring",
+        "en": "Before the ailing tree, ten thousand others greet the spring",
         "zh": "病树前头万木春"
       }
     ],
@@ -1492,11 +1332,11 @@
     "full_verse": "飞来山上千寻塔，闻说鸡鸣见日升。不畏浮云遮望眼，自缘身在最高层。",
     "mapping": [
       {
-        "en": "clouds obscure my view",
+        "en": "I do not fear clouds obscuring my view,",
         "zh": "不畏浮云遮望眼"
       },
       {
-        "en": "I stand on the highest floor",
+        "en": "For I am standing on the highest floor",
         "zh": "自缘身在最高层"
       }
     ],
@@ -1525,11 +1365,11 @@
     "full_verse": "千里黄云白日曛，北风吹雁雪纷纷。莫愁前路无知己，天下谁人不识君？",
     "mapping": [
       {
-        "en": "friends on the road ahead",
+        "en": "Do not worry that you have no friends on the road ahead",
         "zh": "莫愁前路无知己"
       },
       {
-        "en": "everyone knows you",
+        "en": "Who under heaven does not know you",
         "zh": "天下谁人不识君"
       }
     ],
@@ -1558,11 +1398,11 @@
     "full_verse": "海内存知己，天涯若比邻。无为在歧路，儿女共沾巾。",
     "mapping": [
       {
-        "en": "a true friend in the world",
+        "en": "With a true friend in the world,",
         "zh": "海内存知己"
       },
       {
-        "en": "even far apart, we feel close",
+        "en": "Even someone at its farthest edge feels close",
         "zh": "天涯若比邻"
       }
     ],
@@ -1579,7 +1419,7 @@
     "author": "唐 · 李白",
     "title": "《独坐敬亭山》",
     "translator": "参考英译（意译）",
-    "english_text": "All birds have flown high and vanished;\nA lonely cloud floats leisurely away.\nWe look at each other without growing weary;\nThere is only Mount Jingting.",
+    "english_text": "We look at each other without growing weary;\nThere is only Mount Jingting.",
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "相看两不厌，只有敬亭山",
     "options": [
@@ -1591,19 +1431,11 @@
     "full_verse": "众鸟高飞尽，孤云独去闲。相看两不厌，只有敬亭山。",
     "mapping": [
       {
-        "en": "birds flown vanished",
-        "zh": "众鸟高飞尽"
-      },
-      {
-        "en": "lonely cloud leisurely",
-        "zh": "孤云独去闲"
-      },
-      {
-        "en": "look without weary",
+        "en": "We look at each other without growing weary",
         "zh": "相看两不厌"
       },
       {
-        "en": "only Mount Jingting",
+        "en": "There is only Mount Jingting",
         "zh": "只有敬亭山"
       }
     ],
@@ -1632,11 +1464,11 @@
     "full_verse": "无可奈何花落去，似曾相识燕归来。小园香径独徘徊。",
     "mapping": [
       {
-        "en": "helplessly petals fall",
+        "en": "Flowers fall, and there is nothing I can do",
         "zh": "无可奈何花落去"
       },
       {
-        "en": "old acquaintances swallows return",
+        "en": "Swallows return, as though I have seen them before",
         "zh": "似曾相识燕归来"
       }
     ],
@@ -1665,16 +1497,12 @@
     "full_verse": "白日放歌须纵酒，青春作伴好还乡。即从巴峡穿巫峡，便下襄阳向洛阳。",
     "mapping": [
       {
-        "en": "sing and drink my fill in broad daylight",
+        "en": "In broad daylight I must sing and drink my fill",
         "zh": "白日放歌须纵酒"
       },
       {
-        "en": "springtime as my companion",
-        "zh": "青春作伴"
-      },
-      {
-        "en": "return native land",
-        "zh": "好还乡"
+        "en": "Springtime will accompany me on the journey home",
+        "zh": "青春作伴好还乡"
       }
     ],
     "science_note": "【积极情绪峰值释放】以收复失地的狂喜冲刷多巴胺匮乏的焦渴，产生强大精神内啡肽。",
@@ -1690,7 +1518,7 @@
     "author": "唐 · 李白",
     "title": "《侠客行》",
     "translator": "参考英译（意译）",
-    "english_text": "Killing a man every ten paces, leaving no trace for a thousand miles;\nOnce the heroic deed is accomplished, he shakes his robes and departs without fame.",
+    "english_text": "Once the deed is done, he brushes off his robe and leaves;\nHe keeps his identity and name hidden from the world.",
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "事了拂衣去，深藏身与名",
     "options": [
@@ -1702,15 +1530,11 @@
     "full_verse": "十步杀一人，千里不留行。事了拂衣去，深藏身与名。",
     "mapping": [
       {
-        "en": "heroic deed accomplished",
-        "zh": "事了"
+        "en": "Once the deed is done, he brushes off his robe and leaves",
+        "zh": "事了拂衣去"
       },
       {
-        "en": "shakes robes departs",
-        "zh": "拂衣去"
-      },
-      {
-        "en": "without fame",
+        "en": "He keeps his identity and name hidden from the world",
         "zh": "深藏身与名"
       }
     ],
@@ -1739,11 +1563,11 @@
     "full_verse": "半亩方塘一鉴开，天光云影共徘徊。问渠那得清如许？为有源头活水来。",
     "mapping": [
       {
-        "en": "why the square pond stays clear",
+        "en": "Why does the square pond stay so clear",
         "zh": "问渠那得清如许"
       },
       {
-        "en": "fresh water flows from its source",
+        "en": "Because fresh water keeps flowing from its source",
         "zh": "为有源头活水来"
       }
     ],
@@ -1772,11 +1596,11 @@
     "full_verse": "烟笼寒水月笼沙，夜泊秦淮近酒家。商女不知亡国恨，隔江犹唱后庭花。",
     "mapping": [
       {
-        "en": "songstress knows not fallen nation",
+        "en": "The songstress does not know the sorrow of a fallen nation",
         "zh": "商女不知亡国恨"
       },
       {
-        "en": "across river sings Backyard Flowers",
+        "en": "Across the misty river, she still sings the song of Backyard Flowers",
         "zh": "隔江犹唱后庭花"
       }
     ],
@@ -1805,15 +1629,15 @@
     "full_verse": "多情自古伤离别，更那堪，冷落清秋节！今宵酒醒何处？杨柳岸，晓风残月。",
     "mapping": [
       {
-        "en": "where will I wake from wine?",
+        "en": "Where will I wake from wine tonight",
         "zh": "今宵酒醒何处"
       },
       {
-        "en": "willow-lined banks",
+        "en": "On willow-lined banks",
         "zh": "杨柳岸"
       },
       {
-        "en": "dawn breeze and waning moon",
+        "en": "in the dawn breeze beneath a waning moon",
         "zh": "晓风残月"
       }
     ],
@@ -1842,20 +1666,12 @@
     "full_verse": "抽刀断水水更流，举杯消愁愁更愁。人生在世不称意，明朝散发弄扁舟。",
     "mapping": [
       {
-        "en": "cutting water with sword",
-        "zh": "抽刀断水"
+        "en": "Cut at water with a sword, and it flows on all the more",
+        "zh": "抽刀断水水更流"
       },
       {
-        "en": "water flows more",
-        "zh": "水更流"
-      },
-      {
-        "en": "cup drown sorrow",
-        "zh": "举杯消愁"
-      },
-      {
-        "en": "sorrow deeper",
-        "zh": "愁更愁"
+        "en": "Raise a cup to drown sorrow, and sorrow only deepens",
+        "zh": "举杯消愁愁更愁"
       }
     ],
     "science_note": "【成瘾反向悖论识破】深刻认清借烟消愁正如举杯消愁，毒物制造的亏空只会让下一次的焦虑翻倍。",
@@ -1883,11 +1699,11 @@
     "full_verse": "路漫漫其修远兮，吾将上下而求索。",
     "mapping": [
       {
-        "en": "a long road ahead",
+        "en": "The road ahead is long and far",
         "zh": "路漫漫其修远兮"
       },
       {
-        "en": "search high and low",
+        "en": "I shall search high and low for the way",
         "zh": "吾将上下而求索"
       }
     ],
@@ -1904,7 +1720,7 @@
     "author": "唐 · 王勃",
     "title": "《滕王阁序》",
     "translator": "参考英译（意译）",
-    "english_text": "Though old, one should grow stronger: why let age weaken one's resolve?\nThough poor, one should hold firmer to one's ambition and never let lofty hopes fall.",
+    "english_text": "Though old, one should grow stronger: why let age weaken one's resolve?\nThough beset by hardship, one should hold firmer to one's ambition and never let lofty hopes fall.",
     "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志",
     "options": [
@@ -1916,20 +1732,12 @@
     "full_verse": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志。",
     "mapping": [
       {
-        "en": "grow stronger with age",
-        "zh": "老当益壮"
+        "en": "Though old, one should grow stronger: why let age weaken one's resolve",
+        "zh": "老当益壮，宁移白首之心"
       },
       {
-        "en": "not let age weaken resolve",
-        "zh": "宁移白首之心"
-      },
-      {
-        "en": "hold firmer in hardship",
-        "zh": "穷且益坚"
-      },
-      {
-        "en": "never let lofty hopes fall",
-        "zh": "不坠青云之志"
+        "en": "Though beset by hardship, one should hold firmer to one's ambition and never let lofty hopes fall",
+        "zh": "穷且益坚，不坠青云之志"
       }
     ],
     "science_note": "【生命活力逆向唤醒】对抗消极衰老暗示，以‘青云之志’重燃对健康长寿的主动掌控欲。",
@@ -1957,11 +1765,11 @@
     "full_verse": "花径不曾缘客扫，蓬门今始为君开。盘飧市远无兼味，樽酒家贫只旧醅。",
     "mapping": [
       {
-        "en": "flower path never swept",
+        "en": "The flower-strewn path has never been swept for a guest",
         "zh": "花径不曾缘客扫"
       },
       {
-        "en": "thatched gate thrown open",
+        "en": "Today I open my humble gate for you",
         "zh": "蓬门今始为君开"
       }
     ],
@@ -1990,11 +1798,11 @@
     "full_verse": "君不见黄河之水天上来，奔流到海不复回。君不见高堂明镜悲白发，朝如青丝暮成雪。",
     "mapping": [
       {
-        "en": "Yellow River waters from sky",
-        "zh": "黄河之水天上来"
+        "en": "Do you not see the Yellow River pouring down from the sky",
+        "zh": "君不见黄河之水天上来"
       },
       {
-        "en": "rushing boundless sea never return",
+        "en": "It rushes to the sea and never returns",
         "zh": "奔流到海不复回"
       }
     ],
@@ -2016,11 +1824,11 @@
     "full_verse": "大漠孤烟直，长河落日圆。萧关逢候骑，都护在燕然。",
     "mapping": [
       {
-        "en": "a lone plume of smoke rises in the desert",
+        "en": "Across the vast desert, a lone plume of smoke rises straight",
         "zh": "大漠孤烟直"
       },
       {
-        "en": "the round sun hangs over the long river",
+        "en": "the round setting sun hangs over the long river",
         "zh": "长河落日圆"
       }
     ],
@@ -2042,16 +1850,12 @@
     "full_verse": "大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。",
     "mapping": [
       {
-        "en": "endless river eastward flows",
+        "en": "The great river flows east",
         "zh": "大江东去"
       },
       {
-        "en": "huge waves swept away",
-        "zh": "浪淘尽"
-      },
-      {
-        "en": "heroes of time past",
-        "zh": "千古风流人物"
+        "en": "its waves wash away the heroes of ages past",
+        "zh": "浪淘尽，千古风流人物"
       }
     ],
     "science_note": "【历史深度沉浸阻断】以大江东去淘尽千古英豪的时空纵深感，帮助大脑从微小的生理瘾性中抽离。",
@@ -2072,16 +1876,12 @@
     "full_verse": "两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
-        "en": "monkeys incessantly cry",
+        "en": "The gibbons call without cease from both banks",
         "zh": "两岸猿声啼不住"
       },
       {
-        "en": "light skiff passed",
-        "zh": "轻舟已过"
-      },
-      {
-        "en": "ten thousand tiers of mountains",
-        "zh": "万重山"
+        "en": "my light boat has already passed ten thousand mountains",
+        "zh": "轻舟已过万重山"
       }
     ],
     "science_note": "【阻抗冲破愉悦体验】辨析incessantly cry与tiers of mountains的精微句法，大脑前额叶产生高阶心流。",
@@ -2102,11 +1902,11 @@
     "full_verse": "离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。",
     "mapping": [
       {
-        "en": "lush grows grass across plain",
+        "en": "Grass spreads across the plain",
         "zh": "离离原上草"
       },
       {
-        "en": "withers and flourishes again",
+        "en": "each year it withers and grows again",
         "zh": "一岁一枯荣"
       }
     ],
@@ -2128,16 +1928,12 @@
     "full_verse": "随风潜入夜，润物细无声。野径云俱黑，江船火独明。",
     "mapping": [
       {
-        "en": "steals into night with breeze",
+        "en": "The breeze carries it quietly into the night",
         "zh": "随风潜入夜"
       },
       {
-        "en": "moistening living things softly",
-        "zh": "润物"
-      },
-      {
-        "en": "without making sound",
-        "zh": "细无声"
+        "en": "it moistens all things without a sound",
+        "zh": "润物细无声"
       }
     ],
     "science_note": "【副交感柔和暗示】润物细无声的柔润意象有效中和因尼古丁饥渴引发的喉部干涩与交感焦虑。",
@@ -2158,11 +1954,11 @@
     "full_verse": "开轩面场圃，把酒话桑麻。待到重阳日，还来就菊花。",
     "mapping": [
       {
-        "en": "opening window to face garden",
+        "en": "I open the window onto the threshing floor and garden",
         "zh": "开轩面场圃"
       },
       {
-        "en": "hold wine cups chat mulberry hemp",
+        "en": "over wine, we talk of mulberry and hemp",
         "zh": "把酒话桑麻"
       }
     ],
@@ -2184,15 +1980,11 @@
     "full_verse": "稻花香里说丰年，听取蛙声一片。七八个星天外，两三点雨山前。",
     "mapping": [
       {
-        "en": "sweet aroma of rice blossoms",
-        "zh": "稻花香里"
+        "en": "Amid the scent of rice blossoms, people talk of a good harvest",
+        "zh": "稻花香里说丰年"
       },
       {
-        "en": "talk of fertile harvest",
-        "zh": "说丰年"
-      },
-      {
-        "en": "chorus of singing frogs",
+        "en": "all around, frogs call in chorus",
         "zh": "听取蛙声一片"
       }
     ],
@@ -2214,16 +2006,12 @@
     "full_verse": "去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。",
     "mapping": [
       {
-        "en": "on this day last year inside gate",
+        "en": "This day last year, inside this very gate",
         "zh": "去年今日此门中"
       },
       {
-        "en": "maiden face and peach blossoms",
-        "zh": "人面桃花"
-      },
-      {
-        "en": "mirrored in pink",
-        "zh": "相映红"
+        "en": "her face and the peach blossoms glowed red together",
+        "zh": "人面桃花相映红"
       }
     ],
     "science_note": "【生命容光反射】以人面桃花的红润气色对照吸烟者的灰暗蜡黄，激发恢复气色容貌的外在动机。",
@@ -2244,11 +2032,11 @@
     "full_verse": "少小离家老大回，乡音无改鬓毛衰。儿童相见不相识，笑问客从何处来。",
     "mapping": [
       {
-        "en": "the children do not know me",
+        "en": "The children see me but do not know me",
         "zh": "儿童相见不相识"
       },
       {
-        "en": "they ask where the visitor came from",
+        "en": "smiling, they ask where this visitor has come from",
         "zh": "笑问客从何处来"
       }
     ],
@@ -2270,12 +2058,12 @@
     "full_verse": "杨柳青青江水平，闻郎江上踏歌声。东边日出西边雨，道是无晴却有晴。",
     "mapping": [
       {
-        "en": "sun rises in the east, rain falls in the west",
+        "en": "The sun rises in the east while rain falls in the west",
         "zh": "东边日出西边雨"
       },
       {
-        "en": "the sky seems unclear, yet it is clear",
-        "zh": "道是无晴却有晴（晴与情谐音）"
+        "en": "they say the sky is not clear, yet it is clear after all",
+        "zh": "道是无晴却有晴"
       }
     ],
     "science_note": "【双关修辞思维解构】辨析英文中sunshine与sun shines的精巧对应，前额叶逻辑思维全面运转。",
@@ -2296,11 +2084,11 @@
     "full_verse": "折戟沉沙铁未销，自将磨洗认前朝。东风不与周郎便，铜雀春深锁二乔。",
     "mapping": [
       {
-        "en": "east wind not granted timely aid",
+        "en": "Had the east wind not aided Zhou Yu",
         "zh": "东风不与周郎便"
       },
       {
-        "en": "Bronze Bird Tower locked two Qiaos",
+        "en": "the two Qiao sisters would have been locked away in the Bronze Sparrow Terrace",
         "zh": "铜雀春深锁二乔"
       }
     ],
@@ -2322,11 +2110,11 @@
     "full_verse": "死去元知万事空，但悲不见九州同。王师北定中原日，家祭无忘告乃翁。",
     "mapping": [
       {
-        "en": "royal armies recover Central Plains",
+        "en": "When our armies reclaim the Central Plains in the north",
         "zh": "王师北定中原日"
       },
       {
-        "en": "ancestral offerings inform father",
+        "en": "do not forget to tell me at the family rites",
         "zh": "家祭无忘告乃翁"
       }
     ],
@@ -2348,11 +2136,11 @@
     "full_verse": "乱花渐欲迷人眼，浅草才能没马蹄。最爱湖东行不足，绿杨阴里白沙堤。",
     "mapping": [
       {
-        "en": "wild blossoms dazzle eyes",
+        "en": "Wildflowers begin to dazzle the eye",
         "zh": "乱花渐欲迷人眼"
       },
       {
-        "en": "tender grasses submerge hooves",
+        "en": "the young grass is just tall enough to cover a horse's hooves",
         "zh": "浅草才能没马蹄"
       }
     ],
@@ -2374,11 +2162,11 @@
     "full_verse": "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。",
     "mapping": [
       {
-        "en": "lone sail shadow vanishes azure void",
+        "en": "The lone sail fades into the blue distance",
         "zh": "孤帆远影碧空尽"
       },
       {
-        "en": "only Yangtze seen rolling horizon",
+        "en": "only the Yangtze flows toward the horizon",
         "zh": "唯见长江天际流"
       }
     ],
@@ -2400,11 +2188,11 @@
     "full_verse": "野径云俱黑，江船火独明。晓看红湿处，花重锦官城。",
     "mapping": [
       {
-        "en": "clouds over country pathways dark",
+        "en": "The clouds turn the country paths dark",
         "zh": "野径云俱黑"
       },
       {
-        "en": "boat lamp shines bright",
+        "en": "only a light on a riverboat shines through",
         "zh": "江船火独明"
       }
     ],
@@ -2426,11 +2214,11 @@
     "full_verse": "独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。",
     "mapping": [
       {
-        "en": "alone in foreign land stranger",
+        "en": "Alone in a foreign land, I am a stranger here",
         "zh": "独在异乡为异客"
       },
       {
-        "en": "festive season longing doubled",
+        "en": "on every festival, I miss my family all the more",
         "zh": "每逢佳节倍思亲"
       }
     ],
@@ -2452,11 +2240,11 @@
     "full_verse": "李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。",
     "mapping": [
       {
-        "en": "Peach Blossom Pool waters thousand feet",
+        "en": "Peach Blossom Pool may be a thousand feet deep",
         "zh": "桃花潭水深千尺"
       },
       {
-        "en": "cannot match Wang Lun farewell love",
+        "en": "but it cannot match Wang Lun's friendship as he sees me off",
         "zh": "不及汪伦送我情"
       }
     ],
@@ -2478,11 +2266,11 @@
     "full_verse": "黄河远上白云间，一片孤城万仞山。羌笛何须怨杨柳，春风不度玉门关。",
     "mapping": [
       {
-        "en": "Qiang flute complain of willows",
+        "en": "Why should the Qiang flute lament the willows",
         "zh": "羌笛何须怨杨柳"
       },
       {
-        "en": "spring wind never crossed Yumen Pass",
+        "en": "Spring never reaches Yumen Pass",
         "zh": "春风不度玉门关"
       }
     ],
@@ -2504,11 +2292,11 @@
     "full_verse": "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。",
     "mapping": [
       {
-        "en": "window frames thousand autumns snow",
+        "en": "My window frames the snow that has lain for ages on the western peaks",
         "zh": "窗含西岭千秋雪"
       },
       {
-        "en": "door berths ten thousand miles ships",
+        "en": "ships from distant Eastern Wu lie moored by my gate",
         "zh": "门泊东吴万里船"
       }
     ],
@@ -2530,11 +2318,11 @@
     "full_verse": "渭城朝雨浥轻尘，客舍青青柳色新。劝君更尽一杯酒，西出阳关无故人。",
     "mapping": [
       {
-        "en": "urge you drain one more cup",
+        "en": "Have one more cup of wine, my friend",
         "zh": "劝君更尽一杯酒"
       },
       {
-        "en": "west past Yangguan no old friends",
+        "en": "west of Yangguan Pass, you will find no old companions",
         "zh": "西出阳关无故人"
       }
     ],
@@ -2556,11 +2344,11 @@
     "full_verse": "戍鼓断人行，边秋一雁声。露从今夜白，月是故乡明。",
     "mapping": [
       {
-        "en": "dew turns white this night",
+        "en": "Tonight the dew turns white",
         "zh": "露从今夜白"
       },
       {
-        "en": "moon shines brighter native land",
+        "en": "the moon looks brightest in my hometown",
         "zh": "月是故乡明"
       }
     ],
@@ -2582,11 +2370,11 @@
     "full_verse": "天门中断楚江开，碧水东流至此回。两岸青山相对出，孤帆一片日边来。",
     "mapping": [
       {
-        "en": "green mountains step forth to face",
+        "en": "Green mountains rise to face each other on either bank",
         "zh": "两岸青山相对出"
       },
       {
-        "en": "solitary sail gliding from radiant sun",
+        "en": "a lone sail appears from the sunlit horizon",
         "zh": "孤帆一片日边来"
       }
     ],
@@ -2608,11 +2396,11 @@
     "full_verse": "绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？",
     "mapping": [
       {
-        "en": "night approaches sky threatens snow",
+        "en": "Night is falling, and snow is in the air",
         "zh": "晚来天欲雪"
       },
       {
-        "en": "drink warming cup with me",
+        "en": "will you come and share a drink with me",
         "zh": "能饮一杯无"
       }
     ],
@@ -2634,11 +2422,11 @@
     "full_verse": "渔翁夜傍西岩宿，晓汲清湘燃楚竹。烟销日出不见人，欸乃一声山水绿。",
     "mapping": [
       {
-        "en": "mist dissolves sun rises no soul",
+        "en": "As the mist clears and the sun rises, no one is in sight",
         "zh": "烟销日出不见人"
       },
       {
-        "en": "single creak oars mountain waters green",
+        "en": "one creak of the oar, and the mountains and river turn green",
         "zh": "欸乃一声山水绿"
       }
     ],
@@ -2660,11 +2448,11 @@
     "full_verse": "千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。",
     "mapping": [
       {
-        "en": "four hundred eighty temples Southern Dynasties",
+        "en": "Of the Southern Dynasties' four hundred and eighty temples",
         "zh": "南朝四百八十寺"
       },
       {
-        "en": "countless towers veiled in drizzle",
+        "en": "how many towers stand in the mist and rain",
         "zh": "多少楼台烟雨中"
       }
     ],
@@ -2686,11 +2474,11 @@
     "full_verse": "我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间！",
     "mapping": [
       {
-        "en": "ride celestial wind fly to heaven",
+        "en": "I wish to ride the wind back to heaven",
         "zh": "我欲乘风归去"
       },
       {
-        "en": "fear jade mansions cold at great height",
+        "en": "yet I fear the jade towers there would be too cold so high above",
         "zh": "又恐琼楼玉宇，高处不胜寒"
       }
     ],
@@ -2712,11 +2500,11 @@
     "full_verse": "醉翁之意不在酒，在乎山水之间也。山水之乐，得之心而寓之酒也。",
     "mapping": [
       {
-        "en": "delight lies not in wine",
+        "en": "The Old Drunkard's delight lies not in the wine",
         "zh": "醉翁之意不在酒"
       },
       {
-        "en": "in beauty of mountains rivers",
+        "en": "but in the enchanting beauty of mountains and rivers",
         "zh": "在乎山水之间也"
       }
     ],
@@ -2738,11 +2526,11 @@
     "full_verse": "青山隐隐水迢迢，秋尽江南草未凋。二十四桥明月夜，玉人何处教吹箫？",
     "mapping": [
       {
-        "en": "Twenty-Four Bridges moonlit night",
+        "en": "On a moonlit night at Twenty-Four Bridge",
         "zh": "二十四桥明月夜"
       },
       {
-        "en": "jade-fair maiden teaching flute",
+        "en": "where are you teaching someone to play the flute, my friend",
         "zh": "玉人何处教吹箫"
       }
     ],
@@ -2764,16 +2552,12 @@
     "full_verse": "云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。",
     "mapping": [
       {
-        "en": "clouds remind of robes, blossoms of face",
+        "en": "Clouds call to mind her robes, flowers her face",
         "zh": "云想衣裳花想容"
       },
       {
-        "en": "vernal breeze caresses balustrade",
-        "zh": "春风拂槛"
-      },
-      {
-        "en": "rich with crystalline dew",
-        "zh": "露华浓"
+        "en": "the spring breeze brushes the balustrade, and dew glistens on the blossoms",
+        "zh": "春风拂槛露华浓"
       }
     ],
     "science_note": "【顶级色彩与修辞脑激活】字句神韵与拟人通感的精微解码，使大脑前额叶完全进入沉浸状态。",
@@ -2794,16 +2578,12 @@
     "full_verse": "寻寻觅觅，冷冷清清，凄凄惨惨戚戚。乍暖还寒时候，最难将息。",
     "mapping": [
       {
-        "en": "search and search, seeking",
+        "en": "I search and search",
         "zh": "寻寻觅觅"
       },
       {
-        "en": "cold, clear, desolate",
-        "zh": "冷冷清清"
-      },
-      {
-        "en": "sad, poignant, grieved",
-        "zh": "凄凄惨惨戚戚"
+        "en": "all is cold and quiet, lonely and bleak, full of grief",
+        "zh": "冷冷清清，凄凄惨惨戚戚"
       }
     ],
     "science_note": "【高难度叠音词解码】连续叠字英语音韵比对激活布罗卡语言中枢，强力压制边缘系统的烟瘾发作信号。",
@@ -2824,11 +2604,11 @@
     "full_verse": "关山难越，谁悲失路之人？萍水相逢，尽是他乡之客。",
     "mapping": [
       {
-        "en": "meeting chance like floating duckweeds",
+        "en": "We meet by chance, like duckweed drifting on water",
         "zh": "萍水相逢"
       },
       {
-        "en": "wandering guests unfamiliar land",
+        "en": "we are all travellers far from home",
         "zh": "尽是他乡之客"
       }
     ],
@@ -2850,11 +2630,11 @@
     "full_verse": "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
-        "en": "leaving dawn White Emperor City radiant clouds",
+        "en": "At dawn I leave White Emperor City, high among coloured clouds",
         "zh": "朝辞白帝彩云间"
       },
       {
-        "en": "one day journey back thousand leagues",
+        "en": "I reach Jiangling a thousand miles away in a day",
         "zh": "千里江陵一日还"
       }
     ],
@@ -2876,11 +2656,11 @@
     "full_verse": "水光潋滟晴方好，山色空蒙雨亦奇。欲把西湖比西子，淡妆浓抹总相宜。",
     "mapping": [
       {
-        "en": "West Lake compared to fair maiden Xi Shi",
+        "en": "If West Lake were a woman, she would be as lovely as Xi Shi",
         "zh": "欲把西湖比西子"
       },
       {
-        "en": "rich makeup or simple adornment always suit",
+        "en": "beautiful in light or heavy makeup",
         "zh": "淡妆浓抹总相宜"
       }
     ],
@@ -2902,11 +2682,11 @@
     "full_verse": "京口瓜洲一水间，钟山只隔数重山。春风又绿江南岸，明月何时照我还？",
     "mapping": [
       {
-        "en": "spring wind greens southern riverbank",
+        "en": "The spring wind has greened the southern bank again",
         "zh": "春风又绿江南岸"
       },
       {
-        "en": "when will bright moon shine journey home",
+        "en": "when will the bright moon light my way home",
         "zh": "明月何时照我还"
       }
     ],
@@ -2928,11 +2708,11 @@
     "full_verse": "三顾频烦天下计，两朝开济老臣心。出师未捷身先死，长使英雄泪满襟。",
     "mapping": [
       {
-        "en": "before expedition triumph body died",
+        "en": "He died before his campaign could succeed",
         "zh": "出师未捷身先死"
       },
       {
-        "en": "forever causing heroes drench robes tears",
+        "en": "leaving heroes to weep forever",
         "zh": "长使英雄泪满襟"
       }
     ],
@@ -2954,11 +2734,11 @@
     "full_verse": "落魄江湖载酒行，楚腰纤细掌中轻。十年一觉扬州梦，赢得青楼薄幸名。",
     "mapping": [
       {
-        "en": "ten years in Yangzhou seemed a dream",
+        "en": "Ten years in Yangzhou seemed a dream",
         "zh": "十年一觉扬州梦"
       },
       {
-        "en": "a reputation for fickle love",
+        "en": "all I earned was a reputation for fickle love in the pleasure quarters",
         "zh": "赢得青楼薄幸名"
       }
     ],
@@ -2980,11 +2760,11 @@
     "full_verse": "移舟泊烟渚，日暮客愁新。野旷天低树，江清月近人。",
     "mapping": [
       {
-        "en": "vast wilderness sky lower than trees",
+        "en": "Across the open plain, the sky seems lower than the trees",
         "zh": "野旷天低树"
       },
       {
-        "en": "crystal river moon draws near",
+        "en": "in the clear river, the moon seems close to me",
         "zh": "江清月近人"
       }
     ],
@@ -3006,15 +2786,19 @@
     "full_verse": "碧云天，黄叶地，秋色连波，波上寒烟翠。山映斜阳天接水，芳草无情，更在斜阳外。",
     "mapping": [
       {
-        "en": "azure clouds veil heavens",
+        "en": "Clouds float in the blue sky",
         "zh": "碧云天"
       },
       {
-        "en": "yellow leaves blanket ground",
+        "en": "yellow leaves cover the ground",
         "zh": "黄叶地"
       },
       {
-        "en": "emerald cold mists arise",
+        "en": "Autumn colours merge with the rippling water",
+        "zh": "秋色连波"
+      },
+      {
+        "en": "green mist rises from the cold waves",
         "zh": "波上寒烟翠"
       }
     ],
@@ -3036,11 +2820,11 @@
     "full_verse": "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。",
     "mapping": [
       {
-        "en": "push away cup drop chopsticks",
+        "en": "I set down my cup and chopsticks, unable to eat",
         "zh": "停杯投箸不能食"
       },
       {
-        "en": "drawing sword look around bewilderment",
+        "en": "I draw my sword and look around, bewildered",
         "zh": "拔剑四顾心茫然"
       }
     ],
@@ -3062,11 +2846,11 @@
     "full_verse": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志。",
     "mapping": [
       {
-        "en": "destitute, firmer fortitude",
+        "en": "The harder one's circumstances, the stronger one's resolve",
         "zh": "穷且益坚"
       },
       {
-        "en": "never let lofty ambitions falter",
+        "en": "never let lofty ambitions fall",
         "zh": "不坠青云之志"
       }
     ],
@@ -3088,12 +2872,16 @@
     "full_verse": "回首向来萧瑟处，归去，也无风雨也无晴。",
     "mapping": [
       {
-        "en": "looking back desolate place weathered storm",
+        "en": "I look back at the place where I weathered the storm",
         "zh": "回首向来萧瑟处"
       },
       {
-        "en": "return: no rain, no sun",
-        "zh": "归去，也无风雨也无晴"
+        "en": "turn for home",
+        "zh": "归去"
+      },
+      {
+        "en": "neither rain nor shine matters now",
+        "zh": "也无风雨也无晴"
       }
     ],
     "science_note": "【终极情绪脱敏】‘也无风雨也无晴’的圆融超脱帮助戒烟者对一切烟瘾浪涌彻底脱敏，视为寻常过客。",
@@ -3114,11 +2902,11 @@
     "full_verse": "人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。",
     "mapping": [
       {
-        "en": "life find delight, savor to utmost",
+        "en": "When life goes your way, enjoy it to the full",
         "zh": "人生得意须尽欢"
       },
       {
-        "en": "never allow golden goblet face moon empty",
+        "en": "do not leave your golden cup empty beneath the moon",
         "zh": "莫使金樽空对月"
       }
     ],
@@ -3140,11 +2928,11 @@
     "full_verse": "岱宗夫如何？齐鲁青未了。造化钟神秀，阴阳割昏晓。",
     "mapping": [
       {
-        "en": "nature concentrated magical beauty",
+        "en": "Nature gathered all its beauty in this mountain",
         "zh": "造化钟神秀"
       },
       {
-        "en": "yin and yang cleave dusk from dawn",
+        "en": "its sunlit and shaded slopes divide dawn from dusk",
         "zh": "阴阳割昏晓"
       }
     ],
@@ -3166,11 +2954,11 @@
     "full_verse": "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。",
     "mapping": [
       {
-        "en": "white sun sinks distant mountains",
+        "en": "The bright sun sets behind the mountains",
         "zh": "白日依山尽"
       },
       {
-        "en": "Yellow River rolls towards sea",
+        "en": "the Yellow River flows into the sea",
         "zh": "黄河入海流"
       }
     ],

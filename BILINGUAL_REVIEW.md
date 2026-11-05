@@ -10,31 +10,31 @@
 
 | ID | 方向 | 逐题结果 | 内容修订字段 |
 | --- | --- | --- | --- |
-| trans_1 | 英译汉 | 复核保留 | — |
+| trans_1 | 英译汉 | 修订 | english_text, mapping |
 | trans_2 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_3 | 英译汉 | 修订 | mapping |
 | trans_4 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_5 | 英译汉 | 修订 | mapping |
-| trans_6 | 汉译英 | 复核保留 | — |
-| trans_7 | 英译汉 | 复核保留 | — |
-| trans_8 | 汉译英 | 修订 | correct_answer |
-| trans_9 | 英译汉 | 修订 | english_text |
-| trans_10 | 汉译英 | 修订 | correct_answer |
-| trans_11 | 英译汉 | 复核保留 | — |
-| trans_12 | 汉译英 | 修订 | correct_answer |
+| trans_6 | 汉译英 | 修订 | mapping |
+| trans_7 | 英译汉 | 修订 | english_text, mapping |
+| trans_8 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_9 | 英译汉 | 修订 | english_text, mapping |
+| trans_10 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_11 | 英译汉 | 修订 | mapping |
+| trans_12 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_13 | 英译汉 | 修订 | english_text, mapping |
 | trans_14 | 英译汉 | 修订 | english_text, mapping |
-| trans_15 | 英译汉 | 复核保留 | — |
-| trans_16 | 英译汉 | 复核保留 | — |
-| trans_17 | 英译汉 | 修订 | english_text |
-| trans_18 | 英译汉 | 修订 | english_text |
-| trans_19 | 英译汉 | 复核保留 | — |
+| trans_15 | 英译汉 | 修订 | mapping |
+| trans_16 | 英译汉 | 修订 | mapping |
+| trans_17 | 英译汉 | 修订 | english_text, mapping |
+| trans_18 | 英译汉 | 修订 | english_text, mapping |
+| trans_19 | 英译汉 | 修订 | mapping |
 | trans_20 | 英译汉 | 修订 | english_text, mapping |
-| trans_21 | 英译汉 | 复核保留 | — |
-| trans_22 | 英译汉 | 复核保留 | — |
-| trans_23 | 英译汉 | 修订 | english_text |
+| trans_21 | 英译汉 | 修订 | mapping |
+| trans_22 | 英译汉 | 修订 | mapping |
+| trans_23 | 英译汉 | 修订 | english_text, mapping |
 | trans_24 | 英译汉 | 修订 | english_text, mapping |
-| trans_25 | 英译汉 | 修订 | correct_answer |
+| trans_25 | 英译汉 | 修订 | correct_answer, mapping |
 | trans_26 | 英译汉 | 修订 | english_text, mapping |
 | trans_27 | 英译汉 | 修订 | english_text, mapping |
 | trans_28 | 英译汉 | 修订 | english_text, mapping |
@@ -49,67 +49,67 @@
 | trans_37 | 英译汉 | 修订 | english_text, mapping |
 | trans_38 | 英译汉 | 修订 | english_text, mapping |
 | trans_39 | 英译汉 | 修订 | english_text, mapping |
-| trans_40 | 英译汉 | 复核保留 | — |
+| trans_40 | 英译汉 | 修订 | mapping |
 | trans_41 | 英译汉 | 修订 | english_text, mapping |
 | trans_42 | 英译汉 | 修订 | english_text, mapping, author |
 | trans_43 | 英译汉 | 修订 | english_text, mapping |
 | trans_44 | 英译汉 | 修订 | english_text, mapping |
-| trans_45 | 英译汉 | 复核保留 | — |
-| trans_46 | 英译汉 | 修订 | english_text |
+| trans_45 | 英译汉 | 修订 | english_text, mapping |
+| trans_46 | 英译汉 | 修订 | english_text, mapping |
 | trans_47 | 英译汉 | 修订 | english_text, mapping |
-| trans_48 | 英译汉 | 复核保留 | — |
+| trans_48 | 英译汉 | 修订 | english_text, mapping |
 | trans_49 | 英译汉 | 修订 | english_text, mapping |
-| trans_50 | 英译汉 | 复核保留 | — |
+| trans_50 | 英译汉 | 修订 | mapping |
 | trans_51 | 英译汉 | 修订 | english_text, mapping |
-| trans_52 | 英译汉 | 修订 | english_text |
+| trans_52 | 英译汉 | 修订 | english_text, mapping |
 | trans_53 | 英译汉 | 修订 | english_text, mapping |
 | trans_54 | 英译汉 | 修订 | english_text, mapping |
-| trans_55 | 英译汉 | 修订 | english_text |
-| trans_56 | 英译汉 | 修订 | english_text |
+| trans_55 | 英译汉 | 修订 | english_text, mapping |
+| trans_56 | 英译汉 | 修订 | english_text, mapping |
 | trans_57 | 汉译英 | 修订 | correct_answer, mapping |
-| trans_58 | 汉译英 | 修订 | correct_answer |
-| trans_59 | 汉译英 | 修订 | correct_answer |
-| trans_60 | 汉译英 | 修订 | correct_answer |
-| trans_61 | 汉译英 | 修订 | correct_answer |
-| trans_62 | 汉译英 | 修订 | correct_answer |
-| trans_63 | 汉译英 | 修订 | correct_answer |
-| trans_64 | 汉译英 | 修订 | correct_answer |
+| trans_58 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_59 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_60 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_61 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_62 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_63 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_64 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_65 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_66 | 汉译英 | 修订 | correct_answer, mapping |
-| trans_67 | 汉译英 | 修订 | correct_answer |
-| trans_68 | 汉译英 | 修订 | correct_answer |
-| trans_69 | 汉译英 | 修订 | correct_answer |
-| trans_70 | 汉译英 | 修订 | correct_answer |
-| trans_71 | 汉译英 | 修订 | correct_answer |
-| trans_72 | 汉译英 | 修订 | correct_answer |
-| trans_73 | 汉译英 | 修订 | correct_answer |
-| trans_74 | 汉译英 | 修订 | correct_answer |
-| trans_75 | 汉译英 | 修订 | correct_answer |
-| trans_76 | 汉译英 | 修订 | correct_answer |
-| trans_77 | 汉译英 | 修订 | correct_answer |
-| trans_78 | 汉译英 | 修订 | correct_answer |
-| trans_79 | 汉译英 | 修订 | correct_answer |
-| trans_80 | 汉译英 | 修订 | correct_answer |
-| trans_81 | 汉译英 | 修订 | correct_answer |
-| trans_82 | 汉译英 | 修订 | correct_answer |
-| trans_83 | 汉译英 | 复核保留 | — |
-| trans_84 | 汉译英 | 修订 | correct_answer |
-| trans_85 | 汉译英 | 修订 | correct_answer |
-| trans_86 | 汉译英 | 修订 | correct_answer |
-| trans_87 | 汉译英 | 修订 | correct_answer |
-| trans_88 | 汉译英 | 修订 | correct_answer |
-| trans_89 | 汉译英 | 修订 | correct_answer |
-| trans_90 | 汉译英 | 修订 | correct_answer, author |
-| trans_91 | 汉译英 | 修订 | correct_answer |
+| trans_67 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_68 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_69 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_70 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_71 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_72 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_73 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_74 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_75 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_76 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_77 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_78 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_79 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_80 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_81 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_82 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_83 | 汉译英 | 修订 | mapping |
+| trans_84 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_85 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_86 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_87 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_88 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_89 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_90 | 汉译英 | 修订 | correct_answer, mapping, author |
+| trans_91 | 汉译英 | 修订 | correct_answer, mapping |
 | trans_92 | 汉译英 | 修订 | chinese_verse, correct_answer, mapping |
-| trans_93 | 汉译英 | 修订 | correct_answer |
-| trans_94 | 汉译英 | 修订 | correct_answer |
-| trans_95 | 汉译英 | 修订 | correct_answer |
-| trans_96 | 汉译英 | 修订 | correct_answer |
-| trans_97 | 汉译英 | 修订 | correct_answer |
-| trans_98 | 汉译英 | 修订 | correct_answer |
-| trans_99 | 汉译英 | 修订 | correct_answer |
-| trans_100 | 汉译英 | 修订 | correct_answer |
+| trans_93 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_94 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_95 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_96 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_97 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_98 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_99 | 汉译英 | 修订 | correct_answer, mapping |
+| trans_100 | 汉译英 | 修订 | correct_answer, mapping |
 
 ## 英文完形与中文对照
 
@@ -142,7 +142,7 @@
 | q25 | 复核保留 | — |
 | q26 | 复核保留 | — |
 | q27 | 修订 | passage, passage_translation |
-| q28 | 修订 | passage_translation |
+| q28 | 修订 | passage_translation, blank, options, hint, vocab, first_letter |
 | q29 | 修订 | passage, passage_translation, first_letter |
 | q30 | 修订 | passage, passage_translation |
 | q31 | 修订 | passage, passage_translation |
@@ -175,7 +175,7 @@
 | q58 | 修订 | passage, passage_translation |
 | q59 | 修订 | passage_translation |
 | q60 | 修订 | passage_translation |
-| q61 | 修订 | passage, passage_translation |
+| q61 | 修订 | passage, passage_translation, options |
 | q62 | 修订 | passage, passage_translation |
 | q63 | 修订 | passage, passage_translation |
 | q64 | 修订 | passage, passage_translation |
@@ -221,6 +221,8 @@
 - 诗歌题保持 50 道英译汉、50 道汉译英；完形题保持 100 道，ID 连续且唯一。
 - 每道汉译英题显示的中文节选必须连续出现在原文中；英译汉答案必须出现在对应中文原文中。
 - 每道完形题保留一个空格、四个不重复选项，答案在选项中且首字母提示匹配。
+- 每条意象映射的英文片段都应出现在对应参考英译中，中文片段都应出现在对应原句中。
 - 本表“复核保留”表示本轮双语审核未发现达到修改阈值的问题，不代表对医学事实、译者史料或诗歌审美作最终认证。
+- Gemini 对修订稿中可见的 6 道诗歌题和 8 道完形题抽样复核，指出 `trans_25` 映射残留电报式英语、`q28` 搭配失准等问题；据此已完成全库映射一致性扫描与修订。Gemini 未审阅其余 186 道题，也未对修正后的版本再次复核。
 
-统计：诗歌题修订 86 道、复核保留 14 道；完形题修订 92 道、复核保留 8 道。
+统计：诗歌题修订 100 道、复核保留 0 道；完形题修订 92 道、复核保留 8 道。

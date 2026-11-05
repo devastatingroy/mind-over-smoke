@@ -598,22 +598,22 @@
     "type": "cloze",
     "theme": "Regulatory Capture",
     "passage": "In vulnerable developing markets, multinational tobacco firms lobby fiercely for tax ________, leaving underfunded domestic public hospitals to shoulder the cancer bills.",
-    "blank": "subsidies",
+    "blank": "concessions",
     "options": [
       "penalties",
       "prohibitions",
       "boycotts",
-      "subsidies"
+      "concessions"
     ],
-    "hint": "Noun: sums of money granted by the government to assist an industry or business to keep prices low",
-    "first_letter": "s",
+    "hint": "Plural noun: tax relief or other favorable terms granted by a government",
+    "first_letter": "c",
     "punchline": "Privatising the quarterly cashflow while nationalising the chemotherapy wards is Big Tobacco's most lucrative financial innovation.",
     "vocab": {
-      "word": "subsidy",
-      "phonetic": "/ˈsʌbsədi/",
-      "meaning": "n. 财政补贴，政策红利扶持"
+      "word": "concession",
+      "phonetic": "/kənˈseʃən/",
+      "meaning": "n. 让步；税收优惠、减免"
     },
-    "passage_translation": "在监管薄弱的发展中市场，跨国烟草公司竭力游说争取税收补贴，却让资金不足的公立医院承担癌症治疗费用。"
+    "passage_translation": "在监管薄弱的发展中市场，跨国烟草公司竭力游说争取税收优惠，却让资金不足的公立医院承担癌症治疗费用。"
   },
   {
     "id": "q29",
@@ -1327,7 +1327,7 @@
     "blank": "suppressed",
     "options": [
       "suppressed",
-      "broadcasted",
+      "publicized",
       "exalted",
       "venerated"
     ],
@@ -1609,7 +1609,7 @@
     "id": "q74",
     "type": "cloze",
     "theme": "The Exercise Myth",
-    "passage": "Carbon monoxide from cigarette smoke binds to hemoglobin and reduces oxygen delivery; even strenuous exercise is largely ________ at reversing this effect while exposure continues.",
+    "passage": "Carbon monoxide from cigarette smoke binds to hemoglobin and reduces oxygen delivery; even strenuous exercise is largely ________ in reversing this effect while exposure continues.",
     "blank": "ineffectual",
     "options": [
       "potent",
