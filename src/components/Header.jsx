@@ -16,7 +16,7 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
             THE
           </div>
           <div className="min-w-0">
-            <h1 className="text-base sm:text-lg font-serif font-black tracking-tight text-stone-900 leading-none truncate">
+            <h1 className="text-sm min-[360px]:text-base sm:text-lg font-serif font-black tracking-tight text-stone-900 leading-none truncate">
               MindOverSmoke
             </h1>
             <span className="block truncate text-[10px] text-stone-500 font-mono tracking-wide">
@@ -41,8 +41,8 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
           </button>
 
           {/* Refund Progress Badge */}
-          <div className="bg-stone-50 border border-[#E5E0D8] px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
-            <Wallet className="w-3.5 h-3.5 text-stone-700 shrink-0" />
+          <div className="bg-stone-50 border border-[#E5E0D8] px-2 min-[360px]:px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
+            <Wallet className="hidden min-[360px]:block w-3.5 h-3.5 text-stone-700 shrink-0" />
             <span className="font-semibold text-stone-900">
               ${refundedAmount}
             </span>
