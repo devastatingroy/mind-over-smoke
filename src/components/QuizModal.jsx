@@ -40,6 +40,7 @@ export default function QuizModal({
   const [typeInAnswer, setTypeInAnswer] = useState('');
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [isRevealed, setIsRevealed] = useState(false);
   const [inputMode, setInputMode] = useState('choice'); // 'choice' or 'type'
   const [secondsLeft, setSecondsLeft] = useState(initialSecondsLeft); // 3-minute craving countdown
   const [isSessionFinished, setIsSessionFinished] = useState(false);
@@ -65,6 +66,7 @@ export default function QuizModal({
     setTypeInAnswer('');
     setIsAnswered(false);
     setIsCorrect(false);
+    setIsRevealed(false);
     setPhysicalReps(0);
     setTimerSeconds(currentQ?.target_reps || 30);
     setIsTimerRunning(false);
@@ -144,11 +146,23 @@ export default function QuizModal({
     let correct = false;
     if (currentQ.type === 'true_false') {
       correct = (opt === currentQ.correct_boolean);
+    } else if (currentQ.category === 'translation' || currentQ.type === 'translation') {
+      const correctAns = (currentQ.correct_answer || currentQ.blank || '').toString().trim();
+      correct = (opt.toString().trim() === correctAns);
     } else {
-      correct = (opt.toString().toLowerCase().trim() === currentQ.blank.toLowerCase().trim());
+      correct = (opt.toString().toLowerCase().trim() === (currentQ.blank || '').toLowerCase().trim());
     }
 
     setIsCorrect(correct);
+    setIsAnswered(true);
+  };
+
+  // Handle direct answer reveal (用户点击"看答案")
+  const handleRevealAnswer = () => {
+    if (isAnswered) return;
+    setIsRevealed(true);
+    setSelectedOption(currentQ.correct_answer || currentQ.blank);
+    setIsCorrect(true);
     setIsAnswered(true);
   };
 
@@ -261,7 +275,7 @@ export default function QuizModal({
     if (currentQ.category === 'translation' || currentQ.type === 'translation') {
       return {
         code: 'TRANSLATION',
-        label: '英译唐诗逆向还原',
+        label: currentQ.mode === 'zh_to_en' ? '汉诗名篇挑选英译' : '英译唐诗逆向还原',
         icon: <Languages className="w-3.5 h-3.5" />
       };
     }
@@ -380,70 +394,251 @@ export default function QuizModal({
                 )}
               </div>
 
-              {/* ---------------- 1. REVERSE TRANSLATION TASK ---------------- */}
+              {/* ---------------- 1. TRANSLATION COGNITIVE CHALLENGE ---------------- */}
               {(currentQ.category === 'translation' || currentQ.type === 'translation') && (
                 <div className="space-y-4">
-                  {/* Masterpiece English Quote Card */}
-                  <div className="bg-[#18181B] text-white p-5 rounded-xl border border-stone-800 shadow-sm relative">
-                    <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-stone-400 mb-2.5">
-                      <span>ENGLISH TRANSLATION</span>
-                      <span>{currentQ.translator}</span>
-                    </div>
-                    <blockquote className="font-serif italic text-lg sm:text-xl text-stone-100 leading-relaxed border-l-2 border-[#8C1D24] pl-4 py-0.5">
-                      "{currentQ.english_text}"
-                    </blockquote>
-                  </div>
+                  {/* Mode 1: English to Chinese Classical Reconstruction */}
+                  {currentQ.mode === 'en_to_zh' ? (
+                    <>
+                      {/* Masterpiece English Quote Card */}
+                      <div className="bg-[#18181B] text-white p-5 rounded-xl border border-stone-800 shadow-sm relative">
+                        <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-stone-400 mb-2.5">
+                          <span className="flex items-center space-x-1">
+                            <BookOpen className="w-3 h-3 text-[#8C1D24]" />
+                            <span>ENGLISH MASTER TRANSLATION</span>
+                          </span>
+                          <span className="text-stone-300 font-sans">{currentQ.translator}</span>
+                        </div>
+                        <blockquote className="font-serif italic text-lg sm:text-xl text-stone-100 leading-relaxed border-l-2 border-[#8C1D24] pl-4 py-0.5 select-text">
+                          "{renderInteractiveSegment(currentQ.english_text)}"
+                        </blockquote>
+                        <div className="mt-2 text-[10px] text-stone-400 font-sans flex items-center justify-end">
+                          <span>💡 点击英文单词可查音标与发音</span>
+                        </div>
+                      </div>
 
-                  {/* Reconstruction Passage Card */}
-                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
-                    <div className="text-xs text-stone-500 flex items-center justify-between">
-                      <span className="font-serif text-stone-700 font-bold">{currentQ.author} · 《{currentQ.title}》</span>
-                      <span className="text-[10px] font-mono text-stone-400">CHINESE RECONSTRUCTION</span>
-                    </div>
+                      {/* Classical Reconstruction Context Card (NO Chinese Spoilers!) */}
+                      <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                        <div className="text-xs text-stone-500 flex items-center justify-between border-b border-stone-100 pb-2">
+                          <span className="font-serif text-stone-800 font-bold text-sm">
+                            {currentQ.author} · 《{currentQ.title}》
+                          </span>
+                          <span className="text-[10px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
+                            CHINESE RECONSTRUCTION
+                          </span>
+                        </div>
 
-                    <p className="text-xs text-stone-600 leading-relaxed">
-                      💡 {currentQ.prompt}
-                    </p>
+                        <p className="text-xs text-stone-700 leading-relaxed font-sans">
+                          💡 {currentQ.prompt}
+                        </p>
 
-                    {renderPassage(false)}
+                        {/* If Answered: Reveal the original full verse */}
+                        {isAnswered && (
+                          <div className="p-4 bg-stone-50 rounded-xl border border-stone-200/80 text-center space-y-1">
+                            <div className="text-[10px] font-mono text-stone-500 uppercase tracking-wider">
+                              古典名作原句全篇
+                            </div>
+                            <p className="font-serif text-xl sm:text-2xl font-bold text-stone-900 tracking-wide">
+                              {currentQ.full_verse}
+                            </p>
+                          </div>
+                        )}
+                      </div>
 
-                    {isAnswered && (
-                      <div className="pt-2 text-center border-t border-stone-100">
-                        <div className="text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-0.5">原篇全句</div>
-                        <p className="font-serif text-lg font-bold text-stone-900">
-                          {currentQ.full_verse}
+                      {/* Options or Answered State */}
+                      {!isAnswered ? (
+                        <div className="space-y-2.5">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            {currentQ.options.map((opt, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() => handleSelectOption(opt)}
+                                className="p-3.5 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-sm sm:text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-left flex items-center justify-between group"
+                              >
+                                <span>{opt}</span>
+                                <span className="text-[10px] font-mono text-stone-400 group-hover:text-stone-300 ml-2 shrink-0">
+                                  选择
+                                </span>
+                              </button>
+                            ))}
+                          </div>
+
+                          {/* Reveal Answer Button */}
+                          <button
+                            onClick={handleRevealAnswer}
+                            className="w-full py-2.5 text-xs text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-lg transition text-center cursor-pointer border border-dashed border-stone-300 font-sans flex items-center justify-center space-x-1.5"
+                          >
+                            <HelpCircle className="w-3.5 h-3.5 text-stone-400" />
+                            <span>暂时想不出？点击直接【看答案与双语解析】</span>
+                          </button>
+                        </div>
+                      ) : (
+                        /* Options shown with selected & correct state */
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+                          {currentQ.options.map((opt, idx) => {
+                            const isCorrectOpt = opt.trim() === currentQ.correct_answer.trim();
+                            const isSelected = selectedOption?.trim() === opt.trim();
+                            return (
+                              <div
+                                key={idx}
+                                className={`p-3 rounded-xl border font-serif text-sm font-medium flex items-center justify-between ${
+                                  isCorrectOpt
+                                    ? 'bg-stone-900 text-white border-stone-900 shadow-sm'
+                                    : isSelected && !isCorrect
+                                      ? 'bg-rose-50 text-rose-800 border-rose-300'
+                                      : 'bg-stone-50 text-stone-400 border-stone-200 opacity-60'
+                                }`}
+                              >
+                                <span>{opt}</span>
+                                {isCorrectOpt && (
+                                  <span className="text-[10px] font-mono bg-white text-stone-900 px-1.5 py-0.5 rounded font-bold ml-2 shrink-0">
+                                    原作正解
+                                  </span>
+                                )}
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    /* Mode 2: Chinese to English Master Translation Selection */
+                    <>
+                      {/* Classical Chinese Quote Card */}
+                      <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                        <div className="text-xs text-stone-500 flex items-center justify-between border-b border-stone-100 pb-2">
+                          <span className="font-serif text-stone-800 font-bold text-sm">
+                            {currentQ.author} · 《{currentQ.title}》
+                          </span>
+                          <span className="text-[10px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
+                            CHINESE TO ENGLISH TRANSLATION
+                          </span>
+                        </div>
+
+                        <blockquote className="font-serif text-xl sm:text-2xl font-bold text-stone-900 leading-relaxed border-l-2 border-[#8C1D24] pl-4 py-1">
+                          “{currentQ.chinese_verse}”
+                        </blockquote>
+
+                        <p className="text-xs text-stone-700 leading-relaxed font-sans pt-1">
+                          💡 {currentQ.prompt}
                         </p>
                       </div>
-                    )}
-                  </div>
 
-                  {/* Option Grid */}
-                  {!isAnswered && (
-                    <div className="grid grid-cols-2 gap-3 pt-1">
-                      {currentQ.options.map((opt) => (
-                        <button
-                          key={opt}
-                          onClick={() => handleSelectOption(opt)}
-                          className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-center"
-                        >
-                          {opt}
-                        </button>
-                      ))}
+                      {/* Options or Answered State */}
+                      {!isAnswered ? (
+                        <div className="space-y-2.5">
+                          <div className="space-y-2">
+                            {currentQ.options.map((opt, idx) => (
+                              <button
+                                key={idx}
+                                onClick={() => handleSelectOption(opt)}
+                                className="w-full p-4 bg-white hover:bg-stone-900 group border border-[#E5E0D8] hover:border-stone-900 rounded-xl text-left transition-colors shadow-2xs cursor-pointer block"
+                              >
+                                <div className="flex items-start justify-between">
+                                  <p className="font-serif italic text-sm sm:text-base text-stone-800 group-hover:text-white leading-relaxed pr-2">
+                                    "{opt}"
+                                  </p>
+                                  <span className="text-[10px] font-mono text-stone-400 group-hover:text-stone-300 shrink-0 mt-0.5">
+                                    选择
+                                  </span>
+                                </div>
+                              </button>
+                            ))}
+                          </div>
+
+                          {/* Reveal Answer Button */}
+                          <button
+                            onClick={handleRevealAnswer}
+                            className="w-full py-2.5 text-xs text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-lg transition text-center cursor-pointer border border-dashed border-stone-300 font-sans flex items-center justify-center space-x-1.5"
+                          >
+                            <HelpCircle className="w-3.5 h-3.5 text-stone-400" />
+                            <span>暂时想不出？点击直接【看译本答案与汉学解析】</span>
+                          </button>
+                        </div>
+                      ) : (
+                        /* Options shown with selected & correct state */
+                        <div className="space-y-2 pt-1">
+                          {currentQ.options.map((opt, idx) => {
+                            const isCorrectOpt = opt.trim() === currentQ.correct_answer.trim();
+                            const isSelected = selectedOption?.trim() === opt.trim();
+                            return (
+                              <div
+                                key={idx}
+                                className={`p-4 rounded-xl border font-serif italic text-sm leading-relaxed ${
+                                  isCorrectOpt
+                                    ? 'bg-stone-900 text-white border-stone-900 shadow-sm'
+                                    : isSelected && !isCorrect
+                                      ? 'bg-rose-50 text-rose-800 border-rose-300'
+                                      : 'bg-stone-50 text-stone-400 border-stone-200 opacity-60'
+                                }`}
+                              >
+                                <div className="flex items-start justify-between">
+                                  <span>"{opt}"</span>
+                                  {isCorrectOpt && (
+                                    <span className="text-[10px] font-mono not-italic bg-white text-stone-900 px-2 py-0.5 rounded font-bold ml-2 shrink-0">
+                                      名家正译
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                  {/* Word Inspector Floating Card (in case user clicked a word) */}
+                  {inspectedWord && (
+                    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
+                      <div className="space-y-1">
+                        <div className="flex items-center space-x-2">
+                          <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
+                            {inspectedWord.word}
+                          </span>
+                          {inspectedWord.phonetic && (
+                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                              {inspectedWord.phonetic}
+                            </span>
+                          )}
+                          <button
+                            onClick={() => speakWord(inspectedWord.word)}
+                            className="p-1 hover:bg-stone-800 rounded text-stone-300 hover:text-white transition cursor-pointer flex items-center space-x-1"
+                            title="点击发音"
+                          >
+                            <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                            <span className="text-[10px] text-stone-400 font-mono">发音</span>
+                          </button>
+                        </div>
+                        <p className="text-stone-300 text-[11px] font-sans">
+                          {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
+                          {inspectedWord.def}
+                        </p>
+                      </div>
+
+                      <button
+                        onClick={() => setInspectedWord(null)}
+                        className="text-stone-400 hover:text-white p-1 ml-2 cursor-pointer"
+                        title="关闭"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
                     </div>
                   )}
 
                   {/* Bilingual Mapping Table when answered */}
                   {isAnswered && currentQ.mapping && (
-                    <div className="bg-white p-4 rounded-xl border border-[#E5E0D8] text-xs space-y-2">
-                      <div className="font-mono text-[10px] text-stone-500 uppercase tracking-wider">
-                        BILINGUAL SEMANTIC MAPPING · 意象转码对照
+                    <div className="bg-white p-4.5 rounded-xl border border-[#E5E0D8] text-xs space-y-2.5">
+                      <div className="font-mono text-[10px] text-stone-500 uppercase tracking-wider flex items-center justify-between">
+                        <span>BILINGUAL SEMANTIC MAPPING · 意象转码对照</span>
+                        <span className="font-sans text-[10px] text-stone-400">词意精准咬合</span>
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {currentQ.mapping.map((m, idx) => (
-                          <div key={idx} className="bg-stone-50 p-2.5 rounded border border-stone-200/80 flex items-center justify-between text-[11px]">
-                            <span className="font-serif italic text-stone-600 truncate mr-1">{m.en}</span>
-                            <span className="text-stone-400 font-mono text-[10px]">⇄</span>
-                            <span className="font-bold text-stone-900 ml-1">{m.zh}</span>
+                          <div key={idx} className="bg-stone-50 p-2.5 rounded-lg border border-stone-200/80 flex items-center justify-between text-xs">
+                            <span className="font-serif italic text-stone-700 truncate mr-1.5">{m.en}</span>
+                            <span className="text-stone-400 font-mono text-xs shrink-0">⇄</span>
+                            <span className="font-bold text-stone-900 ml-1.5 shrink-0">{m.zh}</span>
                           </div>
                         ))}
                       </div>
@@ -796,7 +991,11 @@ export default function QuizModal({
                   <div className="flex items-center space-x-2 text-xs text-stone-600 px-1">
                     <Check className="w-4 h-4 text-stone-900" />
                     <span className="font-medium text-stone-900">
-                      {isCorrect ? '前额叶认知已成功接管' : `标准答案: ${currentQ.blank}`}
+                      {isRevealed
+                        ? '原篇揭晓 · 强化双向意象记忆'
+                        : isCorrect 
+                          ? '前额叶认知已成功接管' 
+                          : `标准答案: ${currentQ.correct_answer || currentQ.blank}`}
                     </span>
                     <span className="text-stone-300">|</span>
                     <span className="text-stone-500 truncate">{currentQ.science_note || '注意占用阻断生效'}</span>

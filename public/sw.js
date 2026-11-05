@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mind-over-smoke-v2';
+const CACHE_NAME = 'mind-over-smoke-v3';
 const STATIC_ASSETS = [
   './',
   './index.html',
