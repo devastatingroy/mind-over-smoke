@@ -3,6 +3,8 @@
  * Contains IPA phonetic transcriptions, part of speech, and concise Chinese definitions
  * for SAT/GRE and key terms appearing in The Economist passages.
  */
+import fullDictionary from '../data/fullDictionary.json';
+
 export const phoneticDict = {
   // Q1 - Q5
   paradox: { phonetic: '/ˈpærədɒks/', pos: 'n.', def: '悖论，自相矛盾但实际存在的说法' },
@@ -914,6 +916,14 @@ export function lookupWord(rawWord) {
   const cleaned = cleanWord(rawWord);
   if (!cleaned) return null;
   
+  // 1. Exact match in fullDictionary (2,620 words covering entire question bank)
+  if (fullDictionary && fullDictionary[cleaned]) {
+    return {
+      word: cleaned,
+      ...fullDictionary[cleaned]
+    };
+  }
+
   if (phoneticDict[cleaned]) {
     return {
       word: cleaned,
@@ -922,6 +932,45 @@ export function lookupWord(rawWord) {
   }
 
   // Fallback for simple plurals or common endings
+  const dictFind = (w) => (fullDictionary && fullDictionary[w]) || phoneticDict[w];
+
+  if (cleaned.endsWith('s') && !cleaned.endsWith('ss')) {
+    const hit = dictFind(cleaned.slice(0, -1));
+    if (hit) return { word: cleaned, ...hit };
+  }
+
+  if (cleaned.endsWith('ies')) {
+    const hit = dictFind(cleaned.slice(0, -3) + 'y');
+    if (hit) return { word: cleaned, ...hit };
+  }
+
+  if (cleaned.endsWith('es')) {
+    const hit = dictFind(cleaned.slice(0, -2));
+    if (hit) return { word: cleaned, ...hit };
+  }
+
+  if (cleaned.endsWith('ing')) {
+    const stem = cleaned.slice(0, -3);
+    const hit = dictFind(stem) || dictFind(stem + 'e');
+    if (hit) return { word: cleaned, ...hit };
+    if (stem.length > 2 && stem[stem.length - 1] === stem[stem.length - 2]) {
+      const hitSingle = dictFind(stem.slice(0, -1));
+      if (hitSingle) return { word: cleaned, ...hitSingle };
+    }
+  }
+
+  if (cleaned.endsWith('ed')) {
+    const stem = cleaned.slice(0, -2);
+    const hit = dictFind(stem) || dictFind(stem + 'd') || dictFind(cleaned.slice(0, -1));
+    if (hit) return { word: cleaned, ...hit };
+  }
+
+  if (cleaned.endsWith('ly')) {
+    const stem = cleaned.slice(0, -2);
+    const hit = dictFind(stem);
+    if (hit) return { word: cleaned, ...hit };
+  }
+
   if (cleaned.endsWith('s') && phoneticDict[cleaned.slice(0, -1)]) {
     return {
       word: cleaned,

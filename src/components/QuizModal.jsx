@@ -581,7 +581,7 @@ export default function QuizModal({
                   {/* Word Inspector Floating Card (in case user clicked a word) */}
                   {inspectedWord && (
                     <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
-                      <div className="space-y-1">
+                      <div className="space-y-1 flex-1 min-w-0 pr-2">
                         <div className="flex items-center space-x-2">
                           <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
                             {inspectedWord.word}
@@ -592,7 +592,7 @@ export default function QuizModal({
                             </span>
                           )}
                         </div>
-                        <p className="text-stone-300 text-[11px] font-sans">
+                        <p className="text-stone-300 text-[11px] font-sans max-h-20 overflow-y-auto leading-relaxed">
                           {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
                           {inspectedWord.def}
                         </p>
@@ -817,7 +817,7 @@ export default function QuizModal({
                   {/* Word Inspector Floating Card */}
                   {inspectedWord && (
                     <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
-                      <div className="space-y-1">
+                      <div className="space-y-1 flex-1 min-w-0 pr-2">
                         <div className="flex items-center space-x-2">
                           <span className="font-serif font-bold text-base text-stone-100 tracking-wide">
                             {inspectedWord.word}
@@ -828,7 +828,7 @@ export default function QuizModal({
                             </span>
                           )}
                         </div>
-                        <p className="text-stone-300 text-[11px] font-sans">
+                        <p className="text-stone-300 text-[11px] font-sans max-h-20 overflow-y-auto leading-relaxed">
                           {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
                           {inspectedWord.def}
                         </p>
