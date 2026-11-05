@@ -9,7 +9,8 @@ import VocabModal from './components/VocabModal';
 import { 
   generateSessionTasks, 
   getReplacementTask, 
-  taskStats 
+  taskStats,
+  allTasks
 } from './utils/taskManager';
 import { 
   getInitialState, 
@@ -35,7 +36,13 @@ export default function App() {
   const [currentQuizQuestions, setCurrentQuizQuestions] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('mode') === 'dashboard') return [];
-    if (savedSession?.questions?.length) return savedSession.questions;
+    if (savedSession?.questions?.length) {
+      // Re-hydrate questions against current task pool to guarantee latest definitions & no stale schemas
+      return savedSession.questions.map((q) => {
+        const fresh = allTasks.find((t) => t.id === q.id);
+        return fresh || q;
+      });
+    }
     const initialTasks = generateSessionTasks('sos');
     saveActiveSession({
       mode: 'sos',

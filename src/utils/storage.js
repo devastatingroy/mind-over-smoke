@@ -36,10 +36,13 @@ export const saveState = (state) => {
   }
 };
 
-const SESSION_STATE_KEY = 'mind_over_smoke_active_session_v1';
+const SESSION_STATE_KEY = 'mind_over_smoke_active_session_v2';
 
 export const getSavedSession = () => {
   try {
+    // Clear out deprecated legacy v1 sessions to prevent old question schemas from sticking
+    sessionStorage.removeItem('mind_over_smoke_active_session_v1');
+
     const raw = sessionStorage.getItem(SESSION_STATE_KEY);
     if (!raw) return null;
     const session = JSON.parse(raw);
