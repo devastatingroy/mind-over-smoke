@@ -771,23 +771,16 @@ export default function QuizModal({
                         THE ECONOMIST PASSAGE
                       </span>
 
-                      {/* Translation Button: Only unlocked after answering to prevent leakage */}
+                      {/* Translation Button: Always available on-demand as user-requested clue */}
                       {currentQ.passage_translation && (
-                        isAnswered ? (
-                          <button
-                            onClick={() => setShowTranslation(!showTranslation)}
-                            className="text-[11px] font-sans text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2.5 py-0.5 rounded transition cursor-pointer flex items-center space-x-1"
-                            title="点击展开/收起完整中文对照翻译"
-                          >
-                            <Languages className="w-3 h-3 text-stone-500" />
-                            <span>{showTranslation ? '收起译文' : '译 · 中文翻译'}</span>
-                          </button>
-                        ) : (
-                          <span className="text-[10px] font-sans text-stone-400 flex items-center space-x-1" title="完成作答后解锁中文对照翻译">
-                            <Languages className="w-3 h-3 text-stone-300" />
-                            <span>作答后解锁译文</span>
-                          </span>
-                        )
+                        <button
+                          onClick={() => setShowTranslation(!showTranslation)}
+                          className="text-[11px] font-sans text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2.5 py-0.5 rounded transition cursor-pointer flex items-center space-x-1"
+                          title="点击展开/收起完整中文对照翻译"
+                        >
+                          <Languages className="w-3 h-3 text-stone-500" />
+                          <span>{showTranslation ? '收起译文' : '译 · 中文翻译'}</span>
+                        </button>
                       )}
                     </div>
 
