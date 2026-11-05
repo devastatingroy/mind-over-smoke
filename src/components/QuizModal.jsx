@@ -233,7 +233,7 @@ export default function QuizModal({
   const isVocabSaved = currentQ.vocab && savedVocabIds?.includes(currentQ.id);
 
   // Render clickable interactive words for English passages
-  const renderInteractiveSegment = (text) => {
+  const renderInteractiveSegment = (text, dark = false) => {
     if (!text) return null;
     const tokens = text.split(/(\s+)/);
     return tokens.map((token, idx) => {
@@ -244,10 +244,18 @@ export default function QuizModal({
         <span
           key={idx}
           onClick={() => handleWordClick(cleaned)}
+          onKeyDown={(event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              handleWordClick(cleaned);
+            }
+          }}
+          role="button"
+          tabIndex={0}
           className={`cursor-pointer rounded px-0.5 transition-colors select-text ${
-            isSelected 
-              ? 'bg-stone-900 text-white font-semibold' 
-              : 'hover:bg-stone-200/80 hover:text-stone-900 decoration-stone-300 hover:underline'
+            isSelected
+              ? dark ? 'bg-white text-stone-900 font-semibold' : 'bg-stone-900 text-white font-semibold'
+              : dark ? 'hover:bg-white/20 hover:text-white hover:underline' : 'hover:bg-stone-200/80 hover:text-stone-900 decoration-stone-300 hover:underline'
           }`}
           title="点击查看音标与释义"
         >
@@ -411,7 +419,7 @@ export default function QuizModal({
                           <span className="text-stone-300 font-sans">{currentQ.translator}</span>
                         </div>
                         <blockquote className="font-serif italic text-lg sm:text-xl text-stone-100 leading-relaxed border-l-2 border-[#8C1D24] pl-4 py-0.5 select-text">
-                          "{renderInteractiveSegment(currentQ.english_text)}"
+                          "{renderInteractiveSegment(currentQ.english_text, true)}"
                         </blockquote>
                         <div className="mt-2 text-[10px] text-stone-400 font-sans flex items-center justify-end">
                           <span>💡 点击英文单词查看音标与释义</span>
@@ -551,7 +559,12 @@ export default function QuizModal({
                           )}
                           <div className="p-4 bg-stone-900 text-white rounded-xl text-sm">
                             <div className="text-[10px] font-mono text-stone-300 mb-1">参考译文 · 可有其他合理译法</div>
-                            <p className="font-serif italic leading-relaxed">{currentQ.correct_answer}</p>
+                            <p className="font-serif italic leading-relaxed whitespace-pre-wrap select-text">
+                              {renderInteractiveSegment(currentQ.correct_answer, true)}
+                            </p>
+                            <div className="mt-2 text-[10px] text-stone-300 font-sans text-right">
+                              点击英文单词查看音标与释义
+                            </div>
                           </div>
                         </div>
                       )}
