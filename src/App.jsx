@@ -40,7 +40,10 @@ export default function App() {
       // Re-hydrate questions against current task pool to guarantee latest definitions & no stale schemas
       return savedSession.questions.map((q) => {
         const fresh = allTasks.find((t) => t.id === q.id);
-        return fresh || q;
+        if (fresh) return fresh;
+        const usedIds = savedSession.questions.map((task) => task.id);
+        return allTasks.find((task) => task.category === 'breathing' && !usedIds.includes(task.id))
+          || getReplacementTask(q, usedIds);
       });
     }
     const initialTasks = generateSessionTasks('sos');

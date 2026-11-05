@@ -29,8 +29,8 @@ export const taskStats = {
  * Generate randomized tasks for a session.
  * For 'sos' mode (3 tasks):
  * Strategically guarantees high multi-modal variety without trivial cloze:
- * 1. Somatic physical shock or Vagus calming (10 push-ups, plank, or 4-7-8 breathing)
- * 2. Medium Cognitive Load: Translation challenge (英译逆向还原 或 汉诗挑名译，零中文剧透)
+ * 1. Somatic physical shock or Vagus calming (10 push-ups or 4-7-8 breathing)
+ * 2. Medium Cognitive Load: Translation challenge (英译逆向还原 或 汉诗英译填空)
  * 3. The Economist Satirical Reasoning (经济学人深度反讽精读与词汇)
  */
 export function generateSessionTasks(mode = 'sos') {

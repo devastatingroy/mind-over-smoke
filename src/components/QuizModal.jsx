@@ -38,6 +38,7 @@ export default function QuizModal({
   const [currentIndex, setCurrentIndex] = useState(() => Math.min(initialIndex, Math.max(0, (questions?.length || 1) - 1)));
   const [selectedOption, setSelectedOption] = useState(null);
   const [typeInAnswer, setTypeInAnswer] = useState('');
+  const [hasWrongAttempt, setHasWrongAttempt] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [isRevealed, setIsRevealed] = useState(false);
@@ -64,6 +65,8 @@ export default function QuizModal({
   useEffect(() => {
     setSelectedOption(null);
     setTypeInAnswer('');
+    setHasWrongAttempt(false);
+    setInputMode('choice');
     setIsAnswered(false);
     setIsCorrect(false);
     setIsRevealed(false);
@@ -142,27 +145,17 @@ export default function QuizModal({
   const handleSelectOption = (opt) => {
     if (isAnswered) return;
     setSelectedOption(opt);
-    
-    let correct = false;
-    if (currentQ.type === 'true_false') {
-      correct = (opt === currentQ.correct_boolean);
-    } else if (currentQ.category === 'translation' || currentQ.type === 'translation') {
-      const correctAns = (currentQ.correct_answer || currentQ.blank || '').toString().trim();
-      correct = (opt.toString().trim() === correctAns);
-    } else {
-      correct = (opt.toString().toLowerCase().trim() === (currentQ.blank || '').toLowerCase().trim());
-    }
-
+    const correct = opt.toString().toLowerCase().trim() === (currentQ.blank || '').toLowerCase().trim();
     setIsCorrect(correct);
-    setIsAnswered(true);
+    setHasWrongAttempt(!correct);
+    setIsAnswered(correct);
   };
 
   // Handle direct answer reveal (用户点击"看答案")
   const handleRevealAnswer = () => {
     if (isAnswered) return;
     setIsRevealed(true);
-    setSelectedOption(currentQ.correct_answer || currentQ.blank);
-    setIsCorrect(true);
+    setIsCorrect(false);
     setIsAnswered(true);
   };
 
@@ -181,6 +174,13 @@ export default function QuizModal({
     if (!typeInAnswer.trim() || isAnswered) return;
     const correct = typeInAnswer.toLowerCase().trim() === currentQ.blank.toLowerCase().trim();
     setIsCorrect(correct);
+    setHasWrongAttempt(!correct);
+    setIsAnswered(correct);
+  };
+
+  const handleTranslationSubmit = (e) => {
+    e.preventDefault();
+    if (!typeInAnswer.trim() || isAnswered) return;
     setIsAnswered(true);
   };
 
@@ -283,7 +283,7 @@ export default function QuizModal({
     if (currentQ.category === 'translation' || currentQ.type === 'translation') {
       return {
         code: 'TRANSLATION',
-        label: currentQ.mode === 'zh_to_en' ? '汉诗名篇挑选英译' : '英译唐诗逆向还原',
+        label: currentQ.mode === 'zh_to_en' ? '汉诗英译填空' : '英译唐诗逆向还原',
         icon: <Languages className="w-3.5 h-3.5" />
       };
     }
@@ -492,7 +492,7 @@ export default function QuizModal({
                       )}
                     </>
                   ) : (
-                    /* Mode 2: Chinese to English Master Translation Selection */
+                    /* Mode 2: Chinese to English free response */
                     <>
                       {/* Classical Chinese Quote Card */}
                       <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
@@ -514,65 +514,45 @@ export default function QuizModal({
                         </p>
                       </div>
 
-                      {/* Options or Answered State */}
+                      {/* Write a translation before viewing the reference rendition */}
                       {!isAnswered ? (
                         <div className="space-y-2.5">
-                          <div className="space-y-2">
-                            {currentQ.options.map((opt, idx) => (
-                              <button
-                                key={idx}
-                                onClick={() => handleSelectOption(opt)}
-                                className="w-full p-4 bg-white hover:bg-stone-900 group border border-[#E5E0D8] hover:border-stone-900 rounded-xl text-left transition-colors shadow-2xs cursor-pointer block"
-                              >
-                                <div className="flex items-start justify-between">
-                                  <p className="font-serif italic text-sm sm:text-base text-stone-800 group-hover:text-white leading-relaxed pr-2">
-                                    "{opt}"
-                                  </p>
-                                  <span className="text-[10px] font-mono text-stone-400 group-hover:text-stone-300 shrink-0 mt-0.5">
-                                    选择
-                                  </span>
-                                </div>
-                              </button>
-                            ))}
-                          </div>
-
-                          {/* Reveal Answer Button */}
+                          <form onSubmit={handleTranslationSubmit} className="space-y-2.5">
+                            <label htmlFor="translation-answer" className="block text-xs font-medium text-stone-700">
+                              请写出你的英文译文
+                            </label>
+                            <textarea
+                              id="translation-answer"
+                              value={typeInAnswer}
+                              onChange={(e) => setTypeInAnswer(e.target.value)}
+                              rows={3}
+                              placeholder="根据原诗意象，用英文写出完整译文…"
+                              className="w-full p-3.5 bg-white border border-stone-300 rounded-xl text-sm font-serif leading-relaxed focus:outline-none focus:ring-1 focus:ring-stone-900"
+                            />
+                            <button type="submit" disabled={!typeInAnswer.trim()} className="w-full py-3 bg-stone-900 hover:bg-black disabled:opacity-40 text-white rounded-xl font-medium text-sm cursor-pointer disabled:cursor-not-allowed">
+                              提交并对照参考译文
+                            </button>
+                          </form>
                           <button
                             onClick={handleRevealAnswer}
                             className="w-full py-2.5 text-xs text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-lg transition text-center cursor-pointer border border-dashed border-stone-300 font-sans flex items-center justify-center space-x-1.5"
                           >
                             <HelpCircle className="w-3.5 h-3.5 text-stone-400" />
-                            <span>暂时想不出？点击直接【看译本答案与汉学解析】</span>
+                            <span>暂时想不出？点击看参考译文</span>
                           </button>
                         </div>
                       ) : (
-                        /* Options shown with selected & correct state */
-                        <div className="space-y-2 pt-1">
-                          {currentQ.options.map((opt, idx) => {
-                            const isCorrectOpt = opt.trim() === currentQ.correct_answer.trim();
-                            const isSelected = selectedOption?.trim() === opt.trim();
-                            return (
-                              <div
-                                key={idx}
-                                className={`p-4 rounded-xl border font-serif italic text-sm leading-relaxed ${
-                                  isCorrectOpt
-                                    ? 'bg-stone-900 text-white border-stone-900 shadow-sm'
-                                    : isSelected && !isCorrect
-                                      ? 'bg-rose-50 text-rose-800 border-rose-300'
-                                      : 'bg-stone-50 text-stone-400 border-stone-200 opacity-60'
-                                }`}
-                              >
-                                <div className="flex items-start justify-between">
-                                  <span>"{opt}"</span>
-                                  {isCorrectOpt && (
-                                    <span className="text-[10px] font-mono not-italic bg-white text-stone-900 px-2 py-0.5 rounded font-bold ml-2 shrink-0">
-                                      名家正译
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                            );
-                          })}
+                        <div className="space-y-3 pt-1">
+                          {typeInAnswer.trim() && (
+                            <div className="p-4 bg-white rounded-xl border border-stone-200 text-sm">
+                              <div className="text-[10px] font-mono text-stone-500 mb-1">你的译文</div>
+                              <p className="font-serif italic text-stone-800 whitespace-pre-wrap">{typeInAnswer.trim()}</p>
+                            </div>
+                          )}
+                          <div className="p-4 bg-stone-900 text-white rounded-xl text-sm">
+                            <div className="text-[10px] font-mono text-stone-300 mb-1">参考译文 · 可有其他合理译法</div>
+                            <p className="font-serif italic leading-relaxed">{currentQ.correct_answer}</p>
+                          </div>
                         </div>
                       )}
                     </>
@@ -762,7 +742,7 @@ export default function QuizModal({
               )}
 
               {/* ---------------- 5. THE ECONOMIST CLOZE TASK (WITH TRANSLATION & PHONETICS) ---------------- */}
-              {(currentQ.category === 'economist' || currentQ.type === 'cloze' || currentQ.type === 'true_false') && (
+              {(currentQ.category === 'economist' || currentQ.type === 'cloze') && (
                 <div className="space-y-3.5">
                   <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
                     {/* Header with Chinese Translation Toggle */}
@@ -784,12 +764,6 @@ export default function QuizModal({
                       )}
                     </div>
 
-                    {currentQ.type === 'true_false' && (
-                      <div className="mb-2 text-xs font-serif italic text-stone-600 border-l-2 border-stone-900 pl-2.5">
-                        {currentQ.statement}
-                      </div>
-                    )}
-
                     {/* Passage with interactive word tap */}
                     {renderPassage(true)}
 
@@ -798,7 +772,7 @@ export default function QuizModal({
                       <span>💡 点击题干任意单词查看音标与释义</span>
                       {currentQ.type === 'cloze' && (
                         <button
-                          onClick={() => setInputMode(inputMode === 'choice' ? 'type' : 'choice')}
+                          onClick={() => { setInputMode(inputMode === 'choice' ? 'type' : 'choice'); setSelectedOption(null); setTypeInAnswer(''); setHasWrongAttempt(false); }}
                           className="text-stone-500 hover:text-black underline cursor-pointer"
                         >
                           {inputMode === 'choice' ? '切换打字模式' : '切换选择题'}
@@ -847,39 +821,19 @@ export default function QuizModal({
                       <p className="font-sans text-stone-900 leading-relaxed text-sm">
                         {currentQ.passage_translation}
                       </p>
-                      {currentQ.statement_translation && (
-                        <p className="font-sans text-stone-600 border-t border-stone-200/60 pt-2 text-xs italic">
-                          判断题干：{currentQ.statement_translation}
-                        </p>
-                      )}
                     </div>
                   )}
 
                   {/* Choices or Input */}
                   {!isAnswered ? (
                     <div className="space-y-3">
-                      {currentQ.type === 'true_false' ? (
-                        <div className="grid grid-cols-2 gap-3">
-                          <button
-                            onClick={() => handleSelectOption(true)}
-                            className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-bold text-stone-800 transition-colors text-sm cursor-pointer"
-                          >
-                            True (真实有效)
-                          </button>
-                          <button
-                            onClick={() => handleSelectOption(false)}
-                            className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-bold text-stone-800 transition-colors text-sm cursor-pointer"
-                          >
-                            False (伪概念/谎言)
-                          </button>
-                        </div>
-                      ) : inputMode === 'choice' ? (
+                      {inputMode === 'choice' ? (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                           {currentQ.options.map((opt) => (
                             <button
                               key={opt}
                               onClick={() => handleSelectOption(opt)}
-                              className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-left font-medium text-stone-900 transition-colors text-sm shadow-2xs flex items-center justify-between cursor-pointer"
+                              className={`py-3.5 px-4 border rounded-xl font-serif text-left font-medium transition-colors text-sm shadow-2xs flex items-center justify-between cursor-pointer ${selectedOption === opt && !isCorrect ? 'bg-rose-50 text-rose-800 border-rose-300' : 'bg-white hover:bg-stone-900 hover:text-white border-[#E5E0D8] hover:border-stone-900 text-stone-900'}`}
                             >
                               <span>{opt}</span>
                               <span className="text-[11px] font-mono text-stone-400">选择</span>
@@ -906,6 +860,14 @@ export default function QuizModal({
                           </div>
                         </form>
                       )}
+                      {hasWrongAttempt && (
+                        <p role="alert" className="text-xs text-rose-800 bg-rose-50 border border-rose-200 rounded-lg px-3 py-2">
+                          回答错误，请再试一次；答案暂不显示。
+                        </p>
+                      )}
+                      <button onClick={handleRevealAnswer} className="w-full py-2.5 text-xs text-stone-600 hover:text-stone-900 border border-dashed border-stone-300 rounded-lg cursor-pointer">
+                        暂时想不出？点击看正确答案
+                      </button>
                     </div>
                   ) : null}
                 </div>
@@ -918,11 +880,11 @@ export default function QuizModal({
                   <div className="flex items-center space-x-2 text-xs text-stone-600 px-1">
                     <Check className="w-4 h-4 text-stone-900" />
                     <span className="font-medium text-stone-900">
-                      {isRevealed
-                        ? '原篇揭晓 · 强化双向意象记忆'
-                        : isCorrect 
-                          ? '前额叶认知已成功接管' 
-                          : `标准答案: ${currentQ.correct_answer || currentQ.blank}`}
+                      {currentQ.mode === 'zh_to_en'
+                        ? '参考译文已揭晓 · 请对照表达与意象'
+                        : isRevealed
+                          ? '答案已揭晓 · 可对照解析'
+                          : '回答正确 · 可查看解析'}
                     </span>
                     <span className="text-stone-300">|</span>
                     <span className="text-stone-500 truncate">{currentQ.science_note || '注意占用阻断生效'}</span>

@@ -28,8 +28,8 @@
     "passage": "A cigarette does not alleviate stress; it merely temporarily resolves the acute chemical ________ engineered by the preceding one. It is the arsonist posing heroically as the firefighter.",
     "blank": "deficit",
     "options": [
-      "deficit",
       "surplus",
+      "deficit",
       "equilibrium",
       "dividend"
     ],
@@ -45,18 +45,16 @@
   },
   {
     "id": "q3",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The 'Light' Cigarette Illusion",
     "passage": "'Light' and 'low-tar' cigarettes were hailed by marketing gurus as a prudent compromise. In reality, smokers instinctively inhale deeper and cover ventilation holes, leaving their net toxic intake utterly ________.",
     "blank": "unaltered",
     "options": [
-      "unaltered",
       "halved",
       "eliminated",
+      "unaltered",
       "mitigated"
     ],
-    "statement": "True or False: Switching to 'mild' or 'light' cigarettes yields quantifiable cardiovascular safety benefits.",
-    "correct_boolean": false,
     "hint": "Adjective: remaining completely unchanged despite the clever packaging illusion",
     "punchline": "Marketing a 'light' cigarette is akin to promoting a low-sodium guillotine: the cosmetic rebranding does remarkably little to alter the lethal outcome.",
     "vocab": {
@@ -64,8 +62,7 @@
       "phonetic": "/ʌnˈɔːltəd/",
       "meaning": "adj. 未改变的，依旧如初的"
     },
-    "passage_translation": "‘清淡’与‘低焦油’香烟曾被营销大师奉为明智的妥协。然而事实上，吸烟者会本能地吸得更深并按住排气孔，使其实际吸入的净毒素完全未变。",
-    "statement_translation": "判断正误：换用所谓‘温和型’或‘低焦油’香烟，能够带来可量化的心血管安全益处。"
+    "passage_translation": "‘清淡’与‘低焦油’香烟曾被营销大师奉为明智的妥协。然而事实上，吸烟者会本能地吸得更深并按住排气孔，使其实际吸入的净毒素完全未变。"
   },
   {
     "id": "q4",
@@ -74,10 +71,10 @@
     "passage": "From the perspective of classical economics, the smoker is a model of ________ behavior: paying a hefty voluntary tax today in exchange for a catastrophic surge in medical liabilities tomorrow.",
     "blank": "myopic",
     "options": [
-      "myopic",
       "prudent",
       "farsighted",
-      "ascetic"
+      "ascetic",
+      "myopic"
     ],
     "hint": "Adjective: shortsighted, lacking long-term foresight or rational planning",
     "first_letter": "m",
@@ -118,8 +115,8 @@
     "passage": "Carbon monoxide binds to hemoglobin with an affinity 200 times greater than oxygen, turning one's bloodstream into a congested and oxygen-starved ________.",
     "blank": "pipeline",
     "options": [
-      "pipeline",
       "cathedral",
+      "pipeline",
       "sanctuary",
       "monument"
     ],
@@ -135,18 +132,16 @@
   },
   {
     "id": "q7",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Sunk Cost Fallacy",
     "passage": "'I have smoked for twenty years, the damage is already done' is a textbook manifestation of the ________ fallacy. Physiological recovery begins within 20 minutes of cessation.",
     "blank": "sunk cost",
     "options": [
-      "sunk cost",
       "efficient market",
       "liquidity trap",
+      "sunk cost",
       "monopoly"
     ],
-    "statement": "True or False: After a decade of smoking, the biological benefits of quitting become statistically negligible.",
-    "correct_boolean": false,
     "hint": "Concept: the irrational compulsion to continue an endeavor once an investment in time or money has been made",
     "punchline": "Staying in a toxic contract because you've already lost money is not loyalty; it is financial suicide. Your bronchial cilia begin sweeping house within 48 hours.",
     "vocab": {
@@ -163,10 +158,10 @@
     "passage": "The cigarette filter is arguably the greatest public relations ________ in modern commerce: giving the consumer a tactile illusion of safety while doing virtually nothing to impede volatile carcinogens.",
     "blank": "subterfuge",
     "options": [
-      "subterfuge",
       "breakthrough",
       "candour",
-      "benevolence"
+      "benevolence",
+      "subterfuge"
     ],
     "hint": "Noun: deceit or trickery used in order to achieve one's goal or disguise the truth",
     "first_letter": "s",
@@ -207,8 +202,8 @@
     "passage": "Tobacco smoke paralyzes nasal sensory neurons, granting the smoker a blissful but deceptive state of ________, entirely oblivious to the stale stench that heralds their arrival.",
     "blank": "ignorance",
     "options": [
-      "ignorance",
       "enlightenment",
+      "ignorance",
       "sobriety",
       "elegance"
     ],
@@ -224,18 +219,16 @@
   },
   {
     "id": "q11",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Dopamine Delusion",
     "passage": "Nicotine sparks a momentary surge in dopamine, yet brain scans prove it simultaneously down-regulates natural receptors, breeding a permanent state of emotional ________.",
     "blank": "bankruptcy",
     "options": [
-      "bankruptcy",
       "ecstasy",
       "serenity",
+      "bankruptcy",
       "resilience"
     ],
-    "statement": "True or False: Smoking inherently enhances baseline happiness and contentment compared to non-smokers.",
-    "correct_boolean": false,
     "hint": "Noun: the state of complete depletion of funds or natural joy",
     "punchline": "It doesn't make you happier; it just takes a hostage and charges you twenty bucks a pack to negotiate temporary visitation rights with peace of mind.",
     "vocab": {
@@ -252,10 +245,10 @@
     "passage": "By constricting peripheral micro-vessels, chronic smoking starves epidermal cells of nourishment, producing the weathered, greyish complexion dermatologists candidly label 'smoker's ________'.",
     "blank": "facies",
     "options": [
-      "facies",
       "glamour",
       "radiance",
-      "halo"
+      "halo",
+      "facies"
     ],
     "hint": "Noun: distinctive facial appearance associated with a specific pathological condition",
     "first_letter": "f",
@@ -296,8 +289,8 @@
     "passage": "Internal memos from the 1970s reveal that tobacco executives viewed youth addiction not as a tragedy, but with unvarnished ________, labeling adolescent experimenters as 'replacement smokers'.",
     "blank": "cynicism",
     "options": [
-      "cynicism",
       "philanthropy",
+      "cynicism",
       "humility",
       "remorse"
     ],
@@ -318,9 +311,9 @@
     "passage": "Economists define secondhand smoke as the quintessential negative ________: forcing unwitting bystanders to subsidise a stranger's habit with their own pulmonary health.",
     "blank": "externality",
     "options": [
-      "externality",
       "dividend",
       "collateral",
+      "externality",
       "surplus"
     ],
     "hint": "Noun: a consequence of an industrial or commercial activity that affects other parties without being reflected in costs",
@@ -340,10 +333,10 @@
     "passage": "The irrational compulsion to smoke reflects ________ discounting: overvaluing three seconds of mild nicotine sedation today while bankrupting thirty years of healthy retirement.",
     "blank": "hyperbolic",
     "options": [
-      "hyperbolic",
       "linear",
       "prudential",
-      "equitable"
+      "equitable",
+      "hyperbolic"
     ],
     "hint": "Adjective: (behavioral economics) valuing present gratification dramatically higher than future well-being",
     "first_letter": "h",
@@ -379,18 +372,16 @@
   },
   {
     "id": "q18",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "Sleep Architecture",
     "passage": "While smokers believe a late-night cigarette relaxes them into sleep, nocturnal nicotine withdrawal quietly fragments REM cycles, leaving sleep architecture fundamentally ________.",
     "blank": "disrupted",
     "options": [
-      "disrupted",
       "enhanced",
+      "disrupted",
       "consolidated",
       "soothed"
     ],
-    "statement": "True or False: Nicotine acts as a benign natural sleep aid that deepens restorative REM sleep.",
-    "correct_boolean": false,
     "hint": "Adjective: disturbed, interrupted, or shattered in natural rhythm",
     "punchline": "Waking up exhausted after eight hours in bed isn't bad luck; your nervous system spent the night weathering chemical micro-panics.",
     "vocab": {
@@ -407,9 +398,9 @@
     "passage": "For half a century, cigarette conglomerates exploited information ________, burying internal laboratory data on tumors while bankrolling deceptive academic symposia.",
     "blank": "asymmetry",
     "options": [
-      "asymmetry",
       "equilibrium",
       "transparency",
+      "asymmetry",
       "benevolence"
     ],
     "hint": "Noun: lack of equality or balance between parties, especially regarding knowledge in trade",
@@ -429,10 +420,10 @@
     "passage": "The popular conviction that smoking sharpens cognitive focus is entirely ________: the puff merely dispels the brain fog triggered by mild withdrawal, resetting the intellect to where a non-smoker starts.",
     "blank": "illusory",
     "options": [
-      "illusory",
       "profound",
       "verifiable",
-      "invaluable"
+      "invaluable",
+      "illusory"
     ],
     "hint": "Adjective: based on illusion; not real or authentic despite vivid perception",
     "first_letter": "i",
@@ -473,8 +464,8 @@
     "passage": "By constricting capillary blood flow, tobacco smoke masks bleeding gums with ________ deception, allowing periodontal bone erosion to proceed undetected.",
     "blank": "insidious",
     "options": [
-      "insidious",
       "wholesome",
+      "insidious",
       "manifest",
       "laudable"
     ],
@@ -495,9 +486,9 @@
     "passage": "Genuine personal autonomy is utterly incompatible with chemical ________: running out into winter sleet simply because a white paper cylinder demands submission.",
     "blank": "servitude",
     "options": [
-      "servitude",
       "sovereignty",
       "eminence",
+      "servitude",
       "liberty"
     ],
     "hint": "Noun: the state of being completely under the control of someone or something else",
@@ -517,10 +508,10 @@
     "passage": "Many smokers treat organic salads and weekend gym visits as an emotional ________, naively trusting that a few vitamins can cancel out 4,000 toxic combustion byproducts.",
     "blank": "talisman",
     "options": [
-      "talisman",
       "hindrance",
       "peril",
-      "burden"
+      "burden",
+      "talisman"
     ],
     "hint": "Noun: an object or belief thought to possess magical powers of protection against disaster",
     "first_letter": "t",
@@ -561,8 +552,8 @@
     "passage": "The celebrated 'smoke break' is defended as an essential pause for mindfulness, yet non-smokers achieve identical mental serenity without requiring a toxic ________.",
     "blank": "pretext",
     "options": [
-      "pretext",
       "sacrament",
+      "pretext",
       "triumph",
       "decree"
     ],
@@ -583,9 +574,9 @@
     "passage": "Free radicals in combustion gas degrade elastin fibers in vessel walls, relentlessly stripping arteries of the supple ________ required to buffer cardiac pressure waves.",
     "blank": "elasticity",
     "options": [
-      "elasticity",
       "rigidity",
       "petrifaction",
+      "elasticity",
       "fragility"
     ],
     "hint": "Noun: the ability of an object or tissue to resume its normal shape after being stretched",
@@ -605,10 +596,10 @@
     "passage": "In vulnerable developing markets, multinational tobacco firms lobby fiercely for tax ________, leaving underfunded domestic public hospitals to shoulder the cancer bills.",
     "blank": "subsidies",
     "options": [
-      "subsidies",
       "penalties",
       "prohibitions",
-      "boycotts"
+      "boycotts",
+      "subsidies"
     ],
     "hint": "Noun: sums of money granted by the government to assist an industry or business to keep prices low",
     "first_letter": "s",
@@ -622,7 +613,7 @@
   },
   {
     "id": "q29",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "Brain Neuroplasticity",
     "passage": "Within three weeks of total cessation, excess acetylcholine receptors in the brain naturally atrophy, proving that human ________ can completely dismantle chemical dependency.",
     "blank": "neuroplasticity",
@@ -632,8 +623,6 @@
       "ossification",
       "paralysis"
     ],
-    "statement": "True or False: Nicotine addiction permanently alters brain anatomy such that dopamine receptor recovery is impossible.",
-    "correct_boolean": false,
     "hint": "Noun: the brain's inherent biological capacity to reorganize and heal synaptic pathways",
     "punchline": "Your brain is not broken goods; it is simply waiting for you to stop poisoning its delicate electrochemical garden.",
     "vocab": {
@@ -650,8 +639,8 @@
     "passage": "Most adults do not make a conscious daily choice to smoke; they are trapped by behavioral ________, perpetually honoring an irrational impulse formed during teenage insecurity.",
     "blank": "inertia",
     "options": [
-      "inertia",
       "vigilance",
+      "inertia",
       "deliberation",
       "acumen"
     ],
@@ -672,9 +661,9 @@
     "passage": "The rich complexities of high cuisine are perpetually ________ in heavy smokers, as sulfur dioxide and high temperatures dull microscopic taste buds.",
     "blank": "dulled",
     "options": [
-      "dulled",
       "amplified",
       "refined",
+      "dulled",
       "celebrated"
     ],
     "hint": "Adjective: made less sharp, vivid, or perceptive",
@@ -694,10 +683,10 @@
     "passage": "Quitting smoking is conventionally framed as a painful ordeal of deprivation, but in neurobiological reality, it is a glorious act of ________ from chemical taxation.",
     "blank": "emancipation",
     "options": [
-      "emancipation",
       "subjugation",
       "confinement",
-      "penance"
+      "penance",
+      "emancipation"
     ],
     "hint": "Noun: the process of being set free from legal, social, or physiological restrictions",
     "first_letter": "e",
@@ -738,8 +727,8 @@
     "passage": "Psychological data proves that an acute craving surge is purely ________: peaking aggressively within 180 seconds before naturally collapsing if executive attention remains occupied.",
     "blank": "ephemeral",
     "options": [
-      "ephemeral",
       "permanent",
+      "ephemeral",
       "omnipotent",
       "infinite"
     ],
@@ -760,9 +749,9 @@
     "passage": "The comforting rationalisation that 'medical technology will cure lung cancer before I grow old' is a textbook illustration of moral ________, justifying reckless biological gamble.",
     "blank": "hazard",
     "options": [
-      "hazard",
       "acumen",
       "triumph",
+      "hazard",
       "solvency"
     ],
     "hint": "Noun: lack of incentive to guard against risk when one believes they are protected from its consequences",
@@ -782,10 +771,10 @@
     "passage": "The moment you extinguish your final cigarette, your physiology declares an immediate cash ________: arterial blood pressure stabilises within 20 minutes, compounding into decades of renewed vitality.",
     "blank": "dividend",
     "options": [
-      "dividend",
       "deficit",
       "forfeiture",
-      "liability"
+      "liability",
+      "dividend"
     ],
     "hint": "Noun: a payment or tangible benefit resulting from a prudent investment",
     "first_letter": "d",
@@ -826,8 +815,8 @@
     "passage": "The marketing of electronic nicotine devices exhibits an ________ logic: dressed in pastel hues and playful fruit flavors, it manufactures an addiction under the polite guise of harmless leisure.",
     "blank": "insidious",
     "options": [
-      "insidious",
       "innocuous",
+      "insidious",
       "altruistic",
       "candid"
     ],
@@ -843,18 +832,16 @@
   },
   {
     "id": "q39",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Stress Mirage",
     "passage": "Smokers frequently cite the ritual of a cigarette as an indispensable ________ against emotional turbulence, willfully ignoring that the turbulence was synthesized entirely by withdrawal.",
     "blank": "panacea",
     "options": [
-      "panacea",
       "liability",
       "detriment",
+      "panacea",
       "catalyst"
     ],
-    "statement": "True or False: The nicotine puff directly reduces biochemical anxiety without triggering a rebound deficit.",
-    "correct_boolean": false,
     "hint": "Noun: a remedy for all ills or difficulties; a cure-all illusion",
     "first_letter": "p",
     "punchline": "Treating anxiety with a cigarette is like quenching thirst with seawater: every sip guarantees an exponentially fiercer drought.",
@@ -863,8 +850,7 @@
       "phonetic": "/ˌpænəˈsiːə/",
       "meaning": "n. 万灵药，万应神丹；虚幻的解药"
     },
-    "passage_translation": "吸烟者常将点火吐雾标榜为抵御情绪风暴不可或缺的万灵药，却故意对核心真相视而不见——这场情绪风暴正是由上一根烟的戒断反应一手制造的。",
-    "statement_translation": "判断正误：吸入尼古丁能真正降低生理层面的焦虑荷尔蒙，而不会在随后触发更猛烈的神经化学亏空。"
+    "passage_translation": "吸烟者常将点火吐雾标榜为抵御情绪风暴不可或缺的万灵药，却故意对核心真相视而不见——这场情绪风暴正是由上一根烟的戒断反应一手制造的。"
   },
   {
     "id": "q40",
@@ -873,10 +859,10 @@
     "passage": "The urge to light up in a moment of boredom exemplifies ________ discounting: trading years of vigorous retired longevity for 180 seconds of superficial sensory sedation.",
     "blank": "hyperbolic",
     "options": [
-      "hyperbolic",
       "proportional",
       "equitable",
-      "stochastic"
+      "stochastic",
+      "hyperbolic"
     ],
     "hint": "Adjective: describing an irrational preference for small immediate rewards over vastly superior future payouts",
     "first_letter": "h",
@@ -917,8 +903,8 @@
     "passage": "For decades, tobacco publicists weaponized ambiguity to ________ scientific consensus, ensuring that shareholder profits flourished while public health suffocated.",
     "blank": "obfuscate",
     "options": [
-      "obfuscate",
       "illuminate",
+      "obfuscate",
       "corroborate",
       "promulgate"
     ],
@@ -939,9 +925,9 @@
     "passage": "Inhaled toxic combustion products impose an ________ assault upon the delicate arterial lining, accelerating plaque formation long before outward symptoms surface.",
     "blank": "insidious",
     "options": [
-      "insidious",
       "ephemeral",
       "therapeutic",
+      "insidious",
       "sporadic"
     ],
     "hint": "Adjective: operating in an undetectable, gradual, and ultimately catastrophic manner",
@@ -956,18 +942,16 @@
   },
   {
     "id": "q44",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Secondhand Fallacy",
     "passage": "Sidestream smoke contains higher concentrations of volatile carcinogens than the mainstream vapor inhaled through the filter, making passive exposure anything but ________.",
     "blank": "benign",
     "options": [
-      "benign",
       "lethal",
       "deleterious",
-      "corrosive"
+      "corrosive",
+      "benign"
     ],
-    "statement": "True or False: Secondhand smoke is significantly diluted and poses negligible oncological risk to non-smoking bystanders.",
-    "correct_boolean": false,
     "hint": "Adjective: gentle, harmless, or having no detrimental consequence",
     "first_letter": "b",
     "punchline": "Exhaling carcinogens into a shared room is not an expression of personal liberty; it is involuntary biological battery.",
@@ -976,8 +960,7 @@
       "phonetic": "/bɪˈnaɪn/",
       "meaning": "adj. 良性的，无害温和的"
     },
-    "passage_translation": "从烟头侧流飘出的烟气所含的挥发性致癌物浓度，甚至远高于吸烟者吸入的主流烟雾，使二手烟暴露绝非某种人畜无害的微小干扰。",
-    "statement_translation": "判断正误：二手烟在空气中被大幅稀释，对身边的非吸烟者几乎不构成可量化的致癌风险。"
+    "passage_translation": "从烟头侧流飘出的烟气所含的挥发性致癌物浓度，甚至远高于吸烟者吸入的主流烟雾，使二手烟暴露绝非某种人畜无害的微小干扰。"
   },
   {
     "id": "q45",
@@ -1008,8 +991,8 @@
     "passage": "Compounding daily cigarette expenditure over three decades reveals an astronomical sum that could otherwise bankroll an early and dignified retirement, underscoring the true ________ cost of addiction.",
     "blank": "opportunity",
     "options": [
-      "opportunity",
       "marginal",
+      "opportunity",
       "nominal",
       "subsidized"
     ],
@@ -1030,9 +1013,9 @@
     "passage": "By replacing 5% to 15% of functional hemoglobin with carboxyhemoglobin, smoking subjects the human cerebral cortex to a persistent state of microscopic ________.",
     "blank": "suffocation",
     "options": [
-      "suffocation",
       "oxygenation",
       "rejuvenation",
+      "suffocation",
       "illumination"
     ],
     "hint": "Noun: the state of being deprived of vital oxygen, causing cellular impairment",
@@ -1047,18 +1030,16 @@
   },
   {
     "id": "q48",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Flavor Trap",
     "passage": "Menthol additives do not lessen the toxicity of combusted tobacco; they merely anesthetize sensory nerve endings in the throat, allowing deeper and more ________ inhalations.",
     "blank": "pernicious",
     "options": [
-      "pernicious",
       "wholesome",
       "frivolous",
-      "transient"
+      "transient",
+      "pernicious"
     ],
-    "statement": "True or False: Menthol and flavored cigarettes soothe throat tissue and significantly reduce particulate deposition in alveoli.",
-    "correct_boolean": false,
     "hint": "Adjective: having a harmful effect, especially in a gradual, destructive way",
     "first_letter": "p",
     "punchline": "Menthol in a cigarette is like ice on a razor blade: it numbs the pain so you barely feel the slice.",
@@ -1067,8 +1048,7 @@
       "phonetic": "/pəˈnɪʃəs/",
       "meaning": "adj. 极其有害的，恶性致命的"
     },
-    "passage_translation": "薄荷醇添加剂丝毫无助于降低燃烧烟草的毒性；它仅仅麻痹了喉咙深处的感觉神经末梢，诱导吸烟者进行更深沉、更具毁灭性的毒素深吸入。",
-    "statement_translation": "判断正误：薄荷醇与水果风味香烟能舒缓喉部黏膜，并显著减少肺泡中焦油微粒的沉积量。"
+    "passage_translation": "薄荷醇添加剂丝毫无助于降低燃烧烟草的毒性；它仅仅麻痹了喉咙深处的感觉神经末梢，诱导吸烟者进行更深沉、更具毁灭性的毒素深吸入。"
   },
   {
     "id": "q49",
@@ -1099,8 +1079,8 @@
     "passage": "Within weeks of cessation, the brain's excess acetylcholine receptors undergo natural ________, demonstrating that human neuroplasticity can completely dismantle chemical dependency.",
     "blank": "atrophy",
     "options": [
-      "atrophy",
       "proliferation",
+      "atrophy",
       "crystallization",
       "mutation"
     ],
@@ -1121,9 +1101,9 @@
     "passage": "The venerated 'five-minute smoke break' is heralded as a sacred oasis of mindfulness, yet non-smokers achieve identical psychological restoration without purchasing an accompanying lung ________.",
     "blank": "lesion",
     "options": [
-      "lesion",
       "dividend",
       "rebate",
+      "lesion",
       "remedy"
     ],
     "hint": "Noun: a region in an organ or tissue that has suffered damage through injury or disease",
@@ -1143,10 +1123,10 @@
     "passage": "Free radicals in combustion exhaust degrade elastin fibers within vascular walls, robbing arteries of the flexible ________ required to cushion systolic pressure waves.",
     "blank": "resilience",
     "options": [
-      "resilience",
       "brittleness",
       "coagulation",
-      "viscosity"
+      "viscosity",
+      "resilience"
     ],
     "hint": "Noun: the capacity to recover quickly from difficulties; elasticity and toughness",
     "first_letter": "r",
@@ -1187,8 +1167,8 @@
     "passage": "Adult smokers are rarely exercising deliberate free will; they are prisoners of behavioral ________, mechanically fulfilling impulses that were imprinted during adolescent vulnerability.",
     "blank": "inertia",
     "options": [
-      "inertia",
       "spontaneity",
+      "inertia",
       "rebellion",
       "enlightenment"
     ],
@@ -1209,9 +1189,9 @@
     "passage": "The nuanced flavor notes of fine cuisine and vintage wines remain stubbornly elusive to chronic smokers, as hot combustion gases repeatedly ________ delicate lingual papillae.",
     "blank": "cauterize",
     "options": [
-      "cauterize",
       "nourish",
       "reinvigorate",
+      "cauterize",
       "illuminate"
     ],
     "hint": "Verb: to burn, sear, or destroy tissue with heat or caustic chemicals",
@@ -1226,18 +1206,16 @@
   },
   {
     "id": "q56",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Ciliary Defense",
     "passage": "Within moments of taking a drag, the microscopic cilia lining the bronchial epithelium are rendered totally ________, leaving respiratory passageways defenseless against airborne pathogens.",
     "blank": "paralyzed",
     "options": [
-      "paralyzed",
       "hyperactive",
       "impervious",
-      "rejuvenated"
+      "rejuvenated",
+      "paralyzed"
     ],
-    "statement": "True or False: Bronchial cilia can continue beating normally and sweeping mucus upward during active smoking.",
-    "correct_boolean": false,
     "hint": "Adjective: unable to move or act; incapacitated",
     "first_letter": "p",
     "punchline": "Smoking immediately shuts down the natural vacuum cleaner in your lungs, rolling out a red carpet for every virus in the subway.",
@@ -1246,8 +1224,7 @@
       "phonetic": "/ˈpærəlaɪzd/",
       "meaning": "adj. 瘫痪的，麻痹丧失功能的"
     },
-    "passage_translation": "吸入烟雾的短短几秒内，支气管上皮微小的排毒纤毛便会瞬间陷入彻底瘫痪，使整个呼吸道在空气细菌与病毒面前完全门户大开、丧失防线。",
-    "statement_translation": "判断正误：在主动吸烟过程中，支气管纤毛仍能保持正常节律摆动，向上清除黏液与微粒。"
+    "passage_translation": "吸入烟雾的短短几秒内，支气管上皮微小的排毒纤毛便会瞬间陷入彻底瘫痪，使整个呼吸道在空气细菌与病毒面前完全门户大开、丧失防线。"
   },
   {
     "id": "q57",
@@ -1278,8 +1255,8 @@
     "passage": "Believing that 'I have smoked for twenty years, the damage is irreversible' is textbook ________ fallacy; pulmonary regeneration initiates within twenty minutes of cessation.",
     "blank": "sunk-cost",
     "options": [
-      "sunk-cost",
       "gambler's",
+      "sunk-cost",
       "post-hoc",
       "slippery-slope"
     ],
@@ -1300,9 +1277,9 @@
     "passage": "Tobacco smoke alters circulating neutrophils and suppresses natural killer cell activity, leaving the host immune system in a state of chronic ________.",
     "blank": "impairment",
     "options": [
-      "impairment",
       "fortification",
       "vigilance",
+      "impairment",
       "equilibrium"
     ],
     "hint": "Noun: the state of being weakened, damaged, or diminished in effectiveness",
@@ -1322,10 +1299,10 @@
     "passage": "Quitting tobacco is not an arduous journey of perpetual deprivation, but a triumphant ________ from an insidious chemical tax levied upon body and soul.",
     "blank": "emancipation",
     "options": [
-      "emancipation",
       "subjugation",
       "confinement",
-      "surrender"
+      "surrender",
+      "emancipation"
     ],
     "hint": "Noun: the process of being set free from legal, social, or physiological servitude",
     "first_letter": "e",
@@ -1366,8 +1343,8 @@
     "passage": "Within forty-eight hours of total abstinence, olfactory sensory neurons begin regenerating, greeting the former smoker with a vibrant sensory ________.",
     "blank": "resurgence",
     "options": [
-      "resurgence",
       "atrophy",
+      "resurgence",
       "diminution",
       "stagnation"
     ],
@@ -1383,18 +1360,16 @@
   },
   {
     "id": "q63",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "Cardiovascular Reversal",
     "passage": "Within one single year of smoking cessation, an individual's excess risk of ischemic coronary heart disease drops by fifty percent, debunking the myth that cardiovascular damage is ________.",
     "blank": "permanent",
     "options": [
-      "permanent",
       "superficial",
       "insignificant",
+      "permanent",
       "hypothetical"
     ],
-    "statement": "True or False: Arterial plaque and coronary risk remain completely static even after ten years of complete smoking cessation.",
-    "correct_boolean": false,
     "hint": "Adjective: lasting or intended to last or remain unchanged indefinitely",
     "first_letter": "p",
     "punchline": "Your cardiovascular system has an extraordinary biological superpower called healing—the moment you stop pouring battery acid on it.",
@@ -1403,8 +1378,7 @@
       "phonetic": "/ˈpɜːmənənt/",
       "meaning": "adj. 永久不变的，不可逆转的"
     },
-    "passage_translation": "在成功戒烟短短一年之内，个体患缺血性冠心病的超额危险度便会骤降百分之五十，有力地击碎了所谓心血管损伤早已无法挽回的悲观迷思。",
-    "statement_translation": "判断正误：即便彻底戒烟十年以上，动脉硬化斑块和冠心病发作危险度依然完全保持原样不变。"
+    "passage_translation": "在成功戒烟短短一年之内，个体患缺血性冠心病的超额危险度便会骤降百分之五十，有力地击碎了所谓心血管损伤早已无法挽回的悲观迷思。"
   },
   {
     "id": "q64",
@@ -1413,10 +1387,10 @@
     "passage": "Lower-income demographics spend an alarming proportion of disposable income on cigarettes, effectively funding the private school tuitions of tobacco heirs through self-inflicted ________.",
     "blank": "impoverishment",
     "options": [
-      "impoverishment",
       "enrichment",
       "emancipation",
-      "subsidization"
+      "subsidization",
+      "impoverishment"
     ],
     "hint": "Noun: the process of making somebody extremely poor or deprived of resources",
     "first_letter": "i",
@@ -1457,8 +1431,8 @@
     "passage": "Unlike natural achievements that require prolonged effort, nicotine delivers an artificial and unearned spike in dopamine, generating a profound sense of cognitive ________.",
     "blank": "counterfeit",
     "options": [
-      "counterfeit",
       "substance",
+      "counterfeit",
       "legitimacy",
       "transcendence"
     ],
@@ -1479,9 +1453,9 @@
     "passage": "Studies indicate that smoking accelerates telomere shortening, measurably increasing an individual's biological age far beyond their ________ chronology.",
     "blank": "chronological",
     "options": [
-      "chronological",
       "astrological",
       "metaphorical",
+      "chronological",
       "fictional"
     ],
     "hint": "Adjective: relating to the establishment of dates and time in order of occurrence",
@@ -1501,10 +1475,10 @@
     "passage": "Modern tobacco marketing exploits aesthetic nostalgia, attempting to re-glamorize an addictive habit that in actual reality smells predominantly of ________ decay.",
     "blank": "stale",
     "options": [
-      "stale",
       "pristine",
       "aromatic",
-      "ethereal"
+      "ethereal",
+      "stale"
     ],
     "hint": "Adjective: no longer fresh, pleasant, or new; musty and foul",
     "first_letter": "s",
@@ -1518,7 +1492,7 @@
   },
   {
     "id": "q69",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "Brain Blood Flow",
     "passage": "Acute nicotine causes instantaneous cerebral vasoconstriction, decreasing microvascular perfusion by up to twenty-five percent and creating an immediate cognitive ________.",
     "blank": "deficit",
@@ -1528,8 +1502,6 @@
       "renaissance",
       "optimization"
     ],
-    "statement": "True or False: Nicotine acts as a cerebral vasodilator, significantly increasing natural oxygen delivery to cortical brain tissue.",
-    "correct_boolean": false,
     "hint": "Noun: a shortage, disadvantage, or impairment in functional capacity",
     "first_letter": "d",
     "punchline": "Choking the microscopic blood vessels in your skull is not 'clearing your head'; it is literally suffocating your thoughts.",
@@ -1538,8 +1510,7 @@
       "phonetic": "/ˌveɪzəʊkənˈstrɪkʃn/",
       "meaning": "n. （医学）血管收缩痉挛，血流急剧受阻"
     },
-    "passage_translation": "急性吸入尼古丁会瞬间引发脑微血管剧烈痉挛收缩，使局部微循环灌注量骤降高达四分之一，在神经微观层面立刻造成显著的脑力认知亏空。",
-    "statement_translation": "判断正误：尼古丁属于优良的脑血管扩张剂，能够显著增加向大脑皮层输送的新鲜氧气量。"
+    "passage_translation": "急性吸入尼古丁会瞬间引发脑微血管剧烈痉挛收缩，使局部微循环灌注量骤降高达四分之一，在神经微观层面立刻造成显著的脑力认知亏空。"
   },
   {
     "id": "q70",
@@ -1548,8 +1519,8 @@
     "passage": "Every cigarette refused is not an act of denial, but an assertion of psychological ________: proving that your prefrontal cortex answers to you, not to an alkaloid.",
     "blank": "sovereignty",
     "options": [
-      "sovereignty",
       "vassalage",
+      "sovereignty",
       "servitude",
       "resignation"
     ],
@@ -1570,9 +1541,9 @@
     "passage": "The physical sensations of nicotine withdrawal are fundamentally ________; they mimic mild restlessness and are completely incapable of causing bodily injury.",
     "blank": "innocuous",
     "options": [
-      "innocuous",
       "catastrophic",
       "lethal",
+      "innocuous",
       "malignant"
     ],
     "hint": "Adjective: not harmful or offensive; harmless",
@@ -1592,10 +1563,10 @@
     "passage": "To accelerate speed of delivery to the blood-brain barrier, industrial tobacco chemists routinely add ammonia, converting acidic nicotine into its far more volatile ________ form.",
     "blank": "freebase",
     "options": [
-      "freebase",
       "inert",
       "crystalline",
-      "diluted"
+      "diluted",
+      "freebase"
     ],
     "hint": "Noun/Adjective: the pure basic form of an amine, highly potent and readily vaporized",
     "first_letter": "f",
@@ -1631,18 +1602,16 @@
   },
   {
     "id": "q74",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Exercise Myth",
     "passage": "Inhaling carbon monoxide binds aggressively to blood cells, rendering even rigorous cardiovascular gym sessions largely ________ at counteracting deep systemic hypoxia.",
     "blank": "ineffectual",
     "options": [
-      "ineffectual",
       "potent",
+      "ineffectual",
       "invigorating",
       "miraculous"
     ],
-    "statement": "True or False: Running 5 kilometers completely eliminates the cellular cardiovascular damage caused by smoking half a pack on the same day.",
-    "correct_boolean": false,
     "hint": "Adjective: not producing any significant or desired effect",
     "first_letter": "i",
     "punchline": "You cannot outrun carbon monoxide on a treadmill; poison binds 200 times tighter than clean gym air.",
@@ -1651,8 +1620,7 @@
       "phonetic": "/ˌɪnɪˈfektʃuəl/",
       "meaning": "adj. 无效的，徒劳无功的"
     },
-    "passage_translation": "吸入的一氧化碳会霸道地抢占红细胞结合位点，使下班后去健身房疯狂撸铁或跑步在对抗深层全身性缺氧面前显得极其苍白徒劳。",
-    "statement_translation": "判断正误：每天在健身房跑 5 公里，能够完全中和并清除当天抽半包烟对心血管内皮造成的病理损害。"
+    "passage_translation": "吸入的一氧化碳会霸道地抢占红细胞结合位点，使下班后去健身房疯狂撸铁或跑步在对抗深层全身性缺氧面前显得极其苍白徒劳。"
   },
   {
     "id": "q75",
@@ -1661,9 +1629,9 @@
     "passage": "Nighttime nicotine withdrawal fragments human sleep architecture, disrupting deep delta-wave sleep and leaving the habitual smoker perpetually ________ upon awakening.",
     "blank": "fatigued",
     "options": [
-      "fatigued",
       "invigorated",
       "refreshed",
+      "fatigued",
       "hyper-alert"
     ],
     "hint": "Adjective: feeling or showing extreme tiredness; exhausted",
@@ -1683,10 +1651,10 @@
     "passage": "Historic billboard campaigns that associated cigarettes with pristine snow-capped mountains were a masterclass in psychological ________, pairing respiratory poison with pure alpine air.",
     "blank": "juxtaposition",
     "options": [
-      "juxtaposition",
       "redundancy",
       "homogeneity",
-      "fidelity"
+      "fidelity",
+      "juxtaposition"
     ],
     "hint": "Noun: the fact of two things being seen or placed close together with contrasting effect",
     "first_letter": "j",
@@ -1727,8 +1695,8 @@
     "passage": "Consumer capitalism prides itself on individual choice, yet nicotine subverts the market mechanism by replacing rational preference with neurochemical ________.",
     "blank": "compulsion",
     "options": [
-      "compulsion",
       "altruism",
+      "compulsion",
       "apathy",
       "contemplation"
     ],
@@ -1749,9 +1717,9 @@
     "passage": "Heavy smoking doubles the lifetime risk of developing nuclear cataracts, as circulating free radicals permanently ________ the transparent proteins in the ocular lens.",
     "blank": "cloud",
     "options": [
-      "cloud",
       "clarify",
       "illuminate",
+      "cloud",
       "purify"
     ],
     "hint": "Verb: to make less clear, transparent, or bright; obscure",
@@ -1771,10 +1739,10 @@
     "passage": "Redirecting annual tobacco expenditures into an index fund yielding seven percent over thirty years generates a surplus exceeding a quarter million dollars, exposing the true ________ drain of addiction.",
     "blank": "fiscal",
     "options": [
-      "fiscal",
       "negligible",
       "fictitious",
-      "ephemeral"
+      "ephemeral",
+      "fiscal"
     ],
     "hint": "Adjective: relating to government or personal revenue, finances, and taxation",
     "first_letter": "f",
@@ -1788,7 +1756,7 @@
   },
   {
     "id": "q81",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "Skin Microcirculation",
     "passage": "Each cigarette smoked causes cutaneous vasoconstriction lasting up to ninety minutes, starving facial dermis cells of essential oxygen and accelerating premature ________.",
     "blank": "wrinkling",
@@ -1798,8 +1766,6 @@
       "pigmentation",
       "radiance"
     ],
-    "statement": "True or False: Expensive topical anti-aging skincare creams can completely offset the microvascular dermal damage inflicted by a pack-a-day smoking habit.",
-    "correct_boolean": false,
     "hint": "Noun: the formation of small creases or lines in the skin as a consequence of aging or damage",
     "first_letter": "w",
     "punchline": "Applying a $300 anti-aging face serum while smoking is like buffing the paint on a car whose engine is actively on fire.",
@@ -1808,8 +1774,7 @@
       "phonetic": "/kjuːˈteɪniəs/",
       "meaning": "adj. 皮肤的，面部表皮微循环的"
     },
-    "passage_translation": "每抽一根烟都会引起长达九十分钟的面部皮肤毛细血管剧烈痉挛，使真皮层细胞陷入极度缺氧状态，从而直接引发面部过早苍老与深层干瘪皱纹。",
-    "statement_translation": "判断正误：昂贵的顶级抗衰老护肤乳霜能够完全抵消每天抽一包烟对真皮层毛细血管造成的持续缺氧损伤。"
+    "passage_translation": "每抽一根烟都会引起长达九十分钟的面部皮肤毛细血管剧烈痉挛，使真皮层细胞陷入极度缺氧状态，从而直接引发面部过早苍老与深层干瘪皱纹。"
   },
   {
     "id": "q82",
@@ -1818,8 +1783,8 @@
     "passage": "The perceived bond shared among strangers huddled outside office buildings in freezing weather is not true solidarity; it is merely collective submission to a shared chemical ________.",
     "blank": "leash",
     "options": [
-      "leash",
       "triumph",
+      "leash",
       "sovereignty",
       "ideal"
     ],
@@ -1840,9 +1805,9 @@
     "passage": "Remarkably, functional magnetic resonance imaging shows that brain regions regulating impulse control exhibit measurable recovery within just fourteen days of ________ from nicotine.",
     "blank": "abstinence",
     "options": [
-      "abstinence",
       "indulgence",
       "capitulation",
+      "abstinence",
       "saturation"
     ],
     "hint": "Noun: the practice of restraining oneself from partaking in something damaging",
@@ -1862,10 +1827,10 @@
     "passage": "Tobacco marketing is the dark alchemy of capitalism: taking an agricultural weed, spraying it with industrial flavorings, and packaging it as the ultimate talisman of personal ________.",
     "blank": "liberty",
     "options": [
-      "liberty",
       "bondage",
       "despair",
-      "servitude"
+      "servitude",
+      "liberty"
     ],
     "hint": "Noun: the state of being free within society from oppressive restrictions",
     "first_letter": "l",
@@ -1906,8 +1871,8 @@
     "passage": "When a craving strikes, the brain is simply experiencing the death throes of an addiction; feeding it a cigarette does not cure the craving, it merely ensures its ________ recurrence.",
     "blank": "perpetual",
     "options": [
-      "perpetual",
       "sporadic",
+      "perpetual",
       "accidental",
       "negligible"
     ],
@@ -1928,9 +1893,9 @@
     "passage": "Non-smokers do not live in a state of permanent deprivation; they enjoy a higher, more stable baseline of daily dopamine than smokers who are constantly oscillating between withdrawal and ________.",
     "blank": "satiation",
     "options": [
-      "satiation",
       "despair",
       "bankruptcy",
+      "satiation",
       "exhaustion"
     ],
     "hint": "Noun: the state of having a desire or appetite fully satisfied",
@@ -1945,18 +1910,16 @@
   },
   {
     "id": "q88",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Second-Hand Residue",
     "passage": "Thirdhand smoke—the toxic chemical residue that embeds into carpets, furniture, and walls—persists for months and poses measurable DNA-damaging risks to crawling ________.",
     "blank": "infants",
     "options": [
-      "infants",
       "adults",
       "physicians",
-      "athletes"
+      "athletes",
+      "infants"
     ],
-    "statement": "True or False: Thirdhand smoke residue dissipates completely from indoor fabrics within 24 hours of opening a window.",
-    "correct_boolean": false,
     "hint": "Noun: very young children or babies",
     "first_letter": "i",
     "punchline": "Opening a window doesn't eliminate smoke; the carcinogens simply move into the carpet where your baby crawls.",
@@ -1965,8 +1928,7 @@
       "phonetic": "/ˌθɜːd hænd ˈsməʊk/",
       "meaning": "n. 三手烟（吸附在沙发、地毯和墙壁上的持久致癌残留物）"
     },
-    "passage_translation": "所谓三手烟——即深深吸附在地毯、窗帘与墙壁织物上的有毒化学分子残留——会在室内坚挺存留数月之久，对地面爬行的幼童构成切实基因损伤风险。",
-    "statement_translation": "判断正误：只要开窗通风24小时，沉积在室内软装织物上的三手烟致癌残留物就会完全挥发殆尽。"
+    "passage_translation": "所谓三手烟——即深深吸附在地毯、窗帘与墙壁织物上的有毒化学分子残留——会在室内坚挺存留数月之久，对地面爬行的幼童构成切实基因损伤风险。"
   },
   {
     "id": "q89",
@@ -1997,8 +1959,8 @@
     "passage": "Just as cutting off fuel extinguishes an engine fire, terminating nicotine intake halts the relentless endothelial erosion, allowing natural vascular repair mechanisms to ________.",
     "blank": "flourish",
     "options": [
-      "flourish",
       "wither",
+      "flourish",
       "degenerate",
       "collapse"
     ],
@@ -2019,9 +1981,9 @@
     "passage": "Every single time you resist an acute urge and complete a cognitive challenge, you physically fortify the synaptic connections in your prefrontal cortex, transforming self-control from a struggle into an effortless ________.",
     "blank": "mastery",
     "options": [
-      "mastery",
       "ordeal",
       "surrender",
+      "mastery",
       "concession"
     ],
     "hint": "Noun: comprehensive knowledge, skill, or complete command over a discipline or self",
@@ -2041,10 +2003,10 @@
     "passage": "Within twenty-four hours of your last cigarette, poisonous carbon monoxide is completely eliminated from your bloodstream, permitting red blood cells to transport 100% of their theoretical ________ capacity.",
     "blank": "oxygen",
     "options": [
-      "oxygen",
       "tar",
       "nicotine",
-      "glucose"
+      "glucose",
+      "oxygen"
     ],
     "hint": "Noun: the life-giving gas essential for cellular aerobic respiration",
     "first_letter": "o",
@@ -2058,7 +2020,7 @@
   },
   {
     "id": "q93",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Nicotine Replacement Reality",
     "passage": "Nicotine patches and gums deliver the alkaloid at a much slower, non-spiking rate, eliminating the violent dopamine peaks that sustain psychological ________.",
     "blank": "dependence",
@@ -2068,8 +2030,6 @@
       "revival",
       "liberation"
     ],
-    "statement": "True or False: Nicotine replacement therapies have the identical addictive potential and cardiovascular toxicity as inhaled combusted cigarette smoke.",
-    "correct_boolean": false,
     "hint": "Noun: the state of relying on or being controlled by someone or something else",
     "first_letter": "d",
     "punchline": "It's the smoke, combustion tar, and seven-second spike that enslave you; separating the chemical from the smoke disarms the executioner.",
@@ -2078,8 +2038,7 @@
       "phonetic": "/dɪˈpendəns/",
       "meaning": "n. 依赖，成瘾羁绊"
     },
-    "passage_translation": "尼古丁贴片与咀嚼胶以极平缓的速率释放递质，彻底抹平了点火吸入时几秒内的剧烈多巴胺暴击脉冲，从而打破了维持心理依赖的病理神经回路。",
-    "statement_translation": "判断正误：尼古丁替代疗法（贴片/口胶）具有与吸入式燃烧香烟完全相同的成瘾暴击性与心血管致死毒性。"
+    "passage_translation": "尼古丁贴片与咀嚼胶以极平缓的速率释放递质，彻底抹平了点火吸入时几秒内的剧烈多巴胺暴击脉冲，从而打破了维持心理依赖的病理神经回路。"
   },
   {
     "id": "q94",
@@ -2088,8 +2047,8 @@
     "passage": "An intense cigarette craving is nothing more than an orphaned chemical signal floating in a nervous system that is already learning to thrive without ________.",
     "blank": "it",
     "options": [
-      "it",
       "oxygen",
+      "it",
       "water",
       "glucose"
     ],
@@ -2110,9 +2069,9 @@
     "passage": "One of the most immediate social rewards of smoking cessation is the restoration of personal dignity: greeting colleagues without the lingering, defensive odor of an unemptied ________.",
     "blank": "ashtray",
     "options": [
-      "ashtray",
       "wineglass",
       "coffeehouse",
+      "ashtray",
       "parlor"
     ],
     "hint": "Noun: a receptacle for tobacco ash and cigarette ends",
@@ -2132,10 +2091,10 @@
     "passage": "Within one to nine months after quitting, macrophages and bronchial cilia resume full motility, clearing decades of accumulated particulate debris from the deep ________.",
     "blank": "alveoli",
     "options": [
-      "alveoli",
       "arteries",
       "synapses",
-      "tendons"
+      "tendons",
+      "alveoli"
     ],
     "hint": "Noun (plural): tiny air sacs in the lungs where the exchange of oxygen and carbon dioxide takes place",
     "first_letter": "a",
@@ -2171,18 +2130,16 @@
   },
   {
     "id": "q98",
-    "type": "true_false",
+    "type": "cloze",
     "theme": "The Stroke Risk Plunge",
     "passage": "Within five to fifteen years after quitting smoking, an individual's stroke risk drops dramatically to the identical level of a person who has never touched a cigarette in their entire ________.",
     "blank": "lifetime",
     "options": [
-      "lifetime",
       "adolescence",
+      "lifetime",
       "retirement",
       "career"
     ],
-    "statement": "True or False: Cerebrovascular damage from smoking is so irreversible that ex-smokers will perpetually maintain a 400% higher stroke risk than never-smokers.",
-    "correct_boolean": false,
     "hint": "Noun: the duration of a person's life",
     "first_letter": "l",
     "punchline": "Your brain's blood vessels have a clean slate waiting for them; time and abstinence will erase even decades of toxic arithmetic.",
@@ -2191,8 +2148,7 @@
       "phonetic": "/ˈlaɪftaɪm/",
       "meaning": "n. 一生，终身"
     },
-    "passage_translation": "在告别烟草五至十五年之内，个体的中风发作危险度便会剧烈回落，彻底跌至与一生从未碰过香烟的终身不吸烟者完全相同的平稳基准线。",
-    "statement_translation": "判断正误：吸烟造成的脑血管内皮病理性损伤彻底不可逆，即便戒烟数十年，戒烟者的脑卒中中风风险依然终身比常人高出400%。"
+    "passage_translation": "在告别烟草五至十五年之内，个体的中风发作危险度便会剧烈回落，彻底跌至与一生从未碰过香烟的终身不吸烟者完全相同的平稳基准线。"
   },
   {
     "id": "q99",
@@ -2201,9 +2157,9 @@
     "passage": "Urge-surfing is the practice of observing a craving rise, peak, and recede like a wave without acting, demonstrating that a biological impulse possesses zero ________ authority.",
     "blank": "mandatory",
     "options": [
-      "mandatory",
       "illusory",
       "negligible",
+      "mandatory",
       "fictional"
     ],
     "hint": "Adjective: required by law or rules; compulsory",
@@ -2223,10 +2179,10 @@
     "passage": "To stand unshakably in the face of chemical craving and choose vitality over poison is the ultimate demonstration of human rational ________.",
     "blank": "triumph",
     "options": [
-      "triumph",
       "capitulation",
       "bankruptcy",
-      "compromise"
+      "compromise",
+      "triumph"
     ],
     "hint": "Noun: a great victory, achievement, or crowning success",
     "first_letter": "t",

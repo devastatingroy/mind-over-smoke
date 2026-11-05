@@ -15,21 +15,6 @@
     "punchline": "十个俯卧撑后的大口喘气，胸腔吸入的是 100% 鲜活纯氧；双手正撑在地上，哪还有闲工夫去摸烟？"
   },
   {
-    "id": "phys_2",
-    "category": "physical",
-    "type": "physical",
-    "theme": "核心等长强收缩 · 零膝盖压力",
-    "title": "30 秒标准平板支撑",
-    "action_name": "平板支撑",
-    "target_reps": 30,
-    "unit": "秒",
-    "mode": "timer",
-    "knee_friendly": true,
-    "instruction": "前臂与脚尖撑地，收紧腹部与臀部，身体保持一条直线，深长呼吸保持 30 秒！",
-    "science_note": "等长核心收缩能迅速调动前额叶意志控制中枢，腹部核心持续发力，膝盖完全无受力角度，安全高效转移焦躁。",
-    "punchline": "当你的核心腹肌在微微发热震颤时，大脑注意力全在倒数秒数，烟瘾连排号叫号的资格都没有。"
-  },
-  {
     "id": "phys_3",
     "category": "physical",
     "type": "physical",

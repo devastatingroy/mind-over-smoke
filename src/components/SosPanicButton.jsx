@@ -29,7 +29,7 @@ export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
         </h2>
         <p className="text-xs text-stone-600 max-w-md mx-auto leading-relaxed font-sans">
           生理研究表明，急性尼古丁渴求在 <span className="font-semibold text-stone-900">180 秒</span> 内冲顶后必然自然回落。
-          已备妥 <span className="font-medium text-stone-900">英译唐诗解密</span>、<span className="font-medium text-stone-900">10个俯卧撑/平板</span> 与 <span className="font-medium text-stone-900">经济学人题库</span>，零延迟秒级接管注意力。
+          已备妥 <span className="font-medium text-stone-900">英译唐诗解密</span>、<span className="font-medium text-stone-900">10个俯卧撑等动作</span> 与 <span className="font-medium text-stone-900">经济学人题库</span>，零延迟秒级接管注意力。
         </p>
       </div>
 
@@ -55,7 +55,7 @@ export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
           </span>
           <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
             <Dumbbell className="w-3 h-3 text-stone-700" />
-            <span>10个俯卧撑/平板</span>
+            <span>10个俯卧撑等动作</span>
           </span>
           <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
             <BookOpen className="w-3 h-3 text-stone-700" />
