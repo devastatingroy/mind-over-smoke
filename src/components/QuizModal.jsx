@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   X, 
   Timer, 
@@ -58,6 +58,7 @@ export default function QuizModal({
   // Breathing task state
   const [breathingStep, setBreathingStep] = useState(0);
   const [breathingCycle, setBreathingCycle] = useState(1);
+  const bodyScrollRef = useRef(null);
 
   const currentQ = questions[currentIndex] || questions[0];
 
@@ -77,6 +78,7 @@ export default function QuizModal({
     setBreathingCycle(1);
     setShowTranslation(false);
     setInspectedWord(null);
+    if (bodyScrollRef.current) bodyScrollRef.current.scrollTop = 0;
   }, [currentIndex, currentQ?.id]);
 
   // 180s Craving countdown timer
@@ -317,6 +319,17 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
+  const swapButton = onSwapTask && !isSessionFinished && !isAnswered && (
+    <button
+      type="button"
+      onClick={() => onSwapTask(currentIndex)}
+      className="w-full min-h-11 px-4 py-3 bg-white hover:bg-[#F5F2EB] text-stone-900 border border-stone-400 hover:border-stone-900 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+      title="更换当前题目，不计为完成"
+    >
+      <Shuffle className="w-4 h-4 text-[#8C1D24]" aria-hidden="true" />
+      <span>换下一题</span>
+    </button>
+  );
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
@@ -343,18 +356,6 @@ export default function QuizModal({
               <Timer className="w-3.5 h-3.5 text-stone-900" />
               <span>{Math.floor(secondsLeft / 60)}:{(secondsLeft % 60).toString().padStart(2, '0')}</span>
             </div>
-
-            {/* Swap Task */}
-            {onSwapTask && !isSessionFinished && !isAnswered && (
-              <button
-                onClick={() => onSwapTask(currentIndex)}
-                className="text-[11px] font-sans text-stone-500 hover:text-black border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2 py-1 rounded transition cursor-pointer flex items-center space-x-1 shrink-0 whitespace-nowrap"
-                title="更换当前任务"
-              >
-                <Shuffle className="w-3 h-3 text-stone-400" />
-                <span>换题</span>
-              </button>
-            )}
 
             <button
               onClick={onClose}
@@ -385,9 +386,10 @@ export default function QuizModal({
         </div>
 
         {/* Modal Main Body */}
-        <div className="p-5 sm:p-6 overflow-y-auto space-y-5">
+        <div ref={bodyScrollRef} className="p-5 sm:p-6 overflow-y-auto space-y-5">
           {!isSessionFinished ? (
             <>
+              {swapButton}
               {/* Category Subhead */}
               <div className="flex items-center justify-between text-xs text-stone-500 pb-1 border-b border-stone-200/80">
                 <div className="flex items-center space-x-1.5 font-mono text-[11px] tracking-wide text-stone-600">
@@ -887,6 +889,8 @@ export default function QuizModal({
                   ) : null}
                 </div>
               )}
+
+              {swapButton}
 
               {/* ---------------- FEEDBACK & VERDICT (SCHEME A MONOCHROME) ---------------- */}
               {isAnswered && (
