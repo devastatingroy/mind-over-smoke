@@ -10,7 +10,7 @@
     "title": "《春望》",
     "translator": "Kenneth Rexroth 译本",
     "english_text": "The country is broken, yet mountains and rivers remain;\nIn the city spring arrives, with grass and trees growing deep.",
-    "prompt": "解读上方英文意象（broken country / mountains remain / grass and trees grow deep），逆向推断杜甫的千古绝唱是哪一句？",
+    "prompt": "解读上方英译中的核心意象（The country is broken / mountains and rivers remain / In the city spring arrives / grass and trees grow deep），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "国破山河在，城春草木深",
     "options": [
       "国破山河在，城春草木深",
@@ -87,7 +87,7 @@
     "title": "《定风波》",
     "translator": "Arthur Waley / 许渊冲 译本",
     "english_text": "Listen not to the rain beating against the forest trees;\nWhy not chant and stroll along at an easy pace?",
-    "prompt": "体会英文中对风雨泰然自若的描绘（beating against trees / chant / stroll at easy pace），猜出东坡居士的豁达名作：",
+    "prompt": "解读上方英译中的核心意象（beating against forest trees / chant / stroll along at easy pace），调动深层诗词记忆：你能逆向还原苏轼写下的是哪句千古绝唱吗？",
     "correct_answer": "莫听穿林打叶声，何妨吟啸且徐行",
     "options": [
       "莫听穿林打叶声，何妨吟啸且徐行",
@@ -160,7 +160,7 @@
     "title": "《赋得古原草送别》",
     "translator": "Herbert Giles 译本",
     "english_text": "Wildfires cannot burn it out completely;\nSpring breezes blow it back to life again.",
-    "prompt": "解读英文中顽强生机的隐喻（wildfires cannot burn / spring breezes blow back to life），猜出对应的经典名句：",
+    "prompt": "解读上方英译中的核心意象（wildfires cannot burn out / spring breezes blow back to life），调动深层诗词记忆：你能逆向还原白居易写下的是哪句千古绝唱吗？",
     "correct_answer": "野火烧不尽，春风吹又生",
     "options": [
       "野火烧不尽，春风吹又生",
@@ -225,7 +225,7 @@
     "title": "《鹿柴》",
     "translator": "Gary Snyder 译本",
     "english_text": "Empty mountain, no one in sight,\nYet the echoes of human voices are heard afar.",
-    "prompt": "解读英文空灵禅意（empty mountain / echoes of voices），逆向推断诗佛王维对应的幽静名句：",
+    "prompt": "解读上方英译中的核心意象（empty mountain, no one in sight / echoes of human voices），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
     "correct_answer": "空山不见人，但闻人语响",
     "options": [
       "空山不见人，但闻人语响",
@@ -294,7 +294,7 @@
     "title": "《无题》",
     "translator": "A. C. Graham 译本",
     "english_text": "The spring silkworm spins silk until death draws near;\nThe candle burns to tears only before turning to ash.",
-    "prompt": "剖析英译中深沉生动的对仗比喻（silkworm spins silk / candle burns to tears），猜出晚唐绝响原句：",
+    "prompt": "解读上方英译中的核心意象（silkworm spins silk till death / candle turns to ash / tears dried），调动深层诗词记忆：你能逆向还原李商隐写下的是哪句千古绝唱吗？",
     "correct_answer": "春蚕到死丝方尽，蜡炬成灰泪始干",
     "options": [
       "春蚕到死丝方尽，蜡炬成灰泪始干",
@@ -367,7 +367,7 @@
     "title": "《绝句》",
     "translator": "许渊冲 译本",
     "english_text": "Two yellow orioles sing amid the verdant willows;\nA line of white egrets mounts up to the azure sky.",
-    "prompt": "根据英文对明艳色彩与生动景物的勾勒（yellow orioles / verdant willows / white egrets / azure sky），猜出原诗：",
+    "prompt": "解读上方英译中的核心意象（two yellow orioles sing / verdant willows / line of white egrets / azure sky），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "两个黄鹂鸣翠柳，一行白鹭上青天",
     "options": [
       "两个黄鹂鸣翠柳，一行白鹭上青天",
@@ -448,7 +448,7 @@
     "title": "《竹里馆》",
     "translator": "Witter Bynner 译本",
     "english_text": "Sitting alone in the secluded bamboo grove;\nI strum my lute and give a prolonged whistle.",
-    "prompt": "品读英文中清幽深邃的隐逸意象（secluded bamboo grove / strum lute / prolonged whistle），逆向推导诗佛名句：",
+    "prompt": "解读上方英译中的核心意象（secluded bamboo grove / strum lute / prolonged whistle），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
     "correct_answer": "独坐幽篁里，弹琴复长啸",
     "options": [
       "独坐幽篁里，弹琴复长啸",
@@ -485,7 +485,7 @@
     "title": "《山居秋暝》",
     "translator": "Arthur Waley 译本",
     "english_text": "The bright moon shines amid the pine trees;\nThe crystal spring water flows over the smooth stones.",
-    "prompt": "体会英文对空山秋夜的纯净白描（bright moon / pine trees / crystal spring / smooth stones），推导原句：",
+    "prompt": "解读上方英译中的核心意象（bright moon shines / amid pine trees / crystal spring water flows / over smooth stones），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
     "correct_answer": "明月松间照，清泉石上流",
     "options": [
       "明月松间照，清泉石上流",
@@ -526,7 +526,7 @@
     "title": "《登高》",
     "translator": "许渊冲 译本",
     "english_text": "The boundless forest sheds its leaves, rustling down;\nThe endless Yangtze River rolls on, billowing forever.",
-    "prompt": "感悟英文壮阔悲凉的时空意象（boundless forest / rustling down / endless Yangtze rolls / billowing forever），猜出诗圣千古七律原句：",
+    "prompt": "解读上方英译中的核心意象（boundless forest sheds leaves / rustling down / endless Yangtze River / billowing forever），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "无边落木萧萧下，不尽长江滚滚来",
     "options": [
       "无边落木萧萧下，不尽长江滚滚来",
@@ -567,7 +567,7 @@
     "title": "《青玉案·元夕》",
     "translator": "许渊冲 译本",
     "english_text": "I searched for her thousands of times in the crowded fair;\nSuddenly looking back, she stood where the lanterns were dim.",
-    "prompt": "剖析英译中众里寻觅与蓦然回首的情感转折（searched thousands of times / looking back / lanterns dim），推导稼轩绝唱：",
+    "prompt": "解读上方英译中的核心意象（searched thousands of times / suddenly looking back / where lanterns were dim），调动深层诗词记忆：你能逆向还原辛弃疾写下的是哪句千古绝唱吗？",
     "correct_answer": "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处",
     "options": [
       "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处",
@@ -604,7 +604,7 @@
     "title": "《月下独酌》",
     "translator": "Arthur Waley 译本",
     "english_text": "I raise my cup to invite the bright moon;\nFacing my shadow, we make a company of three.",
-    "prompt": "解读英文中浪漫孤独的奇诡想象（raise cup / invite bright moon / shadow / company of three），还原诗仙原诗：",
+    "prompt": "解读上方英译中的核心意象（raise cup to invite / bright moon / facing shadow / company of three），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "举杯邀明月，对影成三人",
     "options": [
       "举杯邀明月，对影成三人",
@@ -645,7 +645,7 @@
     "title": "《春晓》",
     "translator": "Kenneth Rexroth 译本",
     "english_text": "In spring slumber, I was unaware of dawn arriving;\nEverywhere the chirping of birds can be heard.",
-    "prompt": "品味英文对春晨不觉晓与处处啼鸟的质朴描摹（slumber unaware of dawn / birds chirping），推导传世启蒙名作：",
+    "prompt": "解读上方英译中的核心意象（spring slumber / unaware of dawn / everywhere / chirping of birds heard），调动深层诗词记忆：你能逆向还原孟浩然写下的是哪句千古绝唱吗？",
     "correct_answer": "春眠不觉晓，处处闻啼鸟",
     "options": [
       "春眠不觉晓，处处闻啼鸟",
@@ -686,7 +686,7 @@
     "title": "《满江红》",
     "translator": "许渊冲 译本",
     "english_text": "Thirty years of deeds and dust,\nEight thousand miles of clouds and moon.",
-    "prompt": "解读英文凝练雄浑的历史沧桑（thirty years deeds and dust / eight thousand miles clouds and moon），推导民族英雄豪词：",
+    "prompt": "解读上方英译中的核心意象（thirty years of deeds / dust / eight thousand miles / clouds and moon），调动深层诗词记忆：你能逆向还原岳飞写下的是哪句千古绝唱吗？",
     "correct_answer": "三十功名尘与土，八千里路云和月",
     "options": [
       "三十功名尘与土，八千里路云和月",
@@ -727,7 +727,7 @@
     "title": "《黄鹤楼》",
     "translator": "Witter Bynner 译本",
     "english_text": "The yellow crane has flown away and will never return;\nFor a thousand years the white clouds wander empty in the sky.",
-    "prompt": "感悟英文对千古空旷与白云苍茫的怅惘叙述（crane never return / thousand years white clouds empty），猜出千古七律原句：",
+    "prompt": "解读上方英译中的核心意象（yellow crane flown away / never return / white clouds / wander empty thousand years），调动深层诗词记忆：你能逆向还原崔颢写下的是哪句千古绝唱吗？",
     "correct_answer": "黄鹤一去不复返，白云千载空悠悠",
     "options": [
       "黄鹤一去不复返，白云千载空悠悠",
@@ -768,7 +768,7 @@
     "title": "《咏柳》",
     "translator": "Herbert Giles 译本",
     "english_text": "I wonder who has cut and tailored these slender leaves;\nThe spring breeze of February is like a pair of scissors.",
-    "prompt": "领悟英译中春风裁柳的奇绝比喻（who tailored slender leaves / breeze like scissors），推导盛唐七绝：",
+    "prompt": "解读上方英译中的核心意象（who tailored slender leaves / breeze of February / like a pair of scissors），调动深层诗词记忆：你能逆向还原贺知章写下的是哪句千古绝唱吗？",
     "correct_answer": "不知细叶谁裁出，二月春风似剪刀",
     "options": [
       "不知细叶谁裁出，二月春风似剪刀",
@@ -805,7 +805,7 @@
     "title": "《饮酒·其五》",
     "translator": "Arthur Waley 译本",
     "english_text": "Plucking chrysanthemums beneath the eastern hedge;\nLeisurely, I gaze upon the southern mountains.",
-    "prompt": "品味英译中超然物外的悠闲心境（plucking chrysanthemums / eastern hedge / leisurely gaze southern mountains），猜出靖节先生归隐名句：",
+    "prompt": "解读上方英译中的核心意象（plucking chrysanthemums / eastern hedge / leisurely gaze / southern mountains），调动深层诗词记忆：你能逆向还原陶渊明写下的是哪句千古绝唱吗？",
     "correct_answer": "采菊东篱下，悠然见南山",
     "options": [
       "采菊东篱下，悠然见南山",
@@ -846,7 +846,7 @@
     "title": "《望岳》",
     "translator": "David Hawkes 译本",
     "english_text": "Some day I must mount to the very summit;\nAnd see all other mountains dwarfed in a single glance.",
-    "prompt": "剖析英文中登峰极目、睥睨群山的气魄（mount summit / all mountains dwarfed / single glance），推导诗圣青年力作：",
+    "prompt": "解读上方英译中的核心意象（mount to the summit / single glance / all mountains dwarfed），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "会当凌绝顶，一览众山小",
     "options": [
       "会当凌绝顶，一览众山小",
@@ -883,7 +883,7 @@
     "title": "《如梦令》",
     "translator": "许渊冲 译本",
     "english_text": "Asking the maid rolling up the window curtain;\nShe replies that the crabapples remain just the same.",
-    "prompt": "解读英文中晓妆问花、侍女漫应的情景对话（maid rolling curtain / crabapples remain same），推导易安词作名句：",
+    "prompt": "解读上方英译中的核心意象（asking maid rolling curtain / replies / crabapples remain same），调动深层诗词记忆：你能逆向还原李清照写下的是哪句千古绝唱吗？",
     "correct_answer": "试问卷帘人，却道海棠依旧",
     "options": [
       "试问卷帘人，却道海棠依旧",
@@ -920,7 +920,7 @@
     "title": "《静夜思》",
     "translator": "Herbert Giles 译本",
     "english_text": "Raising my head, I gaze at the bright moon;\nBowing my head, I think of my distant homeland.",
-    "prompt": "品读英文直白深情的举头低头对照（raising head gaze moon / bowing head think homeland），还原天下第一思乡诗：",
+    "prompt": "解读上方英译中的核心意象（raising head gaze moon / bowing head think homeland），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "抬头望明月，低头思故乡",
     "options": [
       "抬头望明月，低头思故乡",
@@ -953,7 +953,7 @@
     "title": "《滕王阁序》",
     "translator": "许渊冲 译本",
     "english_text": "The evening glow flies side by side with the lonely wild duck;\nThe autumn water shares the single hue of the vast sky.",
-    "prompt": "体会英文描绘的飞霞落鹜水天一色绝景（evening glow / lonely duck / autumn water / vast sky single hue），推导出处：",
+    "prompt": "解读上方英译中的核心意象（evening glow flies / lonely wild duck / autumn water / single hue of vast sky），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
     "correct_answer": "落霞与孤鹜齐飞，秋水共长天一色",
     "options": [
       "落霞与孤鹜齐飞，秋水共长天一色",
@@ -994,7 +994,7 @@
     "title": "《游山西村》",
     "translator": "Burton Watson 译本",
     "english_text": "Mountains multiply and streams twist till path seems blocked;\nAmid shade of willows and bright flowers, another village appears.",
-    "prompt": "剖析英译中困顿山水与忽现村落的哲思转机（mountains multiply / path blocked / willows flowers / village appears），推导放翁传世名作：",
+    "prompt": "解读上方英译中的核心意象（mountains multiply, path blocked / willows and bright flowers / another village appears），调动深层诗词记忆：你能逆向还原陆游写下的是哪句千古绝唱吗？",
     "correct_answer": "山重水复疑无路，柳暗花明又一村",
     "options": [
       "山重水复疑无路，柳暗花明又一村",
@@ -1031,7 +1031,7 @@
     "title": "《陋室铭》",
     "translator": "Herbert Giles 译本",
     "english_text": "Mountains need not be high; if there is an immortal, they become famous.\nWaters need not be deep; if there is a dragon, they possess divinity.",
-    "prompt": "解读英译中不以高深论名神、重在内在灵魂的辩证名篇（mountain immortal / water dragon divinity），猜出原文：",
+    "prompt": "解读上方英译中的核心意象（mountains not high, immortal famous / waters not deep, dragon divinity），调动深层诗词记忆：你能逆向还原刘禹锡写下的是哪句千古绝唱吗？",
     "correct_answer": "山不在高，有仙则名。水不在深，有龙则灵",
     "options": [
       "山不在高，有仙则名。水不在深，有龙则灵",
@@ -1064,7 +1064,7 @@
     "title": "《望月怀远》",
     "translator": "Witter Bynner 译本",
     "english_text": "Over the sea the bright moon rises into the sky;\nAt this very moment, people far apart share the view.",
-    "prompt": "感悟英文中海上明月升腾与海角天涯共享的澄澈视野（over sea moon rises / people far apart share view），推导名作：",
+    "prompt": "解读上方英译中的核心意象（over sea bright moon rises / people far apart share view），调动深层诗词记忆：你能逆向还原张九龄写下的是哪句千古绝唱吗？",
     "correct_answer": "海上生明月，天涯共此时",
     "options": [
       "海上生明月，天涯共此时",
@@ -1097,7 +1097,7 @@
     "title": "《题西林壁》",
     "translator": "许渊冲 译本",
     "english_text": "Viewed horizontally, it forms a range; from the side, a solitary peak;\nFar, near, high, or low, no two perspectives look the same.",
-    "prompt": "剖析英译中视角多维变换与庐山真容难辨的哲理名句（range / peak / far near high low no two same），推导出处：",
+    "prompt": "解读上方英译中的核心意象（viewed horizontally range, side peak / far near high low different），调动深层诗词记忆：你能逆向还原苏轼写下的是哪句千古绝唱吗？",
     "correct_answer": "横看成岭侧成峰，远近高低各不同",
     "options": [
       "横看成岭侧成峰，远近高低各不同",
@@ -1130,7 +1130,7 @@
     "title": "《早发白帝城》",
     "translator": "Arthur Waley 译本",
     "english_text": "Monkeys on both banks chatter without ceasing;\nThe light skiff has already passed ten thousand tiers of mountains.",
-    "prompt": "体会英文中两岸猿声不绝、轻舟已过重山的破壁狂放（monkeys chatter without ceasing / light skiff passed ten thousand tiers），推导原句：",
+    "prompt": "解读上方英译中的核心意象（monkeys chatter without ceasing / light skiff passed / ten thousand tiers of mountains），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "两岸猿声啼不住，轻舟已过万重山",
     "options": [
       "两岸猿声啼不住，轻舟已过万重山",
@@ -1167,7 +1167,7 @@
     "title": "《山行》",
     "translator": "Herbert Giles 译本",
     "english_text": "I halt my carriage, enchanted by the twilight maple grove;\nThe frosted leaves are redder than the flowers of February spring.",
-    "prompt": "解读英文中停车深秋枫林、霜叶胜似春红的惊艳发现（halt carriage twilight maple / frosted leaves redder than spring flowers），推导名作：",
+    "prompt": "解读上方英译中的核心意象（halt carriage, enchanted maple / frosted leaves redder / flowers of February spring），调动深层诗词记忆：你能逆向还原杜牧写下的是哪句千古绝唱吗？",
     "correct_answer": "停车坐爱枫林晚，霜叶红于二月花",
     "options": [
       "停车坐爱枫林晚，霜叶红于二月花",
@@ -1204,7 +1204,7 @@
     "title": "《岳阳楼记》",
     "translator": "许渊冲 译本",
     "english_text": "To be the first to worry about the worries of the world;\nAnd to be the last to enjoy its joys.",
-    "prompt": "感悟英文中先天下之忧而忧、后天下之乐而乐的士人担当（first to worry world's worries / last to enjoy joys），还原千古散文精魄：",
+    "prompt": "解读上方英译中的核心意象（first to worry world's worries / last to enjoy its joys），调动深层诗词记忆：你能逆向还原范仲淹写下的是哪句千古绝唱吗？",
     "correct_answer": "先天下之忧而忧，后天下之乐而乐",
     "options": [
       "先天下之忧而忧，后天下之乐而乐",
@@ -1237,7 +1237,7 @@
     "title": "《大林寺桃花》",
     "translator": "Witter Bynner 译本",
     "english_text": "In all other realms the blooming petals have withered in the fourth month;\nYet the peach blossoms here in the mountain temple are only just beginning to bloom.",
-    "prompt": "品读英文中人间芳菲尽、山寺始盛开的失而复得（petals withered fourth month / mountain temple blossoms just blooming），推导乐天名诗：",
+    "prompt": "解读上方英译中的核心意象（realm petals withered fourth month / mountain temple peach blossoms / just beginning to bloom），调动深层诗词记忆：你能逆向还原白居易写下的是哪句千古绝唱吗？",
     "correct_answer": "人间四月芳菲尽，山寺桃花始盛开",
     "options": [
       "人间四月芳菲尽，山寺桃花始盛开",
@@ -1274,7 +1274,7 @@
     "title": "《茅屋为秋风所破歌》",
     "translator": "Arthur Waley 译本",
     "english_text": "Could I but obtain a grand mansion of tens of thousands of rooms;\nSheltering all the cold scholars across the world with joyful faces!",
-    "prompt": "剖析英文中安得广厦千万间、大庇天下寒士俱欢颜的悲悯胸襟（grand mansion tens of thousands rooms / sheltering cold scholars joyful faces），推导杜陵野老绝唱：",
+    "prompt": "解读上方英译中的核心意象（grand mansion ten thousand rooms / sheltering cold scholars / joyful faces），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "安得广厦千万间，大庇天下寒士俱欢颜",
     "options": [
       "安得广厦千万间，大庇天下寒士俱欢颜",
@@ -1311,7 +1311,7 @@
     "title": "《题李凝幽居》",
     "translator": "Herbert Giles 译本",
     "english_text": "Birds roost among the trees around the quiet pond;\nA wandering monk knocks on the gate beneath the moonlight.",
-    "prompt": "领悟英文中鸟宿池边树、僧敲月下门的绝妙推敲意境（birds roost quiet pond trees / monk knocks gate moonlight），还原苦吟名作：",
+    "prompt": "解读上方英译中的核心意象（birds roost pond trees / monk knocks gate / beneath moonlight），调动深层诗词记忆：你能逆向还原贾岛写下的是哪句千古绝唱吗？",
     "correct_answer": "鸟宿池边树，僧敲月下门",
     "options": [
       "鸟宿池边树，僧敲月下门",
@@ -1348,7 +1348,7 @@
     "title": "《破阵子·为陈同甫赋壮词以寄之》",
     "translator": "许渊冲 译本",
     "english_text": "Drunk, I turn up the oil lamp to inspect my gleaming sword;\nDreaming back, I hear the war bugles echoing through all camps.",
-    "prompt": "品读英文中醉里挑灯看剑、梦回吹角连营的壮志难酬（drunk turn up lamp inspect sword / dreaming bugles across camps），还原辛弃疾豪放名句：",
+    "prompt": "解读上方英译中的核心意象（drunk turn up lamp inspect sword / dreaming bugles across camps），调动深层诗词记忆：你能逆向还原辛弃疾写下的是哪句千古绝唱吗？",
     "correct_answer": "醉里挑灯看剑，梦回吹角连营",
     "options": [
       "醉里挑灯看剑，梦回吹角连营",
@@ -1381,7 +1381,7 @@
     "title": "《短歌行》",
     "translator": "Arthur Waley 译本",
     "english_text": "Singing before the wine cup, how fleeting is human life;\nIt is like the morning dew, the days gone by are full of sorrow.",
-    "prompt": "感悟英文中对酒当歌、人生几何、去日苦多的苍凉慷慨（singing before wine fleeting life / morning dew gone days sorrow），还原魏武帝代表作：",
+    "prompt": "解读上方英译中的核心意象（singing before wine, fleeting life / like morning dew / days gone sorrow），调动深层诗词记忆：你能逆向还原曹操写下的是哪句千古绝唱吗？",
     "correct_answer": "对酒当歌，人生几何！譬如朝露，去日苦多",
     "options": [
       "对酒当歌，人生几何！譬如朝露，去日苦多",
@@ -1418,7 +1418,7 @@
     "title": "《滁州西涧》",
     "translator": "Witter Bynner 译本",
     "english_text": "At spring twilight the rain comes rushing down upon the swollen river;\nNo one is here at the ferry, the unmanned boat drifts sideways across the current.",
-    "prompt": "体会英文描绘的春潮带雨晚来急、野渡无人舟自横的幽僻画境（spring twilight rain swollen river / unmanned boat drifts sideways），推导名篇：",
+    "prompt": "解读上方英译中的核心意象（rain swollen river twilight / unmanned boat drifts sideways），调动深层诗词记忆：你能逆向还原韦应物写下的是哪句千古绝唱吗？",
     "correct_answer": "春潮带雨晚来急，野渡无人舟自横",
     "options": [
       "春潮带雨晚来急，野渡无人舟自横",
@@ -1451,7 +1451,7 @@
     "title": "《望庐山瀑布》",
     "translator": "Herbert Giles 译本",
     "english_text": "Flying downwards straight through three thousand feet;\nCould it be the Silver River tumbling down from the Ninth Heaven?",
-    "prompt": "领会英文中飞流直下三千尺、疑是银河落九天的奇幻壮丽（flying straight 3000 feet / Silver River tumbling Ninth Heaven），推导诗仙力作：",
+    "prompt": "解读上方英译中的核心意象（flying downwards three thousand feet / Silver River tumbling Ninth Heaven），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "飞流直下三千尺，疑是银河落九天",
     "options": [
       "飞流直下三千尺，疑是银河落九天",
@@ -1484,7 +1484,7 @@
     "title": "《酬乐天扬州初逢席上见赠》",
     "translator": "许渊冲 译本",
     "english_text": "Past the sunken boat, a thousand sails proceed onwards;\nBeyond the diseased tree, ten thousand saplings greet the spring.",
-    "prompt": "剖析英译中沉舟侧畔千帆过、病树前头万木春的新陈代谢生命哲思（sunken boat thousand sails / diseased tree ten thousand saplings spring），还原刘梦得原句：",
+    "prompt": "解读上方英译中的核心意象（past sunken boat thousand sails / diseased tree ten thousand saplings），调动深层诗词记忆：你能逆向还原刘禹锡写下的是哪句千古绝唱吗？",
     "correct_answer": "沉舟侧畔千帆过，病树前头万木春",
     "options": [
       "沉舟侧畔千帆过，病树前头万木春",
@@ -1517,7 +1517,7 @@
     "title": "《登飞来峰》",
     "translator": "Kenneth Rexroth 译本",
     "english_text": "Fear not the floating clouds that veil your eyesight;\nOnly because you stand upon the very highest tier.",
-    "prompt": "品味英文中不畏浮云遮望眼、自缘身在最高层的穿透格局（fear not floating clouds veil eyesight / stand highest tier），推导荆公七绝：",
+    "prompt": "解读上方英译中的核心意象（fear not floating clouds veil eyesight / stand upon highest tier），调动深层诗词记忆：你能逆向还原王安石写下的是哪句千古绝唱吗？",
     "correct_answer": "不畏浮云遮望眼，自缘身在最高层",
     "options": [
       "不畏浮云遮望眼，自缘身在最高层",
@@ -1550,7 +1550,7 @@
     "title": "《别董大》",
     "translator": "Witter Bynner 译本",
     "english_text": "Do not worry that you will find no intimate friends on the journey ahead;\nWho under heaven does not recognize your name?",
-    "prompt": "解读英文中莫愁前路无知己、天下谁人不识君的豪放送别慰藉（worry no intimate friends ahead / who under heaven not recognize name），推导高常侍名句：",
+    "prompt": "解读上方英译中的核心意象（worry no intimate friends ahead / who under heaven not recognize name），调动深层诗词记忆：你能逆向还原高适写下的是哪句千古绝唱吗？",
     "correct_answer": "莫愁前路无知己，天下谁人不识君",
     "options": [
       "莫愁前路无知己，天下谁人不识君",
@@ -1583,7 +1583,7 @@
     "title": "《送杜少府之任蜀州》",
     "translator": "Herbert Giles 译本",
     "english_text": "As long as true friendship exists within the four seas;\nEven the ends of the earth seem like neighbors living side by side.",
-    "prompt": "剖析英译中海内存知己、天涯若比邻的旷达境界（friendship exists within four seas / ends of earth like neighbors），推导初唐四杰绝唱：",
+    "prompt": "解读上方英译中的核心意象（friendship within four seas / ends of earth like neighbors），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
     "correct_answer": "海内存知己，天涯若比邻",
     "options": [
       "海内存知己，天涯若比邻",
@@ -1616,7 +1616,7 @@
     "title": "《独坐敬亭山》",
     "translator": "Arthur Waley 译本",
     "english_text": "All birds have flown high and vanished;\nA lonely cloud floats leisurely away.\nWe look at each other without growing weary;\nThere is only Mount Jingting.",
-    "prompt": "感悟英文中群鸟高飞尽、相看两不厌的纯粹静谧（birds flown high vanished / lonely cloud / look without weary only Mount Jingting），推导李白五绝：",
+    "prompt": "解读上方英译中的核心意象（birds flown vanished / lonely cloud leisurely / look without weary / only Mount Jingting），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "相看两不厌，只有敬亭山",
     "options": [
       "相看两不厌，只有敬亭山",
@@ -1657,7 +1657,7 @@
     "title": "《浣溪沙·一曲新词酒一杯》",
     "translator": "许渊冲 译本",
     "english_text": "Helplessly, the petals fall and drift away;\nLike old acquaintances returning, the swallows fly back again.",
-    "prompt": "领会英文中无可奈何花落去、似曾相识燕归来的惜春与相逢哲思（helplessly petals fall / old acquaintances swallows fly back），推导晏同叔词作名句：",
+    "prompt": "解读上方英译中的核心意象（helplessly petals fall / old acquaintances swallows return），调动深层诗词记忆：你能逆向还原晏殊写下的是哪句千古绝唱吗？",
     "correct_answer": "无可奈何花落去，似曾相识燕归来",
     "options": [
       "无可奈何花落去，似曾相识燕归来",
@@ -1690,7 +1690,7 @@
     "title": "《闻官军收河南河北》",
     "translator": "David Hawkes 译本",
     "english_text": "White-haired in daylight, I must sing aloud and give full rein to wine;\nYouth shall be my true companion as I return to my native land.",
-    "prompt": "剖析英译面白日放歌须纵酒、青春作伴好还乡的狂喜欢呼（sing aloud rein wine in daylight / youth companion return native land），推导生平第一快诗：",
+    "prompt": "解读上方英译中的核心意象（sing aloud rein wine daylight / youth true companion / return native land），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "白日放歌须纵酒，青春作伴好还乡",
     "options": [
       "白日放歌须纵酒，青春作伴好还乡",
@@ -1727,7 +1727,7 @@
     "title": "《侠客行》",
     "translator": "许渊冲 译本",
     "english_text": "Killing a man every ten paces, leaving no trace for a thousand miles;\nOnce the heroic deed is accomplished, he shakes his robes and departs without fame.",
-    "prompt": "体会英文描绘的十步杀一人、事了拂衣去的极道侠客神采（killing ten paces thousand miles / deed accomplished shakes robes departs），推导诗仙热血五言名作：",
+    "prompt": "解读上方英译中的核心意象（heroic deed accomplished / shakes robes departs / without fame），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "事了拂衣去，深藏身与名",
     "options": [
       "事了拂衣去，深藏身与名",
@@ -1764,7 +1764,7 @@
     "title": "《观书有感》",
     "translator": "Herbert Giles 译本",
     "english_text": "If you ask how the square pond water can remain so crystal-clear;\nIt is because there is a living source that unceasingly pours fresh water into it.",
-    "prompt": "感悟英文中问渠那得清如许、为有源头活水来的哲理比喻（pond water crystal-clear / living source unceasingly pours fresh water），推导朱子传世哲理诗：",
+    "prompt": "解读上方英译中的核心意象（how pond water crystal-clear / living source pours fresh water），调动深层诗词记忆：你能逆向还原朱熹写下的是哪句千古绝唱吗？",
     "correct_answer": "问渠那得清如许？为有源头活水来",
     "options": [
       "问渠那得清如许？为有源头活水来",
@@ -1797,7 +1797,7 @@
     "title": "《泊秦淮》",
     "translator": "Witter Bynner 译本",
     "english_text": "The songstress does not know the sorrow of a fallen nation;\nAcross the misty river, she still sings the song of Backyard Flowers.",
-    "prompt": "剖析英文中商女不知亡国恨、隔江犹唱后庭花的讽刺沉痛（songstress knows not fallen nation sorrow / across misty river sings Backyard Flowers），推导晚唐名篇：",
+    "prompt": "解读上方英译中的核心意象（songstress knows not fallen nation / across river sings Backyard Flowers），调动深层诗词记忆：你能逆向还原杜牧写下的是哪句千古绝唱吗？",
     "correct_answer": "商女不知亡国恨，隔江犹唱后庭花",
     "options": [
       "商女不知亡国恨，隔江犹唱后庭花",
@@ -1830,7 +1830,7 @@
     "title": "《雨霖铃》",
     "translator": "许渊冲 译本",
     "english_text": "Where shall I find myself sobered up from wine tonight?\nBeside the willow banks, beneath the morning breeze and waning moon.",
-    "prompt": "品读英文中今宵酒醒何处、杨柳岸晓风残月的凄清离别（where sobered up tonight / willow banks / morning breeze waning moon），还原白衣卿相代表作：",
+    "prompt": "解读上方英译中的核心意象（where sobered up tonight / willow banks / morning breeze waning moon），调动深层诗词记忆：你能逆向还原柳永写下的是哪句千古绝唱吗？",
     "correct_answer": "今宵酒醒何处？杨柳岸，晓风残月",
     "options": [
       "今宵酒醒何处？杨柳岸，晓风残月",
@@ -1867,7 +1867,7 @@
     "title": "《宣州谢朓楼饯别校书叔云》",
     "translator": "Arthur Waley 译本",
     "english_text": "Cutting water with a sword, the water flows all the more;\nRaising a cup to drown sorrow, sorrow returns even deeper.",
-    "prompt": "解读英文中抽刀断水水更流、举杯消愁愁更愁的精妙悖论（cutting water with sword / cup drown sorrow / sorrow deeper），推导千古哲思豪作：",
+    "prompt": "解读上方英译中的核心意象（cutting water with sword / water flows more / cup drown sorrow / sorrow deeper），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "抽刀断水水更流，举杯消愁愁更愁",
     "options": [
       "抽刀断水水更流，举杯消愁愁更愁",
@@ -1908,7 +1908,7 @@
     "title": "《离骚》",
     "translator": "David Hawkes 译本",
     "english_text": "The road ahead is long and extends into the boundless distance;\nI shall search up and down in my unyielding quest.",
-    "prompt": "感悟英文中路漫漫其修远兮、吾将上下而求索的顽强求索风骨（road long extends boundless / search up and down unyielding quest），推导楚辞之冠：",
+    "prompt": "解读上方英译中的核心意象（road long extends distance / search up and down quest），调动深层诗词记忆：你能逆向还原屈原写下的是哪句千古绝唱吗？",
     "correct_answer": "路漫漫其修远兮，吾将上下而求索",
     "options": [
       "路漫漫其修远兮，吾将上下而求索",
@@ -1941,7 +1941,7 @@
     "title": "《滕王阁序》",
     "translator": "许渊冲 译本",
     "english_text": "One should become all the more vigorous as one ages;\nHow could one ever abandon one's lofty ambitions even when hair turns white?",
-    "prompt": "剖析英文长老当益壮、宁移白首之心的昂扬豪气（more vigorous as ages / how abandon lofty ambitions white hair），推导骈文巅峰神句：",
+    "prompt": "解读上方英译中的核心意象（more vigorous as ages / abandon ambitions white hair），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
     "correct_answer": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志",
     "options": [
       "老当益壮，宁移白首之心？穷且益坚，不坠青云之志",
@@ -1974,7 +1974,7 @@
     "title": "《客至》",
     "translator": "Kenneth Rexroth 译本",
     "english_text": "The path strewn with flower petals has never been swept for a visitor before;\nToday for the first time, our simple thatched gate is thrown open for you.",
-    "prompt": "体会英文花径不曾缘客扫、蓬门今始为君开的热忱敦厚（flower path never swept for visitor / thatched gate thrown open for you），推导草堂名诗：",
+    "prompt": "解读上方英译中的核心意象（flower path never swept / thatched gate thrown open），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
     "correct_answer": "花径不曾缘客扫，蓬门今始为君开",
     "options": [
       "花径不曾缘客扫，蓬门今始为君开",
@@ -2007,7 +2007,7 @@
     "title": "《将进酒》",
     "translator": "Arthur Waley 译本",
     "english_text": "Do you not see the Yellow River's waters coming from the sky?\nRushing towards the boundless sea, never to return again.",
-    "prompt": "解读英文中君不见黄河之水天上来、奔流到海不复回的狂澜开篇（Yellow River waters coming from sky / rushing boundless sea never return），还原诗仙豪迈之巅：",
+    "prompt": "解读上方英译中的核心意象（Yellow River waters from sky / rushing boundless sea never return），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
     "correct_answer": "君不见黄河之水天上来，奔流到海不复回",
     "options": [
       "君不见黄河之水天上来，奔流到海不复回",

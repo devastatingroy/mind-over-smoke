@@ -166,6 +166,15 @@ export default function QuizModal({
     setIsAnswered(true);
   };
 
+  // Handle Mode 1 active recall / verify
+  const handleMode1Reveal = (recalled) => {
+    if (isAnswered) return;
+    setIsRevealed(true);
+    setSelectedOption(currentQ.correct_answer);
+    setIsCorrect(true);
+    setIsAnswered(true);
+  };
+
   // Handle typing submit
   const handleTypeSubmit = (e) => {
     e.preventDefault();
@@ -262,7 +271,7 @@ export default function QuizModal({
                 : 'bg-stone-200 text-stone-800 border-stone-300')
             : 'border-stone-900 border-dashed text-stone-700 bg-stone-50/80 animate-pulse'
         }`}>
-          {isAnswered ? currentQ.blank : `[ ${currentQ.hint ? currentQ.hint.slice(0, 18) + '...' : ' ? '} ]`}
+          {isAnswered ? currentQ.blank : '[  ?  ]'}
         </span>
         <span>{interactive ? renderInteractiveSegment(parts[1]) : parts[1]}</span>
       </div>
@@ -430,66 +439,55 @@ export default function QuizModal({
                             <div className="text-[10px] font-mono text-stone-500 uppercase tracking-wider">
                               古典名作原句全篇
                             </div>
-                            <p className="font-serif text-xl sm:text-2xl font-bold text-stone-900 tracking-wide">
+                            <p className="font-serif text-base sm:text-lg font-bold text-stone-800 tracking-wide">
                               {currentQ.full_verse}
                             </p>
                           </div>
                         )}
                       </div>
 
-                      {/* Options or Answered State */}
+                      {/* NO MULTIPLE CHOICE! PURE ACTIVE RETRIEVAL & REVEAL */}
                       {!isAnswered ? (
-                        <div className="space-y-2.5">
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                            {currentQ.options.map((opt, idx) => (
-                              <button
-                                key={idx}
-                                onClick={() => handleSelectOption(opt)}
-                                className="p-3.5 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-sm sm:text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-left flex items-center justify-between group"
-                              >
-                                <span>{opt}</span>
-                                <span className="text-[10px] font-mono text-stone-400 group-hover:text-stone-300 ml-2 shrink-0">
-                                  选择
-                                </span>
-                              </button>
-                            ))}
+                        <div className="space-y-3 pt-1">
+                          <div className="bg-stone-50/90 p-4 rounded-xl border border-stone-200/80 text-center space-y-1.5">
+                            <div className="text-[10px] font-mono text-stone-500 uppercase tracking-widest flex items-center justify-center space-x-1">
+                              <span>🧠 前额叶自主提取挑战 · 拒绝选择题剧透</span>
+                            </div>
+                            <p className="font-serif text-xs sm:text-sm text-stone-700 leading-relaxed">
+                              观察上方英译意象，闭目深思：在脑海中回忆并念出对应的千古名句。
+                            </p>
                           </div>
 
-                          {/* Reveal Answer Button */}
-                          <button
-                            onClick={handleRevealAnswer}
-                            className="w-full py-2.5 text-xs text-stone-500 hover:text-stone-900 hover:bg-stone-100 rounded-lg transition text-center cursor-pointer border border-dashed border-stone-300 font-sans flex items-center justify-center space-x-1.5"
-                          >
-                            <HelpCircle className="w-3.5 h-3.5 text-stone-400" />
-                            <span>暂时想不出？点击直接【看答案与双语解析】</span>
-                          </button>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button
+                              onClick={() => handleMode1Reveal(true)}
+                              className="py-3.5 px-4 bg-stone-900 hover:bg-black text-white rounded-xl font-medium text-sm transition shadow-xs cursor-pointer flex items-center justify-center space-x-2"
+                            >
+                              <Check className="w-4 h-4 text-emerald-400" />
+                              <span>🎯 我想到了 · 揭晓原诗对照</span>
+                            </button>
+                            <button
+                              onClick={() => handleMode1Reveal(false)}
+                              className="py-3.5 px-4 bg-white hover:bg-stone-100 text-stone-700 border border-stone-300 rounded-xl font-medium text-sm transition cursor-pointer flex items-center justify-center space-x-2"
+                            >
+                              <HelpCircle className="w-3.5 h-3.5 text-stone-400" />
+                              <span>❓ 暂时想不出 · 直接看答案</span>
+                            </button>
+                          </div>
                         </div>
                       ) : (
-                        /* Options shown with selected & correct state */
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
-                          {currentQ.options.map((opt, idx) => {
-                            const isCorrectOpt = opt.trim() === currentQ.correct_answer.trim();
-                            const isSelected = selectedOption?.trim() === opt.trim();
-                            return (
-                              <div
-                                key={idx}
-                                className={`p-3 rounded-xl border font-serif text-sm font-medium flex items-center justify-between ${
-                                  isCorrectOpt
-                                    ? 'bg-stone-900 text-white border-stone-900 shadow-sm'
-                                    : isSelected && !isCorrect
-                                      ? 'bg-rose-50 text-rose-800 border-rose-300'
-                                      : 'bg-stone-50 text-stone-400 border-stone-200 opacity-60'
-                                }`}
-                              >
-                                <span>{opt}</span>
-                                {isCorrectOpt && (
-                                  <span className="text-[10px] font-mono bg-white text-stone-900 px-1.5 py-0.5 rounded font-bold ml-2 shrink-0">
-                                    原作正解
-                                  </span>
-                                )}
-                              </div>
-                            );
-                          })}
+                        /* Revealed Master Verse Card */
+                        <div className="space-y-3 pt-1 animate-fadeIn">
+                          <div className="p-5 sm:p-6 bg-[#18181B] text-white rounded-xl border border-stone-800 shadow-md text-center space-y-2">
+                            <div className="text-[10px] font-mono text-stone-400 uppercase tracking-widest flex items-center justify-center space-x-1">
+                              <span className="text-emerald-400">✦</span>
+                              <span>古典名作原句 · 正解</span>
+                              <span className="text-emerald-400">✦</span>
+                            </div>
+                            <p className="font-serif text-2xl sm:text-3xl font-bold tracking-wide text-stone-100 py-1">
+                              {currentQ.correct_answer}
+                            </p>
+                          </div>
                         </div>
                       )}
                     </>
@@ -773,16 +771,23 @@ export default function QuizModal({
                         THE ECONOMIST PASSAGE
                       </span>
 
-                      {/* Translation Button */}
+                      {/* Translation Button: Only unlocked after answering to prevent leakage */}
                       {currentQ.passage_translation && (
-                        <button
-                          onClick={() => setShowTranslation(!showTranslation)}
-                          className="text-[11px] font-sans text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2.5 py-0.5 rounded transition cursor-pointer flex items-center space-x-1"
-                          title="点击展开/收起完整中文对照翻译"
-                        >
-                          <Languages className="w-3 h-3 text-stone-500" />
-                          <span>{showTranslation ? '收起译文' : '译 · 中文翻译'}</span>
-                        </button>
+                        isAnswered ? (
+                          <button
+                            onClick={() => setShowTranslation(!showTranslation)}
+                            className="text-[11px] font-sans text-stone-600 hover:text-stone-900 border border-stone-200 hover:border-stone-400 bg-stone-50 hover:bg-white px-2.5 py-0.5 rounded transition cursor-pointer flex items-center space-x-1"
+                            title="点击展开/收起完整中文对照翻译"
+                          >
+                            <Languages className="w-3 h-3 text-stone-500" />
+                            <span>{showTranslation ? '收起译文' : '译 · 中文翻译'}</span>
+                          </button>
+                        ) : (
+                          <span className="text-[10px] font-sans text-stone-400 flex items-center space-x-1" title="完成作答后解锁中文对照翻译">
+                            <Languages className="w-3 h-3 text-stone-300" />
+                            <span>作答后解锁译文</span>
+                          </span>
+                        )
                       )}
                     </div>
 
