@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Dumbbell, Scroll, Languages } from 'lucide-react';
+import { ArrowRight, Zap, Shield, Dumbbell, BookOpen, Languages } from 'lucide-react';
 import { taskStats } from '../utils/taskManager';
 
 export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
@@ -58,8 +58,8 @@ export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
             <span>10个俯卧撑/平板</span>
           </span>
           <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
-            <Scroll className="w-3 h-3 text-stone-700" />
-            <span>唐诗心流</span>
+            <BookOpen className="w-3 h-3 text-stone-700" />
+            <span>经济学人精读</span>
           </span>
           <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 text-stone-400">
             <span>池化 {taskStats.total} 项</span>

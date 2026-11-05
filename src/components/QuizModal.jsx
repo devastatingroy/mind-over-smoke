@@ -175,12 +175,11 @@ export default function QuizModal({
     setIsAnswered(true);
   };
 
-  // Word click to inspect phonetic & pronunciation
+  // Word click to inspect phonetic & definition (严禁自动朗读，仅显示音标与释义)
   const handleWordClick = (rawWord) => {
     const data = lookupWord(rawWord);
     if (!data) return;
     setInspectedWord(data);
-    speakWord(data.word);
   };
 
   // Physical rep click
@@ -241,7 +240,7 @@ export default function QuizModal({
               ? 'bg-stone-900 text-white font-semibold' 
               : 'hover:bg-stone-200/80 hover:text-stone-900 decoration-stone-300 hover:underline'
           }`}
-          title="点击查看音标与真人发音"
+          title="点击查看音标与释义"
         >
           {token}
         </span>
@@ -284,13 +283,6 @@ export default function QuizModal({
         code: 'SOMATIC',
         label: '躯体动作重置',
         icon: <Dumbbell className="w-3.5 h-3.5" />
-      };
-    }
-    if (currentQ.category === 'poetry' || currentQ.type === 'poetry') {
-      return {
-        code: 'POETRY',
-        label: '唐诗心流语律',
-        icon: <Scroll className="w-3.5 h-3.5" />
       };
     }
     if (currentQ.category === 'breathing' || currentQ.type === 'breathing') {
@@ -413,7 +405,7 @@ export default function QuizModal({
                           "{renderInteractiveSegment(currentQ.english_text)}"
                         </blockquote>
                         <div className="mt-2 text-[10px] text-stone-400 font-sans flex items-center justify-end">
-                          <span>💡 点击英文单词可查音标与发音</span>
+                          <span>💡 点击英文单词查看音标与释义</span>
                         </div>
                       </div>
 
@@ -597,18 +589,10 @@ export default function QuizModal({
                             {inspectedWord.word}
                           </span>
                           {inspectedWord.phonetic && (
-                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
                               {inspectedWord.phonetic}
                             </span>
                           )}
-                          <button
-                            onClick={() => speakWord(inspectedWord.word)}
-                            className="p-1 hover:bg-stone-800 rounded text-stone-300 hover:text-white transition cursor-pointer flex items-center space-x-1"
-                            title="点击发音"
-                          >
-                            <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-[10px] text-stone-400 font-mono">发音</span>
-                          </button>
                         </div>
                         <p className="text-stone-300 text-[11px] font-sans">
                           {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
@@ -727,54 +711,7 @@ export default function QuizModal({
                 </div>
               )}
 
-              {/* ---------------- 3. TANG POETRY RECITATION TASK ---------------- */}
-              {(currentQ.category === 'poetry' || currentQ.type === 'poetry') && (
-                <div className="space-y-4">
-                  <div className="bg-white p-6 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
-                    <div className="flex items-center justify-between text-xs text-stone-500 border-b border-stone-100 pb-2">
-                      <span className="font-serif font-bold text-stone-800">{currentQ.author} · 《{currentQ.title}》</span>
-                      <span className="font-mono text-[10px] text-stone-400">CLASSIC RECITATION</span>
-                    </div>
 
-                    {renderPassage(false)}
-
-                    {isAnswered && (
-                      <div className="pt-2 text-center border-t border-stone-100">
-                        <div className="text-[10px] font-mono text-stone-400 uppercase tracking-wider mb-0.5">诗词全句</div>
-                        <p className="font-serif text-lg font-bold text-stone-900">
-                          {currentQ.full_verse}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-
-                  {!isAnswered && (
-                    <div className="grid grid-cols-2 gap-3 pt-1">
-                      {currentQ.options.map((opt) => (
-                        <button
-                          key={opt}
-                          onClick={() => handleSelectOption(opt)}
-                          className="py-3.5 px-4 bg-white hover:bg-stone-900 hover:text-white border border-[#E5E0D8] hover:border-stone-900 rounded-xl font-serif text-base font-bold text-stone-800 transition-colors shadow-2xs cursor-pointer text-center"
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-
-                  {isAnswered && (
-                    <div className="bg-stone-50 p-4 rounded-xl border border-stone-200/80 text-xs space-y-1">
-                      <div className="flex items-center space-x-1.5 font-bold text-stone-900">
-                        <Volume2 className="w-3.5 h-3.5 text-[#8C1D24]" />
-                        <span>【大声诵读 1 遍 · 平复胸腔焦躁】</span>
-                      </div>
-                      <p className="text-stone-700 leading-relaxed font-serif pl-5">
-                        {currentQ.recitation_guide}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              )}
 
               {/* ---------------- 4. BREATHING VAGUS TASK ---------------- */}
               {(currentQ.category === 'breathing' || currentQ.type === 'breathing') && (
@@ -860,7 +797,7 @@ export default function QuizModal({
 
                     {/* Hint text */}
                     <div className="flex items-center justify-between text-[11px] text-stone-400 font-sans pt-1">
-                      <span>💡 点击题干任意单词可查音标与真人发音</span>
+                      <span>💡 点击题干任意单词查看音标与释义</span>
                       {currentQ.type === 'cloze' && (
                         <button
                           onClick={() => setInputMode(inputMode === 'choice' ? 'type' : 'choice')}
@@ -881,18 +818,10 @@ export default function QuizModal({
                             {inspectedWord.word}
                           </span>
                           {inspectedWord.phonetic && (
-                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-1.5 py-0.5 rounded border border-emerald-800/40">
+                            <span className="font-mono text-emerald-400 text-xs bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
                               {inspectedWord.phonetic}
                             </span>
                           )}
-                          <button
-                            onClick={() => speakWord(inspectedWord.word)}
-                            className="p-1 hover:bg-stone-800 rounded text-stone-300 hover:text-white transition cursor-pointer flex items-center space-x-1"
-                            title="点击发音"
-                          >
-                            <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                            <span className="text-[10px] text-stone-400 font-mono">发音</span>
-                          </button>
                         </div>
                         <p className="text-stone-300 text-[11px] font-sans">
                           {inspectedWord.pos && <span className="text-stone-400 italic mr-1">{inspectedWord.pos}</span>}
