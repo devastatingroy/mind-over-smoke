@@ -5,7 +5,6 @@ import {
   Check, 
   ArrowRight, 
   TrendingDown,
-  Coins,
   Dumbbell,
   Scroll,
   BookOpen,
@@ -29,7 +28,6 @@ export default function QuizModal({
   initialSecondsLeft = 180,
   onClose, 
   onCompleteSession, 
-  isTodayDone,
   onSaveVocab,
   savedVocabIds,
   onSwapTask,
@@ -970,23 +968,9 @@ export default function QuizModal({
                 </p>
               </div>
 
-              {!isTodayDone ? (
-                <div className="bg-[#18181B] text-white p-4 rounded-xl text-left border border-stone-800">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
-                      <Coins className="w-5 h-5 text-stone-200" />
-                    </div>
-                    <div>
-                      <div className="text-[10px] font-mono text-stone-400 tracking-wider">CONTRACT FULFILLED</div>
-                      <div className="text-base font-serif font-bold text-white">今日已成功履约返还 $1.00</div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="bg-stone-50 p-3 rounded-lg border border-stone-200 text-xs text-stone-600">
-                  今日返还额度早前已解锁，本次练习已累积记录入总拦截日志。
-                </div>
-              )}
+              <div className="bg-stone-50 p-3 rounded-lg border border-stone-200 text-xs text-stone-600">
+                本次急救练习已计入拦截记录。无烟日申报请在完整挑战日结束后前往主看板。
+              </div>
 
               <button
                 onClick={onClose}

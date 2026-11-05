@@ -1,185 +1,99 @@
 import React, { useState } from 'react';
-import { 
-  CheckCircle2, 
-  Lock, 
-  HelpCircle, 
-  Wallet, 
-  DollarSign, 
-  ArrowUpRight,
-  Award,
-  CircleDot
-} from 'lucide-react';
-import confetti from 'canvas-confetti';
+import { CheckCircle2, CircleDot, HelpCircle, Lock } from 'lucide-react';
 
-export default function ContractDashboard({ state, onSimulatePayout }) {
+const statusText = {
+  upcoming: '待开始',
+  active: '进行中',
+  reportable: '待申报',
+  smoke_free: '无烟 · +$1',
+  smoked: '吸烟 · $0',
+  expired: '逾期 · $0'
+};
+
+export default function ContractDashboard({ state, view, onStart, onReport }) {
   const [showExplanation, setShowExplanation] = useState(false);
-  const [payoutModal, setPayoutModal] = useState(false);
+  const [confirmDay, setConfirmDay] = useState(null);
+  const next = view?.nextReport;
 
-  const completedCount = state.completedDays.filter(Boolean).length;
-  const currentRefund = completedCount * state.refundPerDay;
-  const maxPossible = state.maxRefund;
-  const platformFee = state.platformFee;
-
-  const handlePayoutClick = () => {
-    if (currentRefund > 0) {
-      confetti({ particleCount: 50, spread: 60 });
-      setPayoutModal(true);
-    }
+  const submit = (result) => {
+    if (!next || confirmDay !== next.number) return;
+    onReport(next.number, result);
+    setConfirmDay(null);
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E2DFD6] p-5 shadow-sm space-y-5">
-      {/* Contract Title & Status */}
-      <div className="flex items-start justify-between">
-        <div>
-          <div className="flex items-center space-x-2">
-            <span className="bg-[#8C1D24] text-white text-[10px] font-serif font-black px-1.5 py-0.5 rounded-xs uppercase tracking-wider">
-              14-DAY CONTRACT
-            </span>
-            <h3 className="text-base font-serif font-black text-gray-900">
-              $20 戒烟承诺契约与返还池
-            </h3>
-          </div>
-          <p className="text-xs text-gray-500 mt-1">
-            每天做题打卡立退 $1，最高退还 $14 · 双方共赢正向博弈
-          </p>
-        </div>
+    <section className="bg-white rounded-2xl border border-[#E2DFD6] p-5 shadow-sm space-y-5" aria-label="14 天无烟挑战">
+      <div className="rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-relaxed text-amber-950">
+        当前为免费体验：没有收取 $20，也不会产生真实的 $1 退款。下方金额仅演示正式计划的计算规则。
+      </div>
 
-        <button
-          onClick={() => setShowExplanation(!showExplanation)}
-          className="text-gray-400 hover:text-gray-700 p-1 cursor-pointer"
-          title="查看经济学模型规则"
-        >
+      <div className="flex items-start justify-between gap-2">
+        <div>
+          <span className="bg-[#8C1D24] text-white text-[10px] font-serif font-black px-1.5 py-0.5 uppercase tracking-wider">14-DAY CHALLENGE</span>
+          <h3 className="text-base font-serif font-black text-gray-900 mt-1">14 天无烟挑战</h3>
+          <p className="text-xs text-gray-600 mt-1 leading-relaxed">正式规则：支付 $20 计划费用；每个自报无烟日返 $1，最多 $14。自报不等于客观核验。</p>
+        </div>
+        <button onClick={() => setShowExplanation(!showExplanation)} className="text-gray-500 hover:text-gray-800 p-1 cursor-pointer" aria-label="查看挑战规则" aria-expanded={showExplanation}>
           <HelpCircle className="w-4 h-4" />
         </button>
       </div>
 
-      {/* Psychology & Business Model Explainer (Toggleable) */}
       {showExplanation && (
-        <div className="bg-[#F7F5F0] border border-[#E2DFD6] p-3.5 rounded-xl text-xs text-gray-700 space-y-2 fade-in">
-          <div className="font-bold text-gray-900 flex items-center space-x-1">
-            <span>⚖️ 为什么是 $20 押金、返还 $14、平台留 $6？</span>
-          </div>
-          <p className="leading-relaxed text-gray-600">
-            传统对赌产品往往希望用户失败来牟取暴利，这会产生天然的对抗心理。<br/>
-            在我们的契约中：当你 14 天全胜拿回 <strong>$14</strong> 时，你相当于仅花 <strong>$6</strong>（甚至低于一包烟的价钱）彻底斩断了烟瘾；平台也堂堂正正获得 <strong>$6</strong> 的技术服务利润。
-            <strong>我们从第一天起就彻底期盼你胜利！</strong>
-          </p>
+        <div className="bg-[#F7F5F0] border border-[#E2DFD6] p-3.5 rounded-xl text-xs text-gray-700 leading-relaxed space-y-2">
+          <p>每天结束后，在接下来的两个自然日内申报该日是否吸过烟。只要吸过一口卷烟，该日就不能申报无烟。SOS 和练习不影响申报资格。</p>
+          <p>正式计划中，无烟日的 $1 将申请原路退款；抽烟或逾期未报的日子不退款，也不影响之后的日子。未返金额由平台保留，因此平台收入可能高于全胜时的 $6 毛收入。</p>
+          <p>电子烟及其他产品的计入规则、支付渠道和商户地区须在正式收费前明确。当前体验记录只保存在此浏览器，不是付款或退款凭据。</p>
         </div>
       )}
 
-      {/* Financial Snapshot Card */}
-      <div className="grid grid-cols-3 gap-2.5 bg-[#F7F5F0] p-3 rounded-xl border border-[#E2DFD6] text-center">
-        <div>
-          <div className="text-[10px] text-gray-500 font-medium">承诺押金</div>
-          <div className="text-sm font-black font-serif text-gray-900 mt-0.5">
-            ${state.stakeAmount}.00
+      {!view ? (
+        <div className="bg-[#F7F5F0] border border-[#E2DFD6] p-4 rounded-xl text-center space-y-3">
+          <p className="text-sm text-gray-800">开始后，明天为第 1 个完整挑战日；后天起可申报第 1 天。</p>
+          <button onClick={onStart} className="px-4 py-2.5 rounded-lg bg-stone-900 text-white text-sm font-bold hover:bg-black cursor-pointer">开始免费体验</button>
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-3 gap-2 bg-[#F7F5F0] border border-[#E2DFD6] p-3 rounded-xl text-center">
+            <div><div className="text-[10px] text-gray-500">正式计划费</div><div className="text-sm font-black font-serif">$20</div></div>
+            <div className="border-x border-stone-200"><div className="text-[10px] text-gray-500">模拟符合返款</div><div className="text-sm font-black font-serif text-emerald-800">${view.smokeFreeCount}</div></div>
+            <div><div className="text-[10px] text-gray-500">已申报天数</div><div className="text-sm font-black font-serif">{view.reportedCount}/14</div></div>
           </div>
-        </div>
-        <div className="border-x border-stone-200">
-          <div className="text-[10px] text-emerald-700 font-medium">已解锁返现</div>
-          <div className="text-sm font-black font-serif text-emerald-700 mt-0.5">
-            ${currentRefund}.00
-          </div>
-        </div>
-        <div>
-          <div className="text-[10px] text-gray-500 font-medium">技术服务费</div>
-          <div className="text-sm font-black font-serif text-gray-700 mt-0.5">
-            ${platformFee}.00
-          </div>
-        </div>
-      </div>
 
-      {/* 14-Day Progress Grid */}
-      <div>
-        <div className="flex items-center justify-between text-xs mb-2">
-          <span className="font-semibold text-gray-800">14 天返还日历格</span>
-          <span className="text-gray-500">
-            已履约 <span className="text-emerald-700 font-bold">{completedCount}</span> / 14 天
-          </span>
-        </div>
-
-        <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
-          {Array.from({ length: 14 }).map((_, idx) => {
-            const dayNum = idx + 1;
-            const isCompleted = !!state.completedDays[idx];
-            const isToday = state.currentDay === dayNum;
-            const isLocked = state.currentDay < dayNum;
-
-            return (
-              <div
-                key={dayNum}
-                className={`relative rounded-lg p-2 text-center border transition-all ${
-                  isCompleted
-                    ? 'bg-emerald-50 border-emerald-300 text-emerald-900'
-                    : isToday
-                    ? 'bg-amber-50/80 border-amber-300 text-amber-900 ring-2 ring-amber-400/40'
-                    : 'bg-stone-50 border-stone-200 text-gray-400 opacity-60'
-                }`}
-              >
-                <div className="text-[10px] font-mono font-medium">D{dayNum}</div>
-                <div className="my-1 flex justify-center">
-                  {isCompleted ? (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-700" />
-                  ) : isToday ? (
-                    <CircleDot className="w-4 h-4 text-amber-600 animate-pulse" />
-                  ) : (
-                    <Lock className="w-3.5 h-3.5 text-gray-300" />
-                  )}
-                </div>
-                <div className="text-[9px] font-bold">
-                  {isCompleted ? '+$1' : '$1'}
-                </div>
+          {view.currentDay === 0 && <p className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm text-stone-700">准备日 · 第 1 天将于 {view.days[0].date} 00:00 开始（{state.challenge.timeZone}）。今天尚无可申报的完整挑战日。</p>}
+          {view.currentDay > 0 && !next && <p className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm text-stone-700">目前没有待申报的完整挑战日。当天结束后才可申报，已申报的日期不会重复提交。</p>}
+          {next && (
+            <div className="rounded-xl border border-[#E2DFD6] p-4 space-y-3">
+              <div>
+                <p className="text-sm font-bold text-stone-900">第 {next.number} 天（{next.date}），你有没有吸过任何一口卷烟？</p>
+                <p className="text-xs text-stone-500 mt-1">请如实自报 · 截止 {next.deadline} 23:59（{state.challenge.timeZone}）</p>
               </div>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Settlement Payout Action */}
-      <div className="pt-2 flex items-center justify-between">
-        <div className="text-xs text-gray-500">
-          到期可一次性原路返还至支付账户
-        </div>
-        <button
-          onClick={handlePayoutClick}
-          disabled={currentRefund === 0}
-          className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center space-x-1.5 transition cursor-pointer ${
-            currentRefund > 0
-              ? 'bg-[#1A3B2F] hover:bg-[#132C23] text-white shadow-xs'
-              : 'bg-stone-100 text-stone-400 cursor-not-allowed'
-          }`}
-        >
-          <span>申请返现结算 (${currentRefund})</span>
-          <ArrowUpRight className="w-3.5 h-3.5" />
-        </button>
-      </div>
-
-      {/* Payout Dialog Simulation */}
-      {payoutModal && (
-        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-xl border border-stone-200 fade-in">
-            <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
-              <Award className="w-6 h-6" />
+              {confirmDay === next.number ? (
+                <div className="space-y-2">
+                  <p className="text-xs text-stone-700">确认申报第 {next.number} 天？提交后此体验记录不可修改。</p>
+                  <div className="flex flex-wrap gap-2">
+                    <button onClick={() => submit('smoke_free')} className="rounded-lg bg-[#1A3B2F] px-3 py-2 text-xs font-bold text-white cursor-pointer">确认：一口也没吸</button>
+                    <button onClick={() => submit('smoked')} className="rounded-lg border border-stone-300 px-3 py-2 text-xs font-bold text-stone-800 cursor-pointer">确认：吸过烟</button>
+                    <button onClick={() => setConfirmDay(null)} className="px-2 py-2 text-xs text-stone-600 cursor-pointer">稍后再说</button>
+                  </div>
+                </div>
+              ) : <button onClick={() => setConfirmDay(next.number)} className="rounded-lg bg-stone-900 px-4 py-2.5 text-sm font-bold text-white cursor-pointer">申报这一天</button>}
             </div>
-            <div className="text-center">
-              <h4 className="font-serif font-black text-lg text-gray-900">
-                履约返现已计提
-              </h4>
-              <p className="text-xs text-gray-600 mt-1">
-                当前已累计成功返还 <strong>${currentRefund}.00</strong>。<br />
-                在生产环境中，这笔款项将通过 Stripe / 原支付渠道自动退款回原卡。
-              </p>
+          )}
+
+          <div>
+            <div className="flex items-center justify-between text-xs mb-2"><span className="font-semibold text-gray-800">14 天记录</span><span className="text-gray-500">无烟 {view.smokeFreeCount} / 14</span></div>
+            <div className="grid grid-cols-7 gap-1.5 sm:gap-2">
+              {view.days.map((day) => (
+                <div key={day.number} title={`${day.date} · ${statusText[day.status]}`} className={`rounded-lg p-1.5 sm:p-2 text-center border min-w-0 ${day.status === 'smoke_free' ? 'bg-emerald-50 border-emerald-300 text-emerald-900' : day.status === 'reportable' ? 'bg-amber-50 border-amber-300 text-amber-900' : 'bg-stone-50 border-stone-200 text-stone-500'}`}>
+                  <div className="text-[10px] font-mono font-medium">D{day.number}</div>
+                  <div className="my-1 flex justify-center">{day.status === 'smoke_free' ? <CheckCircle2 className="w-4 h-4" /> : day.status === 'reportable' ? <CircleDot className="w-4 h-4" /> : <Lock className="w-3.5 h-3.5" />}</div>
+                  <div className="text-[8px] sm:text-[9px] font-bold leading-tight break-words">{statusText[day.status]}</div>
+                </div>
+              ))}
             </div>
-            <button
-              onClick={() => setPayoutModal(false)}
-              className="w-full py-2.5 bg-[#1A3B2F] hover:bg-[#132C23] text-white rounded-xl text-xs font-bold transition cursor-pointer"
-            >
-              继续保持
-            </button>
           </div>
-        </div>
+        </>
       )}
-    </div>
+    </section>
   );
 }

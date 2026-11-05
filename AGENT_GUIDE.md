@@ -8,7 +8,7 @@
 
 ## 1. 30 秒极速全景认知 (Executive Context)
 
-* **项目定位**：一款融合**认知负荷理论 (Cognitive Load Theory)**、**迷走神经重置**与**行为经济学承诺契约 ($20押金/每日返$1)** 的《经济学人》风格戒烟微干预 Web 应用 / PWA。
+* **项目定位**：一款融合**认知负荷理论 (Cognitive Load Theory)**、**迷走神经重置**与**14 天无烟自报挑战（正式计划拟 $20、无烟日返 $1）**的《经济学人》风格戒烟微干预 Web 应用 / PWA。目前只有免费体验，没有真实收退款。
 * **核心战场**：拦截烟瘾来袭时的 **180 秒急性渴求浪涌 (Craving Wave)**。通过“躯体动作/深呼吸 ➔ 传世名篇英汉翻译挑战 ➔ 《经济学人》批判反讽精读”三阶段，强行占满前额叶工作记忆，阻断边缘系统多巴胺反射回路。
 * **视觉流派**：**方案 A 极简墨白 (Minimalist Editorial Monolith)**——纸张米白 `#FAF8F5`、深墨碳黑 `#111827`、超细发丝边框 `#E5E0D8`、克制经济学人红 `#8C1D24`，摒弃所有彩色标签与花哨动效。
 * **部署架构**：Cloudflare Anycast CDN（代理加速与国内直连） + GitHub Pages 双向分发（`devastatingroy.github.io` 主站 + `mind-over-smoke` 仓库分支）。
@@ -68,10 +68,10 @@ mind-over-smoke/
 │   └── icon.svg                    # 经济学人极简红墨质感图标
 ├── src/
 │   ├── components/
-│   │   ├── Header.jsx              # 顶部刊头：经济学人经典深红标识、契约返还状态徽章
+│   │   ├── Header.jsx              # 顶部刊头：经济学人经典深红标识、自报无烟天数
 │   │   ├── SosPanicButton.jsx      # HERO 区域：三分钟急救阻断入口及状态提示
 │   │   ├── QuizModal.jsx           # 核心认知阻断模态框：多模态答题器、180s 潮退曲线、音标查词浮层
-│   │   ├── ContractDashboard.jsx   # 14 天对赌协议网格：$20 押金、每日返 $1、模拟结算
+│   │   ├── ContractDashboard.jsx   # 14 天无烟自报网格和免费体验说明
 │   │   ├── BiologicalTracker.jsx   # 人体机能逆转时间轴与戒烟财务节省计算器
 │   │   └── VocabModal.jsx          # 生词与金句武器库：回顾做题积累的 SAT/GRE 词汇
 │   ├── data/

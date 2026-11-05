@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Zap, Shield, Dumbbell, BookOpen, Languages } from 'lucide-react';
 import { taskStats } from '../utils/taskManager';
 
-export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
+export default function SosPanicButton({ onStartQuiz }) {
   return (
     <div className="bg-white rounded-2xl border border-[#E5E0D8] p-6 shadow-xs">
       {/* Top Meta Bar */}
@@ -11,15 +11,7 @@ export default function SosPanicButton({ onStartQuiz, isTodayDone, streak }) {
           <Shield className="w-3.5 h-3.5 text-stone-900" />
           <span>COGNITIVE CRAVE SHIELD</span>
         </div>
-        {isTodayDone ? (
-          <span className="text-[11px] font-mono text-stone-700 bg-stone-100 px-2.5 py-0.5 rounded border border-stone-200">
-            今日已履约返还 $1.00
-          </span>
-        ) : (
-          <span className="text-[11px] font-mono text-stone-500 border border-stone-200 px-2 py-0.5 rounded">
-            今日待返 $1.00
-          </span>
-        )}
+        <span className="text-[11px] font-mono text-stone-500 border border-stone-200 px-2 py-0.5 rounded">随时可用</span>
       </div>
 
       {/* Editorial Headline & Brief */}

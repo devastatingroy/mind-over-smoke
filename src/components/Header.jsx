@@ -1,9 +1,7 @@
 import React from 'react';
 import { ShieldCheck, BookOpen, Wallet } from 'lucide-react';
 
-export default function Header({ state, onOpenVocab, onResetDemo }) {
-  const completedCount = state.completedDays.filter(Boolean).length;
-  const refundedAmount = completedCount * state.refundPerDay;
+export default function Header({ state, smokeFreeCount, onOpenVocab }) {
 
   return (
     <header className="bg-white/95 backdrop-blur-md border-b border-[#E5E0D8] sticky top-0 z-30 shadow-2xs">
@@ -40,15 +38,15 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
             )}
           </button>
 
-          {/* Refund Progress Badge */}
-          <div className="bg-stone-50 border border-[#E5E0D8] px-2 min-[360px]:px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
+          {/* Self-reported smoke-free days; no payment is collected in the demo. */}
+          <div title="体验模式：自报无烟天数，不是真实退款" className="bg-stone-50 border border-[#E5E0D8] px-2 min-[360px]:px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
             <Wallet className="hidden min-[360px]:block w-3.5 h-3.5 text-stone-700 shrink-0" />
             <span className="font-semibold text-stone-900">
-              ${refundedAmount}
+              {smokeFreeCount} 天
             </span>
             <span className="text-stone-300">/</span>
             <span className="text-stone-500 font-normal">
-              ${state.maxRefund}
+              14 天
             </span>
           </div>
         </div>

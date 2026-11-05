@@ -19,7 +19,8 @@ import {
   saveActiveSession, 
   clearActiveSession 
 } from './utils/storage';
-import { FastForward, RotateCcw, Zap, ExternalLink, ShieldAlert } from 'lucide-react';
+import { createChallenge, getChallengeView, recordReport } from './utils/challenge';
+import { RotateCcw, Zap } from 'lucide-react';
 
 export default function App() {
   const [state, setState] = useState(getInitialState);
@@ -62,13 +63,24 @@ export default function App() {
   }));
 
   const [showVocabModal, setShowVocabModal] = useState(false);
+  const [now, setNow] = useState(Date.now());
 
   // Sync to local storage
   useEffect(() => {
     saveState(state);
   }, [state]);
 
-  const isTodayDone = !!state.completedDays[state.currentDay - 1];
+  useEffect(() => {
+    const refresh = () => setNow(Date.now());
+    const timer = window.setInterval(refresh, 60_000);
+    document.addEventListener('visibilitychange', refresh);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener('visibilitychange', refresh);
+    };
+  }, []);
+
+  const challengeView = getChallengeView(state.challenge, now);
 
   // Start a quiz session (SOS or practice)
   const handleStartQuiz = (mode) => {
@@ -124,23 +136,26 @@ export default function App() {
   // Complete a quiz session
   const handleCompleteSession = () => {
     clearActiveSession();
+    setState((prev) => ({
+      ...prev,
+      totalCravingsIntercepted: prev.totalCravingsIntercepted + 1
+    }));
+  };
+
+  const handleStartChallenge = () => {
+    setState((prev) => prev.challenge ? prev : { ...prev, challenge: createChallenge() });
+    setNow(Date.now());
+  };
+
+  const handleReport = (dayNumber, result) => {
     setState((prev) => {
-      const dayIdx = prev.currentDay - 1;
-      const newCompletedDays = [...prev.completedDays];
-      let newStreak = prev.streak;
-
-      if (!newCompletedDays[dayIdx]) {
-        newCompletedDays[dayIdx] = true;
-        newStreak += 1;
+      try {
+        return { ...prev, challenge: recordReport(prev.challenge, dayNumber, result) };
+      } catch {
+        return prev;
       }
-
-      return {
-        ...prev,
-        completedDays: newCompletedDays,
-        totalCravingsIntercepted: prev.totalCravingsIntercepted + 1,
-        streak: newStreak
-      };
     });
+    setNow(Date.now());
   };
 
   // Save vocab item (only applies to Economist vocab)
@@ -172,16 +187,9 @@ export default function App() {
     }));
   };
 
-  // Demo tool: fast forward to next day
-  const handleNextDay = () => {
-    setState((prev) => ({
-      ...prev,
-      currentDay: Math.min(14, prev.currentDay + 1)
-    }));
-  };
-
   // Demo tool: reset state
   const handleReset = () => {
+    localStorage.removeItem('mind_over_smoke_state_v2');
     localStorage.removeItem('mind_over_smoke_state_v1');
     setState(getInitialState());
   };
@@ -190,8 +198,8 @@ export default function App() {
     <div className="min-h-screen bg-[#F9F8F6] flex flex-col font-sans text-stone-900">
       <Header 
         state={state} 
+        smokeFreeCount={challengeView?.smokeFreeCount || 0}
         onOpenVocab={() => setShowVocabModal(true)} 
-        onResetDemo={handleReset}
       />
 
       <main className="flex-1 max-w-xl w-full mx-auto p-4 space-y-4 pb-12">
@@ -214,18 +222,20 @@ export default function App() {
         {/* Core Hero: Emergency SOS Crave Interceptor */}
         <SosPanicButton 
           onStartQuiz={handleStartQuiz} 
-          isTodayDone={isTodayDone}
-          streak={state.streak}
         />
 
         {/* 14-Day Commitment Contract & Rebate Matrix */}
         <ContractDashboard 
           state={state} 
+          view={challengeView}
+          onStart={handleStartChallenge}
+          onReport={handleReport}
         />
 
         {/* Biological and Financial ROI Health Tracker */}
         <BiologicalTracker 
           state={state} 
+          smokeFreeCount={challengeView?.smokeFreeCount || 0}
         />
 
         {/* Developer / Demo Quick-test toolbar */}
@@ -242,14 +252,6 @@ export default function App() {
             >
               <Zap className="w-3 h-3 text-amber-300" />
               <span>模拟图标冷启动</span>
-            </button>
-            <button
-              onClick={handleNextDay}
-              className="flex items-center space-x-1 px-2.5 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition"
-              title="模拟进入下一天以体验连续打卡返现"
-            >
-              <FastForward className="w-3 h-3" />
-              <span>Day {state.currentDay < 14 ? state.currentDay + 1 : 14}</span>
             </button>
             <button
               onClick={handleReset}
@@ -273,7 +275,6 @@ export default function App() {
           onProgress={handleQuizProgress}
           onClose={handleCloseQuiz}
           onCompleteSession={handleCompleteSession}
-          isTodayDone={isTodayDone}
           onSaveVocab={handleSaveVocab}
           savedVocabIds={state.savedVocab.map((v) => v.id)}
           onSwapTask={handleSwapTask}

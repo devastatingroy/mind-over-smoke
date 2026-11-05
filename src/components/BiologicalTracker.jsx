@@ -1,13 +1,10 @@
 import React from 'react';
 import { HeartPulse, Wind, Sparkles, TrendingUp, DollarSign } from 'lucide-react';
 
-export default function BiologicalTracker({ state }) {
-  const completedCount = state.completedDays.filter(Boolean).length;
-  // Estimate avoided cigarettes (e.g. 15 per day) + intercepted cravings
-  const estimatedAvoidedCigs = Math.max(
-    state.totalCravingsIntercepted * 2,
-    completedCount * state.cigsPerDay
-  );
+export default function BiologicalTracker({ state, smokeFreeCount }) {
+  const completedCount = smokeFreeCount;
+  // A self-report based estimate; SOS completion alone does not prove abstinence.
+  const estimatedAvoidedCigs = completedCount * state.cigsPerDay;
   // Money saved on tobacco (e.g. $8 per 20 cigarettes)
   const savedTobaccoMoney = ((estimatedAvoidedCigs / 20) * state.smokePackPrice).toFixed(1);
 
@@ -16,7 +13,7 @@ export default function BiologicalTracker({ state }) {
       time: '20 分钟',
       title: '心率与血压平复',
       desc: '末梢毛细血管痉挛缓解，心肌供氧恢复正常基线。',
-      achieved: completedCount >= 1 || state.totalCravingsIntercepted >= 1
+      achieved: completedCount >= 1
     },
     {
       time: '24 小时',
@@ -68,7 +65,7 @@ export default function BiologicalTracker({ state }) {
         </div>
 
         <div className="bg-[#F7F5F0] p-3 rounded-xl border border-[#E2DFD6] text-center">
-          <div className="text-[10px] text-gray-500 font-medium">累计少抽卷烟</div>
+          <div className="text-[10px] text-gray-500 font-medium">按自报估算少抽</div>
           <div className="text-base font-black font-serif text-gray-900 mt-0.5">
             {estimatedAvoidedCigs} <span className="text-xs font-sans font-normal text-gray-500">支</span>
           </div>
