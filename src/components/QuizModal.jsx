@@ -891,7 +891,7 @@ export default function QuizModal({
                   </div>
 
                   {/* Editorial Verdict Box */}
-                  <div className="bg-[#18181B] text-white p-4.5 rounded-xl relative shadow-xs">
+                  <div className="bg-[#18181B] text-white p-4 rounded-xl relative shadow-xs">
                     <div className="flex items-center justify-between mb-1.5 text-[9px] font-mono tracking-widest text-stone-400">
                       <span className="text-[#FAFAFA] font-bold">VERDICT · 判词</span>
                       <span className="bg-[#8C1D24] text-white px-1.5 py-0.2">ECONOMIST STYLE</span>
