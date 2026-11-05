@@ -603,17 +603,19 @@ export default function QuizModal({
 
                   {/* Bilingual Mapping Table when answered */}
                   {isAnswered && currentQ.mapping && (
-                    <div className="bg-white p-4.5 rounded-xl border border-[#E5E0D8] text-xs space-y-2.5">
-                      <div className="font-mono text-[10px] text-stone-500 uppercase tracking-wider flex items-center justify-between">
+                    <div className="bg-white p-4 rounded-xl border border-[#E5E0D8] text-xs space-y-2.5">
+                      <div className="font-mono text-[10px] text-stone-500 uppercase tracking-wider flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                         <span>BILINGUAL SEMANTIC MAPPING · 意象转码对照</span>
                         <span className="font-sans text-[10px] text-stone-400">词意精准咬合</span>
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 gap-2">
                         {currentQ.mapping.map((m, idx) => (
-                          <div key={idx} className="bg-stone-50 p-2.5 rounded-lg border border-stone-200/80 flex items-center justify-between text-xs">
-                            <span className="font-serif italic text-stone-700 truncate mr-1.5">{m.en}</span>
-                            <span className="text-stone-400 font-mono text-xs shrink-0">⇄</span>
-                            <span className="font-bold text-stone-900 ml-1.5 shrink-0">{m.zh}</span>
+                          <div key={idx} className="bg-stone-50 p-2.5 rounded-lg border border-stone-200/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5 text-xs">
+                            <span className="font-serif italic text-stone-700 break-words min-w-0 sm:flex-1">{m.en}</span>
+                            <span className="flex items-center gap-1.5 sm:shrink-0">
+                              <span className="text-stone-400 font-mono">⇄</span>
+                              <span className="font-bold text-stone-900">{m.zh}</span>
+                            </span>
                           </div>
                         ))}
                       </div>

@@ -11,21 +11,21 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
       <div className="h-0.5 bg-[#8C1D24] w-full" />
       
       <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-2.5">
-          <div className="bg-[#8C1D24] text-white px-1.5 py-0.5 text-[11px] font-serif font-black tracking-widest uppercase">
+        <div className="flex items-center space-x-2.5 min-w-0 flex-1">
+          <div className="bg-[#8C1D24] text-white px-1.5 py-0.5 text-[11px] font-serif font-black tracking-widest uppercase shrink-0">
             THE
           </div>
-          <div>
-            <h1 className="text-lg font-serif font-black tracking-tight text-stone-900 leading-none">
+          <div className="min-w-0">
+            <h1 className="text-base sm:text-lg font-serif font-black tracking-tight text-stone-900 leading-none truncate">
               MindOverSmoke
             </h1>
-            <span className="text-[10px] text-stone-500 font-mono tracking-wide">
+            <span className="block truncate text-[10px] text-stone-500 font-mono tracking-wide">
               智熄 · 理性认知阻断
             </span>
           </div>
         </div>
 
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 shrink-0">
           {/* Vocab book icon */}
           <button
             onClick={onOpenVocab}
@@ -41,8 +41,8 @@ export default function Header({ state, onOpenVocab, onResetDemo }) {
           </button>
 
           {/* Refund Progress Badge */}
-          <div className="bg-stone-50 border border-[#E5E0D8] px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono">
-            <Wallet className="w-3.5 h-3.5 text-stone-700" />
+          <div className="bg-stone-50 border border-[#E5E0D8] px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
+            <Wallet className="w-3.5 h-3.5 text-stone-700 shrink-0" />
             <span className="font-semibold text-stone-900">
               ${refundedAmount}
             </span>
