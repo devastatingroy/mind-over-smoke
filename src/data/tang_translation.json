@@ -4,13 +4,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《春望》",
-    "translator": "Kenneth Rexroth 译本",
+    "translator": "参考英译（意译）",
     "english_text": "The country is broken, yet mountains and rivers remain;\nIn the city spring arrives, with grass and trees growing deep.",
-    "prompt": "解读上方英译中的核心意象（The country is broken / mountains and rivers remain / In the city spring arrives / grass and trees grow deep），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "国破山河在，城春草木深",
     "options": [
       "国破山河在，城春草木深",
@@ -45,25 +45,25 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《行路难·其一》",
     "chinese_verse": "长风破浪会有时，直挂云帆济沧海。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "A time will come to ride the wind and cleave the waves; I will hoist my cloudy sail to cross the boundless sea.",
+    "correct_answer": "One day I shall ride the wind and break the waves; I shall raise my cloudlike sails and cross the vast sea.",
     "full_verse": "长风破浪会有时，直挂云帆济沧海。",
     "mapping": [
       {
-        "en": "cleave the waves",
+        "en": "break the waves",
         "zh": "破浪"
       },
       {
-        "en": "hoist cloudy sail",
+        "en": "raise my cloudlike sails",
         "zh": "挂云帆"
       },
       {
-        "en": "cross the boundless sea",
+        "en": "cross the vast sea",
         "zh": "济沧海"
       }
     ],
@@ -75,13 +75,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《定风波》",
-    "translator": "Arthur Waley / 许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Listen not to the rain beating against the forest trees;\nWhy not chant and stroll along at an easy pace?",
-    "prompt": "解读上方英译中的核心意象（beating against forest trees / chant / stroll along at easy pace），调动深层诗词记忆：你能逆向还原苏轼写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "莫听穿林打叶声，何妨吟啸且徐行",
     "options": [
       "莫听穿林打叶声，何妨吟啸且徐行",
@@ -92,15 +92,15 @@
     "full_verse": "莫听穿林打叶声，何妨吟啸且徐行。竹杖芒鞋轻胜马，谁怕？一蓑烟雨任平生。",
     "mapping": [
       {
-        "en": "beating against forest trees",
+        "en": "rain beating against the leaves",
         "zh": "穿林打叶"
       },
       {
-        "en": "chant",
+        "en": "sing aloud",
         "zh": "吟啸"
       },
       {
-        "en": "stroll along at easy pace",
+        "en": "walk at an easy pace",
         "zh": "徐行"
       }
     ],
@@ -112,25 +112,25 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《将进酒》",
     "chinese_verse": "天生我材必有用，千金散尽还复来。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Heaven has made our talents, they must serve a purpose; A thousand gold pieces scattered will all return again.",
+    "correct_answer": "Heaven gave me talent for a purpose; though I spend a thousand pieces of gold, they will come back.",
     "full_verse": "天生我材必有用，千金散尽还复来。",
     "mapping": [
       {
-        "en": "talents serve a purpose",
+        "en": "talent has a purpose",
         "zh": "我材必有用"
       },
       {
-        "en": "thousand gold scattered",
+        "en": "a thousand pieces of gold spent",
         "zh": "千金散尽"
       },
       {
-        "en": "all return again",
+        "en": "they will come back",
         "zh": "还复来"
       }
     ],
@@ -142,13 +142,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 白居易",
     "title": "《赋得古原草送别》",
-    "translator": "Herbert Giles 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Wildfires cannot burn it out completely;\nSpring breezes blow it back to life again.",
-    "prompt": "解读上方英译中的核心意象（wildfires cannot burn out / spring breezes blow back to life），调动深层诗词记忆：你能逆向还原白居易写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "野火烧不尽，春风吹又生",
     "options": [
       "野火烧不尽，春风吹又生",
@@ -159,11 +159,11 @@
     "full_verse": "野火烧不尽，春风吹又生。远芳侵古道，晴翠接荒城。",
     "mapping": [
       {
-        "en": "wildfires cannot burn out",
+        "en": "wildfires cannot burn it away",
         "zh": "野火烧不尽"
       },
       {
-        "en": "spring breezes blow back to life",
+        "en": "spring breezes bring it back to life",
         "zh": "春风吹又生"
       }
     ],
@@ -175,7 +175,7 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王之涣",
     "title": "《登鹳雀楼》",
@@ -201,13 +201,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《鹿柴》",
-    "translator": "Gary Snyder 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Empty mountain, no one in sight,\nYet the echoes of human voices are heard afar.",
-    "prompt": "解读上方英译中的核心意象（empty mountain, no one in sight / echoes of human voices），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "空山不见人，但闻人语响",
     "options": [
       "空山不见人，但闻人语响",
@@ -234,13 +234,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《清明》",
     "chinese_verse": "借问酒家何处有？牧童遥指杏花村。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "May I ask where a tavern can be found? A shepherd boy points afar to the Apricot Village.",
+    "correct_answer": "Where can I find an inn? A shepherd boy points toward Apricot Blossom Village.",
     "full_verse": "借问酒家何处有？牧童遥指杏花村。",
     "mapping": [
       {
@@ -264,13 +264,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李商隐",
     "title": "《无题》",
-    "translator": "A. C. Graham 译本",
-    "english_text": "The spring silkworm spins silk until death draws near;\nThe candle burns to tears only before turning to ash.",
-    "prompt": "解读上方英译中的核心意象（silkworm spins silk till death / candle turns to ash / tears dried），调动深层诗词记忆：你能逆向还原李商隐写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "The silkworm spins its silk until it dies;\nThe candle's tears dry only when it turns to ash.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "春蚕到死丝方尽，蜡炬成灰泪始干",
     "options": [
       "春蚕到死丝方尽，蜡炬成灰泪始干",
@@ -301,13 +301,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《水调歌头》",
     "chinese_verse": "但愿人长久，千里共婵娟。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "May we all be blessed with longevity, sharing the elegance of the moonlight though a thousand miles apart.",
+    "correct_answer": "May we both live long and share the same moonlight, though a thousand miles apart.",
     "full_verse": "但愿人长久，千里共婵娟。",
     "mapping": [
       {
@@ -331,13 +331,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《绝句》",
-    "translator": "许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Two yellow orioles sing amid the verdant willows;\nA line of white egrets mounts up to the azure sky.",
-    "prompt": "解读上方英译中的核心意象（two yellow orioles sing / verdant willows / line of white egrets / azure sky），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "两个黄鹂鸣翠柳，一行白鹭上青天",
     "options": [
       "两个黄鹂鸣翠柳，一行白鹭上青天",
@@ -372,13 +372,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 柳宗元",
     "title": "《江雪》",
     "chinese_verse": "孤舟蓑笠翁，独钓寒江雪。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "In a lone boat, an old man in straw cloak and hat, fishes alone in the cold river snow.",
+    "correct_answer": "Alone in a small boat, an old man in a straw cloak and hat fishes on the snowy river.",
     "full_verse": "千山鸟飞绝，万径人踪灭。孤舟蓑笠翁，独钓寒江雪。",
     "mapping": [
       {
@@ -406,13 +406,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《竹里馆》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "Sitting alone in the secluded bamboo grove;\nI strum my lute and give a prolonged whistle.",
-    "prompt": "解读上方英译中的核心意象（secluded bamboo grove / strum lute / prolonged whistle），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I sit alone among secluded bamboo;\nI play my zither and whistle a long note.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "独坐幽篁里，弹琴复长啸",
     "options": [
       "独坐幽篁里，弹琴复长啸",
@@ -423,15 +423,15 @@
     "full_verse": "独坐幽篁里，弹琴复长啸。深林人不知，明月来相照。",
     "mapping": [
       {
-        "en": "secluded bamboo grove",
+        "en": "secluded bamboo",
         "zh": "幽篁"
       },
       {
-        "en": "strum lute",
+        "en": "play my zither",
         "zh": "弹琴"
       },
       {
-        "en": "prolonged whistle",
+        "en": "whistle a long note",
         "zh": "长啸"
       }
     ],
@@ -443,13 +443,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《山居秋暝》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "The bright moon shines amid the pine trees;\nThe crystal spring water flows over the smooth stones.",
-    "prompt": "解读上方英译中的核心意象（bright moon shines / amid pine trees / crystal spring water flows / over smooth stones），调动深层诗词记忆：你能逆向还原王维写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Moonlight shines through the pines;\nA clear spring flows over the stones.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "明月松间照，清泉石上流",
     "options": [
       "明月松间照，清泉石上流",
@@ -460,19 +460,19 @@
     "full_verse": "空山新雨后，天气晚来秋。明月松间照，清泉石上流。",
     "mapping": [
       {
-        "en": "bright moon shines",
+        "en": "moonlight shines",
         "zh": "明月照"
       },
       {
-        "en": "amid pine trees",
+        "en": "through the pines",
         "zh": "松间"
       },
       {
-        "en": "crystal spring water flows",
+        "en": "a clear spring flows",
         "zh": "清泉流"
       },
       {
-        "en": "over smooth stones",
+        "en": "over the stones",
         "zh": "石上"
       }
     ],
@@ -484,13 +484,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《登高》",
-    "translator": "许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "The boundless forest sheds its leaves, rustling down;\nThe endless Yangtze River rolls on, billowing forever.",
-    "prompt": "解读上方英译中的核心意象（boundless forest sheds leaves / rustling down / endless Yangtze River / billowing forever），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "无边落木萧萧下，不尽长江滚滚来",
     "options": [
       "无边落木萧萧下，不尽长江滚滚来",
@@ -525,13 +525,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 辛弃疾",
     "title": "《青玉案·元夕》",
-    "translator": "许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "I searched for her thousands of times in the crowded fair;\nSuddenly looking back, she stood where the lanterns were dim.",
-    "prompt": "解读上方英译中的核心意象（searched thousands of times / suddenly looking back / where lanterns were dim），调动深层诗词记忆：你能逆向还原辛弃疾写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处",
     "options": [
       "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处",
@@ -562,13 +562,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《月下独酌》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "I raise my cup to invite the bright moon;\nFacing my shadow, we make a company of three.",
-    "prompt": "解读上方英译中的核心意象（raise cup to invite / bright moon / facing shadow / company of three），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I raise my cup to invite the moon;\nWith my shadow, we make three.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "举杯邀明月，对影成三人",
     "options": [
       "举杯邀明月，对影成三人",
@@ -603,13 +603,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 孟浩然",
     "title": "《春晓》",
-    "translator": "Kenneth Rexroth 译本",
-    "english_text": "In spring slumber, I was unaware of dawn arriving;\nEverywhere the chirping of birds can be heard.",
-    "prompt": "解读上方英译中的核心意象（spring slumber / unaware of dawn / everywhere / chirping of birds heard），调动深层诗词记忆：你能逆向还原孟浩然写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "In spring sleep, I do not notice dawn;\nEverywhere, birds are singing.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "春眠不觉晓，处处闻啼鸟",
     "options": [
       "春眠不觉晓，处处闻啼鸟",
@@ -644,13 +644,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 岳飞",
     "title": "《满江红》",
-    "translator": "许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Thirty years of deeds and dust,\nEight thousand miles of clouds and moon.",
-    "prompt": "解读上方英译中的核心意象（thirty years of deeds / dust / eight thousand miles / clouds and moon），调动深层诗词记忆：你能逆向还原岳飞写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "三十功名尘与土，八千里路云和月",
     "options": [
       "三十功名尘与土，八千里路云和月",
@@ -685,13 +685,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 崔颢",
     "title": "《黄鹤楼》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "The yellow crane has flown away and will never return;\nFor a thousand years the white clouds wander empty in the sky.",
-    "prompt": "解读上方英译中的核心意象（yellow crane flown away / never return / white clouds / wander empty thousand years），调动深层诗词记忆：你能逆向还原崔颢写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "The yellow crane has flown away, never to return;\nFor a thousand years, white clouds have drifted across the empty sky.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "黄鹤一去不复返，白云千载空悠悠",
     "options": [
       "黄鹤一去不复返，白云千载空悠悠",
@@ -702,11 +702,11 @@
     "full_verse": "昔人已乘黄鹤去，此地空余黄鹤楼。黄鹤一去不复返，白云千载空悠悠。",
     "mapping": [
       {
-        "en": "yellow crane flown away",
+        "en": "the yellow crane has flown away",
         "zh": "黄鹤一去"
       },
       {
-        "en": "never return",
+        "en": "never to return",
         "zh": "不复返"
       },
       {
@@ -714,7 +714,7 @@
         "zh": "白云"
       },
       {
-        "en": "wander empty thousand years",
+        "en": "drift across the empty sky",
         "zh": "千载空悠悠"
       }
     ],
@@ -726,13 +726,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 贺知章",
     "title": "《咏柳》",
-    "translator": "Herbert Giles 译本",
+    "translator": "参考英译（意译）",
     "english_text": "I wonder who has cut and tailored these slender leaves;\nThe spring breeze of February is like a pair of scissors.",
-    "prompt": "解读上方英译中的核心意象（who tailored slender leaves / breeze of February / like a pair of scissors），调动深层诗词记忆：你能逆向还原贺知章写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "不知细叶谁裁出，二月春风似剪刀",
     "options": [
       "不知细叶谁裁出，二月春风似剪刀",
@@ -763,13 +763,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜魏晋名作 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "东晋 · 陶渊明",
     "title": "《饮酒·其五》",
-    "translator": "Arthur Waley 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Plucking chrysanthemums beneath the eastern hedge;\nLeisurely, I gaze upon the southern mountains.",
-    "prompt": "解读上方英译中的核心意象（plucking chrysanthemums / eastern hedge / leisurely gaze / southern mountains），调动深层诗词记忆：你能逆向还原陶渊明写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "采菊东篱下，悠然见南山",
     "options": [
       "采菊东篱下，悠然见南山",
@@ -804,13 +804,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《望岳》",
-    "translator": "David Hawkes 译本",
-    "english_text": "Some day I must mount to the very summit;\nAnd see all other mountains dwarfed in a single glance.",
-    "prompt": "解读上方英译中的核心意象（mount to the summit / single glance / all mountains dwarfed），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "One day I shall climb to the very summit\nAnd see how small the other mountains look.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "会当凌绝顶，一览众山小",
     "options": [
       "会当凌绝顶，一览众山小",
@@ -841,13 +841,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 李清照",
     "title": "《如梦令》",
-    "translator": "许渊冲 译本",
-    "english_text": "Asking the maid rolling up the window curtain;\nShe replies that the crabapples remain just the same.",
-    "prompt": "解读上方英译中的核心意象（asking maid rolling curtain / replies / crabapples remain same），调动深层诗词记忆：你能逆向还原李清照写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I ask the maid as she rolls up the blinds;\nShe says the crabapple blossoms are unchanged.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "试问卷帘人，却道海棠依旧",
     "options": [
       "试问卷帘人，却道海棠依旧",
@@ -858,15 +858,15 @@
     "full_verse": "试问卷帘人，却道海棠依旧。知否，知否？应是绿肥红瘦。",
     "mapping": [
       {
-        "en": "asking maid rolling curtain",
+        "en": "I ask the maid rolling up the blinds",
         "zh": "试问卷帘人"
       },
       {
-        "en": "replies",
+        "en": "she says",
         "zh": "却道"
       },
       {
-        "en": "crabapples remain same",
+        "en": "the crabapple blossoms are unchanged",
         "zh": "海棠依旧"
       }
     ],
@@ -878,14 +878,14 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《静夜思》",
-    "translator": "Herbert Giles 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Raising my head, I gaze at the bright moon;\nBowing my head, I think of my distant homeland.",
-    "prompt": "解读上方英译中的核心意象（raising head gaze moon / bowing head think homeland），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
-    "correct_answer": "抬头望明月，低头思故乡",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
+    "correct_answer": "举头望明月，低头思故乡",
     "options": [
       "抬头望明月，低头思故乡",
       "床前明月光，疑是地上霜",
@@ -911,13 +911,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王勃",
     "title": "《滕王阁序》",
-    "translator": "许渊冲 译本",
-    "english_text": "The evening glow flies side by side with the lonely wild duck;\nThe autumn water shares the single hue of the vast sky.",
-    "prompt": "解读上方英译中的核心意象（evening glow flies / lonely wild duck / autumn water / single hue of vast sky），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Sunset clouds and a lone wild duck fly together;\nAutumn waters blend with the endless sky.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "落霞与孤鹜齐飞，秋水共长天一色",
     "options": [
       "落霞与孤鹜齐飞，秋水共长天一色",
@@ -928,19 +928,19 @@
     "full_verse": "落霞与孤鹜齐飞，秋水共长天一色。",
     "mapping": [
       {
-        "en": "evening glow flies",
+        "en": "sunset clouds fly",
         "zh": "落霞齐飞"
       },
       {
-        "en": "lonely wild duck",
+        "en": "a lone wild duck",
         "zh": "孤鹜"
       },
       {
-        "en": "autumn water",
+        "en": "autumn waters",
         "zh": "秋水"
       },
       {
-        "en": "single hue of vast sky",
+        "en": "blend with the endless sky",
         "zh": "共长天一色"
       }
     ],
@@ -952,13 +952,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 陆游",
     "title": "《游山西村》",
-    "translator": "Burton Watson 译本",
-    "english_text": "Mountains multiply and streams twist till path seems blocked;\nAmid shade of willows and bright flowers, another village appears.",
-    "prompt": "解读上方英译中的核心意象（mountains multiply, path blocked / willows and bright flowers / another village appears），调动深层诗词记忆：你能逆向还原陆游写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Mountains rise and streams wind; I fear the path is gone.\nPast dark willows and bright flowers, another village appears.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "山重水复疑无路，柳暗花明又一村",
     "options": [
       "山重水复疑无路，柳暗花明又一村",
@@ -969,11 +969,11 @@
     "full_verse": "山重水复疑无路，柳暗花明又一村。",
     "mapping": [
       {
-        "en": "mountains multiply, path blocked",
+        "en": "mountains and streams seem to block the path",
         "zh": "山重水复疑无路"
       },
       {
-        "en": "willows and bright flowers",
+        "en": "dark willows and bright flowers",
         "zh": "柳暗花明"
       },
       {
@@ -989,13 +989,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 刘禹锡",
     "title": "《陋室铭》",
-    "translator": "Herbert Giles 译本",
-    "english_text": "Mountains need not be high; if there is an immortal, they become famous.\nWaters need not be deep; if there is a dragon, they possess divinity.",
-    "prompt": "解读上方英译中的核心意象（mountains not high, immortal famous / waters not deep, dragon divinity），调动深层诗词记忆：你能逆向还原刘禹锡写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "A mountain need not be high to be famous if an immortal lives there;\nA river need not be deep to be wondrous if a dragon dwells within it.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "山不在高，有仙则名。水不在深，有龙则灵",
     "options": [
       "山不在高，有仙则名。水不在深，有龙则灵",
@@ -1006,11 +1006,11 @@
     "full_verse": "山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。",
     "mapping": [
       {
-        "en": "mountains not high, immortal famous",
+        "en": "a mountain with an immortal is famous",
         "zh": "山不在高，有仙则名"
       },
       {
-        "en": "waters not deep, dragon divinity",
+        "en": "a river with a dragon is wondrous",
         "zh": "水不在深，有龙则灵"
       }
     ],
@@ -1022,13 +1022,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 张九龄",
     "title": "《望月怀远》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "Over the sea the bright moon rises into the sky;\nAt this very moment, people far apart share the view.",
-    "prompt": "解读上方英译中的核心意象（over sea bright moon rises / people far apart share view），调动深层诗词记忆：你能逆向还原张九龄写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "A bright moon rises over the sea;\nFar apart as we are, we share this moment.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "海上生明月，天涯共此时",
     "options": [
       "海上生明月，天涯共此时",
@@ -1039,11 +1039,11 @@
     "full_verse": "海上生明月，天涯共此时。",
     "mapping": [
       {
-        "en": "over sea bright moon rises",
+        "en": "a bright moon rises over the sea",
         "zh": "海上生明月"
       },
       {
-        "en": "people far apart share view",
+        "en": "we share this moment from afar",
         "zh": "天涯共此时"
       }
     ],
@@ -1055,13 +1055,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《题西林壁》",
-    "translator": "许渊冲 译本",
-    "english_text": "Viewed horizontally, it forms a range; from the side, a solitary peak;\nFar, near, high, or low, no two perspectives look the same.",
-    "prompt": "解读上方英译中的核心意象（viewed horizontally range, side peak / far near high low different），调动深层诗词记忆：你能逆向还原苏轼写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "From the front, it looks like a range; from the side, a peak.\nNear or far, high or low, it never looks the same.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "横看成岭侧成峰，远近高低各不同",
     "options": [
       "横看成岭侧成峰，远近高低各不同",
@@ -1072,11 +1072,11 @@
     "full_verse": "横看成岭侧成峰，远近高低各不同。不识庐山真面目，只缘身在此山中。",
     "mapping": [
       {
-        "en": "viewed horizontally range, side peak",
+        "en": "a range from the front, a peak from the side",
         "zh": "横看成岭侧成峰"
       },
       {
-        "en": "far near high low different",
+        "en": "a different view from every position",
         "zh": "远近高低各不同"
       }
     ],
@@ -1088,13 +1088,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《早发白帝城》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "Monkeys on both banks chatter without ceasing;\nThe light skiff has already passed ten thousand tiers of mountains.",
-    "prompt": "解读上方英译中的核心意象（monkeys chatter without ceasing / light skiff passed / ten thousand tiers of mountains），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "The gibbons call without cease from both banks;\nMy light boat has already passed ten thousand mountains.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "两岸猿声啼不住，轻舟已过万重山",
     "options": [
       "两岸猿声啼不住，轻舟已过万重山",
@@ -1105,15 +1105,15 @@
     "full_verse": "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
-        "en": "monkeys chatter without ceasing",
+        "en": "gibbons call without cease",
         "zh": "两岸猿声啼不住"
       },
       {
-        "en": "light skiff passed",
+        "en": "my light boat has passed",
         "zh": "轻舟已过"
       },
       {
-        "en": "ten thousand tiers of mountains",
+        "en": "ten thousand mountains",
         "zh": "万重山"
       }
     ],
@@ -1125,13 +1125,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《山行》",
-    "translator": "Herbert Giles 译本",
-    "english_text": "I halt my carriage, enchanted by the twilight maple grove;\nThe frosted leaves are redder than the flowers of February spring.",
-    "prompt": "解读上方英译中的核心意象（halt carriage, enchanted maple / frosted leaves redder / flowers of February spring），调动深层诗词记忆：你能逆向还原杜牧写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I stop my carriage to admire the maple woods at dusk;\nFrost-red leaves outshine the flowers of spring.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "停车坐爱枫林晚，霜叶红于二月花",
     "options": [
       "停车坐爱枫林晚，霜叶红于二月花",
@@ -1142,15 +1142,15 @@
     "full_verse": "远上寒山石径斜，白云生处有人家。停车坐爱枫林晚，霜叶红于二月花。",
     "mapping": [
       {
-        "en": "halt carriage, enchanted maple",
+        "en": "stop my carriage to admire the maples",
         "zh": "停车坐爱枫林晚"
       },
       {
-        "en": "frosted leaves redder",
+        "en": "frost-red leaves outshine",
         "zh": "霜叶红于"
       },
       {
-        "en": "flowers of February spring",
+        "en": "spring flowers",
         "zh": "二月花"
       }
     ],
@@ -1162,13 +1162,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 范仲淹",
     "title": "《岳阳楼记》",
-    "translator": "许渊冲 译本",
-    "english_text": "To be the first to worry about the worries of the world;\nAnd to be the last to enjoy its joys.",
-    "prompt": "解读上方英译中的核心意象（first to worry world's worries / last to enjoy its joys），调动深层诗词记忆：你能逆向还原范仲淹写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Be first to worry for the world,\nAnd last to share in its joys.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "先天下之忧而忧，后天下之乐而乐",
     "options": [
       "先天下之忧而忧，后天下之乐而乐",
@@ -1179,11 +1179,11 @@
     "full_verse": "先天下之忧而忧，后天下之乐而乐。",
     "mapping": [
       {
-        "en": "first to worry world's worries",
+        "en": "be first to worry for the world",
         "zh": "先天下之忧而忧"
       },
       {
-        "en": "last to enjoy its joys",
+        "en": "be last to share in its joys",
         "zh": "后天下之乐而乐"
       }
     ],
@@ -1195,13 +1195,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 白居易",
     "title": "《大林寺桃花》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "In all other realms the blooming petals have withered in the fourth month;\nYet the peach blossoms here in the mountain temple are only just beginning to bloom.",
-    "prompt": "解读上方英译中的核心意象（realm petals withered fourth month / mountain temple peach blossoms / just beginning to bloom），调动深层诗词记忆：你能逆向还原白居易写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "By the fourth month, spring flowers have faded in the world below;\nAt the mountain temple, peach blossoms are just beginning to bloom.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "人间四月芳菲尽，山寺桃花始盛开",
     "options": [
       "人间四月芳菲尽，山寺桃花始盛开",
@@ -1212,11 +1212,11 @@
     "full_verse": "人间四月芳菲尽，山寺桃花始盛开。长恨春归无觅处，不知转入此中来。",
     "mapping": [
       {
-        "en": "realm petals withered fourth month",
+        "en": "spring flowers have faded by the fourth month",
         "zh": "人间四月芳菲尽"
       },
       {
-        "en": "mountain temple peach blossoms",
+        "en": "peach blossoms at the mountain temple",
         "zh": "山寺桃花"
       },
       {
@@ -1232,13 +1232,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《茅屋为秋风所破歌》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "Could I but obtain a grand mansion of tens of thousands of rooms;\nSheltering all the cold scholars across the world with joyful faces!",
-    "prompt": "解读上方英译中的核心意象（grand mansion ten thousand rooms / sheltering cold scholars / joyful faces），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "If only I had a mansion with ten thousand rooms,\nTo shelter every poor scholar in the land and bring smiles to their faces.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "安得广厦千万间，大庇天下寒士俱欢颜",
     "options": [
       "安得广厦千万间，大庇天下寒士俱欢颜",
@@ -1249,15 +1249,15 @@
     "full_verse": "安得广厦千万间，大庇天下寒士俱欢颜！风雨不动安如山。",
     "mapping": [
       {
-        "en": "grand mansion ten thousand rooms",
+        "en": "a mansion with ten thousand rooms",
         "zh": "安得广厦千万间"
       },
       {
-        "en": "sheltering cold scholars",
+        "en": "shelter poor scholars",
         "zh": "大庇天下寒士"
       },
       {
-        "en": "joyful faces",
+        "en": "bring smiles to their faces",
         "zh": "俱欢颜"
       }
     ],
@@ -1269,13 +1269,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 贾岛",
     "title": "《题李凝幽居》",
-    "translator": "Herbert Giles 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Birds roost among the trees around the quiet pond;\nA wandering monk knocks on the gate beneath the moonlight.",
-    "prompt": "解读上方英译中的核心意象（birds roost pond trees / monk knocks gate / beneath moonlight），调动深层诗词记忆：你能逆向还原贾岛写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "鸟宿池边树，僧敲月下门",
     "options": [
       "鸟宿池边树，僧敲月下门",
@@ -1286,15 +1286,15 @@
     "full_verse": "鸟宿池边树，僧敲月下门。",
     "mapping": [
       {
-        "en": "birds roost pond trees",
+        "en": "birds roost by the pond",
         "zh": "鸟宿池边树"
       },
       {
-        "en": "monk knocks gate",
+        "en": "a monk knocks at the gate",
         "zh": "僧敲"
       },
       {
-        "en": "beneath moonlight",
+        "en": "beneath the moon",
         "zh": "月下门"
       }
     ],
@@ -1306,13 +1306,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 辛弃疾",
     "title": "《破阵子·为陈同甫赋壮词以寄之》",
-    "translator": "许渊冲 译本",
-    "english_text": "Drunk, I turn up the oil lamp to inspect my gleaming sword;\nDreaming back, I hear the war bugles echoing through all camps.",
-    "prompt": "解读上方英译中的核心意象（drunk turn up lamp inspect sword / dreaming bugles across camps），调动深层诗词记忆：你能逆向还原辛弃疾写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Drunk, I trim the lamp and gaze at my sword;\nIn dreams, I hear bugles sounding from camp to camp.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "醉里挑灯看剑，梦回吹角连营",
     "options": [
       "醉里挑灯看剑，梦回吹角连营",
@@ -1323,11 +1323,11 @@
     "full_verse": "醉里挑灯看剑，梦回吹角连营。八百里分麾下炙，五十弦翻塞外声，沙场秋点兵。",
     "mapping": [
       {
-        "en": "drunk turn up lamp inspect sword",
+        "en": "trim the lamp and gaze at my sword",
         "zh": "醉里挑灯看剑"
       },
       {
-        "en": "dreaming bugles across camps",
+        "en": "bugles sounding from camp to camp",
         "zh": "梦回吹角连营"
       }
     ],
@@ -1339,13 +1339,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜魏晋名作 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "东汉 · 曹操",
     "title": "《短歌行》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "Singing before the wine cup, how fleeting is human life;\nIt is like the morning dew, the days gone by are full of sorrow.",
-    "prompt": "解读上方英译中的核心意象（singing before wine, fleeting life / like morning dew / days gone sorrow），调动深层诗词记忆：你能逆向还原曹操写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I sing over wine: how short is life?\nLike morning dew, it vanishes; too many days have passed in sorrow.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "对酒当歌，人生几何！譬如朝露，去日苦多",
     "options": [
       "对酒当歌，人生几何！譬如朝露，去日苦多",
@@ -1356,7 +1356,7 @@
     "full_verse": "对酒当歌，人生几何！譬如朝露，去日苦多。慨当以慷，忧思难忘。",
     "mapping": [
       {
-        "en": "singing before wine, fleeting life",
+        "en": "sing over wine: how short is life?",
         "zh": "对酒当歌，人生几何"
       },
       {
@@ -1364,7 +1364,7 @@
         "zh": "譬如朝露"
       },
       {
-        "en": "days gone sorrow",
+        "en": "days passed in sorrow",
         "zh": "去日苦多"
       }
     ],
@@ -1376,13 +1376,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 韦应物",
     "title": "《滁州西涧》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "At spring twilight the rain comes rushing down upon the swollen river;\nNo one is here at the ferry, the unmanned boat drifts sideways across the current.",
-    "prompt": "解读上方英译中的核心意象（rain swollen river twilight / unmanned boat drifts sideways），调动深层诗词记忆：你能逆向还原韦应物写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "At dusk, spring rain swells the river and quickens its current;\nAt the deserted ferry, an empty boat drifts sideways.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "春潮带雨晚来急，野渡无人舟自横",
     "options": [
       "春潮带雨晚来急，野渡无人舟自横",
@@ -1393,11 +1393,11 @@
     "full_verse": "独怜幽草涧边生，上有黄鹂深树鸣。春潮带雨晚来急，野渡无人舟自横。",
     "mapping": [
       {
-        "en": "rain swollen river twilight",
+        "en": "spring rain swells the river at dusk",
         "zh": "春潮带雨晚来急"
       },
       {
-        "en": "unmanned boat drifts sideways",
+        "en": "an empty boat drifts sideways",
         "zh": "野渡无人舟自横"
       }
     ],
@@ -1409,13 +1409,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《望庐山瀑布》",
-    "translator": "Herbert Giles 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Flying downwards straight through three thousand feet;\nCould it be the Silver River tumbling down from the Ninth Heaven?",
-    "prompt": "解读上方英译中的核心意象（flying downwards three thousand feet / Silver River tumbling Ninth Heaven），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "飞流直下三千尺，疑是银河落九天",
     "options": [
       "飞流直下三千尺，疑是银河落九天",
@@ -1442,13 +1442,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 刘禹锡",
     "title": "《酬乐天扬州初逢席上见赠》",
-    "translator": "许渊冲 译本",
-    "english_text": "Past the sunken boat, a thousand sails proceed onwards;\nBeyond the diseased tree, ten thousand saplings greet the spring.",
-    "prompt": "解读上方英译中的核心意象（past sunken boat thousand sails / diseased tree ten thousand saplings），调动深层诗词记忆：你能逆向还原刘禹锡写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "A thousand sails pass by the sunken boat;\nBefore the ailing tree, ten thousand others greet the spring.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "沉舟侧畔千帆过，病树前头万木春",
     "options": [
       "沉舟侧畔千帆过，病树前头万木春",
@@ -1459,11 +1459,11 @@
     "full_verse": "沉舟侧畔千帆过，病树前头万木春。今日听君歌一曲，暂凭杯酒长精神。",
     "mapping": [
       {
-        "en": "past sunken boat thousand sails",
+        "en": "a thousand sails pass the sunken boat",
         "zh": "沉舟侧畔千帆过"
       },
       {
-        "en": "diseased tree ten thousand saplings",
+        "en": "ten thousand trees greet spring",
         "zh": "病树前头万木春"
       }
     ],
@@ -1475,13 +1475,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
-    "author": "唐 · 王安石",
+    "author": "宋 · 王安石",
     "title": "《登飞来峰》",
-    "translator": "Kenneth Rexroth 译本",
-    "english_text": "Fear not the floating clouds that veil your eyesight;\nOnly because you stand upon the very highest tier.",
-    "prompt": "解读上方英译中的核心意象（fear not floating clouds veil eyesight / stand upon highest tier），调动深层诗词记忆：你能逆向还原王安石写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "I do not fear clouds obscuring my view,\nFor I am standing on the highest floor.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "不畏浮云遮望眼，自缘身在最高层",
     "options": [
       "不畏浮云遮望眼，自缘身在最高层",
@@ -1492,11 +1492,11 @@
     "full_verse": "飞来山上千寻塔，闻说鸡鸣见日升。不畏浮云遮望眼，自缘身在最高层。",
     "mapping": [
       {
-        "en": "fear not floating clouds veil eyesight",
+        "en": "clouds obscure my view",
         "zh": "不畏浮云遮望眼"
       },
       {
-        "en": "stand upon highest tier",
+        "en": "I stand on the highest floor",
         "zh": "自缘身在最高层"
       }
     ],
@@ -1508,13 +1508,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 高适",
     "title": "《别董大》",
-    "translator": "Witter Bynner 译本",
-    "english_text": "Do not worry that you will find no intimate friends on the journey ahead;\nWho under heaven does not recognize your name?",
-    "prompt": "解读上方英译中的核心意象（worry no intimate friends ahead / who under heaven not recognize name），调动深层诗词记忆：你能逆向还原高适写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Do not worry that you have no friends on the road ahead;\nWho under heaven does not know you?",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "莫愁前路无知己，天下谁人不识君",
     "options": [
       "莫愁前路无知己，天下谁人不识君",
@@ -1525,11 +1525,11 @@
     "full_verse": "千里黄云白日曛，北风吹雁雪纷纷。莫愁前路无知己，天下谁人不识君？",
     "mapping": [
       {
-        "en": "worry no intimate friends ahead",
+        "en": "friends on the road ahead",
         "zh": "莫愁前路无知己"
       },
       {
-        "en": "who under heaven not recognize name",
+        "en": "everyone knows you",
         "zh": "天下谁人不识君"
       }
     ],
@@ -1541,13 +1541,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王勃",
     "title": "《送杜少府之任蜀州》",
-    "translator": "Herbert Giles 译本",
-    "english_text": "As long as true friendship exists within the four seas;\nEven the ends of the earth seem like neighbors living side by side.",
-    "prompt": "解读上方英译中的核心意象（friendship within four seas / ends of earth like neighbors），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "With a true friend in the world,\nEven someone at its farthest edge feels close.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "海内存知己，天涯若比邻",
     "options": [
       "海内存知己，天涯若比邻",
@@ -1558,11 +1558,11 @@
     "full_verse": "海内存知己，天涯若比邻。无为在歧路，儿女共沾巾。",
     "mapping": [
       {
-        "en": "friendship within four seas",
+        "en": "a true friend in the world",
         "zh": "海内存知己"
       },
       {
-        "en": "ends of earth like neighbors",
+        "en": "even far apart, we feel close",
         "zh": "天涯若比邻"
       }
     ],
@@ -1574,13 +1574,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《独坐敬亭山》",
-    "translator": "Arthur Waley 译本",
+    "translator": "参考英译（意译）",
     "english_text": "All birds have flown high and vanished;\nA lonely cloud floats leisurely away.\nWe look at each other without growing weary;\nThere is only Mount Jingting.",
-    "prompt": "解读上方英译中的核心意象（birds flown vanished / lonely cloud leisurely / look without weary / only Mount Jingting），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "相看两不厌，只有敬亭山",
     "options": [
       "相看两不厌，只有敬亭山",
@@ -1615,13 +1615,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 晏殊",
     "title": "《浣溪沙·一曲新词酒一杯》",
-    "translator": "许渊冲 译本",
-    "english_text": "Helplessly, the petals fall and drift away;\nLike old acquaintances returning, the swallows fly back again.",
-    "prompt": "解读上方英译中的核心意象（helplessly petals fall / old acquaintances swallows return），调动深层诗词记忆：你能逆向还原晏殊写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Flowers fall, and there is nothing I can do;\nSwallows return, as though I have seen them before.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "无可奈何花落去，似曾相识燕归来",
     "options": [
       "无可奈何花落去，似曾相识燕归来",
@@ -1648,13 +1648,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《闻官军收河南河北》",
-    "translator": "David Hawkes 译本",
-    "english_text": "White-haired in daylight, I must sing aloud and give full rein to wine;\nYouth shall be my true companion as I return to my native land.",
-    "prompt": "解读上方英译中的核心意象（sing aloud rein wine daylight / youth true companion / return native land），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "In broad daylight I must sing and drink my fill;\nSpringtime will accompany me on the journey home.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "白日放歌须纵酒，青春作伴好还乡",
     "options": [
       "白日放歌须纵酒，青春作伴好还乡",
@@ -1665,11 +1665,11 @@
     "full_verse": "白日放歌须纵酒，青春作伴好还乡。即从巴峡穿巫峡，便下襄阳向洛阳。",
     "mapping": [
       {
-        "en": "sing aloud rein wine daylight",
+        "en": "sing and drink my fill in broad daylight",
         "zh": "白日放歌须纵酒"
       },
       {
-        "en": "youth true companion",
+        "en": "springtime as my companion",
         "zh": "青春作伴"
       },
       {
@@ -1685,13 +1685,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《侠客行》",
-    "translator": "许渊冲 译本",
+    "translator": "参考英译（意译）",
     "english_text": "Killing a man every ten paces, leaving no trace for a thousand miles;\nOnce the heroic deed is accomplished, he shakes his robes and departs without fame.",
-    "prompt": "解读上方英译中的核心意象（heroic deed accomplished / shakes robes departs / without fame），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "事了拂衣去，深藏身与名",
     "options": [
       "事了拂衣去，深藏身与名",
@@ -1722,13 +1722,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 朱熹",
     "title": "《观书有感》",
-    "translator": "Herbert Giles 译本",
-    "english_text": "If you ask how the square pond water can remain so crystal-clear;\nIt is because there is a living source that unceasingly pours fresh water into it.",
-    "prompt": "解读上方英译中的核心意象（how pond water crystal-clear / living source pours fresh water），调动深层诗词记忆：你能逆向还原朱熹写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Why does the square pond stay so clear?\nBecause fresh water keeps flowing from its source.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "问渠那得清如许？为有源头活水来",
     "options": [
       "问渠那得清如许？为有源头活水来",
@@ -1739,11 +1739,11 @@
     "full_verse": "半亩方塘一鉴开，天光云影共徘徊。问渠那得清如许？为有源头活水来。",
     "mapping": [
       {
-        "en": "how pond water crystal-clear",
+        "en": "why the square pond stays clear",
         "zh": "问渠那得清如许"
       },
       {
-        "en": "living source pours fresh water",
+        "en": "fresh water flows from its source",
         "zh": "为有源头活水来"
       }
     ],
@@ -1755,13 +1755,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《泊秦淮》",
-    "translator": "Witter Bynner 译本",
+    "translator": "参考英译（意译）",
     "english_text": "The songstress does not know the sorrow of a fallen nation;\nAcross the misty river, she still sings the song of Backyard Flowers.",
-    "prompt": "解读上方英译中的核心意象（songstress knows not fallen nation / across river sings Backyard Flowers），调动深层诗词记忆：你能逆向还原杜牧写下的是哪句千古绝唱吗？",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "商女不知亡国恨，隔江犹唱后庭花",
     "options": [
       "商女不知亡国恨，隔江犹唱后庭花",
@@ -1788,13 +1788,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜宋词 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "宋 · 柳永",
     "title": "《雨霖铃》",
-    "translator": "许渊冲 译本",
-    "english_text": "Where shall I find myself sobered up from wine tonight?\nBeside the willow banks, beneath the morning breeze and waning moon.",
-    "prompt": "解读上方英译中的核心意象（where sobered up tonight / willow banks / morning breeze waning moon），调动深层诗词记忆：你能逆向还原柳永写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Where will I wake from wine tonight?\nOn willow-lined banks, in the dawn breeze beneath a waning moon.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "今宵酒醒何处？杨柳岸，晓风残月",
     "options": [
       "今宵酒醒何处？杨柳岸，晓风残月",
@@ -1805,15 +1805,15 @@
     "full_verse": "多情自古伤离别，更那堪，冷落清秋节！今宵酒醒何处？杨柳岸，晓风残月。",
     "mapping": [
       {
-        "en": "where sobered up tonight",
+        "en": "where will I wake from wine?",
         "zh": "今宵酒醒何处"
       },
       {
-        "en": "willow banks",
+        "en": "willow-lined banks",
         "zh": "杨柳岸"
       },
       {
-        "en": "morning breeze waning moon",
+        "en": "dawn breeze and waning moon",
         "zh": "晓风残月"
       }
     ],
@@ -1825,13 +1825,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《宣州谢朓楼饯别校书叔云》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "Cutting water with a sword, the water flows all the more;\nRaising a cup to drown sorrow, sorrow returns even deeper.",
-    "prompt": "解读上方英译中的核心意象（cutting water with sword / water flows more / cup drown sorrow / sorrow deeper），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Cut at water with a sword, and it flows on all the more;\nRaise a cup to drown sorrow, and sorrow only deepens.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "抽刀断水水更流，举杯消愁愁更愁",
     "options": [
       "抽刀断水水更流，举杯消愁愁更愁",
@@ -1866,13 +1866,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜先秦名作 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "先秦 · 屈原",
     "title": "《离骚》",
-    "translator": "David Hawkes 译本",
-    "english_text": "The road ahead is long and extends into the boundless distance;\nI shall search up and down in my unyielding quest.",
-    "prompt": "解读上方英译中的核心意象（road long extends distance / search up and down quest），调动深层诗词记忆：你能逆向还原屈原写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "The road ahead is long and far;\nI shall search high and low for the way.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "路漫漫其修远兮，吾将上下而求索",
     "options": [
       "路漫漫其修远兮，吾将上下而求索",
@@ -1883,11 +1883,11 @@
     "full_verse": "路漫漫其修远兮，吾将上下而求索。",
     "mapping": [
       {
-        "en": "road long extends distance",
+        "en": "a long road ahead",
         "zh": "路漫漫其修远兮"
       },
       {
-        "en": "search up and down quest",
+        "en": "search high and low",
         "zh": "吾将上下而求索"
       }
     ],
@@ -1899,13 +1899,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 王勃",
     "title": "《滕王阁序》",
-    "translator": "许渊冲 译本",
-    "english_text": "One should become all the more vigorous as one ages;\nHow could one ever abandon one's lofty ambitions even when hair turns white?",
-    "prompt": "解读上方英译中的核心意象（more vigorous as ages / abandon ambitions white hair），调动深层诗词记忆：你能逆向还原王勃写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Though old, one should grow stronger: why let age weaken one's resolve?\nThough poor, one should hold firmer to one's ambition and never let lofty hopes fall.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志",
     "options": [
       "老当益壮，宁移白首之心？穷且益坚，不坠青云之志",
@@ -1916,12 +1916,20 @@
     "full_verse": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志。",
     "mapping": [
       {
-        "en": "more vigorous as ages",
+        "en": "grow stronger with age",
         "zh": "老当益壮"
       },
       {
-        "en": "abandon ambitions white hair",
+        "en": "not let age weaken resolve",
         "zh": "宁移白首之心"
+      },
+      {
+        "en": "hold firmer in hardship",
+        "zh": "穷且益坚"
+      },
+      {
+        "en": "never let lofty hopes fall",
+        "zh": "不坠青云之志"
       }
     ],
     "science_note": "【生命活力逆向唤醒】对抗消极衰老暗示，以‘青云之志’重燃对健康长寿的主动掌控欲。",
@@ -1932,13 +1940,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《客至》",
-    "translator": "Kenneth Rexroth 译本",
-    "english_text": "The path strewn with flower petals has never been swept for a visitor before;\nToday for the first time, our simple thatched gate is thrown open for you.",
-    "prompt": "解读上方英译中的核心意象（flower path never swept / thatched gate thrown open），调动深层诗词记忆：你能逆向还原杜甫写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "The flower-strewn path has never been swept for a guest;\nToday I open my humble gate for you.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "花径不曾缘客扫，蓬门今始为君开",
     "options": [
       "花径不曾缘客扫，蓬门今始为君开",
@@ -1965,13 +1973,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "en_to_zh",
-    "theme": "英译逆向猜唐诗 · 意象转码挑战",
+    "theme": "古典诗词英译 · 逆向还原",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《将进酒》",
-    "translator": "Arthur Waley 译本",
-    "english_text": "Do you not see the Yellow River's waters coming from the sky?\nRushing towards the boundless sea, never to return again.",
-    "prompt": "解读上方英译中的核心意象（Yellow River waters from sky / rushing boundless sea never return），调动深层诗词记忆：你能逆向还原李白写下的是哪句千古绝唱吗？",
+    "translator": "参考英译（意译）",
+    "english_text": "Do you not see the Yellow River pouring down from the sky?\nIt rushes to the sea and never returns.",
+    "prompt": "根据上方英文意象，回忆并说出对应的中文原句。",
     "correct_answer": "君不见黄河之水天上来，奔流到海不复回",
     "options": [
       "君不见黄河之水天上来，奔流到海不复回",
@@ -1998,21 +2006,21 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《使至塞上》",
     "chinese_verse": "大漠孤烟直，长河落日圆。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "In the boundless desert a lone plume of smoke rises straight; Over the long Yellow River the setting sun sinks round.",
+    "correct_answer": "Across the vast desert, a lone plume of smoke rises straight; the round setting sun hangs over the long river.",
     "full_verse": "大漠孤烟直，长河落日圆。萧关逢候骑，都护在燕然。",
     "mapping": [
       {
-        "en": "boundless desert lone smoke straight",
+        "en": "a lone plume of smoke rises in the desert",
         "zh": "大漠孤烟直"
       },
       {
-        "en": "long river setting sun sinks round",
+        "en": "the round sun hangs over the long river",
         "zh": "长河落日圆"
       }
     ],
@@ -2024,13 +2032,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《念奴娇·赤壁怀古》",
     "chinese_verse": "大江东去，浪淘尽，千古风流人物。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The endless river eastward flows; With its huge waves are swept away all heroes of time past.",
+    "correct_answer": "The great river flows east; its waves wash away the heroes of ages past.",
     "full_verse": "大江东去，浪淘尽，千古风流人物。故垒西边，人道是，三国周郎赤壁。",
     "mapping": [
       {
@@ -2054,13 +2062,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《早发白帝城》",
     "chinese_verse": "两岸猿声啼不住，轻舟已过万重山。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "While monkeys on either bank incessantly cry, the light skiff has already passed ten thousand tiers of mountains.",
+    "correct_answer": "The gibbons call without cease from both banks; my light boat has already passed ten thousand mountains.",
     "full_verse": "两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
@@ -2084,13 +2092,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 白居易",
     "title": "《赋得古原草送别》",
     "chinese_verse": "离离原上草，一岁一枯荣。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Lush, lush grows the grass across the plain; With every passing year it withers and flourishes again.",
+    "correct_answer": "Grass spreads across the plain; each year it withers and grows again.",
     "full_verse": "离离原上草，一岁一枯荣。野火烧不尽，春风吹又生。",
     "mapping": [
       {
@@ -2110,13 +2118,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《春夜喜雨》",
     "chinese_verse": "随风潜入夜，润物细无声。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "It steals into the night along with the gentle breeze; Moistening all living things softly without making a sound.",
+    "correct_answer": "The breeze carries it quietly into the night; it moistens all things without a sound.",
     "full_verse": "随风潜入夜，润物细无声。野径云俱黑，江船火独明。",
     "mapping": [
       {
@@ -2140,13 +2148,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 孟浩然",
     "title": "《过故人庄》",
     "chinese_verse": "开轩面场圃，把酒话桑麻。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Opening the window to face the threshing-ground and garden; We hold our wine cups to chat about mulberry and hemp.",
+    "correct_answer": "I open the window onto the threshing floor and garden; over wine, we talk of mulberry and hemp.",
     "full_verse": "开轩面场圃，把酒话桑麻。待到重阳日，还来就菊花。",
     "mapping": [
       {
@@ -2166,13 +2174,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 辛弃疾",
     "title": "《西江月·夜行黄沙道中》",
     "chinese_verse": "稻花香里说丰年，听取蛙声一片。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Amid the sweet aroma of rice blossoms comes talk of a fertile harvest; While all around one hears the chorus of singing frogs.",
+    "correct_answer": "Amid the scent of rice blossoms, people talk of a good harvest; all around, frogs call in chorus.",
     "full_verse": "稻花香里说丰年，听取蛙声一片。七八个星天外，两三点雨山前。",
     "mapping": [
       {
@@ -2196,13 +2204,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 崔护",
     "title": "《题都城南庄》",
     "chinese_verse": "去年今日此门中，人面桃花相映红。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "On this day last year inside this very gate; The young maiden's face and the peach blossoms mirrored each other in pink.",
+    "correct_answer": "This day last year, inside this very gate, her face and the peach blossoms glowed red together.",
     "full_verse": "去年今日此门中，人面桃花相映红。人面不知何处去，桃花依旧笑春风。",
     "mapping": [
       {
@@ -2226,21 +2234,21 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 贺知章",
     "title": "《回乡偶书》",
     "chinese_verse": "儿童相见不相识，笑问客从何处来。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The village children meet me without knowing who I am; Smiling, they ask: 'Honored guest, from where have you come?'",
+    "correct_answer": "The children see me but do not know me; smiling, they ask where this visitor has come from.",
     "full_verse": "少小离家老大回，乡音无改鬓毛衰。儿童相见不相识，笑问客从何处来。",
     "mapping": [
       {
-        "en": "children meet without knowing",
+        "en": "the children do not know me",
         "zh": "儿童相见不相识"
       },
       {
-        "en": "smiling ask honored guest from where",
+        "en": "they ask where the visitor came from",
         "zh": "笑问客从何处来"
       }
     ],
@@ -2252,22 +2260,22 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 刘禹锡",
     "title": "《竹枝词》",
     "chinese_verse": "东边日出西边雨，道是无晴却有晴。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The sun rises in the east while rain falls in the west; You thought there was no sunshine, yet sun shines bright.",
+    "correct_answer": "The sun rises in the east while rain falls in the west; they say the sky is not clear, yet it is clear after all.",
     "full_verse": "杨柳青青江水平，闻郎江上踏歌声。东边日出西边雨，道是无晴却有晴。",
     "mapping": [
       {
-        "en": "sun rises east rain falls west",
+        "en": "sun rises in the east, rain falls in the west",
         "zh": "东边日出西边雨"
       },
       {
-        "en": "thought no sunshine yet sun shines",
-        "zh": "道是无晴却有晴"
+        "en": "the sky seems unclear, yet it is clear",
+        "zh": "道是无晴却有晴（晴与情谐音）"
       }
     ],
     "science_note": "【双关修辞思维解构】辨析英文中sunshine与sun shines的精巧对应，前额叶逻辑思维全面运转。",
@@ -2278,13 +2286,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《赤壁》",
     "chinese_verse": "东风不与周郎便，铜雀春深锁二乔。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Had the east wind not granted young Zhou Yu its timely aid; Spring deep in the Bronze Bird Tower would have locked up the two Qiao beauties.",
+    "correct_answer": "Had the east wind not aided Zhou Yu, the two Qiao sisters would have been locked away in the Bronze Sparrow Terrace.",
     "full_verse": "折戟沉沙铁未销，自将磨洗认前朝。东风不与周郎便，铜雀春深锁二乔。",
     "mapping": [
       {
@@ -2304,13 +2312,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 陆游",
     "title": "《示儿》",
     "chinese_verse": "王师北定中原日，家祭无忘告乃翁。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "When the royal armies recover the Northern Central Plains; At ancestral offerings, forget not to inform your departed father.",
+    "correct_answer": "When our armies reclaim the Central Plains in the north, do not forget to tell me at the family rites.",
     "full_verse": "死去元知万事空，但悲不见九州同。王师北定中原日，家祭无忘告乃翁。",
     "mapping": [
       {
@@ -2330,13 +2338,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 白居易",
     "title": "《钱塘湖春行》",
     "chinese_verse": "乱花渐欲迷人眼，浅草才能没马蹄。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Wild blossoms gradually begin to dazzle the traveler's eyes; Tender grasses are barely tall enough to submerge the horses' hooves.",
+    "correct_answer": "Wildflowers begin to dazzle the eye; the young grass is just tall enough to cover a horse's hooves.",
     "full_verse": "乱花渐欲迷人眼，浅草才能没马蹄。最爱湖东行不足，绿杨阴里白沙堤。",
     "mapping": [
       {
@@ -2356,13 +2364,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《黄鹤楼送孟浩然之广陵》",
     "chinese_verse": "孤帆远影碧空尽，唯见长江天际流。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The lone sail's distant shadow vanishes into the azure void; Only the mighty Yangtze is seen rolling onwards to the horizon.",
+    "correct_answer": "The lone sail fades into the blue distance; only the Yangtze flows toward the horizon.",
     "full_verse": "故人西辞黄鹤楼，烟花三月下扬州。孤帆远影碧空尽，唯见长江天际流。",
     "mapping": [
       {
@@ -2382,13 +2390,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《春夜喜雨》",
     "chinese_verse": "野径云俱黑，江船火独明。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Clouds over the country pathways hang heavily dark; Across the river, only the lamp upon the boat shines bright.",
+    "correct_answer": "The clouds turn the country paths dark; only a light on a riverboat shines through.",
     "full_verse": "野径云俱黑，江船火独明。晓看红湿处，花重锦官城。",
     "mapping": [
       {
@@ -2408,13 +2416,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《九月九日忆山东兄弟》",
     "chinese_verse": "独在异乡为异客，每逢佳节倍思亲。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "All alone in a foreign land as a lonely stranger; At every festive season my longing for kin is doubled.",
+    "correct_answer": "Alone in a foreign land, I am a stranger here; on every festival, I miss my family all the more.",
     "full_verse": "独在异乡为异客，每逢佳节倍思亲。遥知兄弟登高处，遍插茱萸少一人。",
     "mapping": [
       {
@@ -2434,13 +2442,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《赠汪伦》",
     "chinese_verse": "桃花潭水深千尺，不及汪伦送我情。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Deep as the waters of Peach Blossom Pool may be, plunging a thousand feet; They cannot match the depth of Wang Lun's farewell love for me.",
+    "correct_answer": "Peach Blossom Pool may be a thousand feet deep, but it cannot match Wang Lun's friendship as he sees me off.",
     "full_verse": "李白乘舟将欲行，忽闻岸上踏歌声。桃花潭水深千尺，不及汪伦送我情。",
     "mapping": [
       {
@@ -2460,13 +2468,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王之涣",
     "title": "《凉州词》",
     "chinese_verse": "羌笛何须怨杨柳，春风不度玉门关。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Why need the Qiang flute complain of the willow trees? The spring wind has never crossed beyond Yumen Pass.",
+    "correct_answer": "Why should the Qiang flute lament the willows? Spring never reaches Yumen Pass.",
     "full_verse": "黄河远上白云间，一片孤城万仞山。羌笛何须怨杨柳，春风不度玉门关。",
     "mapping": [
       {
@@ -2486,13 +2494,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《绝句》",
     "chinese_verse": "窗含西岭千秋雪，门泊东吴万里船。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "My window frames the pristine snow of a thousand autumns on the Western Peak; My door berths the trading vessels that have sailed ten thousand miles from Eastern Wu.",
+    "correct_answer": "My window frames the snow that has lain for ages on the western peaks; ships from distant Eastern Wu lie moored by my gate.",
     "full_verse": "两个黄鹂鸣翠柳，一行白鹭上青天。窗含西岭千秋雪，门泊东吴万里船。",
     "mapping": [
       {
@@ -2512,13 +2520,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王维",
     "title": "《送元二使安西》",
     "chinese_verse": "劝君更尽一杯酒，西出阳关无故人。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "I urge you to drain just one more cup of wine; Once you venture west past Yangguan Pass, there will be no more old friends.",
+    "correct_answer": "Have one more cup of wine, my friend; west of Yangguan Pass, you will find no old companions.",
     "full_verse": "渭城朝雨浥轻尘，客舍青青柳色新。劝君更尽一杯酒，西出阳关无故人。",
     "mapping": [
       {
@@ -2538,13 +2546,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《月夜忆舍弟》",
     "chinese_verse": "露从今夜白，月是故乡明。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The dew begins to turn white from this very night; The moon shines brighter over my distant native land.",
+    "correct_answer": "Tonight the dew turns white; the moon looks brightest in my hometown.",
     "full_verse": "戍鼓断人行，边秋一雁声。露从今夜白，月是故乡明。",
     "mapping": [
       {
@@ -2564,13 +2572,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《望天门山》",
     "chinese_verse": "两岸青山相对出，孤帆一片日边来。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "From both banks the green mountains step forth to face each other; A solitary sail comes gliding from the radiant sun.",
+    "correct_answer": "Green mountains rise to face each other on either bank; a lone sail appears from the sunlit horizon.",
     "full_verse": "天门中断楚江开，碧水东流至此回。两岸青山相对出，孤帆一片日边来。",
     "mapping": [
       {
@@ -2590,13 +2598,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 白居易",
     "title": "《问刘十九》",
     "chinese_verse": "晚来天欲雪，能饮一杯无？",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Night approaches and the sky threatens snow; Can you come and drink a warming cup with me?",
+    "correct_answer": "Night is falling, and snow is in the air; will you come and share a drink with me?",
     "full_verse": "绿蚁新醅酒，红泥小火炉。晚来天欲雪，能饮一杯无？",
     "mapping": [
       {
@@ -2616,13 +2624,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 柳宗元",
     "title": "《渔翁》",
     "chinese_verse": "烟销日出不见人，欸乃一声山水绿。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The river mist dissolves as the sun rises, not a soul in sight; With a single creak of the oars, the mountain and waters turn vivid green.",
+    "correct_answer": "As the mist clears and the sun rises, no one is in sight; one creak of the oar, and the mountains and river turn green.",
     "full_verse": "渔翁夜傍西岩宿，晓汲清湘燃楚竹。烟销日出不见人，欸乃一声山水绿。",
     "mapping": [
       {
@@ -2642,13 +2650,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《江南春》",
     "chinese_verse": "南朝四百八十寺，多少楼台烟雨中。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Of the four hundred and eighty temples of the Southern Dynasties; Countless misty towers stand veiled in the spring drizzle.",
+    "correct_answer": "Of the Southern Dynasties' four hundred and eighty temples, how many towers stand in the mist and rain?",
     "full_verse": "千里莺啼绿映红，水村山郭酒旗风。南朝四百八十寺，多少楼台烟雨中。",
     "mapping": [
       {
@@ -2668,13 +2676,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《水调歌头·明月几时有》",
     "chinese_verse": "我欲乘风归去，又恐琼楼玉宇，高处不胜寒。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "I long to ride the celestial wind and fly back to heaven; Yet I fear the jasper towers and jade mansions are too cold at that great height.",
+    "correct_answer": "I wish to ride the wind back to heaven, yet I fear the jade towers there would be too cold so high above.",
     "full_verse": "我欲乘风归去，又恐琼楼玉宇，高处不胜寒。起舞弄清影，何似在人间！",
     "mapping": [
       {
@@ -2694,7 +2702,7 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 欧阳修",
     "title": "《醉翁亭记》",
@@ -2720,13 +2728,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《寄扬州韩绰判官》",
     "chinese_verse": "二十四桥明月夜，玉人何处教吹箫？",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Over the Twenty-Four Bridges on this bright moonlit night; Where is the jade-fair maiden teaching someone to play the flute?",
+    "correct_answer": "On a moonlit night at Twenty-Four Bridge, where are you teaching someone to play the flute, my friend?",
     "full_verse": "青山隐隐水迢迢，秋尽江南草未凋。二十四桥明月夜，玉人何处教吹箫？",
     "mapping": [
       {
@@ -2746,13 +2754,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《清平调·其一》",
     "chinese_verse": "云想衣裳花想容，春风拂槛露华浓。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Floating clouds remind me of her robes, blooming blossoms of her radiant face; The vernal breeze caresses the balustrade, rich with crystalline dew.",
+    "correct_answer": "Clouds call to mind her robes, flowers her face; the spring breeze brushes the balustrade, and dew glistens on the blossoms.",
     "full_verse": "云想衣裳花想容，春风拂槛露华浓。若非群玉山头见，会向瑶台月下逢。",
     "mapping": [
       {
@@ -2776,13 +2784,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 李清照",
     "title": "《声声慢》",
     "chinese_verse": "寻寻觅觅，冷冷清清，凄凄惨惨戚戚。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "I search and search, seeking and seeking; So cold, so clear, so desolate; So sad, so poignant, so grieved.",
+    "correct_answer": "I search and search; all is cold and quiet, lonely and bleak, full of grief.",
     "full_verse": "寻寻觅觅，冷冷清清，凄凄惨惨戚戚。乍暖还寒时候，最难将息。",
     "mapping": [
       {
@@ -2806,13 +2814,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王勃",
     "title": "《滕王阁序》",
     "chinese_verse": "萍水相逢，尽是他乡之客。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Meeting by chance like floating duckweeds upon the water; We are all wandering guests in an unfamiliar land.",
+    "correct_answer": "We meet by chance, like duckweed drifting on water; we are all travellers far from home.",
     "full_verse": "关山难越，谁悲失路之人？萍水相逢，尽是他乡之客。",
     "mapping": [
       {
@@ -2832,13 +2840,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《下江陵》",
     "chinese_verse": "朝辞白帝彩云间，千里江陵一日还。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Leaving at dawn the White Emperor City towering amid radiant clouds; In one single day I journey back a thousand leagues to Jiangling.",
+    "correct_answer": "At dawn I leave White Emperor City, high among coloured clouds; I reach Jiangling a thousand miles away in a day.",
     "full_verse": "朝辞白帝彩云间，千里江陵一日还。两岸猿声啼不住，轻舟已过万重山。",
     "mapping": [
       {
@@ -2858,13 +2866,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《饮湖上初晴后雨》",
     "chinese_verse": "欲把西湖比西子，淡妆浓抹总相宜。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "If West Lake were compared to the fair maiden Xi Shi; Rich makeup or simple adornment would always suit her well.",
+    "correct_answer": "If West Lake were a woman, she would be as lovely as Xi Shi, beautiful in light or heavy makeup.",
     "full_verse": "水光潋滟晴方好，山色空蒙雨亦奇。欲把西湖比西子，淡妆浓抹总相宜。",
     "mapping": [
       {
@@ -2884,13 +2892,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
-    "author": "唐 · 王安石",
+    "author": "宋 · 王安石",
     "title": "《泊船瓜洲》",
     "chinese_verse": "春风又绿江南岸，明月何时照我还？",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The spring wind greens once more the southern riverbank; When will the bright moon shine on my journey home?",
+    "correct_answer": "The spring wind has greened the southern bank again; when will the bright moon light my way home?",
     "full_verse": "京口瓜洲一水间，钟山只隔数重山。春风又绿江南岸，明月何时照我还？",
     "mapping": [
       {
@@ -2910,13 +2918,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《蜀相》",
     "chinese_verse": "出师未捷身先死，长使英雄泪满襟。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Before the expedition could triumph, his body had already died; Forever causing heroic men to drench their robes in tears.",
+    "correct_answer": "He died before his campaign could succeed, leaving heroes to weep forever.",
     "full_verse": "三顾频烦天下计，两朝开济老臣心。出师未捷身先死，长使英雄泪满襟。",
     "mapping": [
       {
@@ -2936,22 +2944,22 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜牧",
     "title": "《遣怀》",
-    "chinese_verse": "赢得青楼薄幸名，落魄江湖载酒行。",
+    "chinese_verse": "十年一觉扬州梦，赢得青楼薄幸名。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Earning only a fickle name in the entertainment quarters; Down and out, I wander the rivers and lakes with jars of wine.",
+    "correct_answer": "Ten years in Yangzhou seemed a dream; all I earned was a reputation for fickle love in the pleasure quarters.",
     "full_verse": "落魄江湖载酒行，楚腰纤细掌中轻。十年一觉扬州梦，赢得青楼薄幸名。",
     "mapping": [
       {
-        "en": "earning fickle name entertainment quarters",
-        "zh": "赢得青楼薄幸名"
+        "en": "ten years in Yangzhou seemed a dream",
+        "zh": "十年一觉扬州梦"
       },
       {
-        "en": "down and out wander rivers lakes",
-        "zh": "落魄江湖载酒行"
+        "en": "a reputation for fickle love",
+        "zh": "赢得青楼薄幸名"
       }
     ],
     "science_note": "【深刻自我批判唤醒】透过杜牧的辛辣自嘲反观自身的吸烟习气，打破‘抽烟很潇洒’的自欺滤镜。",
@@ -2962,13 +2970,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 孟浩然",
     "title": "《宿建德江》",
     "chinese_verse": "野旷天低树，江清月近人。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Across the vast wilderness, the sky hangs lower than the trees; In the crystal river, the moon draws intimate and near to men.",
+    "correct_answer": "Across the open plain, the sky seems lower than the trees; in the clear river, the moon seems close to me.",
     "full_verse": "移舟泊烟渚，日暮客愁新。野旷天低树，江清月近人。",
     "mapping": [
       {
@@ -2988,13 +2996,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 范仲淹",
     "title": "《苏幕遮·怀旧》",
     "chinese_verse": "碧云天，黄叶地，秋色连波，波上寒烟翠。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Azure clouds veil the heavens, yellow leaves blanket the ground; Autumn colors stretch across the ripples, where emerald cold mists arise.",
+    "correct_answer": "Clouds float in the blue sky; yellow leaves cover the ground. Autumn colours merge with the rippling water, and green mist rises from the cold waves.",
     "full_verse": "碧云天，黄叶地，秋色连波，波上寒烟翠。山映斜阳天接水，芳草无情，更在斜阳外。",
     "mapping": [
       {
@@ -3018,13 +3026,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《行路难·其一》",
     "chinese_verse": "停杯投箸不能食，拔剑四顾心茫然。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "I push away the cup and drop my chopsticks, unable to eat; Drawing my sword, I look around in every direction, my heart lost in bewilderment.",
+    "correct_answer": "I set down my cup and chopsticks, unable to eat; I draw my sword and look around, bewildered.",
     "full_verse": "金樽清酒斗十千，玉盘珍羞直万钱。停杯投箸不能食，拔剑四顾心茫然。",
     "mapping": [
       {
@@ -3044,13 +3052,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王勃",
     "title": "《滕王阁序》",
     "chinese_verse": "穷且益坚，不坠青云之志。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The more destitute one is, the firmer one's fortitude must become; Never letting one's lofty ambitions of soaring into the blue clouds falter.",
+    "correct_answer": "The harder one's circumstances, the stronger one's resolve; never let lofty ambitions fall.",
     "full_verse": "老当益壮，宁移白首之心？穷且益坚，不坠青云之志。",
     "mapping": [
       {
@@ -3070,13 +3078,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "宋 · 苏轼",
     "title": "《定风波》",
     "chinese_verse": "回首向来萧瑟处，归去，也无风雨也无晴。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Looking back upon the desolate place where I weathered the storm; I return: there was no rain, and there was no sun.",
+    "correct_answer": "I look back at the place where I weathered the storm and turn for home: neither rain nor shine matters now.",
     "full_verse": "回首向来萧瑟处，归去，也无风雨也无晴。",
     "mapping": [
       {
@@ -3096,13 +3104,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 李白",
     "title": "《将进酒》",
     "chinese_verse": "人生得意须尽欢，莫使金樽空对月。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "When in life you find delight, savor it to the very utmost; Never allow the golden goblet to face the moon empty of wine.",
+    "correct_answer": "When life goes your way, enjoy it to the full; do not leave your golden cup empty beneath the moon.",
     "full_verse": "人生得意须尽欢，莫使金樽空对月。天生我材必有用，千金散尽还复来。",
     "mapping": [
       {
@@ -3122,13 +3130,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 杜甫",
     "title": "《望岳》",
     "chinese_verse": "造化钟神秀，阴阳割昏晓。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "Nature has concentrated all magical beauty upon its peaks; The yin and yang slopes cleave the dusk from the dawn.",
+    "correct_answer": "Nature gathered all its beauty in this mountain; its sunlit and shaded slopes divide dawn from dusk.",
     "full_verse": "岱宗夫如何？齐鲁青未了。造化钟神秀，阴阳割昏晓。",
     "mapping": [
       {
@@ -3148,13 +3156,13 @@
     "category": "translation",
     "type": "translation",
     "mode": "zh_to_en",
-    "theme": "汉诗名篇挑英译 · 西方汉学神韵",
+    "theme": "古典诗词汉译英 · 自由表达",
     "difficulty": "medium",
     "author": "唐 · 王之涣",
     "title": "《登鹳雀楼》",
     "chinese_verse": "白日依山尽，黄河入海流。",
     "prompt": "根据原诗意象，用英文写出完整译文；提交后与参考译本对照。",
-    "correct_answer": "The white sun sinks behind the distant mountains; The Yellow River rolls onwards towards the sea.",
+    "correct_answer": "The bright sun sets behind the mountains; the Yellow River flows into the sea.",
     "full_verse": "白日依山尽，黄河入海流。欲穷千里目，更上一层楼。",
     "mapping": [
       {

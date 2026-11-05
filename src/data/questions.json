@@ -19,7 +19,7 @@
       "phonetic": "/dɪˌpriːʃiˈeɪʃn/",
       "meaning": "n. 折旧，贬值；（比喻）生理机能与身体价值的加速衰退"
     },
-    "passage_translation": "大型烟草公司完成了终极的经济学悖论：成功说服理性的消费者签订一份生理加速折旧的终身契约，慷慨地自掏腰包，只为买下亲手点燃自己寿命的特权。"
+    "passage_translation": "烟草公司完成了一桩经济学悖论：让理性的消费者花钱购买一份让自身健康不断贬值的长期契约。"
   },
   {
     "id": "q2",
@@ -62,13 +62,14 @@
       "phonetic": "/ʌnˈɔːltəd/",
       "meaning": "adj. 未改变的，依旧如初的"
     },
-    "passage_translation": "‘清淡’与‘低焦油’香烟曾被营销大师奉为明智的妥协。然而事实上，吸烟者会本能地吸得更深并按住排气孔，使其实际吸入的净毒素完全未变。"
+    "passage_translation": "“淡味”“低焦油”香烟曾被包装成更稳妥的选择；但吸烟者可能吸得更深，甚至遮住滤嘴的通气孔，使实际毒物摄入量并未减少。",
+    "first_letter": "u"
   },
   {
     "id": "q4",
     "type": "cloze",
     "theme": "Fiscal Folly & Opportunity Cost",
-    "passage": "From the perspective of classical economics, the smoker is a model of ________ behavior: paying a hefty voluntary tax today in exchange for a catastrophic surge in medical liabilities tomorrow.",
+    "passage": "In behavioral economics, smoking can illustrate [________] decision-making: a short-term reward is valued over long-term health costs.",
     "blank": "myopic",
     "options": [
       "prudent",
@@ -84,7 +85,7 @@
       "phonetic": "/maɪˈɒpɪk/",
       "meaning": "adj. 目光短浅的，近视的（缺乏长远规划）"
     },
-    "passage_translation": "从古典经济学角度看，吸烟者堪称短视行为的典型范本：在今天自愿缴纳沉重的高额税款，换取明天医疗负债的灾难性激增。"
+    "passage_translation": "从行为经济学角度看，吸烟可以体现短视决策：人们更看重眼前短暂的满足，却低估长期健康代价。"
   },
   {
     "id": "q5",
@@ -106,7 +107,7 @@
       "phonetic": "/ˌdespəˈreɪʃn/",
       "meaning": "n. 绝望，狼狈不堪的心境"
     },
-    "passage_translation": "二十世纪中叶的电影将香烟包装成叛逆魅力的终极配饰。现代现实却证明，它只是一场被驱逐到湿冷逃生梯上的狼狈流放，周身笼罩着淡淡发霉的异味。"
+    "passage_translation": "二十世纪中叶的电影把香烟塑造成叛逆魅力的象征。如今的现实却是吸烟者躲在湿冷的逃生梯旁，身上透着一丝难掩的窘迫。"
   },
   {
     "id": "q6",
@@ -128,7 +129,7 @@
       "phonetic": "/ˈpaɪplaɪn/",
       "meaning": "n. 输送管道，生命补给线"
     },
-    "passage_translation": "一氧化碳与血红蛋白的结合力比氧气高出200倍，硬生生将一个人的血液循环系统变成了一条拥堵不堪、严重缺氧的死胡同。"
+    "passage_translation": "一氧化碳与血红蛋白的结合能力约为氧气的200倍，让血液这条输氧通道变得拥堵而缺氧。"
   },
   {
     "id": "q7",
@@ -149,13 +150,14 @@
       "phonetic": "/ˌsʌŋk ˈkɒst/",
       "meaning": "n. 沉没成本（无法收回但常误导决策的已发支出）"
     },
-    "passage_translation": "‘我已经抽了二十年，伤害已经造成了’是沉没成本谬误的教科书式体现。事实上，生理修复在戒烟后20分钟内便已启动。"
+    "passage_translation": "‘我已经抽了二十年，伤害已经造成了’是沉没成本谬误的教科书式体现。事实上，生理修复在戒烟后20分钟内便已启动。",
+    "first_letter": "s"
   },
   {
     "id": "q8",
     "type": "cloze",
     "theme": "The Nicotine Trap",
-    "passage": "The cigarette filter is arguably the greatest public relations ________ in modern commerce: giving the consumer a tactile illusion of safety while doing virtually nothing to impede volatile carcinogens.",
+    "passage": "A cigarette filter can be a public-relations [________], offering the appearance of safety without eliminating exposure to carcinogens.",
     "blank": "subterfuge",
     "options": [
       "breakthrough",
@@ -171,7 +173,7 @@
       "phonetic": "/ˈsʌbtəfjuːdʒ/",
       "meaning": "n. 诡计，托词，花招"
     },
-    "passage_translation": "香烟过滤嘴堪称现代商业史上最伟大的公关骗局：它给消费者提供了一种虚假的安全触感，却几乎没有任何阻挡挥发性致癌物的作用。"
+    "passage_translation": "香烟滤嘴可以成为一种公关障眼法：它给人更安全的印象，却无法消除致癌物暴露。"
   },
   {
     "id": "q9",
@@ -193,13 +195,13 @@
       "phonetic": "/ˈkænɪbəlaɪz/",
       "meaning": "v. 自相残食，蚕食吞噬（原可用作高价值产出的精力）"
     },
-    "passage_translation": "尼古丁渴求持续霸占着前额叶的执行控制注意，悄无声息地吞噬抽干原本可用于职业抱负或创意创造的心智马力。"
+    "passage_translation": "烟瘾占据人的执行注意力，悄悄蚕食原本可用于事业或创作的心力。"
   },
   {
     "id": "q10",
     "type": "cloze",
     "theme": "Olfactory Bankruptcy",
-    "passage": "Tobacco smoke paralyzes nasal sensory neurons, granting the smoker a blissful but deceptive state of ________, entirely oblivious to the stale stench that heralds their arrival.",
+    "passage": "Smoking can dull the sense of smell, leaving smokers in a state of [________] about the stale odor that follows them.",
     "blank": "ignorance",
     "options": [
       "enlightenment",
@@ -215,7 +217,7 @@
       "phonetic": "/ˈɪɡnərəns/",
       "meaning": "n. 无知，浑然不知"
     },
-    "passage_translation": "烟草烟雾会麻痹鼻腔的感觉神经元，让吸烟者陷入一种幸福却自欺欺人的无嗅状态，对自己走到哪里都弥漫着的陈年烟臭浑然不觉。"
+    "passage_translation": "烟草烟雾会损害嗅觉，使吸烟者对自己身上挥之不去的烟味浑然不觉。"
   },
   {
     "id": "q11",
@@ -236,13 +238,14 @@
       "phonetic": "/ˌdaʊn ˈreɡjuleɪt/",
       "meaning": "v. （生物化学）下调受体活性，使自然多巴胺受钝化"
     },
-    "passage_translation": "尼古丁会引发多巴胺短暂的激增，但脑部扫描证实它同时会下调天然受体，从而酝酿出一种长期的情绪冷漠与迟钝状态。"
+    "passage_translation": "尼古丁会短暂推高多巴胺水平，但脑部扫描也显示，它会降低自然奖赏受体的活性，让人仿佛陷入长期的“情绪破产”。",
+    "first_letter": "b"
   },
   {
     "id": "q12",
     "type": "cloze",
     "theme": "Skin & Cellular Aging",
-    "passage": "By constricting peripheral micro-vessels, chronic smoking starves epidermal cells of nourishment, producing the weathered, greyish complexion dermatologists candidly label 'smoker's ________'.",
+    "passage": "By restricting blood flow to the skin, smoking can contribute to the weathered complexion sometimes called a smoker's [________].",
     "blank": "facies",
     "options": [
       "glamour",
@@ -258,13 +261,13 @@
       "phonetic": "/ˈfeɪʃiiːz/",
       "meaning": "n. （医学）特殊面容，病态面貌"
     },
-    "passage_translation": "通过收缩外周微血管，长期吸烟使表皮细胞丧失养分，产生皮肤科医生直言不讳称之为‘吸烟者面容’的枯槁苍老容颜。"
+    "passage_translation": "吸烟会限制皮肤的血液供应，可能使面容显得更早衰老；这种外观有时被称为“吸烟者面容”。"
   },
   {
     "id": "q13",
     "type": "cloze",
     "theme": "Hedonic Adaptation",
-    "passage": "The neurological trap of smoking is a masterclass in the hedonic ________: running furiously uphill simply to sustain the baseline serenity non-smokers enjoy for free.",
+    "passage": "The hedonic [________] of nicotine keeps smokers chasing brief relief from withdrawal just to feel normal again.",
     "blank": "treadmill",
     "options": [
       "treadmill",
@@ -280,13 +283,13 @@
       "phonetic": "/ˈtredmɪl/",
       "meaning": "n. 跑步机；快感适应牢笼（徒劳折腾以维持基线）"
     },
-    "passage_translation": "吸烟的神经陷阱堪称享乐适应跑步机的典范：在斜坡上拼命狂奔，仅仅为了勉强维持非吸烟者天然免费享受的基础平静感。"
+    "passage_translation": "尼古丁形成的“享乐跑步机”让吸烟者不断追逐戒断后的短暂缓解，只为重新感觉正常。"
   },
   {
     "id": "q14",
     "type": "cloze",
     "theme": "Corporate Empathy",
-    "passage": "Internal memos from the 1970s reveal that tobacco executives viewed youth addiction not as a tragedy, but with unvarnished ________, labeling adolescent experimenters as 'replacement smokers'.",
+    "passage": "Internal memos from the 1970s reveal the tobacco industry's [________]: some executives referred to young people experimenting with cigarettes as 'replacement smokers'.",
     "blank": "cynicism",
     "options": [
       "philanthropy",
@@ -302,7 +305,7 @@
       "phonetic": "/ˈsɪnɪsɪzəm/",
       "meaning": "n. 玩世不恭，犬儒自私，冷血现实"
     },
-    "passage_translation": "1970年代的烟草公司内部备忘录显示，高管们并非将年轻人成瘾视作悲剧，而是带着毫不掩饰的犬儒冷酷，将涉世未深的青少年直接标注为‘替代吸烟者’。"
+    "passage_translation": "二十世纪七十年代的内部备忘录显示，一些烟草公司高管冷漠地把开始尝试吸烟的青少年视为“替代吸烟者”。"
   },
   {
     "id": "q15",
@@ -330,7 +333,7 @@
     "id": "q16",
     "type": "cloze",
     "theme": "Hyperbolic Discounting",
-    "passage": "The irrational compulsion to smoke reflects ________ discounting: overvaluing three seconds of mild nicotine sedation today while bankrupting thirty years of healthy retirement.",
+    "passage": "Choosing a cigarette's brief relief over long-term health is an example of [________] discounting: immediate rewards loom larger than future costs.",
     "blank": "hyperbolic",
     "options": [
       "linear",
@@ -346,13 +349,13 @@
       "phonetic": "/ˌhaɪpəˈbɒlɪk/",
       "meaning": "adj. 双曲折现的（过度夸大即时满足、漠视未来复利）"
     },
-    "passage_translation": "对吸烟的非理性冲动反映了双曲贴现心理：极度高估今天3秒钟微弱的尼古丁麻痹感，却透支破产了未来30年健康的退休晚年。"
+    "passage_translation": "为一支烟带来的短暂缓解而忽视长期健康，是双曲贴现的例子：眼前的好处被看得过重，未来的代价却被低估。"
   },
   {
     "id": "q17",
     "type": "cloze",
     "theme": "The Vaping Fallacy",
-    "passage": "Promoting e-cigarettes as harmless lifestyle wellness vapor is the latest commercial ________: swapping tar-laden soot for flavored aerosol while locking the brain in the exact same servitude.",
+    "passage": "Promoting flavored e-cigarettes as harmless lifestyle products relies on [________]: lower exposure to some toxins does not make nicotine dependence risk-free.",
     "blank": "sophistry",
     "options": [
       "sophistry",
@@ -368,7 +371,7 @@
       "phonetic": "/ˈsɒfɪstri/",
       "meaning": "n. 诡辩，似是而非的花招"
     },
-    "passage_translation": "将电子烟包装成无害的健康生活方式蒸汽雾，是商业上最新的诡计骗局：将焦油烟灰换成调味气溶胶，同时将大脑牢牢锁死在完全相同的化学奴役中。"
+    "passage_translation": "把调味电子烟宣传成无害的生活用品，是一种诡辩：即使某些毒物暴露较低，尼古丁依赖仍有风险。"
   },
   {
     "id": "q18",
@@ -389,7 +392,8 @@
       "phonetic": "/dɪsˈrʌptɪd/",
       "meaning": "adj. 遭受扰乱破坏的，节律失衡的"
     },
-    "passage_translation": "尽管吸烟者误以为深夜吸烟能帮助自己放松入睡，但夜间尼古丁戒断反应在悄悄撕裂REM深层睡眠周期，使睡眠结构遭到根本性破坏。"
+    "passage_translation": "吸烟者可能以为睡前来一支烟能帮助放松，但夜间的尼古丁戒断会打断快速眼动睡眠周期，扰乱整体睡眠结构。",
+    "first_letter": "d"
   },
   {
     "id": "q19",
@@ -417,7 +421,7 @@
     "id": "q20",
     "type": "cloze",
     "theme": "The Concentration Myth",
-    "passage": "The popular conviction that smoking sharpens cognitive focus is entirely ________: the puff merely dispels the brain fog triggered by mild withdrawal, resetting the intellect to where a non-smoker starts.",
+    "passage": "The belief that a smoker needs a cigarette to focus can be [________]: a puff may relieve withdrawal-related brain fog without improving baseline cognition.",
     "blank": "illusory",
     "options": [
       "profound",
@@ -433,13 +437,13 @@
       "phonetic": "/ɪˈluːsəri/",
       "meaning": "adj. 错觉的，虚妄假象的"
     },
-    "passage_translation": "‘吸烟能提升专注力’的大众迷信完全是自欺欺人的幻觉：那一缕烟雾只是暂时驱散了由轻微戒断引发的脑雾，让心智重置回非吸烟者的起点而已。"
+    "passage_translation": "吸烟者以为自己必须靠香烟才能专注，这种感觉可能是一种错觉：吸一口烟或许只是暂时缓解了戒断带来的脑雾，并没有提高原本的认知水平。"
   },
   {
     "id": "q21",
     "type": "cloze",
     "theme": "Opportunity Cost",
-    "passage": "A pack-a-day habit over forty years carries an opportunity cost exceeding $250,000 when factoring in the mathematical miracle of broad-market index ________.",
+    "passage": "The cost of a pack-a-day habit adds up over decades; invested instead, that money could grow through index-fund ________.",
     "blank": "compounding",
     "options": [
       "compounding",
@@ -455,13 +459,13 @@
       "phonetic": "/kəmˈpaʊndɪŋ/",
       "meaning": "n. 复利滚存，指数级资本增殖"
     },
-    "passage_translation": "如果算上大盘指数复合年化增长的数学奇迹，长达40年每天一包烟的恶习所带来的机会成本，实际上超过了25万美元。"
+    "passage_translation": "一天一包烟的开支会在几十年里不断累积；若将同样的钱投资于指数基金，还可能产生复利收益。"
   },
   {
     "id": "q22",
     "type": "cloze",
     "theme": "Periodontal Carnage",
-    "passage": "By constricting capillary blood flow, tobacco smoke masks bleeding gums with ________ deception, allowing periodontal bone erosion to proceed undetected.",
+    "passage": "Smoking can constrict blood vessels in the gums and mask bleeding, allowing periodontal disease to advance in an ________ way.",
     "blank": "insidious",
     "options": [
       "wholesome",
@@ -477,7 +481,7 @@
       "phonetic": "/ɪnˈsɪdiəs/",
       "meaning": "adj. 潜伏蔓延的，暗中肆虐的"
     },
-    "passage_translation": "通过剧烈收缩毛细血管血流，烟草烟雾以阴险的欺骗性掩盖了牙龈出血的警讯，任由牙周骨质侵蚀在毫无察觉中暗自蔓延。"
+    "passage_translation": "吸烟会使牙龈血管收缩，掩盖出血迹象，使牙周病在不易察觉的情况下逐步恶化。"
   },
   {
     "id": "q23",
@@ -499,13 +503,13 @@
       "phonetic": "/ˈsɜːvɪtjuːd/",
       "meaning": "n. 屈从，被奴役状态"
     },
-    "passage_translation": "真正的人身自由与化学奴役绝对水火不容：只因为一根白色纸卷发号施令，就在严冬冰雨中急不可耐地冲下楼顺从点火。"
+    "passage_translation": "真正的个人自主权与化学依赖下的屈从难以并存：只因一根香烟的驱使，就得冒着冬天的雨雪跑到室外。"
   },
   {
     "id": "q24",
     "type": "cloze",
     "theme": "Risk Compensation",
-    "passage": "Many smokers treat organic salads and weekend gym visits as an emotional ________, naively trusting that a few vitamins can cancel out 4,000 toxic combustion byproducts.",
+    "passage": "Healthy meals and gym visits can become a psychological [________] for smokers who hope good habits will erase tobacco's risks.",
     "blank": "talisman",
     "options": [
       "hindrance",
@@ -521,7 +525,7 @@
       "phonetic": "/ˈtælɪzmən/",
       "meaning": "n. 护身符；（比喻）自我麻痹的虚假心理安慰"
     },
-    "passage_translation": "许多吸烟者将有机沙拉和周末去健身房当成一种情感赎罪券，天真地相信几片维生素就能抵消吸入体内的4000种有毒燃烧副产物。"
+    "passage_translation": "健康饮食和健身可能被吸烟者当作心理护身符，误以为这些好习惯能抵消烟草带来的风险。"
   },
   {
     "id": "q25",
@@ -571,7 +575,7 @@
     "id": "q27",
     "type": "cloze",
     "theme": "Arterial Stiffening",
-    "passage": "Free radicals in combustion gas degrade elastin fibers in vessel walls, relentlessly stripping arteries of the supple ________ required to buffer cardiac pressure waves.",
+    "passage": "Chemicals in cigarette smoke damage blood vessels over time, reducing the [________] that helps arteries cushion each heartbeat.",
     "blank": "elasticity",
     "options": [
       "rigidity",
@@ -587,7 +591,7 @@
       "phonetic": "/ˌɪlæˈstɪsəti/",
       "meaning": "n. 弹性，血管舒缩回弹力"
     },
-    "passage_translation": "烟草燃烧废气中的自由基会持续降解血管壁中的弹性蛋白纤维，无情地剥夺动脉缓冲心脏高压脉冲波所需的柔韧弹性。"
+    "passage_translation": "香烟烟雾中的化学物质会逐渐损伤血管，削弱动脉缓冲每次心跳所需的弹性。"
   },
   {
     "id": "q28",
@@ -609,13 +613,13 @@
       "phonetic": "/ˈsʌbsədi/",
       "meaning": "n. 财政补贴，政策红利扶持"
     },
-    "passage_translation": "在监管薄弱的发展中市场，跨国烟草公司竭力游说争取税收豁免优惠，任由资金匮乏的本土公立医院去独自承担沉重的癌症医疗账单。"
+    "passage_translation": "在监管薄弱的发展中市场，跨国烟草公司竭力游说争取税收补贴，却让资金不足的公立医院承担癌症治疗费用。"
   },
   {
     "id": "q29",
     "type": "cloze",
     "theme": "Brain Neuroplasticity",
-    "passage": "Within three weeks of total cessation, excess acetylcholine receptors in the brain naturally atrophy, proving that human ________ can completely dismantle chemical dependency.",
+    "passage": "After quitting, nicotine-related changes in the brain can gradually ease, illustrating the brain's capacity for [________].",
     "blank": "neuroplasticity",
     "options": [
       "neuroplasticity",
@@ -630,13 +634,14 @@
       "phonetic": "/ˌnjʊərəʊplæˈstɪsəti/",
       "meaning": "n. 神经可塑性（大脑自我康复与回路重塑能力）"
     },
-    "passage_translation": "在彻底戒烟后的三周内，大脑中过度增生的乙酰胆碱受体便会自然萎缩，这证明人类的神经可塑性完全有能力彻底解构化学依赖。"
+    "passage_translation": "戒烟后，大脑中与尼古丁相关的一些变化可能逐渐缓解，体现出大脑的神经可塑性。",
+    "first_letter": "n"
   },
   {
     "id": "q30",
     "type": "cloze",
     "theme": "Status Quo Bias",
-    "passage": "Most adults do not make a conscious daily choice to smoke; they are trapped by behavioral ________, perpetually honoring an irrational impulse formed during teenage insecurity.",
+    "passage": "For many smokers, reaching for a cigarette is less a fresh decision than an expression of behavioral [________] built up over years.",
     "blank": "inertia",
     "options": [
       "vigilance",
@@ -652,13 +657,13 @@
       "phonetic": "/ɪˈnɜːʃə/",
       "meaning": "n. 惯性，行为惰性"
     },
-    "passage_translation": "大多数成年人每天吸烟并不是出于清醒的自主选择；他们只是被行为惯性所囚禁，日复一日地在兑现年少无知脆弱时形成的一时冲动。"
+    "passage_translation": "对许多吸烟者来说，伸手拿烟与其说是每次重新作出的决定，不如说是多年形成的行为惯性。"
   },
   {
     "id": "q31",
     "type": "cloze",
     "theme": "Taste Bud Resurrection",
-    "passage": "The rich complexities of high cuisine are perpetually ________ in heavy smokers, as sulfur dioxide and high temperatures dull microscopic taste buds.",
+    "passage": "The subtle flavors of fine food are often ________ for heavy smokers, as repeated exposure to hot smoke can impair the sense of taste.",
     "blank": "dulled",
     "options": [
       "amplified",
@@ -674,13 +679,13 @@
       "phonetic": "/dʌld/",
       "meaning": "adj. 钝化的，迟钝麻木的"
     },
-    "passage_translation": "高端美食美酒的丰富微妙层次在老烟枪嘴里永远是迟钝平庸的，因为二氧化硫和持续高温反复灼烧钝化了微观味蕾。"
+    "passage_translation": "长期吸烟者往往难以品出精致菜肴的细微风味，因为反复接触灼热烟雾可能损害味觉。"
   },
   {
     "id": "q32",
     "type": "cloze",
     "theme": "The Freedom Paradox",
-    "passage": "Quitting smoking is conventionally framed as a painful ordeal of deprivation, but in neurobiological reality, it is a glorious act of ________ from chemical taxation.",
+    "passage": "Quitting can feel like deprivation at first, but over time it can also be an [________] from the cycle of craving and withdrawal.",
     "blank": "emancipation",
     "options": [
       "subjugation",
@@ -696,35 +701,35 @@
       "phonetic": "/ɪˌmænsɪˈpeɪʃn/",
       "meaning": "n. 解放，摆脱枷锁"
     },
-    "passage_translation": "戒烟传统上总被渲染为一场剥夺与痛苦的苦行，但在神经生物学的真相中，它是一场彻底挣脱化学苛捐杂税的辉煌解放。"
+    "passage_translation": "戒烟起初可能让人觉得在失去什么，但随着时间推移，也可能成为摆脱烟瘾与戒断循环的一次解放。"
   },
   {
     "id": "q33",
     "type": "cloze",
     "theme": "Immune Compromise",
-    "passage": "Within minutes of drawing smoke, the microscopic cilia lining your bronchial epithelium are instantly ________, leaving respiratory airways completely defenseless against airborne bacteria.",
-    "blank": "paralysed",
+    "passage": "Cigarette smoke can impair the tiny cilia that help clear the airways, leaving the respiratory system less able to defend itself against airborne ________.",
+    "blank": "pathogens",
     "options": [
-      "paralysed",
-      "mobilised",
-      "fortified",
-      "galvanised"
+      "pathogens",
+      "nutrients",
+      "antibodies",
+      "hormones"
     ],
-    "hint": "Adjective: rendered incapable of movement or normal cellular activity",
+    "hint": "Noun (plural): microorganisms that can cause disease",
     "first_letter": "p",
     "punchline": "Smoking dismisses your pulmonary security guards and hangs an open invitation on the front door of your bronchial tree.",
     "vocab": {
-      "word": "paralyse",
-      "phonetic": "/ˈpærəlaɪz/",
-      "meaning": "v. 使瘫痪，使麻痹停顿"
+      "word": "pathogens",
+      "phonetic": "/ˈpæθədʒənz/",
+      "meaning": "n. 病原体；能够引发疾病的微生物"
     },
-    "passage_translation": "吸入烟雾的短短几分钟内，支气管上皮微小的纤毛便会瞬间陷入瘫痪，使呼吸道在空气细菌面前完全门户大开、丧失防线。"
+    "passage_translation": "香烟烟雾会损害帮助清理气道的细小纤毛，使呼吸道抵御空气中病原体的能力下降。"
   },
   {
     "id": "q34",
     "type": "cloze",
     "theme": "Craving Wave Dynamics",
-    "passage": "Psychological data proves that an acute craving surge is purely ________: peaking aggressively within 180 seconds before naturally collapsing if executive attention remains occupied.",
+    "passage": "Cravings are often ________: they rise and fall within minutes, and shifting attention can help a person wait them out.",
     "blank": "ephemeral",
     "options": [
       "permanent",
@@ -734,41 +739,41 @@
     ],
     "hint": "Adjective: lasting for a very short time; fleeting and transient",
     "first_letter": "e",
-    "punchline": "A craving is merely a temporary neurological tantrum. It cannot break bones or stop breathing; it simply evaporates the second your attention moves elsewhere.",
+    "punchline": "A craving can feel urgent without being a command. Give yourself a few minutes and let the wave pass.",
     "vocab": {
       "word": "ephemeral",
       "phonetic": "/ɪˈfemərəl/",
       "meaning": "adj. 短暂的，朝生暮死的，转瞬即逝的"
     },
-    "passage_translation": "心理学数据证明，急性的烟瘾发作完全是短暂瞬态的：只要前额叶的注意力被有效占用，冲动浪涌在180秒内剧烈冲顶后必然自然瓦解。"
+    "passage_translation": "烟瘾通常是短暂的：它会在几分钟内起落，转移注意力有助于熬过这阵冲动。"
   },
   {
     "id": "q35",
     "type": "cloze",
     "theme": "Moral Hazard",
-    "passage": "The comforting rationalisation that 'medical technology will cure lung cancer before I grow old' is a textbook illustration of moral ________, justifying reckless biological gamble.",
-    "blank": "hazard",
+    "passage": "The comforting claim that 'medicine will cure lung cancer before I grow old' is a case of self-serving ________, using an imagined future cure to excuse a risk taken today.",
+    "blank": "rationalization",
     "options": [
-      "acumen",
-      "triumph",
-      "hazard",
-      "solvency"
+      "restitution",
+      "mitigation",
+      "rationalization",
+      "adaptation"
     ],
-    "hint": "Noun: lack of incentive to guard against risk when one believes they are protected from its consequences",
-    "first_letter": "h",
+    "hint": "Noun: an explanation that makes questionable behavior seem reasonable",
+    "first_letter": "r",
     "punchline": "Gambling your lungs on future gene therapy while inhaling tar is like driving at 200 km/h blindfolded because cars have airbags.",
     "vocab": {
-      "word": "moral hazard",
-      "phonetic": "/ˌmɒrəl ˈhæzəd/",
-      "meaning": "n. （经济学）道德风险（因以为后果可转嫁而肆意冒险）"
+      "word": "rationalization",
+      "phonetic": "/ˌræʃənəlaɪˈzeɪʃən/",
+      "meaning": "n. 合理化辩解；为行为寻找看似合理的理由"
     },
-    "passage_translation": "‘等我老了医学技术肯定能治好肺癌’这种自我安慰的借口，是道德风险的经典样本，用虚妄的未来技术为当下的危险生物豪赌开脱。"
+    "passage_translation": "“等我老了，医学就能治好肺癌”是一种自我开脱：拿想象中的未来疗法，为今天承担的风险辩解。"
   },
   {
     "id": "q36",
     "type": "cloze",
     "theme": "The Vitality Balance Sheet",
-    "passage": "The moment you extinguish your final cigarette, your physiology declares an immediate cash ________: arterial blood pressure stabilises within 20 minutes, compounding into decades of renewed vitality.",
+    "passage": "After the last cigarette, the body begins to recover quickly: heart rate starts to fall within minutes, an early health ________ that grows with time.",
     "blank": "dividend",
     "options": [
       "deficit",
@@ -784,7 +789,7 @@
       "phonetic": "/ˈdɪvɪdend/",
       "meaning": "n. 红利，股息；（比喻）生理健康与生命的切实回报"
     },
-    "passage_translation": "熄灭最后一支烟的那一刻，你的身体机能便宣布了一笔立竿见影的现金分红：动脉血压在20分钟内恢复稳定，并在随后数十年中复利为焕然新生的充沛精力。"
+    "passage_translation": "最后一支烟之后，身体很快就会开始恢复：心率在几分钟内开始下降，这只是此后逐渐累积的健康收益之一。"
   },
   {
     "id": "q37",
@@ -828,13 +833,13 @@
       "phonetic": "/ɪnˈsɪdiəs/",
       "meaning": "adj. 潜行暗伏的，阴险潜伏的"
     },
-    "passage_translation": "电子烟的商业营销展现出一种极其潜行阴险的逻辑：身披马卡龙糖果色与水果甜香，却在人畜无害的悠闲伪装下，悄然量产着终身化学成瘾。"
+    "passage_translation": "电子烟营销的危险之处在于：它用柔和的颜色和水果口味包装产品，让成瘾看起来像一种无害的消遣。"
   },
   {
     "id": "q39",
     "type": "cloze",
     "theme": "The Stress Mirage",
-    "passage": "Smokers frequently cite the ritual of a cigarette as an indispensable ________ against emotional turbulence, willfully ignoring that the turbulence was synthesized entirely by withdrawal.",
+    "passage": "Smokers may regard a cigarette as a [________] for stress, overlooking how nicotine withdrawal can itself add to irritability and anxiety.",
     "blank": "panacea",
     "options": [
       "liability",
@@ -850,13 +855,13 @@
       "phonetic": "/ˌpænəˈsiːə/",
       "meaning": "n. 万灵药，万应神丹；虚幻的解药"
     },
-    "passage_translation": "吸烟者常将点火吐雾标榜为抵御情绪风暴不可或缺的万灵药，却故意对核心真相视而不见——这场情绪风暴正是由上一根烟的戒断反应一手制造的。"
+    "passage_translation": "吸烟者可能把香烟当成缓解压力的万能药，却忽略了尼古丁戒断本身也可能加重烦躁和焦虑。"
   },
   {
     "id": "q40",
     "type": "cloze",
     "theme": "Behavioral Economics of Relapse",
-    "passage": "The urge to light up in a moment of boredom exemplifies ________ discounting: trading years of vigorous retired longevity for 180 seconds of superficial sensory sedation.",
+    "passage": "Lighting up out of boredom is an example of [________] discounting: giving too much weight to a brief reward and too little to long-term health.",
     "blank": "hyperbolic",
     "options": [
       "proportional",
@@ -872,13 +877,13 @@
       "phonetic": "/ˌhaɪpəˈbɒlɪk/",
       "meaning": "adj. （经济学）双曲的；急功近利的贴现模型"
     },
-    "passage_translation": "因一时无聊而伸手摸烟的行为，是经济学‘双曲贴现’最极致的讽刺标本：为了区区180秒的廉价神经麻痹，拱手典当掉晚年数十年鲜活清朗的寿命。"
+    "passage_translation": "无聊时点上一支烟，体现了双曲贴现：过分看重眼前短暂的满足，却低估了长期健康的价值。"
   },
   {
     "id": "q41",
     "type": "cloze",
     "theme": "The Myth of Moderation",
-    "passage": "The self-delusion of the 'social smoker' rests on a ________ foundation: neurobiology demonstrates that nicotine receptors do not negotiate part-time treaties.",
+    "passage": "The belief that occasional social smoking is automatically harmless rests on a [________] assumption: nicotine exposure can still reinforce a habit.",
     "blank": "tenuous",
     "options": [
       "tenuous",
@@ -888,13 +893,13 @@
     ],
     "hint": "Adjective: very weak, flimsy, or having little substance",
     "first_letter": "t",
-    "punchline": "Believing you can be a 'weekend-only smoker' is like thinking you can be a little bit pregnant: addiction is fundamentally binary.",
+    "punchline": "An occasional cigarette can still keep a familiar habit alive. Notice the trigger before it becomes a routine.",
     "vocab": {
       "word": "tenuous",
       "phonetic": "/ˈtenjuəs/",
       "meaning": "adj. 脆弱单薄的，站不住脚的"
     },
-    "passage_translation": "所谓‘偶尔聚会抽一根’的社交型吸烟自欺，建立在一个极其单薄脆弱的空中楼阁之上：神经生物学早已证实，大脑乙酰胆碱受体从不签署半职停战协议。"
+    "passage_translation": "认为偶尔社交吸烟一定无害，依据并不牢靠；尼古丁接触仍可能强化吸烟习惯。"
   },
   {
     "id": "q42",
@@ -938,13 +943,13 @@
       "phonetic": "/ɪnˈsɪdiəs/",
       "meaning": "adj. 潜行毁灭性的，暗中作祟的"
     },
-    "passage_translation": "吸入的燃烧毒素对娇嫩的动脉内皮展开了潜行暗伏的持续绞杀，早在任何外在临床症状显现前数年，血管斑块早已悄然硬化累积。"
+    "passage_translation": "吸入的燃烧毒素会悄悄损伤动脉内壁；在症状出现前，动脉斑块可能已逐渐形成。"
   },
   {
     "id": "q44",
     "type": "cloze",
     "theme": "The Secondhand Fallacy",
-    "passage": "Sidestream smoke contains higher concentrations of volatile carcinogens than the mainstream vapor inhaled through the filter, making passive exposure anything but ________.",
+    "passage": "Sidestream smoke contains higher concentrations of some carcinogens than the mainstream smoke inhaled through a filter, making passive exposure anything but ________.",
     "blank": "benign",
     "options": [
       "lethal",
@@ -960,13 +965,13 @@
       "phonetic": "/bɪˈnaɪn/",
       "meaning": "adj. 良性的，无害温和的"
     },
-    "passage_translation": "从烟头侧流飘出的烟气所含的挥发性致癌物浓度，甚至远高于吸烟者吸入的主流烟雾，使二手烟暴露绝非某种人畜无害的微小干扰。"
+    "passage_translation": "侧流烟雾中某些致癌物的浓度可能高于经过滤嘴吸入的主流烟雾，因此二手烟暴露绝非无害。"
   },
   {
     "id": "q45",
     "type": "cloze",
     "theme": "Dopaminergic Flattening",
-    "passage": "Chronic nicotine bombardment eventually leads to dopaminergic ________, leaving the user incapable of extracting joy from the everyday pleasures of food, music, and quiet reflection.",
+    "passage": "Repeated nicotine exposure can dull the brain's response to ordinary rewards, a form of dopaminergic ________ that may make simple pleasures less satisfying.",
     "blank": "blunting",
     "options": [
       "blunting",
@@ -982,13 +987,13 @@
       "phonetic": "/ˈblʌntɪŋ/",
       "meaning": "n. 迟钝化，麻木退化，反应钝化"
     },
-    "passage_translation": "长期高频的尼古丁轰炸最终会导致大脑多巴胺感知受体的迟钝退化，让吸烟者对美食、音乐与宁静沉思等日常世俗的美好全然丧失细腻的心灵触感。"
+    "passage_translation": "反复摄入尼古丁可能减弱大脑对日常奖赏的反应，这种多巴胺反应钝化会让简单的快乐变得不那么令人满足。"
   },
   {
     "id": "q46",
     "type": "cloze",
     "theme": "The Cost of Habit",
-    "passage": "Compounding daily cigarette expenditure over three decades reveals an astronomical sum that could otherwise bankroll an early and dignified retirement, underscoring the true ________ cost of addiction.",
+    "passage": "Cigarette spending accumulates over decades; money not spent on tobacco could instead support savings, travel, or retirement, revealing addiction's [________] cost.",
     "blank": "opportunity",
     "options": [
       "marginal",
@@ -1004,35 +1009,35 @@
       "phonetic": "/ˌɒpəˈtjuːnəti kɒst/",
       "meaning": "n. （经济学）机会成本（为做一件事而放弃的最大潜在收益）"
     },
-    "passage_translation": "若将三十年间每日买烟的开支按标准年化复利测算，其金额足以全款支撑一场从容体面的提前退休，这血淋淋地揭示出成瘾背后沉重的‘机会成本’。"
+    "passage_translation": "几十年的香烟开支会不断累积；这笔钱原本可以用于储蓄、旅行或退休生活，这正是吸烟的机会成本。"
   },
   {
     "id": "q47",
     "type": "cloze",
     "theme": "Cerebral Oxygenation",
-    "passage": "By replacing 5% to 15% of functional hemoglobin with carboxyhemoglobin, smoking subjects the human cerebral cortex to a persistent state of microscopic ________.",
-    "blank": "suffocation",
+    "passage": "Carbon monoxide in cigarette smoke binds to hemoglobin, reducing the blood's oxygen-carrying capacity and contributing to tissue ________.",
+    "blank": "hypoxia",
     "options": [
       "oxygenation",
       "rejuvenation",
-      "suffocation",
+      "hypoxia",
       "illumination"
     ],
-    "hint": "Noun: the state of being deprived of vital oxygen, causing cellular impairment",
-    "first_letter": "s",
+    "hint": "Noun: a shortage of oxygen in body tissues",
+    "first_letter": "h",
     "punchline": "Expecting sharp executive decisions while suffocating your brain with carbon monoxide is like trying to win an F1 race with sugar in your fuel tank.",
     "vocab": {
-      "word": "suffocation",
-      "phonetic": "/ˌsʌfəˈkeɪʃn/",
-      "meaning": "n. 窒息，微循环严重缺氧"
+      "word": "hypoxia",
+      "phonetic": "/haɪˈpɒksiə/",
+      "meaning": "n. 组织缺氧；身体组织获得的氧气不足"
     },
-    "passage_translation": "通过将5%至15%的运氧血红蛋白强行篡改为碳氧血红蛋白，吸烟使人类高阶大脑皮层常年陷于一种微观层面的慢性窒息。"
+    "passage_translation": "香烟烟雾中的一氧化碳与血红蛋白结合，降低血液的携氧能力，并可能导致组织缺氧。"
   },
   {
     "id": "q48",
     "type": "cloze",
     "theme": "The Flavor Trap",
-    "passage": "Menthol additives do not lessen the toxicity of combusted tobacco; they merely anesthetize sensory nerve endings in the throat, allowing deeper and more ________ inhalations.",
+    "passage": "Menthol can make cigarette smoke feel less harsh, but it does not make smoking safe; the cooling sensation can mask its [________] effects.",
     "blank": "pernicious",
     "options": [
       "wholesome",
@@ -1048,7 +1053,7 @@
       "phonetic": "/pəˈnɪʃəs/",
       "meaning": "adj. 极其有害的，恶性致命的"
     },
-    "passage_translation": "薄荷醇添加剂丝毫无助于降低燃烧烟草的毒性；它仅仅麻痹了喉咙深处的感觉神经末梢，诱导吸烟者进行更深沉、更具毁灭性的毒素深吸入。"
+    "passage_translation": "薄荷醇可能让烟雾感觉不那么呛，却不能让吸烟变得安全；清凉感反而可能掩盖其有害影响。"
   },
   {
     "id": "q49",
@@ -1070,57 +1075,57 @@
       "phonetic": "/kɑːˈtel/",
       "meaning": "n. 卡特尔垄断集团，商业巨头联合体"
     },
-    "passage_translation": "曾经在二十世纪老电影中被推崇为叛逆独立的硬汉勋章，在当代文明视角下，却越来越被视为一名被跨国商业垄断集团所牢牢圈养的化学奴隶。"
+    "passage_translation": "二十世纪中叶的电影曾把吸烟塑造成硬朗独立的象征；如今，吸烟者越来越容易被看作受烟草产业控制的人。"
   },
   {
     "id": "q50",
     "type": "cloze",
     "theme": "Neuroplastic Liberation",
-    "passage": "Within weeks of cessation, the brain's excess acetylcholine receptors undergo natural ________, demonstrating that human neuroplasticity can completely dismantle chemical dependency.",
-    "blank": "atrophy",
+    "passage": "After quitting, some nicotine-related receptor changes in the brain can begin to reverse, a gradual process of neural ________.",
+    "blank": "readjustment",
     "options": [
       "proliferation",
-      "atrophy",
+      "readjustment",
       "crystallization",
       "mutation"
     ],
-    "hint": "Noun: the gradual decline, shrinking, or reduction in size and sensitivity of biological structures",
-    "first_letter": "a",
+    "hint": "Noun: the process of adapting again to changed conditions",
+    "first_letter": "r",
     "punchline": "Your brain is not permanently broken; it is an elastic marvel waiting for you to stop dosing it with kerosene.",
     "vocab": {
-      "word": "atrophy",
-      "phonetic": "/ˈætrəfi/",
-      "meaning": "n./v. 萎缩，自然消退，退化"
+      "word": "readjustment",
+      "phonetic": "/ˌriːəˈdʒʌstmənt/",
+      "meaning": "n. 再调整；重新适应"
     },
-    "passage_translation": "在彻底告别烟草的数周之内，大脑中因受刺激而异常增生的乙酰胆碱受体便会自然萎缩，这雄辩地证明人类大脑的神经可塑性完全有能力彻底瓦解化学成瘾。"
+    "passage_translation": "戒烟后，大脑中一些与尼古丁有关的受体变化可能逐渐逆转，这是一个缓慢的神经系统再调整过程。"
   },
   {
     "id": "q51",
     "type": "cloze",
     "theme": "The Smoke Break Mirage",
-    "passage": "The venerated 'five-minute smoke break' is heralded as a sacred oasis of mindfulness, yet non-smokers achieve identical psychological restoration without purchasing an accompanying lung ________.",
-    "blank": "lesion",
+    "passage": "A smoke break may feel restorative, but stepping outside and breathing without a cigarette offers a pause without exposing the lungs to another ________.",
+    "blank": "carcinogen",
     "options": [
       "dividend",
       "rebate",
-      "lesion",
+      "carcinogen",
       "remedy"
     ],
-    "hint": "Noun: a region in an organ or tissue that has suffered damage through injury or disease",
-    "first_letter": "l",
+    "hint": "Noun: a substance capable of causing cancer",
+    "first_letter": "c",
     "punchline": "You don't need a cylinder of burning toxic weeds to pause and take three deep breaths; non-smokers call that 'living'.",
     "vocab": {
-      "word": "lesion",
-      "phonetic": "/ˈliːʒn/",
-      "meaning": "n. （医学）病损，损伤，病灶"
+      "word": "carcinogen",
+      "phonetic": "/kɑːrˈsɪnədʒən/",
+      "meaning": "n. 致癌物；可能引发癌症的物质"
     },
-    "passage_translation": "备受追捧的‘五分钟抽烟摸鱼’常被粉饰为不可多得的正念暂停，然而非吸烟者无需随单附赠肺部微观病损，就能获得完全相同的内心安宁。"
+    "passage_translation": "抽烟休息也许让人觉得放松，但走到室外透口气，不点烟也能休息，还能避免再吸入致癌物。"
   },
   {
     "id": "q52",
     "type": "cloze",
     "theme": "Arterial Stiffening",
-    "passage": "Free radicals in combustion exhaust degrade elastin fibers within vascular walls, robbing arteries of the flexible ________ required to cushion systolic pressure waves.",
+    "passage": "Healthy arteries can expand and recover as blood pressure changes; smoking gradually weakens that vascular ________.",
     "blank": "resilience",
     "options": [
       "brittleness",
@@ -1136,13 +1141,13 @@
       "phonetic": "/rɪˈzɪliəns/",
       "meaning": "n. 弹性，回弹韧性；复原力"
     },
-    "passage_translation": "烟草燃烧废气中的自由基会持续降解血管壁中的弹性蛋白纤维，无情地剥夺动脉缓冲心脏高压脉冲波所需的柔韧回弹力。"
+    "passage_translation": "健康的动脉能够随血压变化而舒张、回弹；吸烟会逐渐削弱血管的这种韧性。"
   },
   {
     "id": "q53",
     "type": "cloze",
     "theme": "Regulatory Exploitation",
-    "passage": "In emerging economies with porous oversight, multinational tobacco conglomerates aggressively lobby for tax exemptions, leaving impoverished municipal hospitals to shoulder the resulting ________ bills.",
+    "passage": "In emerging economies with weak oversight, multinational tobacco companies lobby for tax exemptions, leaving underfunded public hospitals to shoulder the costs of ________ care.",
     "blank": "oncology",
     "options": [
       "oncology",
@@ -1158,13 +1163,13 @@
       "phonetic": "/ɒŋˈkɒlədʒi/",
       "meaning": "n. 肿瘤学，癌症医学"
     },
-    "passage_translation": "在监管薄弱的新兴市场中，跨国烟草巨头竭力游说争取税收豁免，任由资金匮乏的本土公立医院去独自承担由此导致的沉重肿瘤化疗账单。"
+    "passage_translation": "在监管薄弱的新兴经济体，跨国烟草公司游说争取税收豁免，却让经费不足的公立医院承担癌症诊疗费用。"
   },
   {
     "id": "q54",
     "type": "cloze",
     "theme": "Behavioral Inertia",
-    "passage": "Adult smokers are rarely exercising deliberate free will; they are prisoners of behavioral ________, mechanically fulfilling impulses that were imprinted during adolescent vulnerability.",
+    "passage": "Smoking after a meal or during a break can become automatic through behavioral ________, long after the first cigarette seemed like a choice.",
     "blank": "inertia",
     "options": [
       "spontaneity",
@@ -1180,35 +1185,35 @@
       "phonetic": "/ɪˈnɜːʃə/",
       "meaning": "n. 惯性，惰性，行为机械顺从"
     },
-    "passage_translation": "成年吸烟者每天吞云吐雾并非出于清醒深思的自由意志；他们不过是行为惯性的终身囚徒，日复一日地在机械兑现年少无知脆弱时形成的非理性冲动。"
+    "passage_translation": "饭后或休息时点烟可能变成一种自动化习惯；即使最初是自己选择尝试，之后也可能只是行为惯性在起作用。"
   },
   {
     "id": "q55",
     "type": "cloze",
     "theme": "Sensory Blunting",
-    "passage": "The nuanced flavor notes of fine cuisine and vintage wines remain stubbornly elusive to chronic smokers, as hot combustion gases repeatedly ________ delicate lingual papillae.",
-    "blank": "cauterize",
+    "passage": "The subtle flavours of food and wine can be harder to notice when smoking repeatedly ________ the senses of taste and smell.",
+    "blank": "deadens",
     "options": [
-      "nourish",
-      "reinvigorate",
-      "cauterize",
-      "illuminate"
+      "nourishes",
+      "sharpens",
+      "deadens",
+      "illuminates"
     ],
-    "hint": "Verb: to burn, sear, or destroy tissue with heat or caustic chemicals",
-    "first_letter": "c",
+    "hint": "Verb: makes a sensation less vivid or responsive",
+    "first_letter": "d",
     "punchline": "Paying $200 for a Michelin-starred dinner while smoking a pack a day is like buying an OLED 4K television and smearing petroleum jelly across the glass.",
     "vocab": {
-      "word": "cauterize",
-      "phonetic": "/ˈkɔːtəraɪz/",
-      "meaning": "v. 烧灼，烫灼，麻痹破坏（味蕾微观组织）"
+      "word": "deadens",
+      "phonetic": "/ˈdedənz/",
+      "meaning": "v. 使感觉迟钝；减弱感受能力"
     },
-    "passage_translation": "高级珍馐美馔与顶级佳酿的幽微层次，对老烟民而言永远是迟钝平庸的，因为灼热的有毒烟气日复一日地灼伤钝化了舌尖娇嫩的微观味蕾。"
+    "passage_translation": "反复吸烟可能钝化味觉和嗅觉，让人更难察觉食物与葡萄酒的细微风味。"
   },
   {
     "id": "q56",
     "type": "cloze",
     "theme": "The Ciliary Defense",
-    "passage": "Within moments of taking a drag, the microscopic cilia lining the bronchial epithelium are rendered totally ________, leaving respiratory passageways defenseless against airborne pathogens.",
+    "passage": "Repeated exposure to cigarette smoke can leave the airway cilia partly ________, reducing their ability to clear mucus and particles.",
     "blank": "paralyzed",
     "options": [
       "hyperactive",
@@ -1224,13 +1229,13 @@
       "phonetic": "/ˈpærəlaɪzd/",
       "meaning": "adj. 瘫痪的，麻痹丧失功能的"
     },
-    "passage_translation": "吸入烟雾的短短几秒内，支气管上皮微小的排毒纤毛便会瞬间陷入彻底瘫痪，使整个呼吸道在空气细菌与病毒面前完全门户大开、丧失防线。"
+    "passage_translation": "反复接触香烟烟雾会削弱气道纤毛的活动，使它们更难清除黏液和颗粒物。"
   },
   {
     "id": "q57",
     "type": "cloze",
     "theme": "Transience of Urges",
-    "passage": "Neurological telemetry proves that an acute nicotine craving is purely ________: as long as the prefrontal cortex stays occupied, the dopamine surge peaks and dissolves within 180 seconds.",
+    "passage": "Nicotine cravings are often ________: for many people, an urge begins to ease after a few minutes, especially when they shift attention to another task.",
     "blank": "transient",
     "options": [
       "transient",
@@ -1240,19 +1245,19 @@
     ],
     "hint": "Adjective: lasting only for a short time; impermanent",
     "first_letter": "t",
-    "punchline": "A craving feels like an eternity only if you sit there staring at it; engage your cortex for three minutes, and it dissolves like morning mist.",
+    "punchline": "An urge can feel endless while you watch the clock. Try another task and give it time to subside.",
     "vocab": {
       "word": "transient",
       "phonetic": "/ˈtrænziənt/",
       "meaning": "adj. 短暂瞬态的，转瞬即逝的"
     },
-    "passage_translation": "神经遥测数据确凿证明，急性的尼古丁烟瘾发作完全是一种短暂的瞬态波形：只要前额叶注意力被有效接管，多巴胺渴求浪涌在180秒内冲顶后必然自然瓦解。"
+    "passage_translation": "烟瘾通常是短暂的。对很多人来说，转移注意力几分钟后，这阵冲动就会开始减弱。"
   },
   {
     "id": "q58",
     "type": "cloze",
     "theme": "The Sunk-Cost Fallacy",
-    "passage": "Believing that 'I have smoked for twenty years, the damage is irreversible' is textbook ________ fallacy; pulmonary regeneration initiates within twenty minutes of cessation.",
+    "passage": "Believing that 'I have smoked for twenty years, so there is no point in quitting' is a ________ fallacy: heart rate can begin to fall soon after the last cigarette, with other benefits building over time.",
     "blank": "sunk-cost",
     "options": [
       "gambler's",
@@ -1268,7 +1273,7 @@
       "phonetic": "/ˌsʌŋk ˈkɒst/",
       "meaning": "n. 沉没成本（无法收回的历史投入，不可作为未来决策依据）"
     },
-    "passage_translation": "坚信‘我已经抽了二十年，伤害早就造成了无法挽回’是沉没成本谬误的教科书式体现；事实上，肺部与心血管的生理自我修复在熄灭最后一根烟后20分钟内便已轰然启动。"
+    "passage_translation": "“我已经抽了二十年，戒烟也没用了”是一种沉没成本谬误：最后一支烟之后，心率就可能开始下降，其他健康收益也会随时间逐渐出现。"
   },
   {
     "id": "q59",
@@ -1290,7 +1295,7 @@
       "phonetic": "/ɪmˈpeəmənt/",
       "meaning": "n. 损害，削弱，机能衰退"
     },
-    "passage_translation": "烟草烟雾会改变外周循环中性粒细胞的表型并抑制自然杀伤细胞的活力，使人体免疫系统常年陷于一种被严重削弱的慢性机能缺陷状态。"
+    "passage_translation": "烟草烟雾会影响中性粒细胞和自然杀伤细胞的功能，使免疫系统长期处于受损状态。"
   },
   {
     "id": "q60",
@@ -1312,13 +1317,13 @@
       "phonetic": "/ɪˌmænsɪˈpeɪʃn/",
       "meaning": "n. 解放，摆脱枷锁，重获自由"
     },
-    "passage_translation": "戒烟传统上总被刻画为一场饱受剥夺与痛苦折磨的苦行，但在神经真相中，它是一场彻底摆脱被强加于身心之上的有毒苛捐杂税的辉煌解放。"
+    "passage_translation": "戒烟并非永无止境的痛苦剥夺，而是摆脱强加于身心的化学负担。"
   },
   {
     "id": "q61",
     "type": "cloze",
     "theme": "Corporate Psychopathy",
-    "passage": "Internal memos revealed that tobacco executives were well aware that nicotine altered brain chemistry in toddlers, yet they deliberately ________ the evidence to safeguard quarterly dividends.",
+    "passage": "Internal documents show that tobacco executives knew nicotine was addictive, yet the companies ________ evidence of that risk to protect sales.",
     "blank": "suppressed",
     "options": [
       "suppressed",
@@ -1334,13 +1339,13 @@
       "phonetic": "/səˈprest/",
       "meaning": "v./adj. 强行隐瞒压制，压匿证据"
     },
-    "passage_translation": "解密内部备忘录显示，烟草公司高管早在半个世纪前就心知肚明尼古丁会永久篡改神经回路，却蓄意压匿科学铁证，只为在财报季捍卫季度分红的高额数字。"
+    "passage_translation": "内部文件显示，烟草公司高管明知尼古丁会使人成瘾，却为维护销售而压下了相关风险证据。"
   },
   {
     "id": "q62",
     "type": "cloze",
     "theme": "The Smelling Awakening",
-    "passage": "Within forty-eight hours of total abstinence, olfactory sensory neurons begin regenerating, greeting the former smoker with a vibrant sensory ________.",
+    "passage": "As smell and taste begin to recover after quitting, ordinary scents can feel newly vivid: a welcome sensory ________.",
     "blank": "resurgence",
     "options": [
       "atrophy",
@@ -1356,13 +1361,13 @@
       "phonetic": "/rɪˈsɜːdʒəns/",
       "meaning": "n. 复苏，再现生机，重新苏醒"
     },
-    "passage_translation": "在彻底断绝烟雾的四十八小时之内，嗅觉感觉神经元便已展开密集再生，让告别烟草者重新拥抱一个层次丰富、生机盎然的真实气味世界。"
+    "passage_translation": "戒烟后，嗅觉和味觉会逐渐恢复，日常气味也可能重新变得鲜明，这是一种令人欣喜的感官复苏。"
   },
   {
     "id": "q63",
     "type": "cloze",
     "theme": "Cardiovascular Reversal",
-    "passage": "Within one single year of smoking cessation, an individual's excess risk of ischemic coronary heart disease drops by fifty percent, debunking the myth that cardiovascular damage is ________.",
+    "passage": "Within three to six years of quitting, the added risk of coronary heart disease falls by about half, challenging the belief that cardiovascular harm is always ________.",
     "blank": "permanent",
     "options": [
       "superficial",
@@ -1378,13 +1383,13 @@
       "phonetic": "/ˈpɜːmənənt/",
       "meaning": "adj. 永久不变的，不可逆转的"
     },
-    "passage_translation": "在成功戒烟短短一年之内，个体患缺血性冠心病的超额危险度便会骤降百分之五十，有力地击碎了所谓心血管损伤早已无法挽回的悲观迷思。"
+    "passage_translation": "戒烟三至六年后，冠心病的额外风险约可降低一半；心血管损伤并非必然无法改善。"
   },
   {
     "id": "q64",
     "type": "cloze",
     "theme": "Economic Cannibalism",
-    "passage": "Lower-income demographics spend an alarming proportion of disposable income on cigarettes, effectively funding the private school tuitions of tobacco heirs through self-inflicted ________.",
+    "passage": "For people with low incomes, cigarette spending can consume a large share of disposable income, deepening financial ________ while enriching tobacco companies.",
     "blank": "impoverishment",
     "options": [
       "enrichment",
@@ -1400,13 +1405,13 @@
       "phonetic": "/ɪmˈpɒvrɪʃmənt/",
       "meaning": "n. 贫困化，财富被搜刮掏空"
     },
-    "passage_translation": "在底层脆弱收入群体中，香烟开支占可支配收入的惊人比例，实质上是通过自残式贫困化，慷慨为跨国烟草资本寡头的后代全款赞助贵族精英私校学费。"
+    "passage_translation": "对低收入者来说，买烟可能占去不少可支配收入，加重经济困难，却增加了烟草公司的收入。"
   },
   {
     "id": "q65",
     "type": "cloze",
     "theme": "The Habit Loop",
-    "passage": "The act of lighting a cigarette following a meal is not biological hunger; it is a conditioned neurological ________ that can be cleanly extinguished through conscious interruption.",
+    "passage": "Wanting a cigarette after a meal may reflect a learned cue rather than a physical need; the habit is a conditioned ________ that can be interrupted.",
     "blank": "reflex",
     "options": [
       "reflex",
@@ -1422,35 +1427,35 @@
       "phonetic": "/ˈriːfleks/",
       "meaning": "n. 条件反射，机械反射动作"
     },
-    "passage_translation": "餐后点烟的下意识冲动绝非生理上的饥饿或消化需求；它不过是一种被人工驯化的神经反射条件回路，完全能够通过短暂的意识阻断被彻底斩断。"
+    "passage_translation": "饭后想抽烟可能是习得的习惯，而非身体真的需要香烟；这种条件反射可以逐步打断。"
   },
   {
     "id": "q66",
     "type": "cloze",
     "theme": "Dopamine Hijacking",
-    "passage": "Unlike natural achievements that require prolonged effort, nicotine delivers an artificial and unearned spike in dopamine, generating a profound sense of cognitive ________.",
+    "passage": "Unlike achievements earned through effort, nicotine can deliver a brief, ________ sense of reward.",
     "blank": "counterfeit",
     "options": [
-      "substance",
+      "genuine",
       "counterfeit",
-      "legitimacy",
-      "transcendence"
+      "earned",
+      "lasting"
     ],
-    "hint": "Noun/Adjective: made in exact imitation of something valuable with the intention to deceive; fake",
+    "hint": "Adjective: made to imitate something genuine; false",
     "first_letter": "c",
     "punchline": "Nicotine sells you forged dopamine checks that bounce the moment your liver filters out the toxin.",
     "vocab": {
       "word": "counterfeit",
       "phonetic": "/ˈkaʊntəfɪt/",
-      "meaning": "n./adj. 伪造物，虚假赝品，假托奖赏"
+      "meaning": "adj. 伪造的；看似真实却并非真实的"
     },
-    "passage_translation": "不同于需要持久自律与努力才能换来的真正成就感，尼古丁仅凭几秒便向大脑投递一记虚妄的伪造多巴胺脉冲，造成深层认知意义上的虚无赝品感。"
+    "passage_translation": "不同于经过努力获得的成就，尼古丁带来的奖赏感短暂而虚假。"
   },
   {
     "id": "q67",
     "type": "cloze",
     "theme": "Cellular Aging",
-    "passage": "Studies indicate that smoking accelerates telomere shortening, measurably increasing an individual's biological age far beyond their ________ chronology.",
+    "passage": "Studies suggest that smoking can accelerate telomere shortening, potentially increasing biological age relative to a person's ________ age.",
     "blank": "chronological",
     "options": [
       "astrological",
@@ -1458,7 +1463,7 @@
       "chronological",
       "fictional"
     ],
-    "hint": "Adjective: relating to the establishment of dates and time in order of occurrence",
+    "hint": "Adjective: relating to age measured by elapsed calendar time",
     "first_letter": "c",
     "punchline": "Your calendar may say you are thirty-five, but your smoky telomeres are already applying for a pension.",
     "vocab": {
@@ -1466,13 +1471,13 @@
       "phonetic": "/ˌkrɒnəˈlɒdʒɪkl/",
       "meaning": "adj. 按自然时间顺序的，实足年龄的"
     },
-    "passage_translation": "遗传学研究表明，吸烟会急剧加速染色体端粒缩短，使个体的实际生物学机能折旧年龄，大幅超越其身份证上的自然历法实足年龄。"
+    "passage_translation": "研究提示，吸烟可能加快端粒缩短，使生物学年龄相对于实际年龄有所增加。"
   },
   {
     "id": "q68",
     "type": "cloze",
     "theme": "The Illusion of Cool",
-    "passage": "Modern tobacco marketing exploits aesthetic nostalgia, attempting to re-glamorize an addictive habit that in actual reality smells predominantly of ________ decay.",
+    "passage": "Tobacco advertising trades on nostalgia, trying to make smoking look glamorous again even as the smell of ________ smoke lingers on clothes and furniture.",
     "blank": "stale",
     "options": [
       "pristine",
@@ -1488,13 +1493,13 @@
       "phonetic": "/steɪl/",
       "meaning": "adj. 陈腐发馊的，陈年异味的"
     },
-    "passage_translation": "当代烟草营销疯狂收割复古审美红利，竭力想要为这种化学成瘾重新披上浪漫外衣，而现实真相是，它走到哪里都弥漫着一股刺鼻陈腐的异味衰败。"
+    "passage_translation": "烟草广告利用怀旧情绪，试图重新美化吸烟；现实中，陈旧的烟味却会留在衣物和家具上。"
   },
   {
     "id": "q69",
     "type": "cloze",
     "theme": "Brain Blood Flow",
-    "passage": "Acute nicotine causes instantaneous cerebral vasoconstriction, decreasing microvascular perfusion by up to twenty-five percent and creating an immediate cognitive ________.",
+    "passage": "Nicotine constricts blood vessels, creating a blood-flow ________ rather than the clear-headedness smokers may expect.",
     "blank": "deficit",
     "options": [
       "deficit",
@@ -1504,19 +1509,19 @@
     ],
     "hint": "Noun: a shortage, disadvantage, or impairment in functional capacity",
     "first_letter": "d",
-    "punchline": "Choking the microscopic blood vessels in your skull is not 'clearing your head'; it is literally suffocating your thoughts.",
+    "punchline": "A cigarette is a poor tool for clear thinking when it constricts blood vessels.",
     "vocab": {
       "word": "vasoconstriction",
       "phonetic": "/ˌveɪzəʊkənˈstrɪkʃn/",
       "meaning": "n. （医学）血管收缩痉挛，血流急剧受阻"
     },
-    "passage_translation": "急性吸入尼古丁会瞬间引发脑微血管剧烈痉挛收缩，使局部微循环灌注量骤降高达四分之一，在神经微观层面立刻造成显著的脑力认知亏空。"
+    "passage_translation": "尼古丁会使血管收缩，减少血流量；这与吸烟能让头脑更清醒的期待并不一致。"
   },
   {
     "id": "q70",
     "type": "cloze",
     "theme": "Psychological Sovereignty",
-    "passage": "Every cigarette refused is not an act of denial, but an assertion of psychological ________: proving that your prefrontal cortex answers to you, not to an alkaloid.",
+    "passage": "Choosing not to smoke when an urge strikes can be an act of personal ________: the craving is real, but the decision is still yours.",
     "blank": "sovereignty",
     "options": [
       "vassalage",
@@ -1532,13 +1537,13 @@
       "phonetic": "/ˈsɒvrənti/",
       "meaning": "n. 主权，不可侵犯的自主统驭权"
     },
-    "passage_translation": "每一次坚决掐灭或拒绝点火的瞬间，绝非苦涩的自我压抑，而是心理主权的庄严宣示：向世人证明你的前额叶只听命于你自身的清醒意志，而非几毫克植物碱。"
+    "passage_translation": "烟瘾来袭时选择不抽，是个人自主权的体现：冲动真实存在，但决定权仍在自己手中。"
   },
   {
     "id": "q71",
     "type": "cloze",
     "theme": "The Withdrawal Curve",
-    "passage": "The physical sensations of nicotine withdrawal are fundamentally ________; they mimic mild restlessness and are completely incapable of causing bodily injury.",
+    "passage": "Nicotine withdrawal is uncomfortable but usually ________ for most people; restlessness does not mean another cigarette is needed.",
     "blank": "innocuous",
     "options": [
       "catastrophic",
@@ -1554,13 +1559,13 @@
       "phonetic": "/ɪˈnɒkjuəs/",
       "meaning": "adj. 无害的，不伤大雅的，无实质创伤的"
     },
-    "passage_translation": "尼古丁戒断时的生理感觉在生物学本质上极其无害：它充其量类似轻微的心神不宁，完全没有任何造成实际器质性损伤的能力。"
+    "passage_translation": "尼古丁戒断会让人难受，但对大多数人来说通常不会造成身体伤害；坐立不安不代表必须再抽一支烟。"
   },
   {
     "id": "q72",
     "type": "cloze",
     "theme": "Chemical Engineering",
-    "passage": "To accelerate speed of delivery to the blood-brain barrier, industrial tobacco chemists routinely add ammonia, converting acidic nicotine into its far more volatile ________ form.",
+    "passage": "To speed nicotine delivery to the brain, tobacco manufacturers have used ammonia to increase the proportion of ________ nicotine in cigarette smoke.",
     "blank": "freebase",
     "options": [
       "inert",
@@ -1570,19 +1575,19 @@
     ],
     "hint": "Noun/Adjective: the pure basic form of an amine, highly potent and readily vaporized",
     "first_letter": "f",
-    "punchline": "Big Tobacco spent billions on molecular engineering not to make tobacco taste better, but to crack open your blood-brain barrier in seven seconds flat.",
+    "punchline": "Tobacco product design has long considered how quickly nicotine reaches the brain; that speed is part of the addiction problem.",
     "vocab": {
       "word": "freebase",
       "phonetic": "/ˈfriːbeɪs/",
       "meaning": "n./adj. 游离碱，极具挥发性与成瘾暴击力的化学形态"
     },
-    "passage_translation": "为了以秒级极速跨越血脑屏障，工业烟草化学家蓄意在配方中添加氨类化合物，将原本酸性的尼古丁强行转化成挥发度与成瘾性高出数倍的游离碱形态。"
+    "passage_translation": "为加快尼古丁进入大脑的速度，烟草生产商曾使用氨来提高烟雾中游离碱尼古丁的比例。"
   },
   {
     "id": "q73",
     "type": "cloze",
     "theme": "The Dental Penalty",
-    "passage": "Tar deposition and chronic oral vasoconstriction starve periodontal tissues of oxygen, dramatically increasing the long-term incidence of premature tooth ________.",
+    "passage": "Smoking raises the risk of periodontal disease, which can damage the tissues supporting teeth and eventually lead to tooth ________.",
     "blank": "loss",
     "options": [
       "loss",
@@ -1598,13 +1603,13 @@
       "phonetic": "/ˌperɪəʊˈdɒntl/",
       "meaning": "adj. 牙周的，牙龈微循环的"
     },
-    "passage_translation": "焦油持续沉积与长年口腔微血管痉挛，会彻底剥夺牙周软组织的供氧来源，使吸烟者在中年时期牙齿松动脱落的风险成倍飙升。"
+    "passage_translation": "吸烟会提高牙周病风险；牙周病可能损伤支撑牙齿的组织，最终造成牙齿脱落。"
   },
   {
     "id": "q74",
     "type": "cloze",
     "theme": "The Exercise Myth",
-    "passage": "Inhaling carbon monoxide binds aggressively to blood cells, rendering even rigorous cardiovascular gym sessions largely ________ at counteracting deep systemic hypoxia.",
+    "passage": "Carbon monoxide from cigarette smoke binds to hemoglobin and reduces oxygen delivery; even strenuous exercise is largely ________ at reversing this effect while exposure continues.",
     "blank": "ineffectual",
     "options": [
       "potent",
@@ -1620,13 +1625,13 @@
       "phonetic": "/ˌɪnɪˈfektʃuəl/",
       "meaning": "adj. 无效的，徒劳无功的"
     },
-    "passage_translation": "吸入的一氧化碳会霸道地抢占红细胞结合位点，使下班后去健身房疯狂撸铁或跑步在对抗深层全身性缺氧面前显得极其苍白徒劳。"
+    "passage_translation": "香烟烟雾中的一氧化碳会与血红蛋白结合，减少氧气输送；只要继续吸烟，再卖力运动也很难抵消这一影响。"
   },
   {
     "id": "q75",
     "type": "cloze",
     "theme": "Sleep Architecture",
-    "passage": "Nighttime nicotine withdrawal fragments human sleep architecture, disrupting deep delta-wave sleep and leaving the habitual smoker perpetually ________ upon awakening.",
+    "passage": "Nicotine withdrawal during the night can disrupt sleep, leaving a smoker feeling ________ on waking even after enough time in bed.",
     "blank": "fatigued",
     "options": [
       "invigorated",
@@ -1642,7 +1647,7 @@
       "phonetic": "/fəˈtiːɡd/",
       "meaning": "adj. 疲惫不堪的，慢性乏力的"
     },
-    "passage_translation": "夜间熟睡中的尼古丁戒断会无情肢解人体的睡眠结构，阻断珍贵的深层慢波睡眠，让吸烟者在晨起睁眼的那一刻永远陷入一种莫名的慢性疲惫。"
+    "passage_translation": "夜间尼古丁戒断可能打断睡眠，让吸烟者即使睡了足够久，早晨醒来仍感到疲惫。"
   },
   {
     "id": "q76",
@@ -1664,13 +1669,13 @@
       "phonetic": "/ˌdʒʌkstəpəˈzɪʃn/",
       "meaning": "n. 并列对置，鲜明反差对比"
     },
-    "passage_translation": "历史上将香烟与白雪皑皑的纯净阿尔卑斯雪峰绑定的经典广告牌，堪称心理学‘荒诞并置’的最高骗术，生硬地将呼吸道毒药与圣洁空气强行联想拼接。"
+    "passage_translation": "过去有香烟广告把产品与白雪覆盖的群山并置，借纯净空气的意象掩盖吸烟对呼吸系统的伤害。"
   },
   {
     "id": "q77",
     "type": "cloze",
     "theme": "The Clean Air Dividend",
-    "passage": "After three weeks without smoking, the bronchial passages relax and lung capacity increases by up to thirty percent, translating to effortless ________ during physical exertion.",
+    "passage": "Over weeks and months after quitting, lung function can improve, making exercise feel easier and helping restore ________.",
     "blank": "stamina",
     "options": [
       "stamina",
@@ -1686,7 +1691,7 @@
       "phonetic": "/ˈstæmɪnə/",
       "meaning": "n. 体力，耐力，持久充沛精力"
     },
-    "passage_translation": "在彻底告别烟草三周后，支气管平滑肌显著舒展，全肺活量可恢复高达百分之三十，在日常爬楼梯与运动中直接兑现为毫不费力的持久充沛耐力。"
+    "passage_translation": "戒烟后的几周到几个月里，肺功能可能逐渐改善，运动会变得轻松一些，耐力也可能恢复。"
   },
   {
     "id": "q78",
@@ -1708,13 +1713,13 @@
       "phonetic": "/kəmˈpʌlʃn/",
       "meaning": "n. 强迫冲动，身不由己的化学驱使"
     },
-    "passage_translation": "消费资本主义向来以个体的自由自主选择为傲，然而尼古丁彻底颠覆了自由市场的理性基石，用纯粹的神经化学强迫驱动代替了理智的消费偏好。"
+    "passage_translation": "消费文化推崇个人选择，但尼古丁依赖会削弱这种自主性，使理性偏好更容易让位于难以控制的冲动。"
   },
   {
     "id": "q79",
     "type": "cloze",
     "theme": "Oxidative Cataracts",
-    "passage": "Heavy smoking doubles the lifetime risk of developing nuclear cataracts, as circulating free radicals permanently ________ the transparent proteins in the ocular lens.",
+    "passage": "Smoking raises the risk of cataracts; oxidative stress can gradually [________] the eye's lens.",
     "blank": "cloud",
     "options": [
       "clarify",
@@ -1730,35 +1735,35 @@
       "phonetic": "/ˈkætərækts/",
       "meaning": "n. （医学）白内障，晶状体混浊"
     },
-    "passage_translation": "长年重度吸烟会使晚年罹患核性白内障的风险整整翻倍，因为血液中循环的过氧化自由基会不可逆地使眼球晶状体中的透明蛋白变性浑浊。"
+    "passage_translation": "吸烟会提高患白内障的风险；氧化应激可能逐渐使眼球晶状体变浑浊。"
   },
   {
     "id": "q80",
     "type": "cloze",
     "theme": "The Financial Compounding",
-    "passage": "Redirecting annual tobacco expenditures into an index fund yielding seven percent over thirty years generates a surplus exceeding a quarter million dollars, exposing the true ________ drain of addiction.",
-    "blank": "fiscal",
+    "passage": "Saving or investing money that would otherwise be spent on cigarettes can compound over decades, revealing addiction's ________ financial cost.",
+    "blank": "cumulative",
     "options": [
+      "incidental",
+      "immediate",
       "negligible",
-      "fictitious",
-      "ephemeral",
-      "fiscal"
+      "cumulative"
     ],
-    "hint": "Adjective: relating to government or personal revenue, finances, and taxation",
-    "first_letter": "f",
+    "hint": "Adjective: increasing through successive additions over time",
+    "first_letter": "c",
     "punchline": "A lighter doesn't just burn paper; it ignites a quarter-million-dollar retirement portfolio and flushes the ashes down the toilet.",
     "vocab": {
-      "word": "fiscal",
-      "phonetic": "/ˈfɪskl/",
-      "meaning": "adj. 财务的，财政的，经济账目的"
+      "word": "cumulative",
+      "phonetic": "/ˈkjuːmjələtɪv/",
+      "meaning": "adj. 累积的；逐渐叠加形成的"
     },
-    "passage_translation": "若将每年消耗在香烟上的巨额开销转投于年化百分之七的宽基指数基金中，三十年后本息滚存可突破上百万元，这无情揭示出成瘾背后沉重的个人财务枯竭。"
+    "passage_translation": "把原本花在香烟上的钱用于储蓄或投资，数十年下来可能形成可观积累，也显出成瘾带来的长期财务成本。"
   },
   {
     "id": "q81",
     "type": "cloze",
     "theme": "Skin Microcirculation",
-    "passage": "Each cigarette smoked causes cutaneous vasoconstriction lasting up to ninety minutes, starving facial dermis cells of essential oxygen and accelerating premature ________.",
+    "passage": "Smoking can constrict blood vessels in the skin and reduce oxygen delivery, contributing to premature ________.",
     "blank": "wrinkling",
     "options": [
       "wrinkling",
@@ -1774,7 +1779,7 @@
       "phonetic": "/kjuːˈteɪniəs/",
       "meaning": "adj. 皮肤的，面部表皮微循环的"
     },
-    "passage_translation": "每抽一根烟都会引起长达九十分钟的面部皮肤毛细血管剧烈痉挛，使真皮层细胞陷入极度缺氧状态，从而直接引发面部过早苍老与深层干瘪皱纹。"
+    "passage_translation": "吸烟会使皮肤血管收缩、减少氧气供应，从而增加过早出现皱纹的风险。"
   },
   {
     "id": "q82",
@@ -1796,13 +1801,13 @@
       "phonetic": "/liːʃ/",
       "meaning": "n. 皮带，拴狗绳；（比喻）无形束缚缰绳"
     },
-    "passage_translation": "寒冬腊月挤在大楼背风处瑟瑟发抖的陌生人之间所产生的所谓同仇敌忾，绝非真正的灵魂共鸣；那不过是被拴在同一根化学缰绳上的被支配者的报团取暖。"
+    "passage_translation": "寒天里挤在楼外抽烟的人也许觉得彼此有默契，但这份联结更多来自共同受到烟瘾驱使，而非真正的情谊。"
   },
   {
     "id": "q83",
     "type": "cloze",
     "theme": "Brain Plasticity Speed",
-    "passage": "Remarkably, functional magnetic resonance imaging shows that brain regions regulating impulse control exhibit measurable recovery within just fourteen days of ________ from nicotine.",
+    "passage": "Brain-imaging research suggests that regions involved in impulse control can change during ________ from nicotine.",
     "blank": "abstinence",
     "options": [
       "indulgence",
@@ -1812,13 +1817,13 @@
     ],
     "hint": "Noun: the practice of restraining oneself from partaking in something damaging",
     "first_letter": "a",
-    "punchline": "Your brain's capacity for repair is vastly superior to the poison's ability to corrupt it—give it two weeks, and watch the miracle unfold.",
+    "punchline": "The brain can adapt over time. Quitting gives those changes a chance to work in your favour.",
     "vocab": {
       "word": "abstinence",
       "phonetic": "/ˈæbstɪnəns/",
       "meaning": "n. 节制，完全戒绝，坚守远离"
     },
-    "passage_translation": "令人惊叹的是，功能性核磁共振扫描证实，掌管冲动抑制的高阶脑区在彻底远离尼古丁仅仅十四天内，便展现出令人振奋的器质性可塑性自我修复。"
+    "passage_translation": "脑成像研究提示，戒断尼古丁期间，参与冲动控制的脑区可能发生变化。"
   },
   {
     "id": "q84",
@@ -1840,13 +1845,13 @@
       "phonetic": "/ˈtælɪzmən/",
       "meaning": "n. 护身符，法宝象征"
     },
-    "passage_translation": "烟草营销堪称现代资本主义最黑暗的炼金术：取一把普通草叶，浸润以数百种工业香精添加剂，然后将其包装成象征个人自由与独立的至高护身符。"
+    "passage_translation": "烟草营销把一种会使人成瘾的产品包装成自由的象征，仿佛一根香烟就是个人独立的护身符。"
   },
   {
     "id": "q85",
     "type": "cloze",
     "theme": "The Breath of Vitality",
-    "passage": "The sensation of breathing deep, pristine air into fully expanded, uncontaminated lungs is a sensory luxury that no synthetic substance can ever ________.",
+    "passage": "After quitting, taking a deep breath of clean air can feel like a simple pleasure that no synthetic substance can fully ________.",
     "blank": "replicate",
     "options": [
       "replicate",
@@ -1856,41 +1861,41 @@
     ],
     "hint": "Verb: to make an exact copy of, reproduce, or match the perfection of",
     "first_letter": "r",
-    "punchline": "The cleanest, sweetest high on Planet Earth is taking a massive lungful of cool mountain morning air with 100% clean alveoli.",
+    "punchline": "A deep breath of fresh air is free. You can enjoy it without lighting anything first.",
     "vocab": {
       "word": "replicate",
       "phonetic": "/ˈreplɪkeɪt/",
       "meaning": "v. 复制，匹敌重现，模仿"
     },
-    "passage_translation": "将纯净清冽的新鲜空气深吸入完全舒展、未经任何污染的肺泡深处，所带来的身心通透与极致愉悦，是世间任何人工合成化学物质都绝无可能匹敌复刻的。"
+    "passage_translation": "戒烟后，深吸一口清新空气也能成为一种简单的享受，任何人工合成物都难以完全复制这种感受。"
   },
   {
     "id": "q86",
     "type": "cloze",
     "theme": "The Withdrawal Phantom",
-    "passage": "When a craving strikes, the brain is simply experiencing the death throes of an addiction; feeding it a cigarette does not cure the craving, it merely ensures its ________ recurrence.",
-    "blank": "perpetual",
+    "passage": "A cigarette may ease a craving briefly while making its ________ more likely, keeping the cycle of dependence alive.",
+    "blank": "recurrence",
     "options": [
-      "sporadic",
-      "perpetual",
-      "accidental",
-      "negligible"
+      "remission",
+      "recurrence",
+      "absence",
+      "resolution"
     ],
-    "hint": "Adjective: never ending or changing; occurring repeatedly",
-    "first_letter": "p",
+    "hint": "Noun: the return of a condition or event after it has faded",
+    "first_letter": "r",
     "punchline": "Each unsmoked craving is a nail in the addiction's coffin; lighting up is merely giving the vampire another blood transfusion.",
     "vocab": {
-      "word": "perpetual",
-      "phonetic": "/pəˈpetʃuəl/",
-      "meaning": "adj. 永无休止的，无休止循环的"
+      "word": "recurrence",
+      "phonetic": "/rɪˈkɜːrəns/",
+      "meaning": "n. 再次发生；复发"
     },
-    "passage_translation": "当烟瘾突然来袭时，大脑实际上正在目睹成瘾神经回路走向消亡前的临死挣扎；此时给它点上一根烟根本不是解决问题，而是在为它的无休止死灰复燃续命。"
+    "passage_translation": "一支烟也许能暂时压下烟瘾，却更可能让渴求再次出现，使依赖循环延续。"
   },
   {
     "id": "q87",
     "type": "cloze",
     "theme": "The Dopamine Baseline",
-    "passage": "Non-smokers do not live in a state of permanent deprivation; they enjoy a higher, more stable baseline of daily dopamine than smokers who are constantly oscillating between withdrawal and ________.",
+    "passage": "Non-smokers do not live in deprivation; they can enjoy ordinary pleasures without cycling through nicotine withdrawal and brief ________.",
     "blank": "satiation",
     "options": [
       "despair",
@@ -1900,19 +1905,19 @@
     ],
     "hint": "Noun: the state of having a desire or appetite fully satisfied",
     "first_letter": "s",
-    "punchline": "Non-smokers feel all day long the way you only feel for sixty seconds right after lighting up.",
+    "punchline": "The freedom worth noticing is not having to plan the next cigarette.",
     "vocab": {
       "word": "satiation",
       "phonetic": "/ˌseɪʃiˈeɪʃn/",
       "meaning": "n. 饱足，暂时满足"
     },
-    "passage_translation": "非吸烟者绝非生活在一种饱受剥夺的清苦之中；他们全天候享有比烟民更高、更稳定的多巴胺基准线，而无需日复一日地在焦躁匮乏与短暂饱足之间绝望震荡。"
+    "passage_translation": "不吸烟的人并非在忍受剥夺；他们享受日常生活，无需在尼古丁戒断和短暂满足之间反复摇摆。"
   },
   {
     "id": "q88",
     "type": "cloze",
     "theme": "The Second-Hand Residue",
-    "passage": "Thirdhand smoke—the toxic chemical residue that embeds into carpets, furniture, and walls—persists for months and poses measurable DNA-damaging risks to crawling ________.",
+    "passage": "Thirdhand smoke leaves chemical residue on carpets, furniture, and walls; crawling ________ can be exposed when they touch contaminated surfaces.",
     "blank": "infants",
     "options": [
       "adults",
@@ -1928,7 +1933,7 @@
       "phonetic": "/ˌθɜːd hænd ˈsməʊk/",
       "meaning": "n. 三手烟（吸附在沙发、地毯和墙壁上的持久致癌残留物）"
     },
-    "passage_translation": "所谓三手烟——即深深吸附在地毯、窗帘与墙壁织物上的有毒化学分子残留——会在室内坚挺存留数月之久，对地面爬行的幼童构成切实基因损伤风险。"
+    "passage_translation": "三手烟会把化学残留留在地毯、家具和墙壁上；爬行的婴幼儿接触这些表面时，可能受到暴露。"
   },
   {
     "id": "q89",
@@ -1956,7 +1961,7 @@
     "id": "q90",
     "type": "cloze",
     "theme": "The Vascular Resurrection",
-    "passage": "Just as cutting off fuel extinguishes an engine fire, terminating nicotine intake halts the relentless endothelial erosion, allowing natural vascular repair mechanisms to ________.",
+    "passage": "Stopping smoking reduces ongoing damage to blood vessels and gives the body a chance to repair itself and ________.",
     "blank": "flourish",
     "options": [
       "wither",
@@ -1972,13 +1977,13 @@
       "phonetic": "/ˈflʌrɪʃ/",
       "meaning": "v. 繁荣，蓬勃焕发，生机重现"
     },
-    "passage_translation": "正如切断供油能让引擎大火瞬间熄灭，彻底终结尼古丁摄入能立刻遏制无休止的内皮侵蚀，让人体内源性的微血管自我修复机制重新蓬勃生长。"
+    "passage_translation": "戒烟能减少血管持续受到的伤害，让身体有机会逐渐修复、恢复活力。"
   },
   {
     "id": "q91",
     "type": "cloze",
     "theme": "The Executive Prefrontal Reset",
-    "passage": "Every single time you resist an acute urge and complete a cognitive challenge, you physically fortify the synaptic connections in your prefrontal cortex, transforming self-control from a struggle into an effortless ________.",
+    "passage": "Each time you resist an urge and practise a coping strategy, you strengthen a useful habit, gradually making self-control feel more like ________ than struggle.",
     "blank": "mastery",
     "options": [
       "ordeal",
@@ -1988,41 +1993,41 @@
     ],
     "hint": "Noun: comprehensive knowledge, skill, or complete command over a discipline or self",
     "first_letter": "m",
-    "punchline": "Willpower is not a fixed moral trait; it is a biological muscle that gets visibly stronger every single time you say 'not today'.",
+    "punchline": "Self-control grows through practice. Every time you wait out an urge, the next attempt may feel more manageable.",
     "vocab": {
       "word": "mastery",
       "phonetic": "/ˈmɑːstəri/",
       "meaning": "n. 驾驭，掌控精通，从容自如"
     },
-    "passage_translation": "每一次当你成功抵挡住急性冲动并完成一项高阶认知挑战时，你都在物理层面上加固前额叶突触连接，将原本痛苦的抵抗逐步升华为一种云淡风轻的自主驾驭。"
+    "passage_translation": "每次忍住烟瘾并练习一种应对方法，都是在巩固有益的习惯；自我控制也会逐渐变得更从容。"
   },
   {
     "id": "q92",
     "type": "cloze",
     "theme": "The Carbon Monoxide Eviction",
-    "passage": "Within twenty-four hours of your last cigarette, poisonous carbon monoxide is completely eliminated from your bloodstream, permitting red blood cells to transport 100% of their theoretical ________ capacity.",
-    "blank": "oxygen",
+    "passage": "Within roughly a day of quitting, blood carbon monoxide levels generally return to normal, freeing hemoglobin to carry oxygen more ________.",
+    "blank": "efficiently",
     "options": [
-      "tar",
-      "nicotine",
-      "glucose",
-      "oxygen"
+      "viscously",
+      "toxically",
+      "slowly",
+      "efficiently"
     ],
-    "hint": "Noun: the life-giving gas essential for cellular aerobic respiration",
-    "first_letter": "o",
+    "hint": "Adverb: in a way that works well without waste",
+    "first_letter": "e",
     "punchline": "Your blood is meant to carry fresh alpine oxygen, not industrial exhaust. Evict the squatter and let your cells breathe.",
     "vocab": {
-      "word": "eliminated",
-      "phonetic": "/ɪˈlɪmɪneɪtɪd/",
-      "meaning": "v./adj. 彻底代谢排除，消除殆尽"
+      "word": "efficiently",
+      "phonetic": "/ɪˈfɪʃəntli/",
+      "meaning": "adv. 有效地；效率更高地"
     },
-    "passage_translation": "在掐灭最后一根烟的二十四小时之内，剧毒的一氧化碳便已从血液循环中被彻底排除殆尽，让红细胞百分之百重新兑现运送生命氧气的最高负荷。"
+    "passage_translation": "戒烟大约一天后，血液中的一氧化碳水平通常会恢复正常，血红蛋白也能更有效地运输氧气。"
   },
   {
     "id": "q93",
     "type": "cloze",
     "theme": "The Nicotine Replacement Reality",
-    "passage": "Nicotine patches and gums deliver the alkaloid at a much slower, non-spiking rate, eliminating the violent dopamine peaks that sustain psychological ________.",
+    "passage": "Nicotine patches and gum deliver nicotine more slowly than cigarettes, avoiding the rapid spikes associated with smoking and helping people manage ________.",
     "blank": "dependence",
     "options": [
       "dependence",
@@ -2032,41 +2037,41 @@
     ],
     "hint": "Noun: the state of relying on or being controlled by someone or something else",
     "first_letter": "d",
-    "punchline": "It's the smoke, combustion tar, and seven-second spike that enslave you; separating the chemical from the smoke disarms the executioner.",
+    "punchline": "Nicotine replacement can make quitting more manageable without the smoke and combustion products of cigarettes.",
     "vocab": {
       "word": "dependence",
       "phonetic": "/dɪˈpendəns/",
       "meaning": "n. 依赖，成瘾羁绊"
     },
-    "passage_translation": "尼古丁贴片与咀嚼胶以极平缓的速率释放递质，彻底抹平了点火吸入时几秒内的剧烈多巴胺暴击脉冲，从而打破了维持心理依赖的病理神经回路。"
+    "passage_translation": "尼古丁贴片和口香糖释放尼古丁的速度比香烟慢，能够避开吸烟带来的快速浓度峰值，帮助人们应对依赖。"
   },
   {
     "id": "q94",
     "type": "cloze",
     "theme": "The True Nature of Craving",
-    "passage": "An intense cigarette craving is nothing more than an orphaned chemical signal floating in a nervous system that is already learning to thrive without ________.",
-    "blank": "it",
+    "passage": "A cigarette craving is a passing signal in a nervous system that is learning to live without chemical ________.",
+    "blank": "dependence",
     "options": [
-      "oxygen",
-      "it",
-      "water",
-      "glucose"
+      "resilience",
+      "dependence",
+      "equilibrium",
+      "autonomy"
     ],
-    "hint": "Pronoun: referencing the unnecessary exogenous substance",
-    "first_letter": "i",
+    "hint": "Noun: the state of relying on a substance to feel normal",
+    "first_letter": "d",
     "punchline": "The craving is not a command; it is merely an echo of an outdated habit dying inside an empty room.",
     "vocab": {
-      "word": "orphaned",
-      "phonetic": "/ˈɔːfnd/",
-      "meaning": "adj. 沦为孤儿的，失去寄宿主体的"
+      "word": "dependence",
+      "phonetic": "/dɪˈpendəns/",
+      "meaning": "n. 依赖；对某种物质的生理或心理依赖"
     },
-    "passage_translation": "所谓凶猛的烟瘾发作，本质上不过是一个漂浮在神经系统里的孤儿电信号，而整个神经系统早已在不知不觉中习惯了没有它的健康与纯净。"
+    "passage_translation": "烟瘾只是短暂出现的信号；神经系统正在逐渐适应不再依赖尼古丁的生活。"
   },
   {
     "id": "q95",
     "type": "cloze",
     "theme": "The Scent of Dignity",
-    "passage": "One of the most immediate social rewards of smoking cessation is the restoration of personal dignity: greeting colleagues without the lingering, defensive odor of an unemptied ________.",
+    "passage": "Quitting smoking can spare you the lingering smell of stale smoke on your clothes, so a conversation no longer begins with the scent of an old ________.",
     "blank": "ashtray",
     "options": [
       "wineglass",
@@ -2082,35 +2087,35 @@
       "phonetic": "/ˈæʃtreɪ/",
       "meaning": "n. 烟灰缸"
     },
-    "passage_translation": "戒烟最立竿见影的社交奖赏之一就是个人尊严的彻底回归：再也无需在与同伴交谈时心虚防备自己周身散发着如同经年未倒的烟灰缸般的陈腐恶臭。"
+    "passage_translation": "戒烟后，衣服上不会再留着陈旧烟味，与人交谈时也不必担心自己闻起来像一只旧烟灰缸。"
   },
   {
     "id": "q96",
     "type": "cloze",
     "theme": "The Lung Clean-Up Crew",
-    "passage": "Within one to nine months after quitting, macrophages and bronchial cilia resume full motility, clearing decades of accumulated particulate debris from the deep ________.",
-    "blank": "alveoli",
+    "passage": "After quitting, cilia lining the airways can gradually recover some function, helping move mucus and debris out of the ________.",
+    "blank": "bronchi",
     "options": [
       "arteries",
-      "synapses",
-      "tendons",
-      "alveoli"
+      "joints",
+      "neurons",
+      "bronchi"
     ],
-    "hint": "Noun (plural): tiny air sacs in the lungs where the exchange of oxygen and carbon dioxide takes place",
-    "first_letter": "a",
+    "hint": "Noun (plural): the major air passages branching from the windpipe into the lungs",
+    "first_letter": "b",
     "punchline": "Your lungs are cleaning out the basement right now; all they asked of you was to stop shoveling soot down the chimney.",
     "vocab": {
-      "word": "alveoli",
-      "phonetic": "/ælˈviːəlaɪ/",
-      "meaning": "n. （医学）肺泡（气体交换的最微观单元）"
+      "word": "bronchi",
+      "phonetic": "/ˈbrɒŋkaɪ/",
+      "meaning": "n. 支气管；气管通往肺部的主要分支"
     },
-    "passage_translation": "在彻底告别烟草的一至九个月间，肺泡巨噬细胞与支气管纤毛全面恢复活跃摆动，将数十年沉积在肺泡最幽微深处的有毒颗粒物彻底清理排出。"
+    "passage_translation": "戒烟后，气道纤毛的功能可能逐渐恢复，帮助把黏液和杂质从支气管排出。"
   },
   {
     "id": "q97",
     "type": "cloze",
     "theme": "The Clarity Dividend",
-    "passage": "Free from the perpetual cycle of withdrawal, former smokers report a sharp increase in uninterrupted creative focus, proving that nicotine was always a cognitive ________ rather than a stimulant.",
+    "passage": "Many people who quit smoking report better sustained focus after withdrawal eases, suggesting that the cycle of craving can be a cognitive ________.",
     "blank": "distraction",
     "options": [
       "distraction",
@@ -2126,13 +2131,13 @@
       "phonetic": "/dɪˈstrækʃn/",
       "meaning": "n. 干扰分心，分散心智注意力的累赘"
     },
-    "passage_translation": "彻底挣脱周而复始的戒断锁链后，戒烟者无一例外迎来了未曾中断的深度专注力激增，这无可辩驳地证明尼古丁从不是什么灵感催化剂，而是一具沉重的心智干扰器。"
+    "passage_translation": "许多戒烟者在戒断反应缓解后表示，自己更能持续专注；这提示反复出现的烟瘾可能本身就是一种注意力干扰。"
   },
   {
     "id": "q98",
     "type": "cloze",
     "theme": "The Stroke Risk Plunge",
-    "passage": "Within five to fifteen years after quitting smoking, an individual's stroke risk drops dramatically to the identical level of a person who has never touched a cigarette in their entire ________.",
+    "passage": "Over time after quitting, stroke risk falls and can approach that of someone who has never smoked in their ________.",
     "blank": "lifetime",
     "options": [
       "adolescence",
@@ -2142,41 +2147,41 @@
     ],
     "hint": "Noun: the duration of a person's life",
     "first_letter": "l",
-    "punchline": "Your brain's blood vessels have a clean slate waiting for them; time and abstinence will erase even decades of toxic arithmetic.",
+    "punchline": "The risk reduction grows over time; every smoke-free year is worth keeping.",
     "vocab": {
       "word": "lifetime",
       "phonetic": "/ˈlaɪftaɪm/",
       "meaning": "n. 一生，终身"
     },
-    "passage_translation": "在告别烟草五至十五年之内，个体的中风发作危险度便会剧烈回落，彻底跌至与一生从未碰过香烟的终身不吸烟者完全相同的平稳基准线。"
+    "passage_translation": "戒烟后，中风风险会随时间下降，并可能逐渐接近从未吸烟者的水平。"
   },
   {
     "id": "q99",
     "type": "cloze",
     "theme": "The Mastery of Urge",
-    "passage": "Urge-surfing is the practice of observing a craving rise, peak, and recede like a wave without acting, demonstrating that a biological impulse possesses zero ________ authority.",
-    "blank": "mandatory",
+    "passage": "Urge-surfing means observing a craving rise, peak, and recede like a wave without acting on it: a craving is an urge, not an ________.",
+    "blank": "imperative",
     "options": [
-      "illusory",
-      "negligible",
-      "mandatory",
-      "fictional"
+      "incentive",
+      "omen",
+      "imperative",
+      "argument"
     ],
-    "hint": "Adjective: required by law or rules; compulsory",
-    "first_letter": "m",
+    "hint": "Noun: an authoritative command that must be obeyed",
+    "first_letter": "i",
     "punchline": "An urge is an email from a scammer; you don't have to reply, click the link, or wire your life savings. You just hit delete.",
     "vocab": {
-      "word": "mandatory",
-      "phonetic": "/ˈmændətəri/",
-      "meaning": "adj. 强制性的，必须服从的"
+      "word": "imperative",
+      "phonetic": "/ɪmˈperətɪv/",
+      "meaning": "n. 必须服从的命令；迫切要求"
     },
-    "passage_translation": "‘冲动冲浪法’是指如潮汐般静观烟瘾浪涌升起、冲顶并自然回落而不采取任何盲从动作，这雄辩地印证了生理冲动对你拥有零强制统驭权力。"
+    "passage_translation": "“冲动冲浪”是观察烟瘾像波浪一样升起、达到高峰再退去，而不立即行动；烟瘾是一种冲动，不是必须服从的命令。"
   },
   {
     "id": "q100",
     "type": "cloze",
     "theme": "The Sovereign Mind",
-    "passage": "To stand unshakably in the face of chemical craving and choose vitality over poison is the ultimate demonstration of human rational ________.",
+    "passage": "Facing a craving and choosing your health over another cigarette is a quiet personal ________.",
     "blank": "triumph",
     "options": [
       "capitulation",
@@ -2192,6 +2197,6 @@
       "phonetic": "/ˈtraɪʌmf/",
       "meaning": "n. 辉煌凯旋，伟大的胜利"
     },
-    "passage_translation": "面对来势汹汹的化学渴求能够泰然自若、从容选择生命的鲜活而断然拒绝毒害，是人类理性之光对动物性成瘾机制最伟大的辉煌凯旋。"
+    "passage_translation": "烟瘾来时仍选择健康而不点烟，是一次平静却实在的个人胜利。"
   }
 ]

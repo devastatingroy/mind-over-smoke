@@ -49,7 +49,7 @@ git push origin master
 
 ### 法则 4：认知阻断标准与坚决杜绝低质题 (Zero Trivial Cloze)
 * **严禁在题库中出现任何“中文古诗单字填空”式的傻瓜题**（如“长风破浪会有时，直挂云帆济____”）。母语者会无意识触发肌肉记忆，完全起不到前额叶认知阻断效果。
-* **Mode 1（英译名篇逆向还原）**：**严禁出选择题（Zero Multiple Choice）**。严禁给出中文选项供反向认读；必须通过权威英译意象群自主回忆中文原诗，提供【🎯 我想到了 · 揭晓原诗对照】与【❓ 暂时想不出 · 直接看答案】。
+* **Mode 1（英译逆向还原）**：**严禁出选择题（Zero Multiple Choice）**。严禁给出中文选项供反向认读；通过与答案范围对应的参考英译自主回忆中文原诗，提供【🎯 我想到了 · 揭晓原诗对照】与【❓ 暂时想不出 · 直接看答案】。无可核实出处时，不署名具体译者。
 * **Mode 2（汉诗英译填空）**：自行输入英文译文，与参考译本对照；允许点击看答案，不用选择题或逐字匹配判分。
 * **经济学人题**：统一使用语境完形填空；正确选项分散于四个位置，选错先提示重试，不直接揭晓。
 * **题干防剧透**：题干和提示语严禁直接泄露答案中文原句或英文词汇。
@@ -76,7 +76,7 @@ mind-over-smoke/
 │   │   └── VocabModal.jsx          # 生词与金句武器库：回顾做题积累的 SAT/GRE 词汇
 │   ├── data/
 │   │   ├── questions.json          # 100 题《经济学人》反讽与商业逻辑完形填空题
-│   │   ├── tang_translation.json   # 100 题传世名篇双向英汉名译题 (50 题 Mode 1 + 50 题 Mode 2)
+│   │   ├── tang_translation.json   # 100 题古典诗词双向翻译题 (50 题 Mode 1 + 50 题 Mode 2)
 │   │   ├── physical_tasks.json     # 膝盖友好型躯体动作题 (俯卧撑、空击等)
 │   │   ├── breathing_tasks.json    # 4-7-8 箱式迷走神经重置深呼吸任务
 │   │   └── fullDictionary.json     # 30,000+ 离线核心词库 (音标、词性、精准简明释义)
@@ -107,7 +107,7 @@ mind-over-smoke/
 ### 4.1 SOS 急救三维组卷策略 (`src/utils/taskManager.js`)
 每次用户点击【🚨 烟瘾急救 · 3分钟阻断 (SOS)】时，系统必须组装 3 个互不相同且跨越不同感知维度的任务：
 1. **维度 1（生理重置）**：随机抽取 1 个躯体发力动作（保留俯卧撑，移除平板支撑）或 1 个 4-7-8 迷走神经呼吸。
-2. **维度 2（英汉跨语种意象转码）**：随机抽取 1 个诗词名译挑战（Mode 1 纯英译逆向还原 或 Mode 2 汉诗英译填空）。
+2. **维度 2（英汉跨语种意象转码）**：随机抽取 1 个诗词翻译挑战（Mode 1 英译逆向还原 或 Mode 2 汉诗英译填空）。
 3. **维度 3（高阶思维批判精读）**：随机抽取 1 个《经济学人》批判阅读或词汇完形填空。
 4. **动态换题机制 (`handleSwapTask`)**：用户可在题目上方或下方点击【换下一题】，算法优先从不同类别的候选池中无刷新替换当前题目，并将题目内容滚动回顶部。
 
@@ -131,7 +131,7 @@ mind-over-smoke/
 
 新增或修改题目必须符合以下 JSON 契约：
 
-### 5.1 诗词名译题 (`src/data/tang_translation.json`)
+### 5.1 诗词翻译题 (`src/data/tang_translation.json`)
 ```json
 {
   "id": "trans_101",
@@ -142,7 +142,7 @@ mind-over-smoke/
   "difficulty": "medium",
   "author": "唐 · 杜甫",
   "title": "《春望》",
-  "translator": "Kenneth Rexroth 译本",
+  "translator": "参考英译（意译）",
   "english_text": "The country is broken, yet mountains and rivers remain;\nIn the city spring arrives, with grass and trees growing deep.",
   "prompt": "解读上方英译中的核心意象群，调动前额叶记忆：你能逆向还原杜甫写下的是哪句诗吗？", // 严禁出现中文原句!
   "correct_answer": "国破山河在，城春草木深",

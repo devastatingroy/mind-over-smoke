@@ -416,7 +416,7 @@ export default function QuizModal({
                         <div className="flex items-center justify-between text-[10px] font-mono tracking-widest text-stone-400 mb-2.5">
                           <span className="flex items-center space-x-1">
                             <BookOpen className="w-3 h-3 text-[#8C1D24]" />
-                            <span>ENGLISH MASTER TRANSLATION</span>
+                            <span>ENGLISH RENDERING</span>
                           </span>
                           <span className="text-stone-300 font-sans">{currentQ.translator}</span>
                         </div>
@@ -432,7 +432,7 @@ export default function QuizModal({
                       <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
                         <div className="text-xs text-stone-500 flex items-center justify-between border-b border-stone-100 pb-2">
                           <span className="font-serif text-stone-800 font-bold text-sm">
-                            {currentQ.author} · 《{currentQ.title}》
+                            {currentQ.author} · {currentQ.title}
                           </span>
                           <span className="text-[10px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
                             CHINESE RECONSTRUCTION
@@ -447,7 +447,7 @@ export default function QuizModal({
                         {isAnswered && (
                           <div className="p-4 bg-stone-50 rounded-xl border border-stone-200/80 text-center space-y-1">
                             <div className="text-[10px] font-mono text-stone-500 uppercase tracking-wider">
-                              古典名作原句全篇
+                              古典名作原文节选
                             </div>
                             <p className="font-serif text-base sm:text-lg font-bold text-stone-800 tracking-wide">
                               {currentQ.full_verse}
@@ -508,7 +508,7 @@ export default function QuizModal({
                       <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
                         <div className="text-xs text-stone-500 flex items-center justify-between border-b border-stone-100 pb-2">
                           <span className="font-serif text-stone-800 font-bold text-sm">
-                            {currentQ.author} · 《{currentQ.title}》
+                            {currentQ.author} · {currentQ.title}
                           </span>
                           <span className="text-[10px] font-mono text-stone-400 bg-stone-100 px-2 py-0.5 rounded">
                             CHINESE TO ENGLISH TRANSLATION
