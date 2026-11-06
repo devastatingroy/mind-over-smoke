@@ -190,5 +190,293 @@
     ],
     "analysis": "revenue 是商家的收入，value 是顾客的主观收益；may not 保留判断边界。",
     "punchline": "同一张回头客收据，卖家和买家的收益栏未必一样。"
+  },
+  {
+    "id": "econ_trans_13",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "奖赏与工作",
+    "chinese_claim": "把烟当作完成工作的奖赏，不能把工作本身变轻松。",
+    "prompt": "译出“奖赏”的称呼与工作负担之间的区别。",
+    "scaffold_hint": "可用 calling ... a reward does not ...。",
+    "reference_translation": "Calling a cigarette a reward for finishing work does not make the work itself easier.",
+    "key_phrases": [
+      { "zh": "完成工作的奖赏", "en": "a reward for finishing work" },
+      { "zh": "让工作本身变轻松", "en": "make the work itself easier" }
+    ],
+    "analysis": "论断比较的是标签和工作负担，没有否定完成工作带来的真实满足感。",
+    "punchline": "工作没有变轻，奖励却先开出了一张账单。"
+  },
+  {
+    "id": "econ_trans_14",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "邀请与选择",
+    "chinese_claim": "朋友递来一支烟，是邀请；接不接受仍由你决定。",
+    "prompt": "保留“邀请”和“决定”之间的分界。",
+    "scaffold_hint": "可用 an invitation ... whether ...。",
+    "reference_translation": "A cigarette offered by a friend is an invitation; whether to accept it is still your decision.",
+    "key_phrases": [
+      { "zh": "朋友递来一支烟", "en": "a cigarette offered by a friend" },
+      { "zh": "接不接受", "en": "whether to accept it" }
+    ],
+    "analysis": "英文用 whether 把选择保留给接受邀请的人，不评价朋友的动机。",
+    "punchline": "邀请可以礼貌地收到，烟不必一起收下。"
+  },
+  {
+    "id": "econ_trans_15",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "短时延迟",
+    "chinese_claim": "把点烟推迟五分钟，并不要求你先承诺一辈子。",
+    "prompt": "译出一个短时决定与终身承诺的反差。",
+    "scaffold_hint": "可用 delaying ... does not require ...。",
+    "reference_translation": "Delaying a cigarette for five minutes does not require a lifelong promise.",
+    "key_phrases": [
+      { "zh": "推迟五分钟", "en": "delay for five minutes" },
+      { "zh": "承诺一辈子", "en": "a lifelong promise" }
+    ],
+    "analysis": "短时延迟是一项当下可选的行动，句子没有保证它一定消除冲动。",
+    "punchline": "先处理眼前五分钟，不必把整个人生都搬上谈判桌。"
+  },
+  {
+    "id": "econ_trans_16",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "形象与补货",
+    "chinese_claim": "烟盒上的自由形象，无法替你安排下一次购买的时间。",
+    "prompt": "把广告形象与重复购买这件实际事务对照起来。",
+    "scaffold_hint": "可用 image of freedom 和 next purchase。",
+    "reference_translation": "The image of freedom on a cigarette pack cannot schedule your next purchase for you.",
+    "key_phrases": [
+      { "zh": "自由形象", "en": "the image of freedom" },
+      { "zh": "下一次购买", "en": "the next purchase" }
+    ],
+    "analysis": "句子指出形象与实际行为的差距，不推断个人购买频率。",
+    "punchline": "纸盒负责印自由，补货还得由你亲自跑腿。"
+  },
+  {
+    "id": "econ_trans_17",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "真实节省",
+    "chinese_claim": "今天少买一包烟，省下的是实际支出，不是想象中的折扣。",
+    "prompt": "译出“少买”与“打折”两种省钱方式的区别。",
+    "scaffold_hint": "可用 spending avoided，而不是 discount。",
+    "reference_translation": "Buying one fewer pack today avoids a real expense, not an imaginary discount.",
+    "key_phrases": [
+      { "zh": "少买一包", "en": "buy one fewer pack" },
+      { "zh": "实际支出", "en": "a real expense" }
+    ],
+    "analysis": "避免购买减少实际付款，与购买时获得价格折扣不同。",
+    "punchline": "最简单的折扣券，有时就是没拿起那包烟。"
+  },
+  {
+    "id": "econ_trans_18",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "怀念与价值",
+    "chinese_claim": "想念某个习惯，并不等于这个习惯对你有利。",
+    "prompt": "保留感受与价值判断之间的距离。",
+    "scaffold_hint": "可用 missing a habit does not mean ...。",
+    "reference_translation": "Missing a habit does not mean the habit is good for you.",
+    "key_phrases": [
+      { "zh": "想念某个习惯", "en": "miss a habit" },
+      { "zh": "对你有利", "en": "be good for you" }
+    ],
+    "analysis": "想念是一种感受，不是对习惯利弊的充分证据；英文不必把它译成渴望。",
+    "punchline": "熟悉感有投票权，却不该独占裁判席。"
+  },
+  {
+    "id": "econ_trans_19",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "休息的地点",
+    "chinese_claim": "如果一场休息只能在吸烟区发生，休息的选择就被缩窄了。",
+    "prompt": "译出条件句和可选方式减少的结果。",
+    "scaffold_hint": "可用 if ... limited to ...。",
+    "reference_translation": "If a break can happen only in the smoking area, your options for taking a break become narrower.",
+    "key_phrases": [
+      { "zh": "只能在吸烟区发生", "en": "happen only in the smoking area" },
+      { "zh": "选择被缩窄", "en": "options become narrower" }
+    ],
+    "analysis": "这是对一种假设情形的讨论，不声称所有人的休息地点都受限制。",
+    "punchline": "休息本来是一扇门，没必要把门牌只挂在吸烟区。"
+  },
+  {
+    "id": "econ_trans_20",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "广告的剪辑",
+    "chinese_claim": "广告展示点烟的瞬间，却省略了反复购买的日常。",
+    "prompt": "译出广告画面与长期日常之间的反差。",
+    "scaffold_hint": "可用 show ... while leaving out ...。",
+    "reference_translation": "An ad shows the moment a cigarette is lit while leaving out the routine of buying the next pack.",
+    "key_phrases": [
+      { "zh": "点烟的瞬间", "en": "the moment a cigarette is lit" },
+      { "zh": "反复购买的日常", "en": "the routine of buying the next pack" }
+    ],
+    "analysis": "句子讨论广告的选择性呈现，不推断所有广告都采用同一种画面。",
+    "punchline": "镜头拍下点火的一秒，收据却会反复登场。"
+  },
+  {
+    "id": "econ_trans_21",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "单价与总额",
+    "chinese_claim": "一包烟的价格可以变化，反复购买仍会让总支出累积。",
+    "prompt": "分清单价变化与多次付款的累积。",
+    "scaffold_hint": "可用 the price of a pack ... repeated purchases ...。",
+    "reference_translation": "The price of a pack may change, but repeated purchases still add to the total cost.",
+    "key_phrases": [
+      { "zh": "一包烟的价格", "en": "the price of a pack" },
+      { "zh": "总支出累积", "en": "add to the total cost" }
+    ],
+    "analysis": "论断没有假定价格上涨或下降，只说明多笔支出会累加。",
+    "punchline": "盯着单价看久了，容易忘记收据还有张数。"
+  },
+  {
+    "id": "econ_trans_22",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "行动的尺度",
+    "chinese_claim": "压力来时换一个动作，可能比要求自己永远不想抽烟更现实。",
+    "prompt": "保留“可能更现实”的谨慎比较。",
+    "scaffold_hint": "可用 may be more realistic than ...。",
+    "reference_translation": "Changing one action under stress may be more realistic than demanding that you never want a cigarette again.",
+    "key_phrases": [
+      { "zh": "换一个动作", "en": "change one action" },
+      { "zh": "永远不想抽烟", "en": "never want a cigarette again" }
+    ],
+    "analysis": "比较的是眼前行动和绝对化的要求，不保证替代动作适用于每个人。",
+    "punchline": "今天先换一个动作，给明天留一点商量的余地。"
+  },
+  {
+    "id": "econ_trans_23",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "陪伴与仪式",
+    "chinese_claim": "有人陪着抽烟，不代表只有抽烟才能与人相处。",
+    "prompt": "译出共同吸烟与人际陪伴之间并非必然绑定。",
+    "scaffold_hint": "可用 smoking together does not mean ...。",
+    "reference_translation": "Smoking together does not mean a cigarette is the only way to spend time with someone.",
+    "key_phrases": [
+      { "zh": "陪着抽烟", "en": "smoke together" },
+      { "zh": "与人相处", "en": "spend time with someone" }
+    ],
+    "analysis": "句子没有否定陪伴本身，只质疑把陪伴局限于一种仪式。",
+    "punchline": "想留下的是朋友，不必连烟一起留下。"
+  },
+  {
+    "id": "econ_trans_24",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "当下决定",
+    "chinese_claim": "今天放下一支烟，不需要先解决未来所有的冲动。",
+    "prompt": "突出今天的具体决定与未来不确定性。",
+    "scaffold_hint": "可用 putting down ... today does not require ...。",
+    "reference_translation": "Putting down one cigarette today does not require solving every future craving first.",
+    "key_phrases": [
+      { "zh": "今天放下一支烟", "en": "put down one cigarette today" },
+      { "zh": "未来所有的冲动", "en": "every future craving" }
+    ],
+    "analysis": "论断缩小决策范围，没有承诺今后的冲动会消失。",
+    "punchline": "今天的决定不必替未来所有日子一次签字。"
+  },
+  {
+    "id": "econ_trans_25",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "工具与必要性",
+    "chinese_claim": "把烟称作提神工具，并不能证明它是完成任务的唯一方式。",
+    "prompt": "译出“称作工具”与“证明唯一性”之间的差别。",
+    "scaffold_hint": "可用 calling ... a tool does not prove ...。",
+    "reference_translation": "Calling a cigarette a way to stay alert does not prove it is the only way to finish a task.",
+    "key_phrases": [
+      { "zh": "提神工具", "en": "a way to stay alert" },
+      { "zh": "唯一方式", "en": "the only way" }
+    ],
+    "analysis": "一个方法被使用，并不能推出其他方法都无效；句子不评价个体的提神体验。",
+    "punchline": "工具箱里只有一件东西，往往只是还没打开抽屉。"
+  },
+  {
+    "id": "econ_trans_26",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "动作与停顿",
+    "chinese_claim": "自动伸向口袋的手，也可以在拿出烟盒前停一下。",
+    "prompt": "译出动作已开始、仍可暂停的时间顺序。",
+    "scaffold_hint": "可用 a hand reaching ... can still pause ...。",
+    "reference_translation": "A hand reaching into a pocket on autopilot can still pause before pulling out the pack.",
+    "key_phrases": [
+      { "zh": "自动伸向口袋", "en": "reach into a pocket on autopilot" },
+      { "zh": "拿出烟盒前停一下", "en": "pause before pulling out the pack" }
+    ],
+    "analysis": "英文 on autopilot 描述习惯性动作，不否定人在当下暂停的可能。",
+    "punchline": "手有旧路线，停顿也可以成为新路口。"
+  },
+  {
+    "id": "econ_trans_27",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "休息的条件",
+    "chinese_claim": "不吸烟也能走出办公室，休息就不必附带一张收据。",
+    "prompt": "译出休息不必以购买为前提的意思。",
+    "scaffold_hint": "可用 a break does not have to come with ...。",
+    "reference_translation": "If you can step outside without smoking, a break does not have to come with a receipt.",
+    "key_phrases": [
+      { "zh": "不吸烟也能走出办公室", "en": "step outside without smoking" },
+      { "zh": "附带一张收据", "en": "come with a receipt" }
+    ],
+    "analysis": "收据是购买的隐喻；条件句保留不同工作场所的实际差异。",
+    "punchline": "散步不收费，休息也不一定要消费。"
+  },
+  {
+    "id": "econ_trans_28",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "复购与满意",
+    "chinese_claim": "顾客反复购买一件商品，并不足以证明他每次都满意。",
+    "prompt": "译出复购这一行为与满意度判断的证据差别。",
+    "scaffold_hint": "可用 repeat purchases do not prove ...。",
+    "reference_translation": "Repeat purchases alone do not prove that a customer is satisfied every time.",
+    "key_phrases": [
+      { "zh": "反复购买", "en": "repeat purchases" },
+      { "zh": "每次都满意", "en": "satisfied every time" }
+    ],
+    "analysis": "购买原因可能多样；英文 alone 和 every time 避免把复购直接等同满意。",
+    "punchline": "回头客的数据漂亮，心情却未必写在小票上。"
+  },
+  {
+    "id": "econ_trans_29",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "熟悉的支出",
+    "chinese_claim": "一项支出越熟悉，就越容易在预算里变得不显眼。",
+    "prompt": "译出熟悉程度与注意力之间的关系，避免写成必然规律。",
+    "scaffold_hint": "可用 a familiar expense may ...。",
+    "reference_translation": "The more familiar an expense becomes, the easier it may be to overlook in a budget.",
+    "key_phrases": [
+      { "zh": "支出越熟悉", "en": "the more familiar an expense becomes" },
+      { "zh": "在预算里不显眼", "en": "easy to overlook in a budget" }
+    ],
+    "analysis": "may 保留可能性，句子没有断言每个人都会漏记固定支出。",
+    "punchline": "账本里最安静的一行，未必是最便宜的一行。"
+  },
+  {
+    "id": "econ_trans_30",
+    "category": "economist",
+    "type": "zh_to_en",
+    "theme": "替代奖励",
+    "chinese_claim": "不买一包烟，不需要先找到另一件东西作为奖励。",
+    "prompt": "译出“不购买”无需附带额外消费的意思。",
+    "scaffold_hint": "可用 choosing not to buy ... does not require ...。",
+    "reference_translation": "Choosing not to buy a pack of cigarettes does not require buying something else as a reward.",
+    "key_phrases": [
+      { "zh": "不买一包烟", "en": "choose not to buy a pack of cigarettes" },
+      { "zh": "另一件东西作为奖励", "en": "something else as a reward" }
+    ],
+    "analysis": "论断只否定替代消费的必要性，没有否定其他无消费的奖励方式。",
+    "punchline": "省下的钱可以先留在口袋里，不必立刻转交下一位商家。"
   }
 ]

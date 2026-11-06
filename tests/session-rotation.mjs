@@ -1,0 +1,74 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { createServer } from 'vite';
+
+const translationBank = JSON.parse(fs.readFileSync('src/data/economist_translation.json', 'utf8'));
+assert.equal(translationBank.length, 30);
+assert.equal(new Set(translationBank.map((task) => task.id)).size, 30);
+assert.equal(new Set(translationBank.map((task) => task.chinese_claim)).size, 30);
+for (const task of translationBank) {
+  for (const field of ['theme', 'chinese_claim', 'prompt', 'scaffold_hint', 'reference_translation', 'analysis', 'punchline']) {
+    assert.ok(task[field]?.trim(), `${task.id}.${field} is missing`);
+  }
+  assert.equal(task.key_phrases?.length, 2, `${task.id} needs two expression mappings`);
+}
+
+const server = await createServer({ server: { host: '127.0.0.1', port: 0 } });
+const storageData = new Map();
+const storage = {
+  getItem: (key) => storageData.get(key) ?? null,
+  setItem: (key, value) => storageData.set(key, value)
+};
+
+function family(task) {
+  if (task.category === 'breathing') return 'breathing';
+  if (task.category === 'translation') return `poetry_${task.mode}`;
+  return task.type === 'zh_to_en' ? 'economist_zh_to_en' : 'economist_cloze';
+}
+
+try {
+  const { generateSessionTasks, getReplacementTask, taskStats } = await server.ssrLoadModule('/src/utils/taskManager.js');
+  assert.equal(taskStats.economistTranslation, 30);
+  assert.equal(taskStats.reflection, 5);
+  assert.equal(taskStats.total, 240);
+
+  const firstFiveFamilies = new Set();
+  const firstFourPhysical = new Set();
+  const translatedIds = [];
+  let firstSession;
+  for (let index = 0; index < 150; index++) {
+    const tasks = generateSessionTasks('sos', { reflectionAspectIndex: index % 5, storage });
+    assert.equal(tasks.length, 3);
+    assert.equal(new Set(tasks.map((task) => task.id)).size, 3);
+    const physical = tasks.filter((task) => task.category === 'physical');
+    const reflection = tasks.filter((task) => task.category === 'reflection');
+    assert.equal(physical.length, 1);
+    assert.equal(reflection.length, 1);
+    assert.equal(reflection[0].aspectIndex, index % 5);
+    const third = tasks.find((task) => !['physical', 'reflection'].includes(task.category));
+    if (index < 5) firstFiveFamilies.add(family(third));
+    if (index < 4) firstFourPhysical.add(physical[0].id);
+    if (third.type === 'zh_to_en') translatedIds.push(third.id);
+    if (index === 0) firstSession = { physical: physical[0], reflection: reflection[0], third, ids: tasks.map((task) => task.id) };
+  }
+  assert.equal(firstFiveFamilies.size, 5, 'Each third-task type appears once in the first cycle');
+  assert.equal(firstFourPhysical.size, 4, 'Physical tasks cycle before repeating');
+  assert.equal(new Set(translatedIds.slice(0, 30)).size, 30, 'All 30 new-form questions rotate before repeating');
+  assert.equal(getReplacementTask(firstSession.physical, firstSession.ids, 'sos', { storage }).category, 'physical');
+  assert.equal(getReplacementTask(firstSession.reflection, firstSession.ids, 'sos', { storage }).category, 'reflection');
+  assert.notEqual(family(getReplacementTask(firstSession.third, firstSession.ids, 'sos', { storage })), family(firstSession.third));
+
+  const practice = generateSessionTasks('practice', { reflectionAspectIndex: 2, storage });
+  assert.equal(practice.length, 5);
+  assert.equal(practice.filter((task) => task.category === 'reflection').length, 1);
+  assert.ok(practice.some((task) => task.category === 'economist'));
+  assert.equal(new Set(practice.filter((task) => task.category !== 'reflection').map(family)).size, 4);
+  const practiceIds = practice.map((task) => task.id);
+  const onlyEconomist = practice.find((task) => task.category === 'economist');
+  if (practice.filter((task) => task.category === 'economist').length === 1) {
+    assert.equal(getReplacementTask(onlyEconomist, practiceIds, 'practice', { storage }).category, 'economist');
+  }
+  console.log('SOS category rotation, ID bags, swaps, and five-task practice verified.');
+} finally {
+  await server.close();
+}

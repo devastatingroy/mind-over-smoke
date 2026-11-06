@@ -17419,24 +17419,309 @@
     "pos": "n.",
     "def": "企业集团，大型联合公司"
   },
-  "payment": { "phonetic": "/ˈpeɪmənt/", "pos": "n.", "def": "付款；支付的金额" },
-  "package": { "phonetic": "/ˈpækɪdʒ/", "pos": "n.", "def": "包装；包装盒" },
-  "elsewhere": { "phonetic": "/ˌelsˈweə(r)/", "pos": "adv.", "def": "在别处；到其他地方" },
-  "convenience": { "phonetic": "/kənˈviːniəns/", "pos": "n.", "def": "方便；便利" },
-  "tag": { "phonetic": "/tæɡ/", "pos": "n.", "def": "标签；标价牌" },
-  "reason": { "phonetic": "/ˈriːzən/", "pos": "n.", "def": "理由；原因" },
-  "regular": { "phonetic": "/ˈreɡjələr/", "pos": "adj.", "def": "定期的；有规律的" },
-  "refills": { "phonetic": "/ˈriːfɪlz/", "pos": "n.", "def": "补充量；续购的商品" },
-  "ads": { "phonetic": "/ædz/", "pos": "n.", "def": "广告（ad 的复数）" },
-  "discounted": { "phonetic": "/ˈdɪskaʊntɪd/", "pos": "adj.", "def": "打折的；折价的" },
-  "cheaper": { "phonetic": "/ˈtʃiːpər/", "pos": "adj.", "def": "更便宜的" },
-  "none": { "phonetic": "/nʌn/", "pos": "pron.", "def": "一个也没有；毫无" },
-  "saves": { "phonetic": "/seɪvz/", "pos": "v.", "def": "节省（save 的第三人称单数）" },
-  "seller": { "phonetic": "/ˈselər/", "pos": "n.", "def": "卖家；销售方" },
-  "earns": { "phonetic": "/ɜːnz/", "pos": "v.", "def": "赚得；获得（earn 的第三人称单数）" },
-  "repeat": { "phonetic": "/rɪˈpiːt/", "pos": "adj.", "def": "重复的；再次发生的" },
-  "purchases": { "phonetic": "/ˈpɜːtʃəsɪz/", "pos": "n.", "def": "购买行为；购买的商品" },
-  "gain": { "phonetic": "/ɡeɪn/", "pos": "v.", "def": "获得；增加" },
-  "value": { "phonetic": "/ˈvæljuː/", "pos": "n.", "def": "价值；效用" },
-  "calling": { "phonetic": "/ˈkɔːlɪŋ/", "pos": "v.", "def": "称作；称为（call 的现在分词）" }
+  "payment": {
+    "phonetic": "/ˈpeɪmənt/",
+    "pos": "n.",
+    "def": "付款；支付的金额"
+  },
+  "package": {
+    "phonetic": "/ˈpækɪdʒ/",
+    "pos": "n.",
+    "def": "包装；包装盒"
+  },
+  "elsewhere": {
+    "phonetic": "/ˌelsˈweə(r)/",
+    "pos": "adv.",
+    "def": "在别处；到其他地方"
+  },
+  "convenience": {
+    "phonetic": "/kənˈviːniəns/",
+    "pos": "n.",
+    "def": "方便；便利"
+  },
+  "tag": {
+    "phonetic": "/tæɡ/",
+    "pos": "n.",
+    "def": "标签；标价牌"
+  },
+  "reason": {
+    "phonetic": "/ˈriːzən/",
+    "pos": "n.",
+    "def": "理由；原因"
+  },
+  "regular": {
+    "phonetic": "/ˈreɡjələr/",
+    "pos": "adj.",
+    "def": "定期的；有规律的"
+  },
+  "refills": {
+    "phonetic": "/ˈriːfɪlz/",
+    "pos": "n.",
+    "def": "补充量；续购的商品"
+  },
+  "ads": {
+    "phonetic": "/ædz/",
+    "pos": "n.",
+    "def": "广告（ad 的复数）"
+  },
+  "discounted": {
+    "phonetic": "/ˈdɪskaʊntɪd/",
+    "pos": "adj.",
+    "def": "打折的；折价的"
+  },
+  "cheaper": {
+    "phonetic": "/ˈtʃiːpər/",
+    "pos": "adj.",
+    "def": "更便宜的"
+  },
+  "none": {
+    "phonetic": "/nʌn/",
+    "pos": "pron.",
+    "def": "一个也没有；毫无"
+  },
+  "saves": {
+    "phonetic": "/seɪvz/",
+    "pos": "v.",
+    "def": "节省（save 的第三人称单数）"
+  },
+  "seller": {
+    "phonetic": "/ˈselər/",
+    "pos": "n.",
+    "def": "卖家；销售方"
+  },
+  "earns": {
+    "phonetic": "/ɜːnz/",
+    "pos": "v.",
+    "def": "赚得；获得（earn 的第三人称单数）"
+  },
+  "repeat": {
+    "phonetic": "/rɪˈpiːt/",
+    "pos": "adj.",
+    "def": "重复的；再次发生的"
+  },
+  "purchases": {
+    "phonetic": "/ˈpɜːtʃəsɪz/",
+    "pos": "n.",
+    "def": "购买行为；购买的商品"
+  },
+  "gain": {
+    "phonetic": "/ɡeɪn/",
+    "pos": "v.",
+    "def": "获得；增加"
+  },
+  "value": {
+    "phonetic": "/ˈvæljuː/",
+    "pos": "n.",
+    "def": "价值；效用"
+  },
+  "calling": {
+    "phonetic": "/ˈkɔːlɪŋ/",
+    "pos": "v.",
+    "def": "称作；称为（call 的现在分词）"
+  },
+  "accept": {
+    "phonetic": "/əkˈsept/",
+    "pos": "v.",
+    "def": "接受，收受；同意，赞成；相信，认为……正确；忍受，容忍；吸纳，招收；接纳；承担（责任等），承认；承兑，认付（单据等）；不排斥；适配"
+  },
+  "action": {
+    "phonetic": "/ˈækʃ(ə)n/",
+    "pos": "n.",
+    "def": "行动；行为；战斗；诉讼；<非正式>令人激动的事；动作；情节；惊险刺激的活动（或事件）；作用；开始（电影导演开拍的指令）；赚钱的机会；性交；运转方式"
+  },
+  "ad": {
+    "phonetic": "/æd/",
+    "pos": "n.",
+    "def": "广告；促销活动；<非正式>预告片（同 advertisement）"
+  },
+  "area": {
+    "phonetic": "/ˈeəriə/",
+    "pos": "n.",
+    "def": "地区，区域；场地，地方；领域；面积；部位；罚球区"
+  },
+  "autopilot": {
+    "phonetic": "/ˈɔːtəʊpaɪlət/",
+    "pos": "n.",
+    "def": "（航）自动驾驶仪，自动操舵装置（等于 automatic pilot）；比喻不需主动思考、机械或本能地做事的状态（常用于 be/go on autopilot）"
+  },
+  "avoids": {
+    "phonetic": "/əˈvɔɪdz/",
+    "pos": "v.",
+    "def": "避免，防止；避免（做某事）；回避，避开，避让；（法律）撤销，使无效（avoid 的第三人称单数）"
+  },
+  "budget": {
+    "phonetic": "/ˈbʌdʒɪt/",
+    "pos": "n.",
+    "def": "预算；政府预算案"
+  },
+  "changing": {
+    "phonetic": "/ˈtʃeɪndʒɪŋ/",
+    "pos": "adj.",
+    "def": "变化中的，改变中的"
+  },
+  "delay": {
+    "phonetic": "/dɪˈleɪ/",
+    "pos": "v.",
+    "def": "推迟，延期；延误，耽搁；（故意）拖延，磨蹭"
+  },
+  "delaying": {
+    "phonetic": "/dɪˈleɪɪŋ/",
+    "pos": "adj.",
+    "def": "延迟的，拖延的（常作定语）"
+  },
+  "demanding": {
+    "phonetic": "/dɪˈmɑːndɪŋ/",
+    "pos": "adj.",
+    "def": "费时费力的；苛刻的，难以满足的"
+  },
+  "discount": {
+    "phonetic": "/ˈdɪskaʊnt/",
+    "pos": "n.",
+    "def": "减价，折扣；（汇票或期票到期前转手的）贴现率"
+  },
+  "else": {
+    "phonetic": "/els/",
+    "pos": "adv.",
+    "def": "此外，其他；否则，要不然"
+  },
+  "expense": {
+    "phonetic": "/ɪkˈspens/",
+    "pos": "n.",
+    "def": "代价，费用；业务费用，报销（expenses）；需要花钱的东西，花销的东西"
+  },
+  "fewer": {
+    "phonetic": "/ˈfjuːə(r)/",
+    "pos": "adj.",
+    "def": "较少的"
+  },
+  "finish": {
+    "phonetic": "/ˈfɪnɪʃ/",
+    "pos": "v.",
+    "def": "完成，做好；（使）结束；消耗尽（所剩之物）；（比赛中）获得（名次）；（英式足球用语）进球；对（物件）做最后加工；杀死，歼灭；使精疲力竭；<旧>为（少女）进入上流社会做好准备；<非正式>使精疲力竭"
+  },
+  "finishing": {
+    "phonetic": "/ˈfɪnɪʃɪŋ/",
+    "pos": "v.",
+    "def": "完成；结束；（竞赛）获得（名次）；用完，吃光（finish 的现在分词）"
+  },
+  "hand": {
+    "phonetic": "/hænd/",
+    "pos": "n.",
+    "def": "手；（钟表的）指针；一局牌，一手牌；帮助，援手；工人；船员，水手；支配，掌管；作用，影响；鼓掌，拍手喝��；<文>字迹；一手之宽（用来测量马匹的高度）；<旧>（女方的）允婚；表演艺人，制作工匠"
+  },
+  "happen": {
+    "phonetic": "/ˈhæpən/",
+    "pos": "v.",
+    "def": "发生；使遭遇；碰巧"
+  },
+  "image": {
+    "phonetic": "/ˈɪmɪdʒ/",
+    "pos": "n.",
+    "def": "形象，印象；影像，映像，图像；比喻，意象；画像，塑像，雕像；酷似另一个人的人；（人或事物）外形，外表；像点；硬盘备份；（圣经）偶像"
+  },
+  "imaginary": {
+    "phonetic": "/ɪˈmædʒɪnəri/",
+    "pos": "adj.",
+    "def": "想象的，虚构的；虚数的"
+  },
+  "lit": {
+    "phonetic": "/lɪt/",
+    "pos": "v.",
+    "def": "点亮，照亮；点燃，点火；偶然发现，偶然碰见，偶然获得（light 的过去式和过去分词；light on/upon 的过去式）"
+  },
+  "missing": {
+    "phonetic": "/ˈmɪsɪŋ/",
+    "pos": "adj.",
+    "def": "找不到的，丢失的；缺少的，缺损的；（人）失踪的，下落不明的；遗漏的，未被包括在内的"
+  },
+  "narrower": {
+    "phonetic": "/ˈnærəʊə(r)/",
+    "pos": "adj.",
+    "def": "比较狭窄的（narrow 的比较级）"
+  },
+  "offered": {
+    "phonetic": "/ˈɒfəd/",
+    "pos": "v.",
+    "def": "offer 的过去式和过去分词：提供，给予；提议，表示愿意（做某事）；提出，作出（建议、报价等）"
+  },
+  "overlook": {
+    "phonetic": "/ˌəʊvəˈlʊk/",
+    "pos": "v.",
+    "def": "忽视，忽略；（工作、职位、提拔等）不考虑（某人）；（对不良现象等）不予理会，视而不见；眺望，俯瞰；<古>监督；<罕>检查；<古>用邪恶的眼睛施魔法于"
+  },
+  "pocket": {
+    "phonetic": "/ˈpɒkɪt/",
+    "pos": "n.",
+    "def": "衣袋，口袋；钱财，财力；（附在某物上的）小口袋，小容器；<南非>（用作贸易计量的）（农产品）袋；（与周围不同的）小群体，小区域；（台球）网袋，球袋；岩石或地层中充满矿石或其他物质的空洞"
+  },
+  "promise": {
+    "phonetic": "/ˈprɒmɪs/",
+    "pos": "v.",
+    "def": "承诺，保证；使很可能，预示；指望，期待（promise oneself）；<古>把（某人，尤指女人）许配给；有指望，有前途"
+  },
+  "pulling": {
+    "phonetic": "/ˈpʊlɪŋ/",
+    "pos": "v.",
+    "def": "拉；拔出；（向某方向）拖；将……拖在身后；扭转（pull的现在分词）"
+  },
+  "purchase": {
+    "phonetic": "/ˈpɜːtʃəs/",
+    "pos": "n.",
+    "def": "<正式>购买，采购；<正式>购买的东西；<法律>（非继承性的）财产置得；<正式>紧握，牢牢抓住；（移动重物的）滑轮（或类似装置）"
+  },
+  "put": {
+    "phonetic": "/pʊt/",
+    "pos": "v.",
+    "def": "放，放置；猛推，用力插入；将……送往，安置；使与……连接，安装；写下；使处于（某状态或情况）；使受到……的影响，把……施加给；给予（重视、信任、价值等）；把……视为（或列为）；表述，提出；使工作，使用；投掷（铁饼），推（铅球）；（船）（沿某个方向）行驶；谱曲"
+  },
+  "realistic": {
+    "phonetic": "/ˌriːəˈlɪstɪk/",
+    "pos": "adj.",
+    "def": "务实的，实事求是的；实际的，现实可行的；写实的，逼真的；实在论的"
+  },
+  "really": {
+    "phonetic": "/ˈriːəli/",
+    "pos": "adv.",
+    "def": "真正地，事实上；确实的，的确（用于加强语气）；很，十分；（用于带有隐含的否定回答的疑问句和感叹句）真的，是吗；用于缓和否定语气"
+  },
+  "receipt": {
+    "phonetic": "/rɪˈsiːt/",
+    "pos": "n.",
+    "def": "发票，收据；<正式>收到，接收；(企业、银行、政府等）收到的款项，收入（receipts）"
+  },
+  "satisfied": {
+    "phonetic": "/ˈsætɪsfaɪd/",
+    "pos": "adj.",
+    "def": "满意的，满足的；确信的，信服的"
+  },
+  "solving": {
+    "phonetic": "/ˈsɒlvɪŋ/",
+    "pos": "v.",
+    "def": "解决，解答，求解（solve 的现在分词和动名词）"
+  },
+  "something": {
+    "phonetic": "/ˈsʌmθɪŋ/",
+    "pos": "pron.",
+    "def": "某事，某物；……或诸如此类的东西，……什么的；大致，大约，左右；什么什么（用于表示不记得人名、数字的余下部分或歌词等）；还算幸运的事；重要的人（或事）；（想法或建议）有道理，值得考虑；有点儿，有几分"
+  },
+  "thing": {
+    "phonetic": "/θɪŋ/",
+    "pos": "n.",
+    "def": "东西，物；（无生命的）物体，物件；个人物品，衣物（things）；器具，用品（things）；情形，事件；行为，活动；想法，观点；情况，形势（things）；……之类的东西，特定的事物；需要的东西，适当的东西；事实本身；（生活的）方面；目标，目的；生物，有生命的东西；家伙，东西（指人或动物，常带感情色彩）；（用于强调）任何东西；（某人喜欢或擅长的）事情；<非正式>（对某事物或某人的）喜欢，憎恶；烂东西，破烂玩意儿"
+  },
+  "ways": {
+    "phonetic": "/weɪz/",
+    "pos": "n.",
+    "def": "方法，方式，途径（way 的复数）；方面（常用于 in many ways、in some ways 等短语）；习俗，习惯，惯常行为方式；（造船）滑道，滑路；（Ways）人名，瓦伊斯（音译）"
+  },
+  "whether": {
+    "phonetic": "/ˈweðə(r)/",
+    "pos": "conj.",
+    "def": "是否（表选择或可能性）；不管，无论"
+  },
+  "options": {
+    "phonetic": "/ˈɒpʃnz/",
+    "pos": "n.",
+    "def": "可选择的事物；（将来的）买卖选择权利，期权；（计算机程序中的）选项（option 的复数）"
+  }
 }

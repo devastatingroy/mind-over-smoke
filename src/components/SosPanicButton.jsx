@@ -21,7 +21,7 @@ export default function SosPanicButton({ onStartQuiz }) {
         </h2>
         <p className="text-xs text-stone-600 max-w-md mx-auto leading-relaxed font-sans">
           生理研究表明，急性尼古丁渴求在 <span className="font-semibold text-stone-900">180 秒</span> 内冲顶后必然自然回落。
-          已备妥 <span className="font-medium text-stone-900">英译唐诗解密</span>、<span className="font-medium text-stone-900">10个俯卧撑等动作</span> 与 <span className="font-medium text-stone-900">经济学人题库</span>，零延迟秒级接管注意力。
+          每轮包含 <span className="font-medium text-stone-900">体力活动</span>、<span className="font-medium text-stone-900">生活反思</span> 和一道轮换的呼吸或语言挑战。
         </p>
       </div>
 
@@ -66,7 +66,7 @@ export default function SosPanicButton({ onStartQuiz }) {
           onClick={() => onStartQuiz('practice')}
           className="text-stone-900 hover:underline font-semibold flex items-center space-x-1 cursor-pointer font-sans"
         >
-          <span>日常精读（5题＋1问）</span>
+          <span>日常精读（5项）</span>
           <ArrowRight className="w-3 h-3" />
         </button>
       </div>

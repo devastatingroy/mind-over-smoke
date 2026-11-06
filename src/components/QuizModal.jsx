@@ -339,6 +339,9 @@ export default function QuizModal({
 
   // Monochrome Category Meta Label
   const getCategoryMeta = () => {
+    if (currentQ.category === 'reflection') {
+      return { code: 'REFLECTION', label: '生活的一角', icon: <Sparkles className="w-3.5 h-3.5" /> };
+    }
     if (currentQ.type === 'zh_to_en') {
       return {
         code: 'REASONING · TRANSLATION',
@@ -375,7 +378,7 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
-  const swapButton = onSwapTask && !isSessionFinished && !isAnswered && (
+  const swapButton = onSwapTask && currentQ.category !== 'reflection' && !isSessionFinished && !isAnswered && (
     <button
       type="button"
       onClick={() => onSwapTask(currentIndex)}
@@ -448,7 +451,7 @@ export default function QuizModal({
               <ReflectionQuestion prompt={practicePrompt} onSwapAspect={onSwapPracticeAspect} onContinue={() => setShowPracticeIntro(false)} />
             ) : (
             <>
-              {mode === 'sos' && (
+              {mode === 'sos' && !questions.some((task) => task.category === 'reflection') && (
                 <div>
                   {!showSosReflection && (
                     <button
@@ -482,6 +485,18 @@ export default function QuizModal({
                   </span>
                 )}
               </div>
+
+              {currentQ.category === 'reflection' && (
+                <div className="space-y-3">
+                  <h2 className="font-serif text-xl font-bold text-stone-900">{currentQ.title}</h2>
+                  <ReflectionQuestion
+                    prompt={{ aspectIndex: currentQ.aspectIndex }}
+                    onSwapAspect={() => onSwapTask(currentIndex)}
+                    onContinue={handleNext}
+                    continueLabel={currentIndex < questions.length - 1 ? '想过了，继续下一项' : '完成本次急救'}
+                  />
+                </div>
+              )}
 
               {/* ---------------- 1. TRANSLATION COGNITIVE CHALLENGE ---------------- */}
               {(currentQ.category === 'translation' || currentQ.type === 'translation') && (

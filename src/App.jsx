@@ -39,24 +39,26 @@ export default function App() {
   const [currentQuizQuestions, setCurrentQuizQuestions] = useState(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('mode') === 'dashboard') return [];
-    if (savedSession?.questions?.length) {
+    // StrictMode can call this initializer twice; reuse the session written by the first call.
+    const sessionToRestore = getSavedSession() || savedSession;
+    if (sessionToRestore?.questions?.length) {
       // Re-hydrate questions against current task pool to guarantee latest definitions & no stale schemas
-      return savedSession.questions.map((q) => {
+      return sessionToRestore.questions.map((q) => {
         const fresh = allTasks.find((t) => t.id === q.id);
         if (fresh) return fresh;
-        const usedIds = savedSession.questions.map((task) => task.id);
+        const usedIds = sessionToRestore.questions.map((task) => task.id);
         return allTasks.find((task) => task.category === 'breathing' && !usedIds.includes(task.id))
           || getReplacementTask(q, usedIds);
       });
     }
-    const initialTasks = generateSessionTasks('sos');
-    const sosPrompt = claimReflectionPrompt('sos');
+    const reflectionPrompt = claimReflectionPrompt('task');
+    const initialTasks = generateSessionTasks('sos', { reflectionAspectIndex: reflectionPrompt.aspectIndex });
     saveActiveSession({
       mode: 'sos',
       questions: initialTasks,
       currentIndex: 0,
       secondsLeft: 180,
-      sosPrompt
+      sosPrompt: null
     });
     return initialTasks;
   });
@@ -91,20 +93,21 @@ export default function App() {
 
   // Start a quiz session (SOS or practice)
   const handleStartQuiz = (mode) => {
-    const tasks = generateSessionTasks(mode);
-    const nextSosPrompt = mode === 'sos' ? claimReflectionPrompt('sos') : null;
-    const nextPracticePrompt = mode === 'practice' ? claimReflectionPrompt('practice') : null;
+    const reflectionPrompt = claimReflectionPrompt('task');
+    const tasks = generateSessionTasks(mode, { reflectionAspectIndex: reflectionPrompt.aspectIndex });
+    const nextSosPrompt = null;
+    const nextPracticePrompt = null;
     setCurrentQuizQuestions(tasks);
     setActiveQuizMode(mode);
     setSosPrompt(nextSosPrompt);
     setPracticePrompt(nextPracticePrompt);
-    setSessionProgress({ currentIndex: 0, secondsLeft: 180, practiceIntroDismissed: mode !== 'practice' });
+    setSessionProgress({ currentIndex: 0, secondsLeft: 180, practiceIntroDismissed: true });
     saveActiveSession({
       mode,
       questions: tasks,
       currentIndex: 0,
       secondsLeft: 180,
-      practiceIntroDismissed: mode !== 'practice',
+      practiceIntroDismissed: true,
       sosPrompt: nextSosPrompt,
       practicePrompt: nextPracticePrompt
     });
@@ -125,10 +128,21 @@ export default function App() {
 
   // Swap a specific task with a different one (e.g. if user is on subway and can't do push-ups)
   const handleSwapTask = (indexToSwap) => {
+    const currentAspect = currentQuizQuestions[indexToSwap]?.aspectIndex;
+    let nextAspect = null;
+    if (currentQuizQuestions[indexToSwap]?.category === 'reflection') {
+      for (let attempt = 0; attempt < 5; attempt++) {
+        nextAspect = claimReflectionPrompt('task').aspectIndex;
+        if (nextAspect !== currentAspect) break;
+      }
+      if (nextAspect === currentAspect) nextAspect = (currentAspect + 1) % 5;
+    }
     setCurrentQuizQuestions((prev) => {
       const taskToReplace = prev[indexToSwap];
       const existingIds = prev.map((t) => t.id);
-      const replacement = getReplacementTask(taskToReplace, existingIds);
+      const replacement = taskToReplace.category === 'reflection'
+        ? allTasks.find((task) => task.category === 'reflection' && task.aspectIndex === nextAspect)
+        : getReplacementTask(taskToReplace, existingIds, activeQuizMode || 'sos');
       const next = [...prev];
       next[indexToSwap] = replacement;
       saveActiveSession({

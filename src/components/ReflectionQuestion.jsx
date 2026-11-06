@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { REFLECTION_ASPECTS, localDayKey, readReflectionState, writeReflectionState } from '../utils/reflection';
 
-export default function ReflectionQuestion({ prompt, compact = false, onSwapAspect, onContinue, onDismiss }) {
+export default function ReflectionQuestion({ prompt, compact = false, onSwapAspect, onContinue, continueLabel = '直接开始刷题', onDismiss }) {
   const aspect = REFLECTION_ASPECTS[prompt.aspectIndex];
   const [isWriting, setIsWriting] = useState(false);
   const [draft, setDraft] = useState('');
@@ -65,7 +65,7 @@ export default function ReflectionQuestion({ prompt, compact = false, onSwapAspe
       {message && <p role="status" className="text-xs text-stone-600">{message}</p>}
       {onContinue && (
         <button type="button" onClick={onContinue} className="w-full rounded-lg bg-stone-900 px-4 py-3 text-sm font-medium text-white hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900">
-          直接开始刷题
+          {continueLabel}
         </button>
       )}
     </section>

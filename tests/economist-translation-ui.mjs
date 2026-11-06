@@ -38,22 +38,21 @@ async function loadTask(page, id) {
 
 try {
   const { generateSessionTasks, taskStats } = await server.ssrLoadModule('/src/utils/taskManager.js');
-  assert.equal(taskStats.economist, 112);
-  assert.equal(taskStats.economistTranslation, 12);
+  assert.equal(taskStats.economist, 130);
+  assert.equal(taskStats.economistTranslation, 30);
   let translationCount = 0;
   for (let i = 0; i < 600; i++) {
     const session = generateSessionTasks('sos');
     assert.equal(session.length, 3);
-    const poem = session.find((task) => task.category === 'translation');
-    const economist = session.find((task) => task.category === 'economist');
-    assert.ok(poem && economist);
-    if (poem.mode === 'zh_to_en') assert.equal(economist.type, 'cloze');
-    if (economist.type === 'zh_to_en') translationCount++;
+    assert.equal(session.filter((task) => task.category === 'physical').length, 1);
+    assert.equal(session.filter((task) => task.category === 'reflection').length, 1);
+    if (session.some((task) => task.category === 'economist' && task.type === 'zh_to_en')) translationCount++;
   }
   assert.ok(translationCount > 60 && translationCount < 180, `Unexpected new-form exposure: ${translationCount}/600`);
   for (let i = 0; i < 100; i++) {
     const practice = generateSessionTasks('practice');
     assert.equal(practice.length, 5);
+    assert.equal(practice.filter((task) => task.category === 'reflection').length, 1);
     assert.ok(practice.some((task) => task.category === 'economist'));
     assert.equal(new Set(practice.map((task) => task.id)).size, 5);
   }
