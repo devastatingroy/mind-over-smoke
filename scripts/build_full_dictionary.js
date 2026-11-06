@@ -7,6 +7,7 @@ console.log('=== MindOverSmoke 全量词库智能构建引擎 (方案 C) ===');
 
 const economist = JSON.parse(fs.readFileSync('src/data/questions.json', 'utf8'));
 const trans = JSON.parse(fs.readFileSync('src/data/tang_translation.json', 'utf8'));
+const economistTranslations = JSON.parse(fs.readFileSync('src/data/economist_translation.json', 'utf8'));
 
 // 1. Collect all unique English words
 const wordSet = new Set();
@@ -21,7 +22,7 @@ function addText(text) {
   }
 }
 
-for (const [, text] of dictionaryFields(economist, trans)) addText(text);
+for (const [, text] of dictionaryFields(economist, trans, economistTranslations)) addText(text);
 
 const allWords = Array.from(wordSet).sort();
 console.log(`全库共扫描出 ${allWords.length} 个独立英文字词。`);

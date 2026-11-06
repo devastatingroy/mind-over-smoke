@@ -1,10 +1,11 @@
 import economist from '../src/data/questions.json' with { type: 'json' };
 import translations from '../src/data/tang_translation.json' with { type: 'json' };
+import economistTranslations from '../src/data/economist_translation.json' with { type: 'json' };
 import { interactiveWords } from '../src/utils/wordTokens.js';
 import { lookupWord } from '../src/utils/phoneticDict.js';
 import { dictionaryFields } from './dictionaryFields.js';
 
-const fields = dictionaryFields(economist, translations);
+const fields = dictionaryFields(economist, translations, economistTranslations);
 
 const missing = new Map();
 let total = 0;

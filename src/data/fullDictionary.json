@@ -17418,5 +17418,25 @@
     "phonetic": "/kənˈɡlɒmərət/",
     "pos": "n.",
     "def": "企业集团，大型联合公司"
-  }
+  },
+  "payment": { "phonetic": "/ˈpeɪmənt/", "pos": "n.", "def": "付款；支付的金额" },
+  "package": { "phonetic": "/ˈpækɪdʒ/", "pos": "n.", "def": "包装；包装盒" },
+  "elsewhere": { "phonetic": "/ˌelsˈweə(r)/", "pos": "adv.", "def": "在别处；到其他地方" },
+  "convenience": { "phonetic": "/kənˈviːniəns/", "pos": "n.", "def": "方便；便利" },
+  "tag": { "phonetic": "/tæɡ/", "pos": "n.", "def": "标签；标价牌" },
+  "reason": { "phonetic": "/ˈriːzən/", "pos": "n.", "def": "理由；原因" },
+  "regular": { "phonetic": "/ˈreɡjələr/", "pos": "adj.", "def": "定期的；有规律的" },
+  "refills": { "phonetic": "/ˈriːfɪlz/", "pos": "n.", "def": "补充量；续购的商品" },
+  "ads": { "phonetic": "/ædz/", "pos": "n.", "def": "广告（ad 的复数）" },
+  "discounted": { "phonetic": "/ˈdɪskaʊntɪd/", "pos": "adj.", "def": "打折的；折价的" },
+  "cheaper": { "phonetic": "/ˈtʃiːpər/", "pos": "adj.", "def": "更便宜的" },
+  "none": { "phonetic": "/nʌn/", "pos": "pron.", "def": "一个也没有；毫无" },
+  "saves": { "phonetic": "/seɪvz/", "pos": "v.", "def": "节省（save 的第三人称单数）" },
+  "seller": { "phonetic": "/ˈselər/", "pos": "n.", "def": "卖家；销售方" },
+  "earns": { "phonetic": "/ɜːnz/", "pos": "v.", "def": "赚得；获得（earn 的第三人称单数）" },
+  "repeat": { "phonetic": "/rɪˈpiːt/", "pos": "adj.", "def": "重复的；再次发生的" },
+  "purchases": { "phonetic": "/ˈpɜːtʃəsɪz/", "pos": "n.", "def": "购买行为；购买的商品" },
+  "gain": { "phonetic": "/ɡeɪn/", "pos": "v.", "def": "获得；增加" },
+  "value": { "phonetic": "/ˈvæljuː/", "pos": "n.", "def": "价值；效用" },
+  "calling": { "phonetic": "/ˈkɔːlɪŋ/", "pos": "v.", "def": "称作；称为（call 的现在分词）" }
 }

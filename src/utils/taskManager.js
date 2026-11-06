@@ -1,4 +1,5 @@
 import economistQuestions from '../data/questions.json';
+import economistTranslationTasks from '../data/economist_translation.json';
 import tangTranslationTasks from '../data/tang_translation.json';
 import physicalTasks from '../data/physical_tasks.json';
 import breathingTasks from '../data/breathing_tasks.json';
@@ -8,11 +9,22 @@ const normalizedEconomistQuestions = economistQuestions.map((q) => ({
   ...q,
   category: 'economist'
 }));
+const economistTasks = [...normalizedEconomistQuestions, ...economistTranslationTasks];
+
+function pickRandom(tasks) {
+  return tasks[Math.floor(Math.random() * tasks.length)];
+}
+
+function pickEconomistTask(allowTranslation = true) {
+  return allowTranslation && Math.random() < 0.4
+    ? pickRandom(economistTranslationTasks)
+    : pickRandom(normalizedEconomistQuestions);
+}
 
 // All combined high-cognitive & somatic tasks (彻底移除纯中文古诗单字填空傻瓜题)
 export const allTasks = [
   ...tangTranslationTasks,
-  ...normalizedEconomistQuestions,
+  ...economistTasks,
   ...physicalTasks,
   ...breathingTasks
 ];
@@ -20,7 +32,8 @@ export const allTasks = [
 export const taskStats = {
   total: allTasks.length,
   translation: tangTranslationTasks.length,
-  economist: normalizedEconomistQuestions.length,
+  economist: economistTasks.length,
+  economistTranslation: economistTranslationTasks.length,
   physical: physicalTasks.length,
   breathing: breathingTasks.length
 };
@@ -43,16 +56,17 @@ export function generateSessionTasks(mode = 'sos') {
     const randomTrans = tangTranslationTasks[Math.floor(Math.random() * tangTranslationTasks.length)];
     
     // Pick Economist reasoning
-    const randomEconomist = normalizedEconomistQuestions[Math.floor(Math.random() * normalizedEconomistQuestions.length)];
+    const randomEconomist = pickEconomistTask(randomTrans.mode !== 'zh_to_en');
 
     // Shuffle the 3 tasks
     const bundle = [randomSomatic, randomTrans, randomEconomist].sort(() => 0.5 - Math.random());
     return bundle;
   }
 
-  // Practice mode: pick 5 random tasks from the pool
-  const shuffled = [...allTasks].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, 5);
+  // Practice includes one Economist task so the two forms remain discoverable.
+  const economistTask = pickEconomistTask();
+  const shuffled = allTasks.filter((task) => task.id !== economistTask.id).sort(() => 0.5 - Math.random());
+  return [economistTask, ...shuffled.slice(0, 4)].sort(() => 0.5 - Math.random());
 }
 
 /**

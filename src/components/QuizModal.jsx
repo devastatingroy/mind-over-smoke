@@ -47,6 +47,7 @@ export default function QuizModal({
 
   // Translation & Word Phonetic inspection state
   const [showTranslation, setShowTranslation] = useState(false);
+  const [showScaffold, setShowScaffold] = useState(false);
   const [inspectedWord, setInspectedWord] = useState(null);
   const [inspectedSource, setInspectedSource] = useState(null);
 
@@ -78,6 +79,7 @@ export default function QuizModal({
     setBreathingStep(0);
     setBreathingCycle(1);
     setShowTranslation(false);
+    setShowScaffold(false);
     setInspectedWord(null);
     setInspectedSource(null);
     if (bodyScrollRef.current) bodyScrollRef.current.scrollTop = 0;
@@ -324,6 +326,13 @@ export default function QuizModal({
 
   // Monochrome Category Meta Label
   const getCategoryMeta = () => {
+    if (currentQ.type === 'zh_to_en') {
+      return {
+        code: 'REASONING · TRANSLATION',
+        label: '原创论断英译',
+        icon: <Languages className="w-3.5 h-3.5" />
+      };
+    }
     if (currentQ.category === 'translation' || currentQ.type === 'translation') {
       return {
         code: 'TRANSLATION',
@@ -633,6 +642,80 @@ export default function QuizModal({
                 </div>
               )}
 
+              {/* Original Chinese claim -> English reasoning challenge */}
+              {currentQ.type === 'zh_to_en' && (
+                <div className="space-y-3.5">
+                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
+                    <div className="text-[10px] font-mono text-stone-500 uppercase tracking-wider border-b border-stone-100 pb-2">
+                      ORIGINAL CLAIM · 中文论断英译
+                    </div>
+                    <blockquote className="font-serif text-lg sm:text-xl font-semibold text-stone-900 leading-relaxed border-l-2 border-[#8C1D24] pl-4">
+                      {currentQ.chinese_claim}
+                    </blockquote>
+                    <p className="text-xs text-stone-700 leading-relaxed">{currentQ.prompt}</p>
+                    <p className="text-[11px] text-stone-500">本站原创练习，非《经济学人》原文。</p>
+                  </div>
+
+                  {!isAnswered ? (
+                    <div className="space-y-2.5">
+                      <button
+                        type="button"
+                        onClick={() => setShowScaffold(!showScaffold)}
+                        className="text-xs text-stone-600 hover:text-stone-900 underline cursor-pointer"
+                        aria-expanded={showScaffold}
+                      >
+                        {showScaffold ? '收起表达提示' : '需要一点思路？查看表达提示'}
+                      </button>
+                      {showScaffold && <p className="text-xs text-stone-700 bg-stone-50 border border-stone-200 rounded-lg p-3">{currentQ.scaffold_hint}</p>}
+                      <form onSubmit={handleTranslationSubmit} className="space-y-2.5">
+                        <label htmlFor="economist-translation-answer" className="block text-xs font-medium text-stone-700">请写出你的英文译文</label>
+                        <textarea
+                          id="economist-translation-answer"
+                          value={typeInAnswer}
+                          onChange={(event) => setTypeInAnswer(event.target.value)}
+                          rows={3}
+                          placeholder="用英文表达这句论断…"
+                          className="w-full p-3.5 bg-white border border-stone-300 rounded-xl text-sm font-serif leading-relaxed focus:outline-none focus:ring-1 focus:ring-stone-900"
+                        />
+                        <button type="submit" disabled={!typeInAnswer.trim()} className="w-full py-3 bg-stone-900 hover:bg-black disabled:opacity-40 text-white rounded-xl font-medium text-sm cursor-pointer disabled:cursor-not-allowed">
+                          提交并对照参考译文
+                        </button>
+                      </form>
+                      <button type="button" onClick={handleRevealAnswer} className="w-full py-2.5 text-xs text-stone-600 hover:text-stone-900 border border-dashed border-stone-300 rounded-lg cursor-pointer">
+                        暂时想不出？看参考译文
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {typeInAnswer.trim() ? (
+                        <div className="p-4 bg-white rounded-xl border border-stone-200 text-sm">
+                          <div className="text-[10px] font-mono text-stone-500 mb-1">你的译文</div>
+                          <p className="font-serif text-stone-800 whitespace-pre-wrap break-words">{typeInAnswer.trim()}</p>
+                        </div>
+                      ) : <p className="text-xs text-stone-500">已跳过作答，可直接阅读参考表达。</p>}
+                      <div className="p-4 bg-stone-900 text-white rounded-xl text-sm">
+                        <div className="text-[10px] font-mono text-stone-300 mb-1">参考译文 · 可有其他合理译法</div>
+                        <p className="font-serif leading-relaxed whitespace-pre-wrap select-text">
+                          {renderInteractiveSegment(currentQ.reference_translation, true, 'reference')}
+                        </p>
+                        <p className="text-[10px] text-stone-300 mt-2">点击英文单词查看音标与释义</p>
+                      </div>
+                      {inspectedWord && inspectedSource !== 'verdict' && renderWordInspector()}
+                      <div className="p-4 bg-white rounded-xl border border-[#E5E0D8] space-y-2 text-xs">
+                        <div className="font-mono text-[10px] text-stone-500">关键表达</div>
+                        {currentQ.key_phrases.map((phrase) => (
+                          <div key={phrase.zh} className="flex flex-col sm:flex-row sm:gap-3 border-t border-stone-100 pt-2">
+                            <span className="text-stone-600 sm:w-2/5">{phrase.zh}</span>
+                            <span className="font-serif text-stone-900 break-words sm:flex-1">{renderInteractiveSegment(phrase.en, false, 'phrase')}</span>
+                          </div>
+                        ))}
+                        <p className="text-stone-700 leading-relaxed border-t border-stone-100 pt-2">{currentQ.analysis}</p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+
               {/* ---------------- 2. PHYSICAL WORKOUT TASK ---------------- */}
               {(currentQ.category === 'physical' || currentQ.type === 'physical') && (
                 <div className="space-y-4">
@@ -766,7 +849,7 @@ export default function QuizModal({
               )}
 
               {/* ---------------- 5. THE ECONOMIST CLOZE TASK (WITH TRANSLATION & PHONETICS) ---------------- */}
-              {(currentQ.category === 'economist' || currentQ.type === 'cloze') && (
+              {currentQ.type === 'cloze' && (
                 <div className="space-y-3.5">
                   <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] shadow-xs space-y-3">
                     {/* Header with Chinese Translation Toggle */}
@@ -880,15 +963,15 @@ export default function QuizModal({
                     <div className="flex items-start gap-2 shrink-0">
                       <Check className="w-4 h-4 text-stone-900 shrink-0" />
                       <span className="font-medium text-stone-900">
-                        {currentQ.mode === 'zh_to_en'
-                          ? '参考译文已揭晓 · 请对照表达与意象'
+                        {currentQ.mode === 'zh_to_en' || currentQ.type === 'zh_to_en'
+                          ? isRevealed ? '参考译文已揭晓 · 已跳过作答' : '参考译文已揭晓 · 请对照表达'
                           : isRevealed
                             ? '答案已揭晓 · 可对照解析'
                             : '回答正确 · 可查看解析'}
                       </span>
                     </div>
                     <span className="hidden sm:inline text-stone-300">|</span>
-                    <span className="text-stone-500 leading-relaxed break-words min-w-0">{currentQ.science_note || '注意占用阻断生效'}</span>
+                    <span className="text-stone-500 leading-relaxed break-words min-w-0">{currentQ.science_note || (currentQ.type === 'zh_to_en' ? '开放表达，不按参考译文逐字判分' : '注意占用阻断生效')}</span>
                   </div>
 
                   {/* Editorial Verdict Box */}
