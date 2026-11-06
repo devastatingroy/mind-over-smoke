@@ -23,20 +23,42 @@ export function readReflectionState(storage = localStorage) {
       selectedAspect: Number.isInteger(parsed.selectedAspect) && parsed.selectedAspect >= 0 && parsed.selectedAspect < REFLECTION_ASPECTS.length
         ? parsed.selectedAspect
         : null,
+      lastPromptAspect: Number.isInteger(parsed.lastPromptAspect) && parsed.lastPromptAspect >= 0 && parsed.lastPromptAspect < REFLECTION_ASPECTS.length
+        ? parsed.lastPromptAspect
+        : null,
+      lastSosPromptDay: typeof parsed.lastSosPromptDay === 'string' ? parsed.lastSosPromptDay : '',
       notes: Array.isArray(parsed.notes)
         ? parsed.notes.filter((note) => note && typeof note.day === 'string' && REFLECTION_ASPECTS.includes(note.aspect) && typeof note.text === 'string')
         : []
     };
   } catch {
-    return { selectedDay: '', selectedAspect: null, notes: [] };
+    return { selectedDay: '', selectedAspect: null, lastPromptAspect: null, lastSosPromptDay: '', notes: [] };
   }
 }
 
 export function writeReflectionState(state, storage = localStorage) {
   try {
     storage.setItem(STORAGE_KEY, JSON.stringify(state));
+    if (typeof window !== 'undefined' && storage === window.localStorage) {
+      window.dispatchEvent(new Event('mind-over-smoke-reflection-updated'));
+    }
     return true;
   } catch {
     return false;
   }
+}
+
+export function claimReflectionPrompt(mode, date = new Date(), storage = localStorage) {
+  const day = localDayKey(date);
+  const state = readReflectionState(storage);
+  if (mode === 'sos' && state.lastSosPromptDay === day) return null;
+  const aspectIndex = state.lastPromptAspect === null
+    ? defaultAspectIndex(day)
+    : (state.lastPromptAspect + 1) % REFLECTION_ASPECTS.length;
+  writeReflectionState({
+    ...state,
+    lastPromptAspect: aspectIndex,
+    lastSosPromptDay: mode === 'sos' ? day : state.lastSosPromptDay
+  }, storage);
+  return { aspectIndex };
 }

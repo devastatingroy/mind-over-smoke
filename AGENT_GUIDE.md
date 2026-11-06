@@ -74,6 +74,7 @@ mind-over-smoke/
 │   │   ├── ContractDashboard.jsx   # 14 天无烟自报网格和免费体验说明
 │   │   ├── BiologicalTracker.jsx   # 人体机能逆转时间轴与戒烟财务节省计算器
 │   │   ├── ReflectionCard.jsx      # 一个生活方面的可选反思与记录
+│   │   ├── ReflectionQuestion.jsx  # 练习开头与 SOS 首屏的简短思考问题
 │   │   └── VocabModal.jsx          # 生词与金句武器库：回顾做题积累的 SAT/GRE 词汇
 │   ├── data/
 │   │   ├── questions.json          # 100 题经济学人风格英文完形填空题
@@ -85,7 +86,7 @@ mind-over-smoke/
 │   ├── utils/
 │   │   ├── taskManager.js          # SOS 与训练模式的任务抽取、类别配比、动态换题算法
 │   │   ├── storage.js              # 契约进度、打卡记录、SOS 急救会话崩溃持久化
-│   │   ├── reflection.js           # 本地日期轮换和反思短句存储
+│   │   ├── reflection.js           # 反思曝光频率、方面轮换与短句存储
 │   │   └── phoneticDict.js         # 经济学人常考核心高阶词汇音标表 (与 fullDictionary 互补加速)
 │   ├── App.jsx                     # 根组件：全局状态管控、路由/模式切换、紧急会话恢复
 │   ├── index.css                   # Tailwind 基础导入与 Scheme A 自定义工具类
@@ -114,11 +115,14 @@ mind-over-smoke/
 3. **维度 3（高阶思维批判精读）**：抽取 1 道经济学人风格题；唐诗汉译英时只抽英文完形，唐诗英译中时有约 40% 概率抽原创中文论断英译。
 4. **动态换题机制 (`handleSwapTask`)**：用户可在题目上方或下方点击【换下一题】，算法优先从不同类别的候选池中无刷新替换当前题目，并将题目内容滚动回顶部。
 
+反思问题由 `reflection.js` 按会话配额安排：练习每轮开始先显示 1 问，原有 5 道题不减少；SOS 首次进入当天在第一题上方显示 1 问，后续当天只提供手动入口。反思不进入 `allTasks` 或通用换题池，不计入 SOS 三任务或无烟资格。问题只需阅读，可选记录。
+
 ### 4.2 会话崩溃恢复机制 (`src/utils/storage.js`)
 * **痛点**：用户在急救 180 秒倒计时期间，若手滑刷新页面或切换应用，倒计时和题目绝不能丢失！
 * **实现**：
-  - `saveActiveSession({ mode, questions, currentIndex, secondsLeft })` 实时写入 `localStorage`。
+  - `saveActiveSession({ mode, questions, currentIndex, secondsLeft, practiceIntroDismissed, sosPrompt, practicePrompt })` 实时写入 `sessionStorage`；反思展示状态和方面随会话恢复。
   - `App.jsx` 初始化时通过 `getSavedSession()` 自动 re-hydrate。
+  - 反思方面轮换、SOS 当天首次展示标记和用户短句另存在 `localStorage` 的 `mind_over_smoke_reflections_v1`。
   - 只有在三道题全答完并点击【结算胜利】后，调用 `clearActiveSession()` 清除草稿。
 
 ### 4.3 点击查词与音标系统交互准则

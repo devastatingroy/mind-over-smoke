@@ -66,7 +66,7 @@ export default function SosPanicButton({ onStartQuiz }) {
           onClick={() => onStartQuiz('practice')}
           className="text-stone-900 hover:underline font-semibold flex items-center space-x-1 cursor-pointer font-sans"
         >
-          <span>日常精读刷题 (5题)</span>
+          <span>日常精读（5题＋1问）</span>
           <ArrowRight className="w-3 h-3" />
         </button>
       </div>

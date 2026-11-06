@@ -6,6 +6,7 @@ import BiologicalTracker from './components/BiologicalTracker';
 import QuizModal from './components/QuizModal';
 import VocabModal from './components/VocabModal';
 import ReflectionCard from './components/ReflectionCard';
+import { claimReflectionPrompt } from './utils/reflection';
 
 import { 
   generateSessionTasks, 
@@ -49,19 +50,24 @@ export default function App() {
       });
     }
     const initialTasks = generateSessionTasks('sos');
+    const sosPrompt = claimReflectionPrompt('sos');
     saveActiveSession({
       mode: 'sos',
       questions: initialTasks,
       currentIndex: 0,
-      secondsLeft: 180
+      secondsLeft: 180,
+      sosPrompt
     });
     return initialTasks;
   });
 
   const [sessionProgress, setSessionProgress] = useState(() => ({
     currentIndex: savedSession?.currentIndex || 0,
-    secondsLeft: savedSession?.secondsLeft ?? 180
+    secondsLeft: savedSession?.secondsLeft ?? 180,
+    practiceIntroDismissed: savedSession?.practiceIntroDismissed ?? true
   }));
+  const [sosPrompt, setSosPrompt] = useState(() => getSavedSession()?.sosPrompt || null);
+  const [practicePrompt, setPracticePrompt] = useState(() => savedSession?.practicePrompt || null);
 
   const [showVocabModal, setShowVocabModal] = useState(false);
   const [now, setNow] = useState(Date.now());
@@ -86,14 +92,34 @@ export default function App() {
   // Start a quiz session (SOS or practice)
   const handleStartQuiz = (mode) => {
     const tasks = generateSessionTasks(mode);
+    const nextSosPrompt = mode === 'sos' ? claimReflectionPrompt('sos') : null;
+    const nextPracticePrompt = mode === 'practice' ? claimReflectionPrompt('practice') : null;
     setCurrentQuizQuestions(tasks);
     setActiveQuizMode(mode);
-    setSessionProgress({ currentIndex: 0, secondsLeft: 180 });
+    setSosPrompt(nextSosPrompt);
+    setPracticePrompt(nextPracticePrompt);
+    setSessionProgress({ currentIndex: 0, secondsLeft: 180, practiceIntroDismissed: mode !== 'practice' });
     saveActiveSession({
       mode,
       questions: tasks,
       currentIndex: 0,
-      secondsLeft: 180
+      secondsLeft: 180,
+      practiceIntroDismissed: mode !== 'practice',
+      sosPrompt: nextSosPrompt,
+      practicePrompt: nextPracticePrompt
+    });
+  };
+
+  const handleChangeReflectionAspect = (kind) => {
+    const nextPrompt = claimReflectionPrompt('manual');
+    if (kind === 'sos') setSosPrompt(nextPrompt);
+    else setPracticePrompt(nextPrompt);
+    saveActiveSession({
+      mode: activeQuizMode,
+      questions: currentQuizQuestions,
+      ...sessionProgress,
+      sosPrompt: kind === 'sos' ? nextPrompt : sosPrompt,
+      practicePrompt: kind === 'practice' ? nextPrompt : practicePrompt
     });
   };
 
@@ -109,21 +135,27 @@ export default function App() {
         mode: activeQuizMode || 'sos',
         questions: next,
         currentIndex: sessionProgress.currentIndex,
-        secondsLeft: sessionProgress.secondsLeft
+        secondsLeft: sessionProgress.secondsLeft,
+        practiceIntroDismissed: sessionProgress.practiceIntroDismissed,
+        sosPrompt,
+        practicePrompt
       });
       return next;
     });
   };
 
   // Progress update from QuizModal (e.g. index change, timer tick)
-  const handleQuizProgress = ({ currentIndex, secondsLeft }) => {
-    setSessionProgress({ currentIndex, secondsLeft });
+  const handleQuizProgress = ({ currentIndex, secondsLeft, practiceIntroDismissed }) => {
+    setSessionProgress({ currentIndex, secondsLeft, practiceIntroDismissed });
     if (activeQuizMode && currentQuizQuestions.length > 0) {
       saveActiveSession({
         mode: activeQuizMode,
         questions: currentQuizQuestions,
         currentIndex,
-        secondsLeft
+        secondsLeft,
+        practiceIntroDismissed,
+        sosPrompt,
+        practicePrompt
       });
     }
   };
@@ -131,6 +163,8 @@ export default function App() {
   // Close quiz session manually
   const handleCloseQuiz = () => {
     setActiveQuizMode(null);
+    setSosPrompt(null);
+    setPracticePrompt(null);
     clearActiveSession();
   };
 
@@ -282,6 +316,12 @@ export default function App() {
           onSaveVocab={handleSaveVocab}
           savedVocabIds={state.savedVocab.map((v) => v.id)}
           onSwapTask={handleSwapTask}
+          sosPrompt={sosPrompt}
+          practicePrompt={practicePrompt}
+          initialIntroDismissed={sessionProgress.practiceIntroDismissed}
+          onRequestSosPrompt={() => handleChangeReflectionAspect('sos')}
+          onSwapSosAspect={() => handleChangeReflectionAspect('sos')}
+          onSwapPracticeAspect={() => handleChangeReflectionAspect('practice')}
         />
       )}
 

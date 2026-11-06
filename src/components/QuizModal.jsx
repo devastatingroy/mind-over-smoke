@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { lookupWord } from '../utils/phoneticDict';
 import { splitInteractiveText } from '../utils/wordTokens';
+import ReflectionQuestion from './ReflectionQuestion';
 
 export default function QuizModal({ 
   mode, 
@@ -32,7 +33,13 @@ export default function QuizModal({
   onSaveVocab,
   savedVocabIds,
   onSwapTask,
-  onProgress
+  onProgress,
+  sosPrompt,
+  practicePrompt,
+  initialIntroDismissed = true,
+  onRequestSosPrompt,
+  onSwapSosAspect,
+  onSwapPracticeAspect
 }) {
   const [currentIndex, setCurrentIndex] = useState(() => Math.min(initialIndex, Math.max(0, (questions?.length || 1) - 1)));
   const [selectedOption, setSelectedOption] = useState(null);
@@ -44,6 +51,8 @@ export default function QuizModal({
   const [inputMode, setInputMode] = useState('choice'); // 'choice' or 'type'
   const [secondsLeft, setSecondsLeft] = useState(initialSecondsLeft); // 3-minute craving countdown
   const [isSessionFinished, setIsSessionFinished] = useState(false);
+  const [showPracticeIntro, setShowPracticeIntro] = useState(mode === 'practice' && !initialIntroDismissed && Boolean(practicePrompt));
+  const [showSosReflection, setShowSosReflection] = useState(mode === 'sos' && Boolean(sosPrompt) && initialIndex === 0);
 
   // Translation & Word Phonetic inspection state
   const [showTranslation, setShowTranslation] = useState(false);
@@ -87,7 +96,7 @@ export default function QuizModal({
 
   // 180s Craving countdown timer
   useEffect(() => {
-    if (isSessionFinished) return;
+    if (isSessionFinished || showPracticeIntro) return;
     const interval = setInterval(() => {
       setSecondsLeft((prev) => {
         if (prev <= 1) {
@@ -98,14 +107,18 @@ export default function QuizModal({
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, [isSessionFinished]);
+  }, [isSessionFinished, showPracticeIntro]);
 
   // Sync progress back to parent / session storage for seamless reload recovery
   useEffect(() => {
     if (!isSessionFinished && onProgress) {
-      onProgress({ currentIndex, secondsLeft });
+      onProgress({ currentIndex, secondsLeft, practiceIntroDismissed: !showPracticeIntro });
     }
-  }, [currentIndex, secondsLeft, isSessionFinished]);
+  }, [currentIndex, secondsLeft, isSessionFinished, showPracticeIntro]);
+
+  useEffect(() => {
+    if (currentIndex > 0) setShowSosReflection(false);
+  }, [currentIndex]);
 
   // Physical timer countdown
   useEffect(() => {
@@ -389,7 +402,7 @@ export default function QuizModal({
             </span>
             <span className="text-stone-300">/</span>
             <span className="text-xs font-mono font-medium text-stone-500 shrink-0">
-              {currentIndex + 1}/{questions.length}
+              {showPracticeIntro ? '思考问题' : `${currentIndex + 1}/${questions.length}`}
             </span>
           </div>
 
@@ -397,7 +410,7 @@ export default function QuizModal({
             {/* 180s Countdown Badge */}
             <div className="flex items-center space-x-1 text-xs font-mono font-semibold text-stone-800 bg-stone-100 px-2 py-1 rounded shrink-0">
               <Timer className="w-3.5 h-3.5 text-stone-900" />
-              <span>{Math.floor(secondsLeft / 60)}:{(secondsLeft % 60).toString().padStart(2, '0')}</span>
+              <span>{showPracticeIntro ? '未开始' : `${Math.floor(secondsLeft / 60)}:${(secondsLeft % 60).toString().padStart(2, '0')}`}</span>
             </div>
 
             <button
@@ -411,7 +424,7 @@ export default function QuizModal({
         </div>
 
         {/* Quiet Hairline Wave Gauge */}
-        <div className="bg-[#F5F2EB] px-5 py-2 border-b border-[#E5E0D8]">
+        {!showPracticeIntro && <div className="bg-[#F5F2EB] px-5 py-2 border-b border-[#E5E0D8]">
           <div className="flex items-center justify-between text-[11px] font-sans mb-1 text-stone-600">
             <span className="font-medium text-stone-800">
               {wave.stageName}
@@ -426,12 +439,34 @@ export default function QuizModal({
               style={{ width: `${Math.max(5, (secondsLeft / 180) * 100)}%` }}
             />
           </div>
-        </div>
+        </div>}
 
         {/* Modal Main Body */}
         <div ref={bodyScrollRef} className="p-5 sm:p-6 overflow-y-auto space-y-5">
           {!isSessionFinished ? (
+            showPracticeIntro && practicePrompt ? (
+              <ReflectionQuestion prompt={practicePrompt} onSwapAspect={onSwapPracticeAspect} onContinue={() => setShowPracticeIntro(false)} />
+            ) : (
             <>
+              {mode === 'sos' && (
+                <div>
+                  {!showSosReflection && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (!sosPrompt) onRequestSosPrompt();
+                        setShowSosReflection(true);
+                      }}
+                      className="text-xs text-stone-600 hover:text-stone-900 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+                    >
+                      看看生活问题
+                    </button>
+                  )}
+                  {showSosReflection && sosPrompt && (
+                    <ReflectionQuestion prompt={sosPrompt} compact onSwapAspect={onSwapSosAspect} onDismiss={() => setShowSosReflection(false)} />
+                  )}
+                </div>
+              )}
               {swapButton}
               {/* Category Subhead */}
               <div className="flex items-center justify-between text-xs text-stone-500 pb-1 border-b border-stone-200/80">
@@ -1017,6 +1052,7 @@ export default function QuizModal({
                 </div>
               )}
             </>
+            )
           ) : (
             /* Finished State - Editorial Minimalism */
             <div className="text-center py-8 space-y-5">

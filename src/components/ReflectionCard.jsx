@@ -17,11 +17,16 @@ export default function ReflectionCard() {
 
   useEffect(() => {
     const refreshDay = () => setToday(localDayKey());
+    const refreshReflections = () => setReflection(readReflectionState());
     const timer = window.setInterval(refreshDay, 60_000);
     document.addEventListener('visibilitychange', refreshDay);
+    window.addEventListener('mind-over-smoke-reflection-updated', refreshReflections);
+    window.addEventListener('storage', refreshReflections);
     return () => {
       window.clearInterval(timer);
       document.removeEventListener('visibilitychange', refreshDay);
+      window.removeEventListener('mind-over-smoke-reflection-updated', refreshReflections);
+      window.removeEventListener('storage', refreshReflections);
     };
   }, []);
 
