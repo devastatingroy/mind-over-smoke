@@ -126,35 +126,37 @@ export default function App() {
     });
   };
 
-  // Swap a specific task with a different one (e.g. if user is on subway and can't do push-ups)
-  const handleSwapTask = (indexToSwap) => {
+  // SOS skips rotate the unfinished tasks; changing a reflection aspect stays in place.
+  const handleSwapTask = (indexToSwap, { stayInCategory = false } = {}) => {
+    const taskToReplace = currentQuizQuestions[indexToSwap];
+    if (!taskToReplace) return;
     const currentAspect = currentQuizQuestions[indexToSwap]?.aspectIndex;
     let nextAspect = null;
-    if (currentQuizQuestions[indexToSwap]?.category === 'reflection') {
+    if (taskToReplace.category === 'reflection') {
       for (let attempt = 0; attempt < 5; attempt++) {
         nextAspect = claimReflectionPrompt('task').aspectIndex;
         if (nextAspect !== currentAspect) break;
       }
       if (nextAspect === currentAspect) nextAspect = (currentAspect + 1) % 5;
     }
-    setCurrentQuizQuestions((prev) => {
-      const taskToReplace = prev[indexToSwap];
-      const existingIds = prev.map((t) => t.id);
-      const replacement = taskToReplace.category === 'reflection'
-        ? allTasks.find((task) => task.category === 'reflection' && task.aspectIndex === nextAspect)
-        : getReplacementTask(taskToReplace, existingIds, activeQuizMode || 'sos');
-      const next = [...prev];
+    const existingIds = currentQuizQuestions.map((task) => task.id);
+    const replacement = taskToReplace.category === 'reflection'
+      ? allTasks.find((task) => task.category === 'reflection' && task.aspectIndex === nextAspect)
+      : getReplacementTask(taskToReplace, existingIds, activeQuizMode || 'sos');
+    const next = [...currentQuizQuestions];
+    if (activeQuizMode === 'sos' && !stayInCategory) {
+      for (let index = indexToSwap; index < next.length - 1; index++) next[index] = next[index + 1];
+      next[next.length - 1] = replacement;
+    } else {
       next[indexToSwap] = replacement;
-      saveActiveSession({
-        mode: activeQuizMode || 'sos',
-        questions: next,
-        currentIndex: sessionProgress.currentIndex,
-        secondsLeft: sessionProgress.secondsLeft,
-        practiceIntroDismissed: sessionProgress.practiceIntroDismissed,
-        sosPrompt,
-        practicePrompt
-      });
-      return next;
+    }
+    setCurrentQuizQuestions(next);
+    saveActiveSession({
+      mode: activeQuizMode || 'sos',
+      questions: next,
+      ...sessionProgress,
+      sosPrompt,
+      practicePrompt
     });
   };
 

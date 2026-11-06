@@ -30,6 +30,7 @@ async function clickButton(page, label) {
 }
 
 async function loadTask(page, id) {
+  await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
   await page.evaluate((taskId) => sessionStorage.setItem('mind_over_smoke_active_session_v2', JSON.stringify({
     mode: 'sos', questions: [{ id: taskId }], currentIndex: 0, secondsLeft: 180
   })), id);

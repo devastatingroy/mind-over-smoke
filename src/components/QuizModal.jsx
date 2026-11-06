@@ -378,15 +378,16 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
-  const swapButton = onSwapTask && currentQ.category !== 'reflection' && !isSessionFinished && !isAnswered && (
+  const isLastSosTask = mode === 'sos' && currentIndex === questions.length - 1;
+  const swapButton = onSwapTask && (currentQ.category !== 'reflection' || (mode === 'sos' && !isLastSosTask)) && !isSessionFinished && !isAnswered && (
     <button
       type="button"
       onClick={() => onSwapTask(currentIndex)}
       className="w-full min-h-11 px-4 py-3 bg-white hover:bg-[#F5F2EB] text-stone-900 border border-stone-400 hover:border-stone-900 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
-      title="更换当前题目，不计为完成"
+      title={mode === 'sos' && !isLastSosTask ? '跳到下一类未完成任务，当前题不计为完成' : '更换当前题目，不计为完成'}
     >
       <Shuffle className="w-4 h-4 text-[#8C1D24]" aria-hidden="true" />
-      <span>换下一题</span>
+      <span>{isLastSosTask ? '换一道同类题' : '换下一题'}</span>
     </button>
   );
 
@@ -491,7 +492,7 @@ export default function QuizModal({
                   <h2 className="font-serif text-xl font-bold text-stone-900">{currentQ.title}</h2>
                   <ReflectionQuestion
                     prompt={{ aspectIndex: currentQ.aspectIndex }}
-                    onSwapAspect={() => onSwapTask(currentIndex)}
+                    onSwapAspect={() => onSwapTask(currentIndex, { stayInCategory: true })}
                     onContinue={handleNext}
                     continueLabel={currentIndex < questions.length - 1 ? '想过了，继续下一项' : '完成本次急救'}
                   />
