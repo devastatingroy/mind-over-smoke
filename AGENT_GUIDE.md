@@ -73,6 +73,7 @@ mind-over-smoke/
 │   │   ├── QuizModal.jsx           # 核心认知阻断模态框：多模态答题器、180s 潮退曲线、音标查词浮层
 │   │   ├── ContractDashboard.jsx   # 14 天无烟自报网格和免费体验说明
 │   │   ├── BiologicalTracker.jsx   # 人体机能逆转时间轴与戒烟财务节省计算器
+│   │   ├── ReflectionCard.jsx      # 一个生活方面的可选反思与记录
 │   │   └── VocabModal.jsx          # 生词与金句武器库：回顾做题积累的 SAT/GRE 词汇
 │   ├── data/
 │   │   ├── questions.json          # 100 题《经济学人》反讽与商业逻辑完形填空题
@@ -83,6 +84,7 @@ mind-over-smoke/
 │   ├── utils/
 │   │   ├── taskManager.js          # SOS 与训练模式的任务抽取、类别配比、动态换题算法
 │   │   ├── storage.js              # 契约进度、打卡记录、SOS 急救会话崩溃持久化
+│   │   ├── reflection.js           # 本地日期轮换和反思短句存储
 │   │   └── phoneticDict.js         # 经济学人常考核心高阶词汇音标表 (与 fullDictionary 互补加速)
 │   ├── App.jsx                     # 根组件：全局状态管控、路由/模式切换、紧急会话恢复
 │   ├── index.css                   # Tailwind 基础导入与 Scheme A 自定义工具类

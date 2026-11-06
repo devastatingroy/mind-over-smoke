@@ -5,6 +5,7 @@ import ContractDashboard from './components/ContractDashboard';
 import BiologicalTracker from './components/BiologicalTracker';
 import QuizModal from './components/QuizModal';
 import VocabModal from './components/VocabModal';
+import ReflectionCard from './components/ReflectionCard';
 
 import { 
   generateSessionTasks, 
@@ -223,6 +224,9 @@ export default function App() {
         <SosPanicButton 
           onStartQuiz={handleStartQuiz} 
         />
+
+        {/* Optional reflection from the time-use diary; separate from SOS and smoke-free reports. */}
+        <ReflectionCard />
 
         {/* 14-Day Commitment Contract & Rebate Matrix */}
         <ContractDashboard 
