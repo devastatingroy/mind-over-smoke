@@ -19,7 +19,8 @@ import {
   BookmarkCheck,
   HelpCircle
 } from 'lucide-react';
-import { lookupWord, speakWord, cleanWord } from '../utils/phoneticDict';
+import { lookupWord } from '../utils/phoneticDict';
+import { splitInteractiveText } from '../utils/wordTokens';
 
 export default function QuizModal({ 
   mode, 
@@ -58,6 +59,7 @@ export default function QuizModal({
   const [breathingStep, setBreathingStep] = useState(0);
   const [breathingCycle, setBreathingCycle] = useState(1);
   const bodyScrollRef = useRef(null);
+  const inspectorRef = useRef(null);
 
   const currentQ = questions[currentIndex] || questions[0];
 
@@ -235,13 +237,17 @@ export default function QuizModal({
 
   const isVocabSaved = currentQ.vocab && savedVocabIds?.includes(currentQ.id);
 
+  useEffect(() => {
+    if (inspectedWord) inspectorRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [inspectedWord, inspectedSource]);
+
   // Render clickable interactive words for English passages
   const renderInteractiveSegment = (text, dark = false, source = 'passage') => {
     if (!text) return null;
-    const tokens = text.split(/(\s+)/);
-    return tokens.map((token, idx) => {
-      const cleaned = cleanWord(token);
+    return splitInteractiveText(text).map(({ text: token, word: cleaned }, idx) => {
       if (!cleaned) return <span key={idx}>{token}</span>;
+      const entry = lookupWord(cleaned);
+      if (!entry?.def || entry.def === '词典暂未收录该词详细释义') return <span key={idx}>{token}</span>;
       const isSelected = inspectedWord?.word === cleaned && inspectedSource === source;
       return (
         <span
@@ -269,7 +275,7 @@ export default function QuizModal({
   };
 
   const renderWordInspector = () => inspectedWord && (
-    <div className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
+    <div ref={inspectorRef} className="bg-[#18181B] text-white p-3.5 rounded-xl border border-stone-800 shadow-md flex items-center justify-between animate-fadeIn text-xs">
       <div className="space-y-1 flex-1 min-w-0 pr-2">
         <div className="flex items-center flex-wrap gap-x-2 gap-y-1">
           <span className="font-serif font-bold text-base text-stone-100 tracking-wide break-all">{inspectedWord.word}</span>

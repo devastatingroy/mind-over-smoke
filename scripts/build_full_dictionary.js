@@ -1,5 +1,7 @@
 import fs from 'fs';
 import https from 'https';
+import { interactiveWords } from '../src/utils/wordTokens.js';
+import { dictionaryFields } from './dictionaryFields.js';
 
 console.log('=== MindOverSmoke 全量词库智能构建引擎 (方案 C) ===');
 
@@ -10,7 +12,7 @@ const trans = JSON.parse(fs.readFileSync('src/data/tang_translation.json', 'utf8
 const wordSet = new Set();
 function addText(text) {
   if (!text) return;
-  const tokens = text.match(/[a-zA-Z]{1,}/g) || [];
+  const tokens = interactiveWords(text);
   for (const t of tokens) {
     const clean = t.toLowerCase();
     if (clean.length >= 1) {
@@ -19,18 +21,7 @@ function addText(text) {
   }
 }
 
-for (const q of economist) {
-  addText(q.passage);
-  addText(q.statement);
-  addText(q.blank);
-  if (q.options) q.options.forEach(addText);
-}
-
-for (const t of trans) {
-  addText(t.english_text);
-  if (t.options && t.mode === 'zh_to_en') t.options.forEach(addText);
-  if (t.mapping) t.mapping.forEach(m => addText(m.en));
-}
+for (const [, text] of dictionaryFields(economist, trans)) addText(text);
 
 const allWords = Array.from(wordSet).sort();
 console.log(`全库共扫描出 ${allWords.length} 个独立英文字词。`);
@@ -46,8 +37,11 @@ if (fs.existsSync('src/data/fullDictionary.json')) {
   }
 }
 
+// Context-specific names override generic dictionary meanings.
+Object.assign(dictionary, JSON.parse(fs.readFileSync('src/data/dictionaryOverrides.json', 'utf8')));
+
 // Filter words that need to be fetched
-const missingWords = allWords.filter(w => !dictionary[w] || !dictionary[w].def);
+const missingWords = allWords.filter(w => !dictionary[w]?.def && !(w.endsWith("'s") && dictionary[w.slice(0, -2)]?.def));
 console.log(`需要补充查询/补全音标与释义的词条：${missingWords.length} 个`);
 
 // 3. Fetcher function

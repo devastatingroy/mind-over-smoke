@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "prebuild": "node scripts/verify_dictionary.js",
+    "verify:dictionary": "node scripts/verify_dictionary.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
