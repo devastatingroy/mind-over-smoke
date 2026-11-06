@@ -3,7 +3,9 @@
  * Contains IPA phonetic transcriptions, part of speech, and concise Chinese definitions
  * for SAT/GRE and key terms appearing in The Economist passages.
  */
-import fullDictionary from '../data/fullDictionary.json';
+import fullDictionary from '../data/fullDictionary.json' with { type: 'json' };
+import { cleanWord } from './wordTokens.js';
+export { cleanWord } from './wordTokens.js';
 
 export const phoneticDict = {
   // Q1 - Q5
@@ -904,19 +906,12 @@ export const phoneticDict = {
 /**
  * Clean a word token (strip trailing punctuation like commas, periods, quotes)
  */
-export function cleanWord(rawWord) {
-  if (!rawWord) return '';
-  return rawWord.replace(/^[^a-zA-Z]+|[^a-zA-Z]+$/g, '').toLowerCase();
-}
-
-/**
- * Look up a word in the dictionary
- */
+/** Look up a word in the dictionary. */
 export function lookupWord(rawWord) {
   const cleaned = cleanWord(rawWord);
   if (!cleaned) return null;
   
-  // 1. Exact match in fullDictionary (2,620 words covering entire question bank)
+  // Prefer an exact entry, including reviewed proper names and contractions.
   if (fullDictionary && fullDictionary[cleaned]) {
     return {
       word: cleaned,
@@ -933,6 +928,11 @@ export function lookupWord(rawWord) {
 
   // Fallback for simple plurals or common endings
   const dictFind = (w) => (fullDictionary && fullDictionary[w]) || phoneticDict[w];
+
+  if (cleaned.endsWith("'s")) {
+    const hit = dictFind(cleaned.slice(0, -2));
+    if (hit?.def) return { word: cleaned, ...hit };
+  }
 
   if (cleaned.endsWith('s') && !cleaned.endsWith('ss')) {
     const hit = dictFind(cleaned.slice(0, -1));

@@ -80,7 +80,7 @@ mind-over-smoke/
 │   │   ├── tang_translation.json   # 100 题古典诗词双向翻译题 (50 题 Mode 1 + 50 题 Mode 2)
 │   │   ├── physical_tasks.json     # 膝盖友好型躯体动作题 (俯卧撑、空击等)
 │   │   ├── breathing_tasks.json    # 4-7-8 箱式迷走神经重置深呼吸任务
-│   │   └── fullDictionary.json     # 30,000+ 离线核心词库 (音标、词性、精准简明释义)
+│   │   └── fullDictionary.json     # 当前约 3,400 条离线词条
 │   ├── utils/
 │   │   ├── taskManager.js          # SOS 与训练模式的任务抽取、类别配比、动态换题算法
 │   │   ├── storage.js              # 契约进度、打卡记录、SOS 急救会话崩溃持久化
@@ -121,10 +121,10 @@ mind-over-smoke/
   - 只有在三道题全答完并点击【结算胜利】后，调用 `clearActiveSession()` 清除草稿。
 
 ### 4.3 点击查词与音标系统交互准则
-1. **多重查询降级**：
-   - 优先查 `phoneticDict.js` 与 `fullDictionary.json` 本地内存字典（0.001 秒弹窗直出）。
-   - 若未收录，异步静默请求公共字典 API 并缓存至本地。
-   - 保留浏览器原生文本选取能力，不拦截用户自带的划词翻译工具。
+1. **离线查词与覆盖检查**：
+   - 题干、Verdict 判词和英文参考译文共用 `wordTokens.js` 的分词规则与本地词库。
+   - 构建前运行 `scripts/verify_dictionary.js`；当前可点击词缺少释义时禁止发布。新词用 `scripts/build_full_dictionary.js` 补全，专名语境覆盖写在 `dictionaryOverrides.json`。
+   - 保留浏览器原生文本选取能力，不拦截用户自带的划词翻译工具；客户端当前没有在线词典请求。
 2. **静音铁律**：弹窗只呈现 IPA 国际音标、词性与精炼释义，**绝对静音**，杜绝任何自动音频打扰。
 
 ---
@@ -192,7 +192,7 @@ mind-over-smoke/
 | `scripts/deploy_gh_pages.js` | 自动化打包并将 `dist` 强制推送至 `devastatingroy/mind-over-smoke` 的 `gh-pages` 分支 |
 | `scripts/deploy_user_site.js` | 自动化打包并将 `dist` 强制推送至 `devastatingroy/devastatingroy.github.io` 的 `main` 分支 |
 | `scripts/audit_deep.js` | 审计 200+ 题库，检查有无中文题干剧透、选项数量、空格规范及映射完整度 |
-| `scripts/build_full_dictionary.js` | 扩展并构建 30,000+ 本地离线高频与学术词汇库 |
+| `scripts/build_full_dictionary.js` | 按当前题库内容补齐本地词库 |
 | `scripts/verify_deployment.js` | 线上健康度检查，验证 `https://royfree.men/` 的 HTTP 200、HTML 与资源可访问性 |
 | `scripts/simulate_user.js` | 使用 Puppeteer 运行完整的答题、换题、查词、打卡、本地持久化流程自动化测试 |
 
