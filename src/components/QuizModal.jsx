@@ -68,6 +68,9 @@ export default function QuizModal({
   // Breathing task state
   const [breathingStep, setBreathingStep] = useState(0);
   const [breathingCycle, setBreathingCycle] = useState(1);
+  const [quotePhase, setQuotePhase] = useState('study');
+  const [quoteDeadline, setQuoteDeadline] = useState(null);
+  const [quoteSecondsLeft, setQuoteSecondsLeft] = useState(10);
   const bodyScrollRef = useRef(null);
   const inspectorRef = useRef(null);
 
@@ -87,12 +90,33 @@ export default function QuizModal({
     setIsTimerRunning(false);
     setBreathingStep(0);
     setBreathingCycle(1);
+    setQuotePhase('study');
+    setQuoteDeadline(null);
+    setQuoteSecondsLeft(10);
     setShowTranslation(false);
     setShowScaffold(false);
     setInspectedWord(null);
     setInspectedSource(null);
     if (bodyScrollRef.current) bodyScrollRef.current.scrollTop = 0;
   }, [currentIndex, currentQ?.id]);
+
+  // The 10-second recitation window uses elapsed time, so background tab throttling
+  // cannot silently give a longer countdown. Reloading starts this self-check anew.
+  useEffect(() => {
+    if (currentQ?.category !== 'film_quote' || quotePhase !== 'reciting' || quoteDeadline === null) return;
+    const update = () => {
+      const remaining = Math.max(0, Math.ceil((quoteDeadline - Date.now()) / 1000));
+      setQuoteSecondsLeft(remaining);
+      if (remaining === 0) setQuotePhase('ready');
+    };
+    update();
+    const interval = window.setInterval(update, 250);
+    document.addEventListener('visibilitychange', update);
+    return () => {
+      window.clearInterval(interval);
+      document.removeEventListener('visibilitychange', update);
+    };
+  }, [currentQ?.id, currentQ?.category, quotePhase, quoteDeadline]);
 
   // 180s Craving countdown timer
   useEffect(() => {
@@ -201,6 +225,24 @@ export default function QuizModal({
     e.preventDefault();
     if (!typeInAnswer.trim() || isAnswered) return;
     setIsAnswered(true);
+  };
+
+  const startQuoteRecitation = () => {
+    setQuoteSecondsLeft(10);
+    setQuoteDeadline(Date.now() + 10_000);
+    setQuotePhase('reciting');
+  };
+
+  const revealQuote = () => {
+    setQuotePhase('revealed');
+    setIsAnswered(true);
+  };
+
+  const retryQuote = () => {
+    setQuoteDeadline(null);
+    setQuoteSecondsLeft(10);
+    setQuotePhase('study');
+    setIsAnswered(false);
   };
 
   // Word click to inspect phonetic & definition (严禁自动朗读，仅显示音标与释义)
@@ -342,6 +384,9 @@ export default function QuizModal({
     if (currentQ.category === 'reflection') {
       return { code: 'REFLECTION', label: '生活的一角', icon: <Sparkles className="w-3.5 h-3.5" /> };
     }
+    if (currentQ.category === 'film_quote') {
+      return { code: 'FILM · RECALL', label: '电影台词背诵', icon: <BookOpen className="w-3.5 h-3.5" /> };
+    }
     if (currentQ.type === 'zh_to_en') {
       return {
         code: 'REASONING · TRANSLATION',
@@ -471,7 +516,7 @@ export default function QuizModal({
                   )}
                 </div>
               )}
-              {swapButton}
+              {currentQ.category !== 'film_quote' && swapButton}
               {/* Category Subhead */}
               <div className="flex items-center justify-between text-xs text-stone-500 pb-1 border-b border-stone-200/80">
                 <div className="flex items-center space-x-1.5 font-mono text-[11px] tracking-wide text-stone-600">
@@ -496,6 +541,55 @@ export default function QuizModal({
                     onContinue={handleNext}
                     continueLabel={currentIndex < questions.length - 1 ? '想过了，继续下一项' : '完成本次急救'}
                   />
+                </div>
+              )}
+
+              {currentQ.category === 'film_quote' && (
+                <div className="space-y-4">
+                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] space-y-3">
+                    <div className="flex items-center justify-between gap-2 text-xs text-stone-600">
+                      <span className="font-semibold text-stone-900">《{currentQ.film}》 · {currentQ.year}</span>
+                      <span className="font-mono text-[11px]">{currentQ.language === 'zh' ? '中文原声' : 'ENGLISH ORIGINAL'}</span>
+                    </div>
+                    <p role="status" aria-live="polite" className="text-xs text-stone-600">
+                      {quotePhase === 'study' && '读一遍台词，准备好后开始 10 秒背诵。'}
+                      {quotePhase === 'reciting' && `台词已隐藏 · 请在 ${quoteSecondsLeft} 秒内背出，可默念。`}
+                      {quotePhase === 'ready' && '10 秒结束。现在核对原句。'}
+                      {quotePhase === 'revealed' && '对照原句自行核对，不做语音评分。'}
+                    </p>
+                    {(quotePhase === 'study' || quotePhase === 'revealed') ? (
+                      <blockquote lang={currentQ.language === 'zh' ? 'zh-CN' : 'en'} className="font-serif text-xl sm:text-2xl leading-relaxed text-stone-900 border-l-2 border-[#8C1D24] pl-4 select-text whitespace-pre-line">
+                        {currentQ.quote}
+                      </blockquote>
+                    ) : (
+                      <div className="min-h-24 flex items-center justify-center rounded-lg bg-[#F5F2EB] border border-stone-200 text-stone-700 font-mono text-sm">
+                        {quotePhase === 'reciting' ? `背诵倒计时 ${quoteSecondsLeft}s` : '台词已隐藏'}
+                      </div>
+                    )}
+                    {(quotePhase === 'study' || quotePhase === 'revealed') && (
+                      <p className="text-[11px] text-stone-500 text-right">{currentQ.speaker}</p>
+                    )}
+                  </div>
+                  {quotePhase === 'study' && (
+                    <button type="button" onClick={startQuoteRecitation} className="w-full min-h-11 p-3 bg-stone-900 text-white rounded-xl font-semibold text-sm hover:bg-black cursor-pointer">
+                      记住了，开始 10 秒背诵
+                    </button>
+                  )}
+                  {quotePhase === 'ready' && (
+                    <div className="space-y-2">
+                      <button type="button" onClick={revealQuote} className="w-full min-h-11 p-3 bg-stone-900 text-white rounded-xl font-semibold text-sm hover:bg-black cursor-pointer">
+                        核对原句
+                      </button>
+                      <button type="button" onClick={retryQuote} className="w-full min-h-11 p-3 bg-white border border-stone-300 text-stone-900 rounded-xl font-semibold text-sm cursor-pointer">
+                        再背一次
+                      </button>
+                    </div>
+                  )}
+                  {quotePhase === 'revealed' && (
+                    <button type="button" onClick={handleNext} className="w-full min-h-11 p-3 bg-stone-900 text-white rounded-xl font-semibold text-sm hover:bg-black cursor-pointer">
+                      {currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}
+                    </button>
+                  )}
                 </div>
               )}
 
@@ -1007,7 +1101,7 @@ export default function QuizModal({
               {swapButton}
 
               {/* ---------------- FEEDBACK & VERDICT (SCHEME A MONOCHROME) ---------------- */}
-              {isAnswered && (
+              {isAnswered && currentQ.category !== 'film_quote' && (
                 <div className="space-y-3.5 pt-1">
                   {/* Subtle confirmation line */}
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2 text-xs text-stone-600 px-1">

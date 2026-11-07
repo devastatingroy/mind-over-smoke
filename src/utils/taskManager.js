@@ -3,6 +3,7 @@ import economistTranslationTasks from '../data/economist_translation.json';
 import tangTranslationTasks from '../data/tang_translation.json';
 import physicalTasks from '../data/physical_tasks.json';
 import breathingTasks from '../data/breathing_tasks.json';
+import filmQuotes from '../data/film_quotes.json';
 import { REFLECTION_ASPECTS } from './reflection';
 
 const ROTATION_KEY = 'mind_over_smoke_task_rotation_v1';
@@ -20,6 +21,7 @@ export const reflectionTasks = REFLECTION_ASPECTS.map((aspect, aspectIndex) => (
 
 const thirdPools = {
   breathing: breathingTasks,
+  film_quote: filmQuotes,
   poetry_en_to_zh: tangTranslationTasks.filter((task) => task.mode === 'en_to_zh'),
   poetry_zh_to_en: tangTranslationTasks.filter((task) => task.mode === 'zh_to_en'),
   economist_cloze: normalizedEconomistQuestions,
@@ -66,6 +68,7 @@ function thirdFamily(task) {
   if (task.category === 'reflection') return 'reflection';
   if (task.category === 'physical') return 'physical';
   if (task.category === 'breathing') return 'breathing';
+  if (task.category === 'film_quote') return 'film_quote';
   if (task.category === 'translation') return `poetry_${task.mode}`;
   if (task.type === 'zh_to_en') return 'economist_zh_to_en';
   return 'economist_cloze';
@@ -81,7 +84,7 @@ function drawThirdTask(state, excludedIds = [], excludedFamily = null) {
   const families = Object.keys(thirdPools).filter((family) =>
     family !== excludedFamily && thirdPools[family].some((task) => !excludedIds.includes(task.id))
   );
-  const family = drawFromBag(state, 'sos:families', families);
+  const family = drawFromBag(state, 'sos:families:v2', families);
   if (!family) return null;
   return drawFamilyTask(state, family, excludedIds);
 }
@@ -91,6 +94,7 @@ export const allTasks = [
   ...economistTasks,
   ...physicalTasks,
   ...breathingTasks,
+  ...filmQuotes,
   ...reflectionTasks
 ];
 
@@ -101,6 +105,7 @@ export const taskStats = {
   economistTranslation: economistTranslationTasks.length,
   physical: physicalTasks.length,
   breathing: breathingTasks.length,
+  filmQuote: filmQuotes.length,
   reflection: reflectionTasks.length
 };
 
@@ -126,7 +131,7 @@ export function generateSessionTasks(mode = 'sos', { reflectionAspectIndex, stor
   const tasks = [reflection, drawFamilyTask(state, economistFamily)];
   const usedFamilies = new Set([economistFamily]);
   for (let index = 0; index < 3; index++) {
-    const family = drawFromBag(state, 'practice:other:families', Object.keys(practicePools).filter((item) => !usedFamilies.has(item)));
+    const family = drawFromBag(state, 'practice:other:families:v2', Object.keys(practicePools).filter((item) => !usedFamilies.has(item)));
     tasks.push(drawFamilyTask(state, family, tasks.map((task) => task.id)));
     usedFamilies.add(family);
   }
@@ -168,7 +173,7 @@ export function getReplacementTask(currentTask, existingTaskIds = [], mode = 'pr
     (!mustKeepEconomist || family.startsWith('economist_')) &&
     practicePools[family].some((task) => task.id !== currentTask.id && !existingTaskIds.includes(task.id))
   );
-  const family = drawFromBag(state, 'practice:swap:families', families);
+  const family = drawFromBag(state, 'practice:swap:families:v2', families);
   const replacement = family ? drawFamilyTask(state, family, [...existingTaskIds, currentTask.id]) : currentTask;
   saveRotation(chosenStorage, state);
   return replacement || currentTask;

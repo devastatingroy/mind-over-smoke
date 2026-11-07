@@ -3,9 +3,17 @@ import fs from 'node:fs';
 import { createServer } from 'vite';
 
 const translationBank = JSON.parse(fs.readFileSync('src/data/economist_translation.json', 'utf8'));
+const filmQuotes = JSON.parse(fs.readFileSync('src/data/film_quotes.json', 'utf8'));
 assert.equal(translationBank.length, 30);
 assert.equal(new Set(translationBank.map((task) => task.id)).size, 30);
 assert.equal(new Set(translationBank.map((task) => task.chinese_claim)).size, 30);
+assert.equal(filmQuotes.length, 27);
+assert.equal(new Set(filmQuotes.map((task) => task.id)).size, filmQuotes.length);
+for (const task of filmQuotes) {
+  assert.ok(['en', 'zh'].includes(task.language));
+  assert.ok(task.film && task.quote && task.sourceUrl && task.sourceType);
+  if (task.language === 'en') assert.ok(task.quote.split(/\s+/).length <= 25, `${task.id} is too long for 10 seconds`);
+}
 for (const task of translationBank) {
   for (const field of ['theme', 'chinese_claim', 'prompt', 'scaffold_hint', 'reference_translation', 'analysis', 'punchline']) {
     assert.ok(task[field]?.trim(), `${task.id}.${field} is missing`);
@@ -21,7 +29,10 @@ const storage = {
 };
 
 function family(task) {
+  if (task.category === 'physical') return 'physical';
+  if (task.category === 'reflection') return 'reflection';
   if (task.category === 'breathing') return 'breathing';
+  if (task.category === 'film_quote') return 'film_quote';
   if (task.category === 'translation') return `poetry_${task.mode}`;
   return task.type === 'zh_to_en' ? 'economist_zh_to_en' : 'economist_cloze';
 }
@@ -30,13 +41,15 @@ try {
   const { generateSessionTasks, getReplacementTask, taskStats } = await server.ssrLoadModule('/src/utils/taskManager.js');
   assert.equal(taskStats.economistTranslation, 30);
   assert.equal(taskStats.reflection, 5);
-  assert.equal(taskStats.total, 240);
+  assert.equal(taskStats.filmQuote, 27);
+  assert.equal(taskStats.total, 267);
 
-  const firstFiveFamilies = new Set();
+  const firstSixFamilies = new Set();
   const firstFourPhysical = new Set();
   const translatedIds = [];
+  const filmIds = [];
   let firstSession;
-  for (let index = 0; index < 150; index++) {
+  for (let index = 0; index < 210; index++) {
     const tasks = generateSessionTasks('sos', { reflectionAspectIndex: index % 5, storage });
     assert.equal(tasks.length, 3);
     assert.equal(new Set(tasks.map((task) => task.id)).size, 3);
@@ -46,14 +59,16 @@ try {
     assert.equal(reflection.length, 1);
     assert.equal(reflection[0].aspectIndex, index % 5);
     const third = tasks.find((task) => !['physical', 'reflection'].includes(task.category));
-    if (index < 5) firstFiveFamilies.add(family(third));
+    if (index < 6) firstSixFamilies.add(family(third));
     if (index < 4) firstFourPhysical.add(physical[0].id);
     if (third.type === 'zh_to_en') translatedIds.push(third.id);
+    if (third.category === 'film_quote') filmIds.push(third.id);
     if (index === 0) firstSession = { physical: physical[0], reflection: reflection[0], third, ids: tasks.map((task) => task.id) };
   }
-  assert.equal(firstFiveFamilies.size, 5, 'Each third-task type appears once in the first cycle');
+  assert.equal(firstSixFamilies.size, 6, 'Each third-task type appears once in the first cycle');
   assert.equal(firstFourPhysical.size, 4, 'Physical tasks cycle before repeating');
   assert.equal(new Set(translatedIds.slice(0, 30)).size, 30, 'All 30 new-form questions rotate before repeating');
+  assert.equal(new Set(filmIds.slice(0, 25)).size, 25, 'Film lines rotate before repeating');
   assert.equal(getReplacementTask(firstSession.physical, firstSession.ids, 'sos', { storage }).category, 'physical');
   assert.equal(getReplacementTask(firstSession.reflection, firstSession.ids, 'sos', { storage }).category, 'reflection');
   assert.notEqual(family(getReplacementTask(firstSession.third, firstSession.ids, 'sos', { storage })), family(firstSession.third));

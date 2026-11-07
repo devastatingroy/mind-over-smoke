@@ -1,0 +1,164 @@
+[
+  {
+    "id": "film_001", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Point Break", "year": 1991, "speaker": "Bodhi",
+    "quote": "Fear causes hesitation, and hesitation will cause your worst fears to come true.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/point-break-1991/you-see-fear-causes-hesitation/"
+  },
+  {
+    "id": "film_002", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Into the Wild", "year": 2007, "speaker": "Christopher McCandless",
+    "quote": "The core of man's spirit comes from new experiences.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/into-the-wild-2007/the-core-of-mans-spirit-comes-from-new-experiences/"
+  },
+  {
+    "id": "film_003", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Fight Club", "year": 1999, "speaker": "Narrator",
+    "quote": "This is your life, and it's ending one minute at a time.",
+    "sourceType": "film screenplay", "sourceUrl": "https://englishfox.ru/wp-content/uploads/2018/01/Fight_Club.pdf"
+  },
+  {
+    "id": "film_004", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Secret Life of Walter Mitty", "year": 2013, "speaker": "Sean O'Connell",
+    "quote": "Beautiful things don't ask for attention.",
+    "sourceType": "film dialogue", "sourceUrl": "https://www.imdb.com/title/tt0359950/quotes/?item=qt2085184"
+  },
+  {
+    "id": "film_005", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Legends of the Fall", "year": 1994, "speaker": "One Stab",
+    "quote": "Some people hear their own inner voices with great clearness and they live by what they hear.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/legends-of-the-fall-1994/such-people-become-crazy/"
+  },
+  {
+    "id": "film_006", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Beach", "year": 2000, "speaker": "Richard",
+    "quote": "Never refuse an invitation. Never resist the unfamiliar.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-beach-2000/i-just-dont-like-the-idea/"
+  },
+  {
+    "id": "film_007", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Casino Royale", "year": 2006, "speaker": "Vesper Lynd / James Bond",
+    "quote": "“I'm the money.”\n“Every penny of it.”",
+    "sourceType": "production screenplay", "sourceUrl": "https://www.screenwriter.ch/demandit/files/M_BFNO38KLSZ567NYSJ29/dms/File/Casino%20Royale.pdf"
+  },
+  {
+    "id": "film_008", "category": "film_quote", "type": "recitation", "language": "zh",
+    "film": "一代宗师", "year": 2013, "speaker": "叶问",
+    "quote": "功夫，两个字，一横一竖，对的，站着，错的，倒下。",
+    "sourceType": "film trailer", "sourceUrl": "https://culture.people.com.cn/n/2012/1106/c22219-19508537.html"
+  },
+  {
+    "id": "film_009", "category": "film_quote", "type": "recitation", "language": "zh",
+    "film": "让子弹飞", "year": 2010, "speaker": "张麻子",
+    "quote": "我是想站着，还把钱挣了！",
+    "sourceType": "film screenplay", "sourceUrl": "https://www.sohu.com/a/148273206_662944"
+  },
+  {
+    "id": "film_010", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Shawshank Redemption", "year": 1994, "speaker": "Andy Dufresne",
+    "quote": "I guess it comes down to a simple choice, really. Get busy living, or get busy dying.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-shawshank-redemption-1994/i-guess-comes-down-a-simple-choice-really/"
+  },
+  {
+    "id": "film_011", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Batman Begins", "year": 2005, "speaker": "Bruce Wayne",
+    "quote": "It's not who I am underneath, but what I do that defines me.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/batman-begins-2005/you-could-die/"
+  },
+  {
+    "id": "film_012", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Gattaca", "year": 1997, "speaker": "Vincent",
+    "quote": "I never saved anything for the swim back.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/gattaca-1997/you-want-know-how-i-did-it-s1/t/4"
+  },
+  {
+    "id": "film_013", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Dead Poets Society", "year": 1989, "speaker": "John Keating",
+    "quote": "Carpe diem. Seize the day, boys. Make your lives extraordinary.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/dead-poets-society-1989/carpe-hear-it-carpe-carpe-diem-seize-the-day-boys-make-your-lives-extraordinary/"
+  },
+  {
+    "id": "film_014", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Rocky Balboa", "year": 2006, "speaker": "Rocky Balboa",
+    "quote": "It ain't about how hard you hit. It's about how hard you can get hit and keep moving forward.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/rocky-balboa-2006/it-aint-about-how-hard-you-hitits-about-how-hard-you-can-get-hitand-keep-movin-forward/"
+  },
+  {
+    "id": "film_015", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Pursuit of Happyness", "year": 2006, "speaker": "Chris Gardner",
+    "quote": "Don't ever let somebody tell you you can't do something. Not even me.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-pursuit-of-happyness-2006/dont-ever-let-somebody-tell-you/"
+  },
+  {
+    "id": "film_016", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Martian", "year": 2015, "speaker": "Mark Watney",
+    "quote": "Now you can either accept that, or you can get to work.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-martian-2015/at-some-point-everything-going-go-south-on-you/t/29"
+  },
+  {
+    "id": "film_017", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Matrix", "year": 1999, "speaker": "Morpheus",
+    "quote": "There's a difference between knowing the path and walking the path.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-matrix-1999/sooner-later-youll-realize-just-i-did/"
+  },
+  {
+    "id": "film_018", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Interstellar", "year": 2014, "speaker": "Professor Brand",
+    "quote": "Mankind was born on Earth. It was never meant to die here.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/interstellar-2014/mankind-was-born-on-earth-it-was-never-meant-to-die-here/"
+  },
+  {
+    "id": "film_019", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Gladiator", "year": 2000, "speaker": "Maximus",
+    "quote": "Brothers, what we do in life echoes in eternity.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/gladiator-2000/brothers-what-we-do-in-life-echoes-in-eternity/"
+  },
+  {
+    "id": "film_020", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Kingdom of Heaven", "year": 2005, "speaker": "Balian",
+    "quote": "What man is a man who does not make the world better?",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/kingdom-of-heaven-2005/what-man-a-man-does-not-make-the-world-better/"
+  },
+  {
+    "id": "film_021", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Cast Away", "year": 2000, "speaker": "Chuck Noland",
+    "quote": "I know what I have to do now. I gotta keep breathing. Because tomorrow, the sun will rise.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/cast-away-2000/and-i-know-what-i-have-do-now-s2/"
+  },
+  {
+    "id": "film_022", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Aeronauts", "year": 2019, "speaker": "Amelia Wren",
+    "quote": "You don't change the world simply by looking at it. You change it through the way you choose to live in it.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-aeronauts-2019/you-change-through-the-way-choose-live-in-it/"
+  },
+  {
+    "id": "film_023", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Ford v Ferrari", "year": 2019, "speaker": "Carroll Shelby",
+    "quote": "There's a point at 7,000 RPM where everything fades.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/ford-v-ferrari-2019/carroll-theres-a-point-at-7-000-rpm-where-everything-fades/"
+  },
+  {
+    "id": "film_024", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "Creed", "year": 2015, "speaker": "Rocky Balboa",
+    "quote": "One step at a time. One punch at a time. One round at a time.",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/creed-2015/one-punch-at-a-time/"
+  },
+  {
+    "id": "film_025", "category": "film_quote", "type": "recitation", "language": "en",
+    "film": "The Truman Show", "year": 1998, "speaker": "Truman Burbank",
+    "quote": "You never had a camera in my head!",
+    "sourceType": "film clip", "sourceUrl": "https://clip.cafe/the-truman-show-1998/i-know-better-than-do-you-never-a-camera-in-head/?lang=en"
+  },
+  {
+    "id": "film_026", "category": "film_quote", "type": "recitation", "language": "zh",
+    "film": "流浪地球", "year": 2019, "speaker": "韩朵朵",
+    "quote": "希望，是我们这个年代像钻石一样珍贵的东西。",
+    "sourceType": "contemporary film report", "sourceUrl": "https://epaper.lnd.com.cn/lswbepaper/pc/att/201903/07/abd91e23-663f-4928-9a74-884a38374613.pdf"
+  },
+  {
+    "id": "film_027", "category": "film_quote", "type": "recitation", "language": "zh",
+    "film": "流浪地球2", "year": 2023, "speaker": "马兆",
+    "quote": "没有人的文明，毫无意义。",
+    "sourceType": "film interview report", "sourceUrl": "https://www.mittrchina.com/news/detail/11547"
+  }
+]
