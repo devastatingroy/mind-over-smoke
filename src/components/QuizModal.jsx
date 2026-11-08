@@ -429,6 +429,7 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
+  const isPoetryTask = currentQ.category === 'translation' || currentQ.type === 'translation' || currentQ.category === 'poetry' || currentQ.type === 'poetry';
   const nextActionLabel = currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救';
   const showAnsweredAction = isAnswered && !isSessionFinished;
   const swapButton = onSwapTask && (mode === 'sos' || currentQ.category !== 'reflection') && !isSessionFinished && !isAnswered && (
@@ -1121,8 +1122,15 @@ export default function QuizModal({
 
               {swapButton}
 
+              {isAnswered && isPoetryTask && (
+                <div className="flex items-center gap-2 px-1 text-xs text-stone-700">
+                  <Check className="w-4 h-4 shrink-0 text-stone-900" aria-hidden="true" />
+                  <span>答案已揭晓 · 可对照原文与译文</span>
+                </div>
+              )}
+
               {/* ---------------- FEEDBACK & VERDICT (SCHEME A MONOCHROME) ---------------- */}
-              {isAnswered && currentQ.category !== 'film_quote' && (
+              {isAnswered && !isPoetryTask && currentQ.category !== 'film_quote' && (
                 <div className="space-y-3.5 pt-1">
                   {/* Subtle confirmation line */}
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:gap-2 text-xs text-stone-600 px-1">

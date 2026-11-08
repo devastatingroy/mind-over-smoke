@@ -23,7 +23,7 @@ try {
     { width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
     { width: 1280, height: 800, deviceScaleFactor: 1 }
   ]) {
-    for (const questionId of ['q30', 'trans_48']) {
+    for (const questionId of ['q30', 'trans_48', 'trans_2']) {
     const page = await browser.newPage();
     await page.setViewport(viewport);
     await page.goto(new URL('?mode=dashboard', appUrl).toString(), { waitUntil: 'networkidle0' });
@@ -33,12 +33,20 @@ try {
     })), questionId);
     await page.goto(appUrl, { waitUntil: 'networkidle0' });
     await page.evaluate((id) => {
-      const label = id === 'q30' ? 'inertia' : '我想到了 · 揭晓原诗对照';
+      const label = id === 'q30' ? 'inertia' : id === 'trans_48' ? '我想到了 · 揭晓原诗对照' : '暂时想不出？点击看参考译文';
       const option = [...document.querySelectorAll('button')].find((button) => button.innerText.includes(label));
       if (!option) throw new Error(`Answer action missing for ${id}`);
       option.click();
     }, questionId);
     await page.waitForFunction(() => document.querySelector('[data-quiz-continue="top"] button'));
+    const feedback = await page.$eval('.fixed.inset-0', (modal) => modal.innerText);
+    if (questionId === 'q30') {
+      assert.match(feedback, /VERDICT · 判词/, 'Non-poetry feedback should remain');
+    } else {
+      assert.match(feedback, /答案已揭晓 · 可对照原文与译文/);
+      assert.doesNotMatch(feedback, /VERDICT · 判词|果断断舍离赋能|把烟头按灭|意象辨析中等认知/);
+      assert.match(feedback, questionId === 'trans_48' ? /事了拂衣去，深藏身与名/ : /参考译文 · 可有其他合理译法/);
+    }
     const layout = await page.evaluate(() => {
       const modal = document.querySelector('.fixed.inset-0 > div');
       const body = [...modal.querySelectorAll('div')].find((element) => element.classList.contains('overflow-y-auto'));

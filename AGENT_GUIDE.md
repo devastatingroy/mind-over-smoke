@@ -152,7 +152,7 @@ SOS 的「换下一题」只替换当前槽位，不改变 `currentIndex`；下�
   "title": "《春望》",
   "translator": "参考英译（意译）",
   "english_text": "The country is broken, yet mountains and rivers remain;\nIn the city spring arrives, with grass and trees growing deep.",
-  "prompt": "解读上方英译中的核心意象群，调动前额叶记忆：你能逆向还原杜甫写下的是哪句诗吗？", // 严禁出现中文原句!
+  "prompt": "根据上方英译，回忆并说出对应的中文原句。", // 严禁出现中文原句!
   "correct_answer": "国破山河在，城春草木深",
   "options": [                  // 仅 Mode 1 的旧数据保留此字段；两个模式前端均不展示选项
     "国破山河在，城春草木深",
@@ -162,11 +162,11 @@ SOS 的「换下一题」只替换当前槽位，不改变 `currentIndex`；下�
   "mapping": [                  // 揭晓后中英对仗意象映射
     { "en": "The country is broken", "zh": "国破" },
     { "en": "mountains and rivers remain", "zh": "山河在" }
-  ],
-  "science_note": "纯净英文意象转码激活古诗长时记忆，强行占满前额叶工作记忆。",
-  "punchline": "杜甫经历山河破碎尚且笔耕不辍，今日你身体的健康山河尚在，何苦自愿给烟草公司进贡破财？"
+  ]
 }
 ```
+
+诗词题揭晓后只呈现原诗、参考译文、已有英汉对照和中性提示。旧题库仍含 `science_note` 与 `punchline` 字段，但诗词界面不展示；新题无需添加这两个字段或把诗句牵强联系到吸烟。
 
 ### 5.2 经济学人题 (`src/data/questions.json`)
 ```json
