@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
 import { createServer } from 'vite';
@@ -10,7 +11,7 @@ const browserPath = [
 ].find(fs.existsSync);
 assert.ok(browserPath, 'Edge or Chrome is required');
 
-const outputDir = 'C:\\Users\\11300\\.codex\\visualizations\\2026\\11\\06\\01a1ae34-17a9-79b2-836f-06326e8b580a';
+const outputDir = process.env.MOS_SCREENSHOT_DIR || path.join(os.tmpdir(), 'mind-over-smoke-reflection-ui');
 fs.mkdirSync(outputDir, { recursive: true });
 
 const server = await createServer({ server: { host: '127.0.0.1', port: 0, strictPort: false } });
@@ -36,6 +37,7 @@ try {
   page.on('pageerror', (error) => errors.push(error.message));
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
+  await page.click('[data-panel="reflection"] summary');
   const initialAspect = await page.$eval('#reflection-title + span', (element) => element.textContent.trim());
   assert.ok(['工作', '身体', '关系', '休息', '成长'].includes(initialAspect));
   assert.match(await page.$eval('body', (element) => element.innerText), /在你能自己安排的时间里/);
@@ -46,6 +48,7 @@ try {
   const changedAspect = await page.$eval('#reflection-title + span', (element) => element.textContent.trim());
   assert.notEqual(changedAspect, initialAspect);
   await page.reload({ waitUntil: 'networkidle0' });
+  await page.click('[data-panel="reflection"] summary');
   assert.equal(await page.$eval('#reflection-title + span', (element) => element.textContent.trim()), changedAspect);
 
   await clickButton(page, '记下一句');
@@ -54,6 +57,7 @@ try {
   await clickButton(page, '保存这一句');
   assert.match(await page.$eval('body', (element) => element.innerText), /已保存在此浏览器/);
   await page.reload({ waitUntil: 'networkidle0' });
+  await page.click('[data-panel="reflection"] summary');
   assert.match(await page.$eval('body', (element) => element.innerText), /今天想给这一部分留一点时间/);
   await clickButton(page, '回看记录');
   assert.match(await page.$eval('ul', (element) => element.innerText), /今天想给这一部分留一点时间/);

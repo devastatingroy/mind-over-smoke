@@ -1,75 +1,30 @@
 import React from 'react';
-import { ArrowRight, Zap, Shield, Dumbbell, BookOpen, Languages } from 'lucide-react';
-import { taskStats } from '../utils/taskManager';
+import { ArrowRight } from 'lucide-react';
 
 export default function SosPanicButton({ onStartQuiz }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E5E0D8] p-6 shadow-xs">
-      {/* Top Meta Bar */}
-      <div className="flex items-center justify-between pb-3 mb-4 border-b border-stone-100">
-        <div className="flex items-center space-x-2 text-[11px] font-mono tracking-wider text-stone-500 uppercase">
-          <Shield className="w-3.5 h-3.5 text-stone-900" />
-          <span>COGNITIVE CRAVE SHIELD</span>
-        </div>
-        <span className="text-[11px] font-mono text-stone-500 border border-stone-200 px-2 py-0.5 rounded">随时可用</span>
-      </div>
+    <section className="rounded-2xl border border-[#E5E0D8] bg-white px-6 py-8 sm:px-8 sm:py-10">
+      <p className="text-[11px] font-medium tracking-[0.2em] text-[#8C1D24]">MIND OVER SMOKE</p>
+      <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight tracking-tight text-stone-900 sm:text-[34px]">
+        此刻想抽烟？
+      </h2>
+      <p className="mt-3 text-sm leading-relaxed text-stone-600">先用三分钟，做三件别的事。</p>
 
-      {/* Editorial Headline & Brief */}
-      <div className="text-center my-3">
-        <h2 className="text-2xl font-serif font-black text-stone-900 tracking-tight mb-2">
-          烟瘾突发？把控制权交还前额叶
-        </h2>
-        <p className="text-xs text-stone-600 max-w-md mx-auto leading-relaxed font-sans">
-          生理研究表明，急性尼古丁渴求在 <span className="font-semibold text-stone-900">180 秒</span> 内冲顶后必然自然回落。
-          每轮包含 <span className="font-medium text-stone-900">体力活动</span>、<span className="font-medium text-stone-900">生活反思</span> 和一道轮换的呼吸或语言挑战。
-        </p>
-      </div>
-
-      {/* Main Single-Tone Sanctuary Action */}
-      <div className="my-5 flex flex-col items-center">
-        <button
-          onClick={() => onStartQuiz('sos')}
-          className="w-full py-4 px-6 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-serif font-bold text-lg tracking-wide transition-colors shadow-sm flex items-center justify-center space-x-2.5 cursor-pointer"
-        >
-          <span>启动 3 分钟急救干预</span>
-          <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-1 transition-transform" />
-        </button>
-
-        {/* Clean Monochrome Feature Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mt-3.5 text-[11px] font-mono text-stone-500">
-          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
-            <Zap className="w-3 h-3 text-stone-700" />
-            <span>APP 图标直达</span>
-          </span>
-          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
-            <Languages className="w-3 h-3 text-stone-700" />
-            <span>英译唐诗解密</span>
-          </span>
-          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
-            <Dumbbell className="w-3 h-3 text-stone-700" />
-            <span>10个俯卧撑等动作</span>
-          </span>
-          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 bg-stone-50">
-            <BookOpen className="w-3 h-3 text-stone-700" />
-            <span>经济学人精读</span>
-          </span>
-          <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded border border-stone-200 text-stone-400">
-            <span>池化 {taskStats.total} 项</span>
-          </span>
-        </div>
-      </div>
-
-      {/* Secondary Action */}
-      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-500">
-        <span>当前无冲动，仅想强化认知？</span>
-        <button
-          onClick={() => onStartQuiz('practice')}
-          className="text-stone-900 hover:underline font-semibold flex items-center space-x-1 cursor-pointer font-sans"
-        >
-          <span>日常精读（5项）</span>
-          <ArrowRight className="w-3 h-3" />
-        </button>
-      </div>
-    </div>
+      <button
+        type="button"
+        onClick={() => onStartQuiz('sos')}
+        className="mt-8 flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-stone-900 px-5 py-3.5 text-base font-semibold text-white transition-colors hover:bg-black focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+      >
+        开始 3 分钟急救
+        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </button>
+      <button
+        type="button"
+        onClick={() => onStartQuiz('practice')}
+        className="mx-auto mt-5 block text-sm text-stone-600 underline decoration-stone-300 underline-offset-4 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+      >
+        日常精读 · 5 项
+      </button>
+    </section>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import SosPanicButton from './components/SosPanicButton';
 import ContractDashboard from './components/ContractDashboard';
-import BiologicalTracker from './components/BiologicalTracker';
 import QuizModal from './components/QuizModal';
 import VocabModal from './components/VocabModal';
 import ReflectionCard from './components/ReflectionCard';
@@ -11,7 +10,6 @@ import { claimReflectionPrompt } from './utils/reflection';
 import { 
   generateSessionTasks, 
   getReplacementTask, 
-  taskStats,
   allTasks
 } from './utils/taskManager';
 import { 
@@ -22,7 +20,7 @@ import {
   clearActiveSession 
 } from './utils/storage';
 import { createChallenge, getChallengeView, recordReport } from './utils/challenge';
-import { RotateCcw, Zap } from 'lucide-react';
+import { ChevronRight, RotateCcw } from 'lucide-react';
 
 export default function App() {
   const [state, setState] = useState(getInitialState);
@@ -90,6 +88,9 @@ export default function App() {
   }, []);
 
   const challengeView = getChallengeView(state.challenge, now);
+  const challengeFinished = challengeView?.days.every(({ status }) =>
+    ['smoke_free', 'smoked', 'expired'].includes(status)
+  );
 
   // Start a quiz session (SOS or practice)
   const handleStartQuiz = (mode) => {
@@ -260,82 +261,60 @@ export default function App() {
 
   // Demo tool: reset state
   const handleReset = () => {
+    if (!window.confirm('重置挑战、词库和急救次数？生活记录不会删除。')) return;
     localStorage.removeItem('mind_over_smoke_state_v2');
     localStorage.removeItem('mind_over_smoke_state_v1');
     setState(getInitialState());
   };
 
   return (
-    <div className="min-h-screen bg-[#F9F8F6] flex flex-col font-sans text-stone-900">
+    <div className="min-h-screen bg-[#FAF8F5] flex flex-col font-sans text-stone-900">
       <Header 
         state={state} 
-        smokeFreeCount={challengeView?.smokeFreeCount || 0}
         onOpenVocab={() => setShowVocabModal(true)} 
       />
 
-      <main className="flex-1 max-w-xl w-full mx-auto p-4 space-y-4 pb-12">
-        {/* Emergency First-Aid Status Pill - Editorial Monochrome */}
-        <div className="bg-white border border-[#E5E0D8] rounded-xl px-4 py-2.5 flex items-center justify-between text-xs text-stone-700 shadow-2xs">
-          <div className="flex items-center space-x-2">
-            <span className="w-2 h-2 rounded-full bg-stone-900"></span>
-            <span className="font-mono font-bold text-stone-900">FIRST AID READY</span>
-            <span className="text-stone-300">|</span>
-            <span className="text-stone-500 hidden sm:inline font-sans">点击图标零延迟秒入 3 分钟阻断</span>
-          </div>
-          <button
-            onClick={() => handleStartQuiz('sos')}
-            className="flex items-center space-x-1 font-mono font-bold text-stone-900 hover:text-black border-b border-stone-900 cursor-pointer"
-          >
-            <span>[ 立即急救 ]</span>
-          </button>
-        </div>
+      <main className="mx-auto w-full max-w-xl flex-1 space-y-5 px-4 pb-12 pt-8 sm:px-6 sm:pt-12">
+        <SosPanicButton onStartQuiz={handleStartQuiz} />
 
-        {/* Core Hero: Emergency SOS Crave Interceptor */}
-        <SosPanicButton 
-          onStartQuiz={handleStartQuiz} 
-        />
+        <div className="divide-y divide-[#E5E0D8] border-y border-[#E5E0D8]">
+          <details data-panel="challenge" className="group py-1">
+            <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-3 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 [&::-webkit-details-marker]:hidden">
+              <span className="min-w-0">
+                <span className="block text-sm font-medium text-stone-900">
+                  {challengeView?.nextReport
+                    ? `第 ${challengeView.nextReport.number} 天待申报`
+                    : challengeFinished
+                      ? '14 天体验已结束'
+                      : '14 天无烟挑战'}
+                </span>
+                <span className="mt-0.5 block text-xs text-stone-500">
+                  {challengeView?.nextReport
+                    ? `截止 ${challengeView.nextReport.deadline} · 点击申报`
+                    : challengeView
+                      ? `${challengeView.currentDay === 0 ? '准备日' : `第 ${challengeView.currentDay} 天`} · 自报无烟 ${challengeView.smokeFreeCount} 天`
+                      : '免费体验 · 查看挑战'}
+                </span>
+              </span>
+              <ChevronRight className="h-4 w-4 shrink-0 text-stone-500 transition-transform group-open:rotate-90" aria-hidden="true" />
+            </summary>
+            <div className="pb-5 pt-2">
+              <ContractDashboard
+                state={state}
+                view={challengeView}
+                onStart={handleStartChallenge}
+                onReport={handleReport}
+              />
+            </div>
+          </details>
 
-        {/* Optional reflection from the time-use diary; separate from SOS and smoke-free reports. */}
-        <ReflectionCard />
-
-        {/* 14-Day Commitment Contract & Rebate Matrix */}
-        <ContractDashboard 
-          state={state} 
-          view={challengeView}
-          onStart={handleStartChallenge}
-          onReport={handleReport}
-        />
-
-        {/* Biological and Financial ROI Health Tracker */}
-        <BiologicalTracker 
-          state={state} 
-          smokeFreeCount={challengeView?.smokeFreeCount || 0}
-        />
-
-        {/* Developer / Demo Quick-test toolbar */}
-        <div className="bg-white/80 backdrop-blur-xs border border-dashed border-gray-300 rounded-xl p-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
-          <div className="flex items-center space-x-1 font-mono text-[11px]">
-            <span>🛠️ 测试与急救演示工具箱:</span>
-            <span className="text-emerald-700 font-semibold">({taskStats.total}项全任务池)</span>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => handleStartQuiz('sos')}
-              className="flex items-center space-x-1 px-2.5 py-1 bg-emerald-700 hover:bg-emerald-800 text-white rounded-lg transition shadow-xs"
-              title="模拟用户点击桌面应用图标直接唤起急救阻断"
-            >
-              <Zap className="w-3 h-3 text-amber-300" />
-              <span>模拟图标冷启动</span>
-            </button>
-            <button
-              onClick={handleReset}
-              className="flex items-center space-x-1 px-2 py-1 hover:text-red-600 rounded-lg transition"
-              title="重置为初始状态"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>重置</span>
-            </button>
-          </div>
+          <details data-panel="reflection" className="group py-1">
+            <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 py-3 text-sm font-medium text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 [&::-webkit-details-marker]:hidden">
+              生活的一角
+              <ChevronRight className="h-4 w-4 shrink-0 text-stone-500 transition-transform group-open:rotate-90" aria-hidden="true" />
+            </summary>
+            <div className="pb-5 pt-2"><ReflectionCard /></div>
+          </details>
         </div>
       </main>
 
@@ -371,9 +350,17 @@ export default function App() {
         />
       )}
 
-      {/* Footer */}
-      <footer className="border-t border-[#E2DFD6] py-4 text-center text-xs text-stone-500">
-        MindOverSmoke 智熄 · 跨模态急救认知阻断舱 · The Economist & Classic Wisdom
+      <footer className="mx-auto w-full max-w-xl px-4 pb-6 text-xs text-stone-500 sm:px-6">
+        <details className="group">
+          <summary className="w-fit cursor-pointer list-none py-2 underline decoration-stone-300 underline-offset-4 [&::-webkit-details-marker]:hidden">关于与设置</summary>
+          <div className="space-y-3 pb-2 pt-2 leading-relaxed">
+            <p>这是免费体验，记录仅保存在当前浏览器；不会收款或退款。</p>
+            <button type="button" onClick={handleReset} className="inline-flex items-center gap-1.5 text-stone-600 underline decoration-stone-300 underline-offset-4 hover:text-stone-900">
+              <RotateCcw className="h-3 w-3" aria-hidden="true" />
+              重置体验数据
+            </button>
+          </div>
+        </details>
       </footer>
     </div>
   );

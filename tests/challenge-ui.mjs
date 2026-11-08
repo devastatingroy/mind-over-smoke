@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
+import { createServer } from 'vite';
 import { localDaySerial } from '../src/utils/challenge.js';
 
 const browserPath = [
@@ -11,6 +12,9 @@ const browserPath = [
 ].find(fs.existsSync);
 assert.ok(browserPath, 'A browser is required for visual verification');
 
+const server = await createServer({ server: { host: '127.0.0.1', port: 0 } });
+await server.listen();
+const port = server.httpServer.address().port;
 const browser = await puppeteer.launch({ executablePath: browserPath, headless: true, args: ['--no-sandbox'] });
 async function clickButton(page, text) {
   const buttons = await page.$$('button');
@@ -28,7 +32,8 @@ try {
   const errors = [];
   page.on('pageerror', (error) => errors.push(error.message));
   await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
-  await page.goto('http://127.0.0.1:3000/?mode=dashboard', { waitUntil: 'networkidle0' });
+  await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
+  await page.click('[data-panel="challenge"] summary');
   assert.match(await page.locator('body').map((el) => el.innerText).wait(), /当前为免费体验/);
   await clickButton(page, '开始免费体验');
   assert.match(await page.locator('body').map((el) => el.innerText).wait(), /准备日/);
@@ -40,6 +45,7 @@ try {
     localStorage.setItem('mind_over_smoke_state_v2', JSON.stringify(state));
   }, yesterday);
   await page.reload({ waitUntil: 'networkidle0' });
+  await page.click('[data-panel="challenge"] summary');
   await clickButton(page, '申报这一天');
   await clickButton(page, '确认：一口也没吸');
   assert.match(await page.locator('body').map((el) => el.innerText).wait(), /模拟符合返款\s*\$1/);
@@ -51,6 +57,7 @@ try {
 
   await page.setViewport({ width: 1280, height: 800, deviceScaleFactor: 1 });
   await page.reload({ waitUntil: 'networkidle0' });
+  await page.click('[data-panel="challenge"] summary');
   const desktopWidth = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
   assert.ok(desktopWidth <= 1, `Desktop horizontal overflow: ${desktopWidth}px`);
   const desktopPath = path.join(os.tmpdir(), 'mind-over-smoke-1280.png');
@@ -59,4 +66,5 @@ try {
   console.log(JSON.stringify({ mobilePath, desktopPath, mobileWidth, desktopWidth }));
 } finally {
   await browser.close();
+  await server.close();
 }

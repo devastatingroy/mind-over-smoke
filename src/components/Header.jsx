@@ -1,55 +1,24 @@
 import React from 'react';
-import { ShieldCheck, BookOpen, Wallet } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
-export default function Header({ state, smokeFreeCount, onOpenVocab }) {
-
+export default function Header({ state, onOpenVocab }) {
   return (
-    <header className="bg-white/95 backdrop-blur-md border-b border-[#E5E0D8] sticky top-0 z-30 shadow-2xs">
-      {/* Editorial Accent Bar */}
-      <div className="h-0.5 bg-[#8C1D24] w-full" />
-      
-      <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center space-x-2.5 min-w-0 flex-1">
-          <div className="bg-[#8C1D24] text-white px-1.5 py-0.5 text-[11px] font-serif font-black tracking-widest uppercase shrink-0">
-            THE
-          </div>
-          <div className="min-w-0">
-            <h1 className="text-sm min-[360px]:text-base sm:text-lg font-serif font-black tracking-tight text-stone-900 leading-none truncate">
-              MindOverSmoke
-            </h1>
-            <span className="block truncate text-[10px] text-stone-500 font-mono tracking-wide">
-              智熄 · 理性认知阻断
-            </span>
-          </div>
+    <header className="border-b border-[#E5E0D8] bg-white">
+      <div className="h-0.5 bg-[#8C1D24]" />
+      <div className="mx-auto flex w-full max-w-xl items-center justify-between px-5 py-4 sm:px-6">
+        <div className="min-w-0">
+          <h1 className="truncate font-serif text-lg font-semibold tracking-tight text-stone-900">MindOverSmoke</h1>
+          <p className="text-[11px] text-stone-500">智熄</p>
         </div>
-
-        <div className="flex items-center space-x-2 shrink-0">
-          {/* Vocab book icon */}
-          <button
-            onClick={onOpenVocab}
-            title="认知武器库与词汇"
-            className="p-1.5 text-stone-600 hover:text-black hover:bg-stone-100 rounded-lg transition relative cursor-pointer"
-          >
-            <BookOpen className="w-4 h-4 text-stone-800" />
-            {state.savedVocab?.length > 0 && (
-              <span className="absolute -top-1 -right-1 bg-stone-900 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-mono font-bold">
-                {state.savedVocab.length}
-              </span>
-            )}
-          </button>
-
-          {/* Self-reported smoke-free days; no payment is collected in the demo. */}
-          <div title="体验模式：自报无烟天数，不是真实退款" className="bg-stone-50 border border-[#E5E0D8] px-2 min-[360px]:px-2.5 py-1 rounded-md flex items-center space-x-1.5 text-xs font-mono whitespace-nowrap shrink-0">
-            <Wallet className="hidden min-[360px]:block w-3.5 h-3.5 text-stone-700 shrink-0" />
-            <span className="font-semibold text-stone-900">
-              {smokeFreeCount} 天
-            </span>
-            <span className="text-stone-300">/</span>
-            <span className="text-stone-500 font-normal">
-              14 天
-            </span>
-          </div>
-        </div>
+        <button
+          type="button"
+          onClick={onOpenVocab}
+          aria-label={`打开词库${state.savedVocab?.length ? `，已收藏 ${state.savedVocab.length} 项` : ''}`}
+          className="flex min-h-10 items-center gap-1.5 rounded-lg px-2 text-xs text-stone-600 transition-colors hover:bg-stone-50 hover:text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+        >
+          <BookOpen className="h-4 w-4" aria-hidden="true" />
+          词库
+        </button>
       </div>
     </header>
   );
