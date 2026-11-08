@@ -1,15 +1,16 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import puppeteer from 'puppeteer-core';
 import { createServer } from 'vite';
 
 const browserPath = [
-  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
-  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
 ].find(fs.existsSync);
 assert.ok(browserPath, 'Edge or Chrome is required');
-const outputDir = 'C:\\Users\\11300\\.codex\\visualizations\\2026\\11\\07\\01a1b440-7b95-71d0-928a-dbe2519bb1ab';
+const outputDir = path.join(os.tmpdir(), 'mind-over-smoke-film-quote-ui');
 fs.mkdirSync(outputDir, { recursive: true });
 const server = await createServer({ server: { host: '127.0.0.1', port: 0 } });
 await server.listen();
@@ -46,7 +47,7 @@ try {
     await page.setViewport(viewport);
     await loadQuote(page, 'film_001');
     assert.match(await page.$eval('body', (node) => node.innerText), /Fear causes hesitation/);
-    assert.equal(await page.$$eval('.fixed.inset-0 button', (buttons) => buttons.filter((button) => button.innerText.includes('换一道同类题')).length), 1);
+    assert.equal(await page.$$eval('.fixed.inset-0 button', (buttons) => buttons.filter((button) => button.innerText.includes('换下一题')).length), 2);
     await page.screenshot({ path: path.join(outputDir, `film-study-${viewport.width}.png`) });
     await click(page, '开始 10 秒背诵');
     assert.doesNotMatch(await page.$eval('body', (node) => node.innerText), /Fear causes hesitation/);

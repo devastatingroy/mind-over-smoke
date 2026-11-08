@@ -126,35 +126,55 @@ export default function App() {
     });
   };
 
-  // SOS skips rotate the unfinished tasks; changing a reflection aspect stays in place.
+  // SOS changes the displayed format independently of completed task types.
   const handleSwapTask = (indexToSwap, { stayInCategory = false } = {}) => {
     const taskToReplace = currentQuizQuestions[indexToSwap];
     if (!taskToReplace) return;
     const currentAspect = currentQuizQuestions[indexToSwap]?.aspectIndex;
     let nextAspect = null;
-    if (taskToReplace.category === 'reflection') {
+    if (taskToReplace.category === 'reflection' && stayInCategory) {
       for (let attempt = 0; attempt < 5; attempt++) {
         nextAspect = claimReflectionPrompt('task').aspectIndex;
         if (nextAspect !== currentAspect) break;
       }
       if (nextAspect === currentAspect) nextAspect = (currentAspect + 1) % 5;
     }
-    const existingIds = currentQuizQuestions.map((task) => task.id);
-    const replacement = taskToReplace.category === 'reflection'
+    const existingIds = (activeQuizMode === 'sos'
+      ? currentQuizQuestions.slice(0, indexToSwap + 1)
+      : currentQuizQuestions).map((task) => task.id);
+    const replacement = taskToReplace.category === 'reflection' && stayInCategory
       ? allTasks.find((task) => task.category === 'reflection' && task.aspectIndex === nextAspect)
       : getReplacementTask(taskToReplace, existingIds, activeQuizMode || 'sos');
     const next = [...currentQuizQuestions];
-    if (activeQuizMode === 'sos' && !stayInCategory) {
-      for (let index = indexToSwap; index < next.length - 1; index++) next[index] = next[index + 1];
-      next[next.length - 1] = replacement;
-    } else {
-      next[indexToSwap] = replacement;
-    }
+    next[indexToSwap] = replacement;
     setCurrentQuizQuestions(next);
     saveActiveSession({
       mode: activeQuizMode || 'sos',
       questions: next,
       ...sessionProgress,
+      currentIndex: indexToSwap,
+      sosPrompt,
+      practicePrompt
+    });
+  };
+
+  const handleAdvanceTask = (completedIndex, secondsLeft) => {
+    if (activeQuizMode !== 'sos') return;
+    const completedTask = currentQuizQuestions[completedIndex];
+    if (!completedTask || completedIndex >= currentQuizQuestions.length - 1) return;
+    const next = [...currentQuizQuestions];
+    next[completedIndex + 1] = getReplacementTask(
+      completedTask,
+      next.slice(0, completedIndex + 1).map((task) => task.id),
+      'sos'
+    );
+    const progress = { ...sessionProgress, currentIndex: completedIndex + 1, secondsLeft };
+    setCurrentQuizQuestions(next);
+    setSessionProgress(progress);
+    saveActiveSession({
+      mode: 'sos',
+      questions: next,
+      ...progress,
       sosPrompt,
       practicePrompt
     });
@@ -332,6 +352,7 @@ export default function App() {
           onSaveVocab={handleSaveVocab}
           savedVocabIds={state.savedVocab.map((v) => v.id)}
           onSwapTask={handleSwapTask}
+          onAdvanceTask={handleAdvanceTask}
           sosPrompt={sosPrompt}
           practicePrompt={practicePrompt}
           initialIntroDismissed={sessionProgress.practiceIntroDismissed}

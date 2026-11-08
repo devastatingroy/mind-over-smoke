@@ -28,6 +28,11 @@ const thirdPools = {
   economist_zh_to_en: economistTranslationTasks
 };
 const practicePools = { physical: physicalTasks, ...thirdPools };
+const sosPools = { physical: physicalTasks, reflection: reflectionTasks, ...thirdPools };
+const sosFamilies = [
+  'physical', 'reflection', 'breathing', 'film_quote',
+  'poetry_en_to_zh', 'poetry_zh_to_en', 'economist_cloze', 'economist_zh_to_en'
+];
 
 function shuffled(items) {
   const result = [...items];
@@ -140,23 +145,25 @@ export function generateSessionTasks(mode = 'sos', { reflectionAspectIndex, stor
 }
 
 export function getReplacementTask(currentTask, existingTaskIds = [], mode = 'practice', { storage } = {}) {
-  if (currentTask.category === 'reflection') {
-    const alternatives = reflectionTasks.filter((task) => task.id !== currentTask.id && !existingTaskIds.includes(task.id));
-    return alternatives.length ? alternatives[Math.floor(Math.random() * alternatives.length)] : currentTask;
-  }
-
   if (mode === 'sos') {
     const chosenStorage = rotationStorage(storage);
     const state = readRotation(chosenStorage);
-    if (currentTask.category === 'physical') {
-      const candidates = physicalTasks.filter((task) => task.id !== currentTask.id && !existingTaskIds.includes(task.id));
-      const id = drawFromBag(state, 'tasks:physical:ids', candidates.map((task) => task.id));
-      saveRotation(chosenStorage, state);
-      return candidates.find((task) => task.id === id) || currentTask;
-    }
-    const replacement = drawThirdTask(state, [...existingTaskIds, currentTask.id], thirdFamily(currentTask));
+    const familyIndex = sosFamilies.indexOf(thirdFamily(currentTask));
+    const nextFamily = sosFamilies[(familyIndex + 1 + sosFamilies.length) % sosFamilies.length];
+    const pool = sosPools[nextFamily];
+    // A one-question family remains available even when it was completed earlier.
+    const unused = pool.filter((task) => task.id !== currentTask.id && !existingTaskIds.includes(task.id));
+    const candidates = unused.length ? unused : pool.filter((task) => task.id !== currentTask.id);
+    const available = candidates.length ? candidates : pool;
+    const id = drawFromBag(state, `sos:tasks:${nextFamily}:ids`, available.map((task) => task.id));
+    const replacement = available.find((task) => task.id === id);
     saveRotation(chosenStorage, state);
     return replacement || currentTask;
+  }
+
+  if (currentTask.category === 'reflection') {
+    const alternatives = reflectionTasks.filter((task) => task.id !== currentTask.id && !existingTaskIds.includes(task.id));
+    return alternatives.length ? alternatives[Math.floor(Math.random() * alternatives.length)] : currentTask;
   }
 
   const chosenStorage = rotationStorage(storage);

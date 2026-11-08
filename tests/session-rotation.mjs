@@ -69,9 +69,19 @@ try {
   assert.equal(firstFourPhysical.size, 4, 'Physical tasks cycle before repeating');
   assert.equal(new Set(translatedIds.slice(0, 30)).size, 30, 'All 30 new-form questions rotate before repeating');
   assert.equal(new Set(filmIds.slice(0, 25)).size, 25, 'Film lines rotate before repeating');
-  assert.equal(getReplacementTask(firstSession.physical, firstSession.ids, 'sos', { storage }).category, 'physical');
-  assert.equal(getReplacementTask(firstSession.reflection, firstSession.ids, 'sos', { storage }).category, 'reflection');
-  assert.notEqual(family(getReplacementTask(firstSession.third, firstSession.ids, 'sos', { storage })), family(firstSession.third));
+  let displayed = firstSession.physical;
+  const seenFamilies = [];
+  for (let step = 0; step < 8; step++) {
+    const next = getReplacementTask(displayed, firstSession.ids, 'sos', { storage });
+    assert.notEqual(family(next), family(displayed));
+    seenFamilies.push(family(next));
+    displayed = next;
+  }
+  assert.equal(new Set(seenFamilies).size, 8, 'Eight consecutive skips cover every SOS format');
+  assert.equal(family(getReplacementTask(firstSession.reflection, firstSession.ids, 'sos', { storage })), 'breathing');
+  assert.equal(family(getReplacementTask(firstSession.reflection, [firstSession.reflection.id, firstSession.physical.id], 'sos', { storage })), 'breathing', 'Completed families do not constrain the next format');
+  const breath = getReplacementTask(firstSession.reflection, firstSession.ids, 'sos', { storage });
+  assert.equal(family(getReplacementTask(firstSession.reflection, [...firstSession.ids, breath.id], 'sos', { storage })), 'breathing', 'A one-item format stays available after completion');
 
   const practice = generateSessionTasks('practice', { reflectionAspectIndex: 2, storage });
   assert.equal(practice.length, 5);
@@ -83,7 +93,7 @@ try {
   if (practice.filter((task) => task.category === 'economist').length === 1) {
     assert.equal(getReplacementTask(onlyEconomist, practiceIds, 'practice', { storage }).category, 'economist');
   }
-  console.log('SOS category rotation, ID bags, swaps, and five-task practice verified.');
+  console.log('SOS eight-format rotation, ID bags, swaps, and five-task practice verified.');
 } finally {
   await server.close();
 }

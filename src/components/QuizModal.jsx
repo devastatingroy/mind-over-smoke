@@ -33,6 +33,7 @@ export default function QuizModal({
   onSaveVocab,
   savedVocabIds,
   onSwapTask,
+  onAdvanceTask,
   onProgress,
   sosPrompt,
   practicePrompt,
@@ -73,6 +74,7 @@ export default function QuizModal({
   const [quoteSecondsLeft, setQuoteSecondsLeft] = useState(10);
   const bodyScrollRef = useRef(null);
   const inspectorRef = useRef(null);
+  const advanceLockedRef = useRef(false);
 
   const currentQ = questions[currentIndex] || questions[0];
 
@@ -97,6 +99,7 @@ export default function QuizModal({
     setShowScaffold(false);
     setInspectedWord(null);
     setInspectedSource(null);
+    advanceLockedRef.current = false;
     if (bodyScrollRef.current) bodyScrollRef.current.scrollTop = 0;
   }, [currentIndex, currentQ?.id]);
 
@@ -284,7 +287,10 @@ export default function QuizModal({
 
   // Next question or finish
   const handleNext = () => {
+    if (advanceLockedRef.current) return;
+    advanceLockedRef.current = true;
     if (currentIndex < questions.length - 1) {
+      onAdvanceTask?.(currentIndex, secondsLeft);
       setCurrentIndex((prev) => prev + 1);
     } else {
       setIsSessionFinished(true);
@@ -423,22 +429,21 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
-  const isLastSosTask = mode === 'sos' && currentIndex === questions.length - 1;
-  const swapButton = onSwapTask && (currentQ.category !== 'reflection' || (mode === 'sos' && !isLastSosTask)) && !isSessionFinished && !isAnswered && (
+  const swapButton = onSwapTask && (mode === 'sos' || currentQ.category !== 'reflection') && !isSessionFinished && !isAnswered && (
     <button
       type="button"
       onClick={() => onSwapTask(currentIndex)}
       className="w-full min-h-11 px-4 py-3 bg-white hover:bg-[#F5F2EB] text-stone-900 border border-stone-400 hover:border-stone-900 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
-      title={mode === 'sos' && !isLastSosTask ? '跳到下一类未完成任务，当前题不计为完成' : '更换当前题目，不计为完成'}
+      title={mode === 'sos' ? '切换到下一种题型，当前题不计为完成' : '更换当前题目，不计为完成'}
     >
       <Shuffle className="w-4 h-4 text-[#8C1D24]" aria-hidden="true" />
-      <span>{isLastSosTask ? '换一道同类题' : '换下一题'}</span>
+      <span>换下一题</span>
     </button>
   );
 
   return (
     <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-      <div className="bg-[#FAF8F5] text-[#111827] rounded-2xl w-full max-w-xl border border-[#E5E0D8] shadow-xl overflow-hidden flex flex-col my-auto max-h-[94vh]">
+      <div className="bg-[#FAF8F5] text-[#111827] rounded-2xl w-full max-w-xl border border-[#E5E0D8] shadow-xl overflow-hidden flex flex-col my-auto max-h-[94vh] max-h-[94dvh]">
         
         {/* Top Masthead: Editorial Monolith */}
         <div className="bg-white px-5 py-3.5 border-b border-[#E5E0D8] flex items-center justify-between">
@@ -491,7 +496,7 @@ export default function QuizModal({
         </div>}
 
         {/* Modal Main Body */}
-        <div ref={bodyScrollRef} className="p-5 sm:p-6 overflow-y-auto space-y-5">
+        <div ref={bodyScrollRef} className="min-h-0 p-5 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
           {!isSessionFinished ? (
             showPracticeIntro && practicePrompt ? (
               <ReflectionQuestion prompt={practicePrompt} onSwapAspect={onSwapPracticeAspect} onContinue={() => setShowPracticeIntro(false)} />
@@ -516,7 +521,7 @@ export default function QuizModal({
                   )}
                 </div>
               )}
-              {currentQ.category !== 'film_quote' && swapButton}
+              {swapButton}
               {/* Category Subhead */}
               <div className="flex items-center justify-between text-xs text-stone-500 pb-1 border-b border-stone-200/80">
                 <div className="flex items-center space-x-1.5 font-mono text-[11px] tracking-wide text-stone-600">
@@ -1151,14 +1156,6 @@ export default function QuizModal({
                     </div>
                   )}
 
-                  {/* Next Step Action Button */}
-                  <button
-                    onClick={handleNext}
-                    className="w-full py-4 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-bold text-sm tracking-wide transition flex items-center justify-center space-x-2 cursor-pointer shadow-sm"
-                  >
-                    <span>{currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
                 </div>
               )}
             </>
@@ -1195,6 +1192,17 @@ export default function QuizModal({
             </div>
           )}
         </div>
+        {isAnswered && !isSessionFinished && currentQ.category !== 'film_quote' && (
+          <div className="shrink-0 border-t border-[#E5E0D8] bg-[#FAF8F5] px-5 py-3 sm:px-6">
+            <button
+              onClick={handleNext}
+              className="w-full min-h-11 py-3 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-bold text-sm tracking-wide transition flex items-center justify-center space-x-2 cursor-pointer shadow-sm"
+            >
+              <span>{currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

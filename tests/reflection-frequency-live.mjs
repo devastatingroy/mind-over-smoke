@@ -3,8 +3,8 @@ import fs from 'node:fs';
 import puppeteer from 'puppeteer-core';
 
 const browserPath = [
-  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe',
-  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+  'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
 ].find(fs.existsSync);
 assert.ok(browserPath);
 const browser = await puppeteer.launch({ executablePath: browserPath, headless: true, args: ['--no-sandbox'] });
@@ -50,11 +50,21 @@ try {
     currentIndex: 0, secondsLeft: 180, practiceIntroDismissed: true
   })));
   await page.goto(siteUrl, { waitUntil: 'networkidle0' });
-  for (const category of ['reflection', 'economist', 'physical']) {
+  for (const category of ['reflection', 'breathing', 'film_quote']) {
     await click('换下一题');
     await page.waitForFunction((expected) => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).questions[0].category === expected, {}, category);
     assert.equal(await page.evaluate(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex), 0);
   }
+
+  await page.goto(dashboardUrl, { waitUntil: 'networkidle0' });
+  await page.evaluate(() => sessionStorage.setItem('mind_over_smoke_active_session_v2', JSON.stringify({
+    mode: 'sos', questions: [{ id: 'phys_1' }, { id: 'reflection_0' }, { id: 'q30' }],
+    currentIndex: 2, secondsLeft: 120, practiceIntroDismissed: true
+  })));
+  await page.goto(siteUrl, { waitUntil: 'networkidle0' });
+  await click('换下一题');
+  await page.waitForFunction(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).questions[2].type === 'zh_to_en');
+  assert.equal(await page.evaluate(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex), 2);
 
   await page.goto(dashboardUrl, { waitUntil: 'networkidle0' });
   await click('日常精读（5项）');
@@ -70,7 +80,7 @@ try {
   assert.ok(await page.$('#economist-translation-answer'));
   assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /不买一包烟/);
   assert.deepEqual(errors, []);
-  console.log(JSON.stringify({ production: siteUrl, viewport: '390×844 simulated Edge', sos: 'physical + reflection + rotating third', skipCycle: 'reflection -> economist -> physical without completion', practice: 'five items including reflection', newQuestion: 'econ_trans_30', pageErrors: errors.length }));
+  console.log(JSON.stringify({ production: siteUrl, viewport: '390×844 simulated Chrome', sos: 'three completions', skipCycle: 'reflection -> breathing -> film quote; last slot crosses format', practice: 'five items including reflection', newQuestion: 'econ_trans_30', pageErrors: errors.length }));
 } finally {
   await browser.close();
 }
