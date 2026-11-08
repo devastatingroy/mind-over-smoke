@@ -429,6 +429,8 @@ export default function QuizModal({
   };
 
   const meta = getCategoryMeta();
+  const nextActionLabel = currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救';
+  const showAnsweredAction = isAnswered && !isSessionFinished;
   const swapButton = onSwapTask && (mode === 'sos' || currentQ.category !== 'reflection') && !isSessionFinished && !isAnswered && (
     <button
       type="button"
@@ -442,8 +444,8 @@ export default function QuizModal({
   );
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 overflow-y-auto">
-      <div className="bg-[#FAF8F5] text-[#111827] rounded-2xl w-full max-w-xl border border-[#E5E0D8] shadow-xl overflow-hidden flex flex-col my-auto max-h-[94vh] max-h-[94dvh]">
+    <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-start sm:items-center justify-center p-3 sm:p-5 overflow-y-auto">
+      <div className="quiz-modal-panel bg-[#FAF8F5] text-[#111827] rounded-2xl w-full max-w-xl border border-[#E5E0D8] shadow-xl overflow-hidden flex flex-col sm:my-auto">
         
         {/* Top Masthead: Editorial Monolith */}
         <div className="bg-white px-5 py-3.5 border-b border-[#E5E0D8] flex items-center justify-between">
@@ -494,6 +496,20 @@ export default function QuizModal({
             />
           </div>
         </div>}
+
+        {showAnsweredAction && (
+          <div data-quiz-continue="top" className="shrink-0 border-b border-[#E5E0D8] bg-[#FAF8F5] px-5 py-2.5 sm:px-6">
+            <button
+              type="button"
+              onClick={handleNext}
+              aria-label={`${nextActionLabel}（顶部操作）`}
+              className="w-full min-h-11 px-4 py-2.5 bg-white hover:bg-[#F5F2EB] text-stone-900 border border-stone-400 rounded-xl font-semibold text-sm transition flex items-center justify-center gap-2 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+            >
+              <span>{nextActionLabel}</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </button>
+          </div>
+        )}
 
         {/* Modal Main Body */}
         <div ref={bodyScrollRef} className="min-h-0 p-5 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
@@ -592,7 +608,7 @@ export default function QuizModal({
                   )}
                   {quotePhase === 'revealed' && (
                     <button type="button" onClick={handleNext} className="w-full min-h-11 p-3 bg-stone-900 text-white rounded-xl font-semibold text-sm hover:bg-black cursor-pointer">
-                      {currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}
+                      {nextActionLabel}
                     </button>
                   )}
                 </div>
@@ -1192,14 +1208,16 @@ export default function QuizModal({
             </div>
           )}
         </div>
-        {isAnswered && !isSessionFinished && currentQ.category !== 'film_quote' && (
-          <div className="shrink-0 border-t border-[#E5E0D8] bg-[#FAF8F5] px-5 py-3 sm:px-6">
+        {showAnsweredAction && currentQ.category !== 'film_quote' && (
+          <div data-quiz-continue="bottom" className="shrink-0 border-t border-[#E5E0D8] bg-[#FAF8F5] px-5 py-3 sm:px-6">
             <button
+              type="button"
               onClick={handleNext}
+              aria-label={`${nextActionLabel}（底部操作）`}
               className="w-full min-h-11 py-3 bg-stone-900 hover:bg-black active:scale-[0.99] text-white rounded-xl font-bold text-sm tracking-wide transition flex items-center justify-center space-x-2 cursor-pointer shadow-sm"
             >
-              <span>{currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救'}</span>
-              <ArrowRight className="w-4 h-4" />
+              <span>{nextActionLabel}</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
         )}

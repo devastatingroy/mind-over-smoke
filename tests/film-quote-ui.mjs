@@ -57,6 +57,11 @@ try {
     await click(page, '核对原句');
     assert.match(await page.$eval('body', (node) => node.innerText), /Fear causes hesitation/);
     assert.doesNotMatch(await page.$eval('body', (node) => node.innerText), /VERDICT · 判词/);
+    assert.equal(await page.$eval('[data-quiz-continue="top"] button', (button) => {
+      const rect = button.getBoundingClientRect();
+      return button.innerText.includes('完成本次急救') && rect.top >= 0 && rect.bottom <= innerHeight &&
+        button.contains(document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2));
+    }), true, 'Film quote should also expose the top completion action after reveal');
     await page.screenshot({ path: path.join(outputDir, `film-revealed-${viewport.width}.png`) });
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     assert.equal(overflow, false, `Horizontal overflow at ${viewport.width}px`);

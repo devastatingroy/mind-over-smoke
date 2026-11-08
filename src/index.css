@@ -44,3 +44,14 @@
     transform: translateY(0);
   }
 }
+
+/* Keep the quiz panel inside the viewport while mobile browser bars are visible. */
+.quiz-modal-panel {
+  max-height: 94vh;
+}
+
+@supports (height: 100svh) {
+  .quiz-modal-panel {
+    max-height: 94svh;
+  }
+}
