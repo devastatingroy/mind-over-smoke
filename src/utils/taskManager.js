@@ -4,6 +4,7 @@ import tangTranslationTasks from '../data/tang_translation.json';
 import physicalTasks from '../data/physical_tasks.json';
 import breathingTasks from '../data/breathing_tasks.json';
 import filmQuotes from '../data/film_quotes.json';
+import microTasks from '../data/micro_tasks.json';
 import { REFLECTION_ASPECTS } from './reflection';
 
 const ROTATION_KEY = 'mind_over_smoke_task_rotation_v1';
@@ -22,15 +23,20 @@ export const reflectionTasks = REFLECTION_ASPECTS.map((aspect, aspectIndex) => (
 const thirdPools = {
   breathing: breathingTasks,
   film_quote: filmQuotes,
+  visual_imagery: microTasks.filter((task) => task.category === 'visual_imagery'),
   poetry_en_to_zh: tangTranslationTasks.filter((task) => task.mode === 'en_to_zh'),
   poetry_zh_to_en: tangTranslationTasks.filter((task) => task.mode === 'zh_to_en'),
   economist_cloze: normalizedEconomistQuestions,
   economist_zh_to_en: economistTranslationTasks
 };
-const practicePools = { physical: physicalTasks, ...thirdPools };
+const practicePools = {
+  physical: physicalTasks,
+  ...thirdPools,
+  observation_judgment: microTasks.filter((task) => task.category === 'observation_judgment')
+};
 const sosPools = { physical: physicalTasks, reflection: reflectionTasks, ...thirdPools };
 const sosFamilies = [
-  'physical', 'reflection', 'breathing', 'film_quote',
+  'physical', 'reflection', 'breathing', 'film_quote', 'visual_imagery',
   'poetry_en_to_zh', 'poetry_zh_to_en', 'economist_cloze', 'economist_zh_to_en'
 ];
 
@@ -74,6 +80,8 @@ function thirdFamily(task) {
   if (task.category === 'physical') return 'physical';
   if (task.category === 'breathing') return 'breathing';
   if (task.category === 'film_quote') return 'film_quote';
+  if (task.category === 'visual_imagery') return 'visual_imagery';
+  if (task.category === 'observation_judgment') return 'observation_judgment';
   if (task.category === 'translation') return `poetry_${task.mode}`;
   if (task.type === 'zh_to_en') return 'economist_zh_to_en';
   return 'economist_cloze';
@@ -100,6 +108,7 @@ export const allTasks = [
   ...physicalTasks,
   ...breathingTasks,
   ...filmQuotes,
+  ...microTasks,
   ...reflectionTasks
 ];
 
@@ -111,6 +120,8 @@ export const taskStats = {
   physical: physicalTasks.length,
   breathing: breathingTasks.length,
   filmQuote: filmQuotes.length,
+  visualImagery: thirdPools.visual_imagery.length,
+  observationJudgment: practicePools.observation_judgment.length,
   reflection: reflectionTasks.length
 };
 

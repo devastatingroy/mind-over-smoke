@@ -65,7 +65,7 @@ try {
     page.on('pageerror', (error) => errors.push(error.message));
     await page.setViewport(viewport);
     await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
-    await click(page, '启动 3 分钟急救干预');
+    await click(page, '开始 3 分钟急救');
     const opening = await readSession(page);
     assert.equal(opening.questions.length, 3);
     assert.equal(opening.questions.filter((task) => task.category === 'physical').length, 1);
@@ -74,7 +74,7 @@ try {
     await loadSession(page, ['phys_1', 'reflection_0', 'econ_trans_13'], 0, 180);
     const initialInterceptions = await page.evaluate(() => JSON.parse(localStorage.getItem('mind_over_smoke_state_v2')).totalCravingsIntercepted);
     for (const expected of [
-      'reflection', 'breathing', 'film_quote', 'poetry_en_to_zh',
+      'reflection', 'breathing', 'film_quote', 'visual_imagery', 'poetry_en_to_zh',
       'poetry_zh_to_en', 'economist_cloze', 'economist_zh_to_en', 'physical'
     ]) await swapAndExpect(page, 0, expected);
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('mind_over_smoke_state_v2')).totalCravingsIntercepted), initialInterceptions);
@@ -115,7 +115,7 @@ try {
     assert.equal(family((await readSession(page)).questions[2]), 'film_quote');
     await page.reload({ waitUntil: 'networkidle0' });
     assert.equal(family((await readSession(page)).questions[2]), 'film_quote');
-    for (const expected of ['poetry_en_to_zh', 'poetry_zh_to_en', 'economist_cloze', 'economist_zh_to_en']) await swapAndExpect(page, 2, expected);
+    for (const expected of ['visual_imagery', 'poetry_en_to_zh', 'poetry_zh_to_en', 'economist_cloze', 'economist_zh_to_en']) await swapAndExpect(page, 2, expected);
     await click(page, '暂时想不出？看参考译文');
     await page.evaluate(() => {
       const finish = [...document.querySelectorAll('.fixed.inset-0 button')].find((button) => button.innerText.includes('完成本次急救'));
@@ -126,10 +126,25 @@ try {
     assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('mind_over_smoke_state_v2')).totalCravingsIntercepted), initialInterceptions + 1);
 
     await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
-    await click(page, '日常精读（5项）');
+    await click(page, '日常精读 · 5 项');
     const practice = await readSession(page);
     assert.equal(practice.questions.length, 5);
     assert.equal(practice.questions.filter((task) => task.category === 'reflection').length, 1);
+    await loadSession(page, ['visual_1', 'reflection_0', 'q30'], 0);
+    assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /出门的三个镜头/);
+    if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `visual-imagery-${viewport.width}.png`) });
+    await click(page, '想好了，继续下一项');
+    await page.waitForFunction(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex === 1);
+    await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
+    await page.evaluate(() => sessionStorage.setItem('mind_over_smoke_active_session_v2', JSON.stringify({
+      mode: 'practice', questions: [{ id: 'judgment_5' }, { id: 'reflection_0' }, { id: 'q30' }, { id: 'phys_1' }, { id: 'visual_1' }],
+      currentIndex: 0, secondsLeft: 120, practiceIntroDismissed: true
+    })));
+    await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'networkidle0' });
+    assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /事实与推断/);
+    if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `observation-judgment-${viewport.width}.png`) });
+    await click(page, '想好了，继续下一项');
+    await page.waitForFunction(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex === 1);
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
     assert.ok(overflow <= 1, `Horizontal overflow at ${viewport.width}: ${overflow}`);
     assert.deepEqual(errors, []);

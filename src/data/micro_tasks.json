@@ -1,0 +1,66 @@
+[
+  {
+    "id": "visual_1",
+    "category": "visual_imagery",
+    "type": "visual_imagery",
+    "title": "出门的三个镜头",
+    "prompt": "只在脑中想象：一个远景、一个动作、一个特写，各自会拍到什么？每个镜头说出一样具体的东西。",
+    "example": "楼道尽头的光／手指转动钥匙／鞋带上的线头"
+  },
+  {
+    "id": "visual_2",
+    "category": "visual_imagery",
+    "type": "visual_imagery",
+    "title": "眼前物件的三个细节",
+    "prompt": "看看手边的一件物品，说出它的形状、主要颜色，以及一个容易忽略的细节。",
+    "example": "方形笔记本／深蓝色／封面右下角有一道折痕"
+  },
+  {
+    "id": "visual_3",
+    "category": "visual_imagery",
+    "type": "visual_imagery",
+    "title": "只留下这一帧",
+    "prompt": "想象一段路途画面。如果只能留下其中一帧，你会停在哪一刻？说出画面里看得见的两样东西。",
+    "example": "车窗刚掠过桥面时，玻璃上的雨点和远处的灯"
+  },
+  {
+    "id": "judgment_1",
+    "category": "observation_judgment",
+    "type": "observation_judgment",
+    "title": "剪辑的两种意思",
+    "prompt": "想象一段从车站走出去的画面，只能保留五秒。保留开头和保留结尾分别传达什么？选一个，说出理由。",
+    "example": "开头是犹豫，结尾是出发；我留结尾，因为脚步已走进街道。"
+  },
+  {
+    "id": "judgment_2",
+    "category": "observation_judgment",
+    "type": "observation_judgment",
+    "title": "那件没有买的东西",
+    "prompt": "回想一件最终没买的东西。你因为什么放弃？下次遇到类似商品，会先核实哪一项？不必打开购物页面。",
+    "example": "尺寸说明含糊；下次先核实实际肩宽。"
+  },
+  {
+    "id": "judgment_3",
+    "category": "observation_judgment",
+    "type": "observation_judgment",
+    "title": "先验证一个小问题",
+    "prompt": "假设有人总在车站坐过站。先用一句话说清他的麻烦，再想一个不用做完整应用就能验证需求的办法。",
+    "example": "他看手机时错过下车提醒；先问五位经常通勤的人是否遇到过。"
+  },
+  {
+    "id": "judgment_4",
+    "category": "observation_judgment",
+    "type": "observation_judgment",
+    "title": "把好评说具体",
+    "prompt": "把“这个方案挺好”改成一句可检验的话：在什么场景下好、好在哪里、还要验证什么？",
+    "example": "通勤时能单手操作，比原来少两步，但夜间是否看得清还没测。"
+  },
+  {
+    "id": "judgment_5",
+    "category": "observation_judgment",
+    "type": "observation_judgment",
+    "title": "事实与推断",
+    "prompt": "读这句虚构结论：“新封面上线后点击率涨了，所以新封面更好。”哪一部分只是观察，哪一部分是推断？还缺什么证据？",
+    "example": "点击率上涨是观察；封面更好是推断；还要看同期流量来源是否变化。"
+  }
+]

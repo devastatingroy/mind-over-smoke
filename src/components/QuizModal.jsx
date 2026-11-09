@@ -393,6 +393,12 @@ export default function QuizModal({
     if (currentQ.category === 'film_quote') {
       return { code: 'FILM · RECALL', label: '电影台词背诵', icon: <BookOpen className="w-3.5 h-3.5" /> };
     }
+    if (currentQ.category === 'visual_imagery') {
+      return { code: 'VISUAL · IMAGERY', label: '画面想象', icon: <BookOpen className="w-3.5 h-3.5" /> };
+    }
+    if (currentQ.category === 'observation_judgment') {
+      return { code: 'OBSERVE · REASON', label: '观察与判断', icon: <BookOpen className="w-3.5 h-3.5" /> };
+    }
     if (currentQ.type === 'zh_to_en') {
       return {
         code: 'REASONING · TRANSLATION',
@@ -563,6 +569,27 @@ export default function QuizModal({
                     onContinue={handleNext}
                     continueLabel={currentIndex < questions.length - 1 ? '想过了，继续下一项' : '完成本次急救'}
                   />
+                </div>
+              )}
+
+              {['visual_imagery', 'observation_judgment'].includes(currentQ.category) && (
+                <div className="space-y-4">
+                  <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] space-y-3">
+                    <h2 className="font-serif text-xl font-bold text-stone-900">{currentQ.title}</h2>
+                    <p className="text-sm leading-relaxed text-stone-800">{currentQ.prompt}</p>
+                    <details className="text-xs text-stone-600">
+                      <summary className="cursor-pointer underline underline-offset-4">看一个例子</summary>
+                      <p className="mt-2 leading-relaxed">{currentQ.example}</p>
+                    </details>
+                  </div>
+                  <p className="text-xs text-stone-600">在脑中想或说出来即可，无需填写，也不评分。</p>
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="w-full min-h-11 p-3 bg-stone-900 text-white rounded-xl font-semibold text-sm hover:bg-black cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900"
+                  >
+                    {currentIndex < questions.length - 1 ? '想好了，继续下一项' : mode === 'practice' ? '完成本轮练习' : '完成本次急救'}
+                  </button>
                 </div>
               )}
 
