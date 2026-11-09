@@ -141,7 +141,8 @@ try {
       currentIndex: 0, secondsLeft: 120, practiceIntroDismissed: true
     })));
     await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: 'networkidle0' });
-    assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /事实与推断/);
+    assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /点击率涨了，是封面的功劳吗/);
+    assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /例如：不能/);
     if (screenshotDir) await page.screenshot({ path: path.join(screenshotDir, `observation-judgment-${viewport.width}.png`) });
     await click(page, '想好了，继续下一项');
     await page.waitForFunction(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex === 1);

@@ -577,10 +577,14 @@ export default function QuizModal({
                   <div className="bg-white p-5 rounded-xl border border-[#E5E0D8] space-y-3">
                     <h2 className="font-serif text-xl font-bold text-stone-900">{currentQ.title}</h2>
                     <p className="text-sm leading-relaxed text-stone-800">{currentQ.prompt}</p>
-                    <details className="text-xs text-stone-600">
-                      <summary className="cursor-pointer underline underline-offset-4">看一个例子</summary>
-                      <p className="mt-2 leading-relaxed">{currentQ.example}</p>
-                    </details>
+                    {currentQ.category === 'observation_judgment' ? (
+                      <p className="text-xs leading-relaxed text-stone-600">例如：{currentQ.example}</p>
+                    ) : (
+                      <details className="text-xs text-stone-600">
+                        <summary className="cursor-pointer underline underline-offset-4">看一个例子</summary>
+                        <p className="mt-2 leading-relaxed">{currentQ.example}</p>
+                      </details>
+                    )}
                   </div>
                   <p className="text-xs text-stone-600">在脑中想或说出来即可，无需填写，也不评分。</p>
                   <button

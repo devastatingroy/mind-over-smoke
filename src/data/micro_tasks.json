@@ -27,40 +27,40 @@
     "id": "judgment_1",
     "category": "observation_judgment",
     "type": "observation_judgment",
-    "title": "剪辑的两种意思",
-    "prompt": "想象一段从车站走出去的画面，只能保留五秒。保留开头和保留结尾分别传达什么？选一个，说出理由。",
-    "example": "开头是犹豫，结尾是出发；我留结尾，因为脚步已走进街道。"
+    "title": "前五秒还是后五秒",
+    "prompt": "假设你拍到一个人走出车站的十秒视频，只能保留五秒。你会留前半段还是后半段？说出想保留的一个动作。",
+    "example": "留后半段：他推开车站的门，走进阳光里。"
   },
   {
     "id": "judgment_2",
     "category": "observation_judgment",
     "type": "observation_judgment",
-    "title": "那件没有买的东西",
-    "prompt": "回想一件最终没买的东西。你因为什么放弃？下次遇到类似商品，会先核实哪一项？不必打开购物页面。",
-    "example": "尺寸说明含糊；下次先核实实际肩宽。"
+    "title": "想买又没买",
+    "prompt": "想起一件你本来想买、最后没买的东西。只说出一个让你放弃的具体原因，不必打开购物页面。",
+    "example": "那件外套没有写清肩宽，怕买回来不合身。"
   },
   {
     "id": "judgment_3",
     "category": "observation_judgment",
     "type": "observation_judgment",
-    "title": "先验证一个小问题",
-    "prompt": "假设有人总在车站坐过站。先用一句话说清他的麻烦，再想一个不用做完整应用就能验证需求的办法。",
-    "example": "他看手机时错过下车提醒；先问五位经常通勤的人是否遇到过。"
+    "title": "先问一个人",
+    "prompt": "假设朋友说他坐车时常常坐过站。你会问另一位经常坐车的人什么问题，看看他是否也有这个麻烦？",
+    "example": "过去一周，你有没有因为看手机而坐过站？"
   },
   {
     "id": "judgment_4",
     "category": "observation_judgment",
     "type": "observation_judgment",
-    "title": "把好评说具体",
-    "prompt": "把“这个方案挺好”改成一句可检验的话：在什么场景下好、好在哪里、还要验证什么？",
-    "example": "通勤时能单手操作，比原来少两步，但夜间是否看得清还没测。"
+    "title": "哪里好，具体说",
+    "prompt": "想一个你用过的工具。别只说“挺好用”，说出你亲自用过的一个具体优点。",
+    "example": "打开页面后点一下就能开始，不用先填表。"
   },
   {
     "id": "judgment_5",
     "category": "observation_judgment",
     "type": "observation_judgment",
-    "title": "事实与推断",
-    "prompt": "读这句虚构结论：“新封面上线后点击率涨了，所以新封面更好。”哪一部分只是观察，哪一部分是推断？还缺什么证据？",
-    "example": "点击率上涨是观察；封面更好是推断；还要看同期流量来源是否变化。"
+    "title": "点击率涨了，是封面的功劳吗",
+    "prompt": "假设一个视频换封面后，点击率从 2% 涨到 4%。能立刻认定是新封面带来的吗？说出一个别的可能原因。",
+    "example": "不能。也许这次视频被推荐给了更多本来就感兴趣的人。"
   }
 ]
