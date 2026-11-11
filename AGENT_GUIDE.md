@@ -170,6 +170,8 @@ SOS 的「换下一题」只替换当前槽位，不改变 `currentIndex`；下�
 
 诗词题揭晓后只呈现原诗、参考译文、已有英汉对照和中性提示。旧题库仍含 `science_note` 与 `punchline` 字段，但诗词界面不展示；新题无需添加这两个字段或把诗句牵强联系到吸烟。
 
+原创香烟论断汉译英题位于 `src/data/economist_translation.json`。中文题干应先符合自然汉语表达，再据此写英文参考；修改时连同 `prompt`、`scaffold_hint`、`key_phrases` 和 `analysis` 一起核对，避免旧提示与新题干错位。
+
 ### 5.2 经济学人题 (`src/data/questions.json`)
 ```json
 {
