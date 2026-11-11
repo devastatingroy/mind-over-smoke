@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import SosPanicButton from './components/SosPanicButton';
 import ContractDashboard from './components/ContractDashboard';
@@ -21,6 +21,9 @@ import {
 } from './utils/storage';
 import { createChallenge, getChallengeView, recordReport } from './utils/challenge';
 import { ChevronRight, RotateCcw } from 'lucide-react';
+
+const HISTORY_LIMIT = 50;
+const liveEntry = (task, entryId = 1) => ({ entryId, task, outcome: 'live' });
 
 export default function App() {
   const [state, setState] = useState(getInitialState);
@@ -66,6 +69,29 @@ export default function App() {
     secondsLeft: savedSession?.secondsLeft ?? 180,
     practiceIntroDismissed: savedSession?.practiceIntroDismissed ?? true
   }));
+  const [questionHistory, setQuestionHistory] = useState(() => {
+    const restored = savedSession?.history;
+    const currentTask = currentQuizQuestions[savedSession?.currentIndex || 0];
+    return Array.isArray(restored) && restored.length && restored.at(-1)?.task?.id === currentTask?.id
+      ? restored
+      : currentTask ? [liveEntry(currentTask)] : [];
+  });
+  const historyRef = useRef(questionHistory);
+  const swapLockRef = useRef(false);
+  useEffect(() => { swapLockRef.current = false; }, [currentQuizQuestions]);
+  const updateHistory = (next) => {
+    historyRef.current = next;
+    setQuestionHistory(next);
+  };
+  const appendHistory = (task, outcome, result) => {
+    const previous = historyRef.current;
+    const entryId = (previous.at(-1)?.entryId || 0) + 1;
+    updateHistory([
+      ...previous.slice(-(HISTORY_LIMIT - 1), -1),
+      { ...previous.at(-1), outcome, ...(result ? { result } : {}) },
+      liveEntry(task, entryId)
+    ]);
+  };
   const [sosPrompt, setSosPrompt] = useState(() => getSavedSession()?.sosPrompt || null);
   const [practicePrompt, setPracticePrompt] = useState(() => savedSession?.practicePrompt || null);
 
@@ -99,6 +125,7 @@ export default function App() {
     const nextSosPrompt = null;
     const nextPracticePrompt = null;
     setCurrentQuizQuestions(tasks);
+    updateHistory([liveEntry(tasks[0])]);
     setActiveQuizMode(mode);
     setSosPrompt(nextSosPrompt);
     setPracticePrompt(nextPracticePrompt);
@@ -106,6 +133,7 @@ export default function App() {
     saveActiveSession({
       mode,
       questions: tasks,
+      history: [liveEntry(tasks[0])],
       currentIndex: 0,
       secondsLeft: 180,
       practiceIntroDismissed: true,
@@ -121,6 +149,7 @@ export default function App() {
     saveActiveSession({
       mode: activeQuizMode,
       questions: currentQuizQuestions,
+      history: historyRef.current,
       ...sessionProgress,
       sosPrompt: kind === 'sos' ? nextPrompt : sosPrompt,
       practicePrompt: kind === 'practice' ? nextPrompt : practicePrompt
@@ -129,8 +158,10 @@ export default function App() {
 
   // SOS changes the displayed format independently of completed task types.
   const handleSwapTask = (indexToSwap, { stayInCategory = false } = {}) => {
+    if (swapLockRef.current) return;
     const taskToReplace = currentQuizQuestions[indexToSwap];
     if (!taskToReplace) return;
+    swapLockRef.current = true;
     const currentAspect = currentQuizQuestions[indexToSwap]?.aspectIndex;
     let nextAspect = null;
     if (taskToReplace.category === 'reflection' && stayInCategory) {
@@ -148,10 +179,12 @@ export default function App() {
       : getReplacementTask(taskToReplace, existingIds, activeQuizMode || 'sos');
     const next = [...currentQuizQuestions];
     next[indexToSwap] = replacement;
+    appendHistory(replacement, 'skipped');
     setCurrentQuizQuestions(next);
     saveActiveSession({
       mode: activeQuizMode || 'sos',
       questions: next,
+      history: historyRef.current,
       ...sessionProgress,
       currentIndex: indexToSwap,
       sosPrompt,
@@ -159,22 +192,25 @@ export default function App() {
     });
   };
 
-  const handleAdvanceTask = (completedIndex, secondsLeft) => {
-    if (activeQuizMode !== 'sos') return;
+  const handleAdvanceTask = (completedIndex, secondsLeft, result) => {
     const completedTask = currentQuizQuestions[completedIndex];
     if (!completedTask || completedIndex >= currentQuizQuestions.length - 1) return;
     const next = [...currentQuizQuestions];
-    next[completedIndex + 1] = getReplacementTask(
-      completedTask,
-      next.slice(0, completedIndex + 1).map((task) => task.id),
-      'sos'
-    );
+    if (activeQuizMode === 'sos') {
+      next[completedIndex + 1] = getReplacementTask(
+        completedTask,
+        next.slice(0, completedIndex + 1).map((task) => task.id),
+        'sos'
+      );
+    }
+    appendHistory(next[completedIndex + 1], 'completed', result);
     const progress = { ...sessionProgress, currentIndex: completedIndex + 1, secondsLeft };
     setCurrentQuizQuestions(next);
     setSessionProgress(progress);
     saveActiveSession({
       mode: 'sos',
       questions: next,
+      history: historyRef.current,
       ...progress,
       sosPrompt,
       practicePrompt
@@ -188,6 +224,7 @@ export default function App() {
       saveActiveSession({
         mode: activeQuizMode,
         questions: currentQuizQuestions,
+        history: historyRef.current,
         currentIndex,
         secondsLeft,
         practiceIntroDismissed,
@@ -323,6 +360,7 @@ export default function App() {
         <QuizModal
           mode={activeQuizMode}
           questions={currentQuizQuestions}
+          history={questionHistory}
           initialIndex={sessionProgress.currentIndex}
           initialSecondsLeft={sessionProgress.secondsLeft}
           onProgress={handleQuizProgress}

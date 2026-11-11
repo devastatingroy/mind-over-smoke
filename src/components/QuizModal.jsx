@@ -3,6 +3,7 @@ import {
   X, 
   Timer, 
   Check, 
+  ArrowLeft,
   ArrowRight, 
   TrendingDown,
   Dumbbell,
@@ -22,10 +23,54 @@ import {
 import { lookupWord } from '../utils/phoneticDict';
 import { splitInteractiveText } from '../utils/wordTokens';
 import ReflectionQuestion from './ReflectionQuestion';
+import { REFLECTION_ASPECTS } from '../utils/reflection';
+
+function ReviewCard({ entry }) {
+  const task = entry.task;
+  const result = entry.result;
+  const completed = entry.outcome === 'completed';
+  const title = task.title || (task.category === 'film_quote' ? `《${task.film}》` : task.theme || '认知挑战');
+  const questionText = [
+    task.chinese_claim, task.chinese_verse, task.english_text, task.passage,
+    task.prompt, task.instruction, task.quote
+  ].filter(Boolean);
+  const answer = completed && (task.reference_translation || task.correct_answer || task.blank);
+  const givenAnswer = result?.typeInAnswer || result?.selectedOption;
+
+  return (
+    <section aria-label="回顾上一题" className="space-y-4">
+      <div className="flex items-center justify-between gap-3">
+        <h2 className="font-serif text-xl font-bold text-stone-900">{title}</h2>
+        <span className="shrink-0 rounded border border-stone-300 px-2 py-1 text-xs text-stone-600">
+          {completed ? '已完成' : '已跳过'}
+        </span>
+      </div>
+      {task.category === 'reflection' && (
+        <p className="text-sm text-stone-700">
+          最近一段，在你能自己安排的时间里，留给{REFLECTION_ASPECTS[task.aspectIndex]}的时间够用吗？
+        </p>
+      )}
+      {questionText.length > 0 && (
+        <div className="space-y-3 rounded-xl border border-[#E5E0D8] bg-white p-4 text-sm leading-relaxed text-stone-900">
+          {questionText.map((line, index) => <p key={index} className="whitespace-pre-line">{line}</p>)}
+        </div>
+      )}
+      {completed && (givenAnswer || answer) && (
+        <div className="space-y-2 rounded-xl border border-[#E5E0D8] bg-[#F5F2EB] p-4 text-sm text-stone-800">
+          {givenAnswer && <p>你的作答：{givenAnswer}</p>}
+          {answer && <p>参考答案：{answer}</p>}
+          {task.full_verse && <p className="whitespace-pre-line">{task.full_verse}</p>}
+        </div>
+      )}
+      <p className="text-xs text-stone-600">回顾只供查看，不改变本轮进度。</p>
+    </section>
+  );
+}
 
 export default function QuizModal({ 
   mode, 
   questions, 
+  history = [],
   initialIndex = 0,
   initialSecondsLeft = 180,
   onClose, 
@@ -54,6 +99,7 @@ export default function QuizModal({
   const [isSessionFinished, setIsSessionFinished] = useState(false);
   const [showPracticeIntro, setShowPracticeIntro] = useState(mode === 'practice' && !initialIntroDismissed && Boolean(practicePrompt));
   const [showSosReflection, setShowSosReflection] = useState(mode === 'sos' && Boolean(sosPrompt) && initialIndex === 0);
+  const [reviewIndex, setReviewIndex] = useState(null);
 
   // Translation & Word Phonetic inspection state
   const [showTranslation, setShowTranslation] = useState(false);
@@ -290,7 +336,9 @@ export default function QuizModal({
     if (advanceLockedRef.current) return;
     advanceLockedRef.current = true;
     if (currentIndex < questions.length - 1) {
-      onAdvanceTask?.(currentIndex, secondsLeft);
+      onAdvanceTask?.(currentIndex, secondsLeft, {
+        selectedOption, typeInAnswer, isAnswered, isCorrect, isRevealed
+      });
       setCurrentIndex((prev) => prev + 1);
     } else {
       setIsSessionFinished(true);
@@ -438,6 +486,7 @@ export default function QuizModal({
   const isPoetryTask = currentQ.category === 'translation' || currentQ.type === 'translation' || currentQ.category === 'poetry' || currentQ.type === 'poetry';
   const nextActionLabel = currentIndex < questions.length - 1 ? '继续下一项阻断' : '完成本次急救';
   const showAnsweredAction = isAnswered && !isSessionFinished;
+  const isReviewing = reviewIndex !== null;
   const swapButton = onSwapTask && (mode === 'sos' || currentQ.category !== 'reflection') && !isSessionFinished && !isAnswered && (
     <button
       type="button"
@@ -504,7 +553,32 @@ export default function QuizModal({
           </div>
         </div>}
 
-        {showAnsweredAction && (
+        {!showPracticeIntro && !isSessionFinished && history.length > 1 && (
+          <nav aria-label="题目回顾" className="shrink-0 border-b border-[#E5E0D8] bg-white px-5 py-2 sm:px-6">
+            <div className="flex items-center gap-2">
+              <button type="button" onClick={() => setReviewIndex(isReviewing ? Math.max(0, reviewIndex - 1) : history.length - 2)}
+                disabled={reviewIndex === 0}
+                className="min-h-11 flex-1 rounded-lg border border-stone-300 px-3 text-sm font-medium text-stone-900 disabled:opacity-40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900">
+                <ArrowLeft className="mr-1 inline h-4 w-4" aria-hidden="true" />上一题
+              </button>
+              {isReviewing && (
+                <button type="button" onClick={() => setReviewIndex(reviewIndex + 1 >= history.length - 1 ? null : reviewIndex + 1)}
+                  className="min-h-11 flex-1 rounded-lg border border-stone-300 px-3 text-sm font-medium text-stone-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900">
+                  下一条<ArrowRight className="ml-1 inline h-4 w-4" aria-hidden="true" />
+                </button>
+              )}
+              {isReviewing && (
+                <button type="button" onClick={() => setReviewIndex(null)}
+                  className="min-h-11 flex-1 rounded-lg bg-stone-900 px-2 text-sm font-medium text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900">
+                  返回当前题
+                </button>
+              )}
+            </div>
+            {isReviewing && <p className="mt-1 text-center text-xs text-stone-600">回顾中 · {reviewIndex + 1}/{history.length - 1}</p>}
+          </nav>
+        )}
+
+        {showAnsweredAction && !isReviewing && (
           <div data-quiz-continue="top" className="shrink-0 border-b border-[#E5E0D8] bg-[#FAF8F5] px-5 py-2.5 sm:px-6">
             <button
               type="button"
@@ -520,7 +594,7 @@ export default function QuizModal({
 
         {/* Modal Main Body */}
         <div ref={bodyScrollRef} className="min-h-0 p-5 sm:p-6 overflow-y-auto overscroll-contain space-y-5">
-          {!isSessionFinished ? (
+          {isReviewing ? <ReviewCard entry={history[reviewIndex]} /> : !isSessionFinished ? (
             showPracticeIntro && practicePrompt ? (
               <ReflectionQuestion prompt={practicePrompt} onSwapAspect={onSwapPracticeAspect} onContinue={() => setShowPracticeIntro(false)} />
             ) : (
@@ -1247,7 +1321,7 @@ export default function QuizModal({
             </div>
           )}
         </div>
-        {showAnsweredAction && currentQ.category !== 'film_quote' && (
+        {showAnsweredAction && !isReviewing && currentQ.category !== 'film_quote' && (
           <div data-quiz-continue="bottom" className="shrink-0 border-t border-[#E5E0D8] bg-[#FAF8F5] px-5 py-3 sm:px-6">
             <button
               type="button"
