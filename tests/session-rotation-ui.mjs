@@ -71,7 +71,7 @@ try {
     assert.equal(opening.questions.filter((task) => task.category === 'physical').length, 1);
     assert.equal(opening.questions.filter((task) => task.category === 'reflection').length, 1);
 
-    await loadSession(page, ['phys_1', 'reflection_0', 'econ_trans_13'], 0, 180);
+    await loadSession(page, ['phys_1', 'reflection_0', 'econ_trans_03'], 0, 180);
     const initialInterceptions = await page.evaluate(() => JSON.parse(localStorage.getItem('mind_over_smoke_state_v2')).totalCravingsIntercepted);
     for (const expected of [
       'reflection', 'breathing', 'film_quote', 'visual_imagery', 'poetry_en_to_zh',
@@ -103,7 +103,7 @@ try {
     assert.equal(family((await readSession(page)).questions[2]), 'reflection');
     await swapAndExpect(page, 2, 'breathing');
 
-    await loadSession(page, ['reflection_0', 'phys_1', 'econ_trans_13'], 0);
+    await loadSession(page, ['reflection_0', 'phys_1', 'econ_trans_03'], 0);
     await click(page, '想过了，继续下一项');
     await page.waitForFunction(() => JSON.parse(sessionStorage.getItem('mind_over_smoke_active_session_v2')).currentIndex === 1);
     assert.equal(family((await readSession(page)).questions[1]), 'breathing', 'Advance overwrites the future seed');

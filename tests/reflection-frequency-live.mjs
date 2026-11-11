@@ -46,7 +46,7 @@ try {
 
   await page.goto(dashboardUrl, { waitUntil: 'networkidle0' });
   await page.evaluate(() => sessionStorage.setItem('mind_over_smoke_active_session_v2', JSON.stringify({
-    mode: 'sos', questions: [{ id: 'phys_1' }, { id: 'reflection_0' }, { id: 'econ_trans_13' }],
+    mode: 'sos', questions: [{ id: 'phys_1' }, { id: 'reflection_0' }, { id: 'econ_trans_03' }],
     currentIndex: 0, secondsLeft: 180, practiceIntroDismissed: true
   })));
   await page.goto(siteUrl, { waitUntil: 'networkidle0' });
@@ -74,13 +74,13 @@ try {
 
   await page.goto(dashboardUrl, { waitUntil: 'networkidle0' });
   await page.evaluate(() => sessionStorage.setItem('mind_over_smoke_active_session_v2', JSON.stringify({
-    mode: 'sos', questions: [{ id: 'econ_trans_30' }], currentIndex: 0, secondsLeft: 180
+    mode: 'sos', questions: [{ id: 'econ_trans_28' }], currentIndex: 0, secondsLeft: 180
   })));
   await page.goto(siteUrl, { waitUntil: 'networkidle0' });
   assert.ok(await page.$('#economist-translation-answer'));
-  assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /不买一包烟/);
+  assert.match(await page.$eval('.fixed.inset-0', (node) => node.innerText), /忠实顾客/);
   assert.deepEqual(errors, []);
-  console.log(JSON.stringify({ production: siteUrl, viewport: '390×844 simulated Chrome', sos: 'three completions', skipCycle: 'reflection -> breathing -> film quote; last slot crosses format', practice: 'five items including reflection', newQuestion: 'econ_trans_30', pageErrors: errors.length }));
+  console.log(JSON.stringify({ production: siteUrl, viewport: '390×844 simulated Chrome', sos: 'three completions', skipCycle: 'reflection -> breathing -> film quote; last slot crosses format', practice: 'five items including reflection', newQuestion: 'econ_trans_28', pageErrors: errors.length }));
 } finally {
   await browser.close();
 }

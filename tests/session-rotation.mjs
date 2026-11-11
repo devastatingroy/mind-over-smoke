@@ -5,9 +5,9 @@ import { createServer } from 'vite';
 const translationBank = JSON.parse(fs.readFileSync('src/data/economist_translation.json', 'utf8'));
 const filmQuotes = JSON.parse(fs.readFileSync('src/data/film_quotes.json', 'utf8'));
 const microTasks = JSON.parse(fs.readFileSync('src/data/micro_tasks.json', 'utf8'));
-assert.equal(translationBank.length, 30);
-assert.equal(new Set(translationBank.map((task) => task.id)).size, 30);
-assert.equal(new Set(translationBank.map((task) => task.chinese_claim)).size, 30);
+assert.equal(translationBank.length, 4);
+assert.equal(new Set(translationBank.map((task) => task.id)).size, translationBank.length);
+assert.equal(new Set(translationBank.map((task) => task.chinese_claim)).size, translationBank.length);
 assert.equal(filmQuotes.length, 27);
 assert.equal(new Set(filmQuotes.map((task) => task.id)).size, filmQuotes.length);
 assert.equal(microTasks.length, 8);
@@ -47,10 +47,10 @@ function family(task) {
 
 try {
   const { generateSessionTasks, getReplacementTask, taskStats } = await server.ssrLoadModule('/src/utils/taskManager.js');
-  assert.equal(taskStats.economistTranslation, 30);
+  assert.equal(taskStats.economistTranslation, translationBank.length);
   assert.equal(taskStats.reflection, 5);
   assert.equal(taskStats.filmQuote, 27);
-  assert.equal(taskStats.total, 275);
+  assert.equal(taskStats.total, 249);
   assert.equal(taskStats.visualImagery, 3);
   assert.equal(taskStats.observationJudgment, 5);
 
@@ -77,7 +77,7 @@ try {
   }
   assert.equal(firstSevenFamilies.size, 7, 'Each third-task type appears once in the first cycle');
   assert.equal(firstFourPhysical.size, 4, 'Physical tasks cycle before repeating');
-  assert.equal(new Set(translatedIds.slice(0, 30)).size, 30, 'All 30 new-form questions rotate before repeating');
+  assert.equal(new Set(translatedIds.slice(0, translationBank.length)).size, translationBank.length, 'All retained questions rotate before repeating');
   assert.equal(new Set(filmIds.slice(0, 25)).size, 25, 'Film lines rotate before repeating');
   let displayed = firstSession.physical;
   const seenFamilies = [];

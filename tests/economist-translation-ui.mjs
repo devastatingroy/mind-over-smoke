@@ -10,7 +10,7 @@ const browserPath = [
 ].find(fs.existsSync);
 assert.ok(browserPath, 'Edge or Chrome is required');
 
-const outputDir = 'C:\\Users\\11300\\.codex\\visualizations\\2026\\11\\06\\01a1ae50-6dea-7720-8ef1-be6a5ad774f6';
+const outputDir = 'C:\\Users\\11300\\.codex\\visualizations\\2026\\11\\11\\01a1c873-da8b-7902-bd5b-891dd0bc74dd';
 fs.mkdirSync(outputDir, { recursive: true });
 const server = await createServer({ server: { host: '127.0.0.1', port: 0, strictPort: false } });
 await server.listen();
@@ -39,8 +39,8 @@ async function loadTask(page, id) {
 
 try {
   const { generateSessionTasks, taskStats } = await server.ssrLoadModule('/src/utils/taskManager.js');
-  assert.equal(taskStats.economist, 130);
-  assert.equal(taskStats.economistTranslation, 30);
+  assert.equal(taskStats.economist, 104);
+  assert.equal(taskStats.economistTranslation, 4);
   let translationCount = 0;
   for (let i = 0; i < 600; i++) {
     const session = generateSessionTasks('sos');
@@ -67,18 +67,18 @@ try {
     page.on('pageerror', (error) => errors.push(error.message));
     await page.setViewport(viewport);
     await page.goto(`http://127.0.0.1:${port}/?mode=dashboard`, { waitUntil: 'networkidle0' });
-    await loadTask(page, 'econ_trans_01');
+    await loadTask(page, 'econ_trans_03');
     assert.match(await page.$eval('body', (element) => element.innerText), /原创论断英译/);
     assert.ok(await page.$('#economist-translation-answer'));
     await clickButton(page, '查看表达提示');
-    assert.match(await page.$eval('body', (element) => element.innerText), /calling/);
+    assert.match(await page.$eval('body', (element) => element.innerText), /before/);
     await page.screenshot({ path: path.join(outputDir, `economist-before-${viewport.width}.png`) });
-    await page.type('#economist-translation-answer', 'A cigarette is not real income.');
+    await page.type('#economist-translation-answer', 'My hand reaches the pack before my mind does.');
     await clickButton(page, '提交并对照参考译文');
     const answered = await page.$eval('body', (element) => element.innerText);
     assert.match(answered, /你的译文/);
     assert.match(answered, /关键表达/);
-    assert.match(answered, /Calling a pack/);
+    assert.match(answered, /When your hand reaches the pack/);
     assert.doesNotMatch(answered, /回答正确/);
     const clickable = await page.$('p [title="点击查看音标与释义"]');
     assert.ok(clickable, 'Reference translation should offer offline word lookup');
@@ -93,7 +93,7 @@ try {
     });
     await page.screenshot({ path: path.join(outputDir, `economist-feedback-${viewport.width}.png`) });
 
-    await loadTask(page, 'econ_trans_02');
+    await loadTask(page, 'econ_trans_07');
     assert.equal(await page.$eval('#economist-translation-answer', (element) => element.value), '');
     await clickButton(page, '暂时想不出？看参考译文');
     assert.match(await page.$eval('body', (element) => element.innerText), /已跳过作答/);
