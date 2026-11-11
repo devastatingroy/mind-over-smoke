@@ -299,7 +299,7 @@
     ],
     "hint": "Noun: an inclination to believe that people are motivated purely by self-interest; skepticism",
     "first_letter": "c",
-    "punchline": "They didn't see an impressionable teenager; they saw an actuarial revenue stream with lungs.",
+    "punchline": "They didn't see an impressionable teenager; they saw a revenue stream with lungs.",
     "vocab": {
       "word": "cynicism",
       "phonetic": "/ˈsɪnɪsɪzəm/",
@@ -563,7 +563,7 @@
     ],
     "hint": "Noun: a reason given in justification of a course of action that is not the real reason",
     "first_letter": "p",
-    "punchline": "If you require a deadly fire-stick simply to step outside and look at the sky, your corporate workload is tough, but your cognitive excuse is pure comedy.",
+    "punchline": "The break was always yours. The cigarette merely found a way to charge admission to the pavement outside.",
     "vocab": {
       "word": "pretext",
       "phonetic": "/ˈpriːtekst/",
@@ -628,7 +628,7 @@
       "paralysis"
     ],
     "hint": "Noun: the brain's inherent biological capacity to reorganize and heal synaptic pathways",
-    "punchline": "Your brain is not broken goods; it is simply waiting for you to stop poisoning its delicate electrochemical garden.",
+    "punchline": "The cigarette would love permanent ownership of your brain's routine. Recovery is its least favourite clause.",
     "vocab": {
       "word": "neuroplasticity",
       "phonetic": "/ˌnjʊərəʊplæˈstɪsəti/",
@@ -739,7 +739,7 @@
     ],
     "hint": "Adjective: lasting for a very short time; fleeting and transient",
     "first_letter": "e",
-    "punchline": "A craving can feel urgent without being a command. Give yourself a few minutes and let the wave pass.",
+    "punchline": "A craving calls itself an emergency. It is usually a short-lived demand, not an order you have to obey.",
     "vocab": {
       "word": "ephemeral",
       "phonetic": "/ɪˈfemərəl/",
@@ -871,7 +871,7 @@
     ],
     "hint": "Adjective: describing an irrational preference for small immediate rewards over vastly superior future payouts",
     "first_letter": "h",
-    "punchline": "Trading ten years of playing with grandchildren for three minutes of tar-flavored smoke is the most bankrupt exchange rate on Earth.",
+    "punchline": "Three minutes of relief, with the long-term risks filed under 'someone else's problem': a bargain only the seller would advertise.",
     "vocab": {
       "word": "hyperbolic",
       "phonetic": "/ˌhaɪpəˈbɒlɪk/",
@@ -893,7 +893,7 @@
     ],
     "hint": "Adjective: very weak, flimsy, or having little substance",
     "first_letter": "t",
-    "punchline": "An occasional cigarette can still keep a familiar habit alive. Notice the trigger before it becomes a routine.",
+    "punchline": "The word 'occasional' sounds reassuring; the cigarette still knows the way back to your hand.",
     "vocab": {
       "word": "tenuous",
       "phonetic": "/ˈtenjuəs/",
@@ -1091,7 +1091,7 @@
     ],
     "hint": "Noun: the process of adapting again to changed conditions",
     "first_letter": "r",
-    "punchline": "Your brain is not permanently broken; it is an elastic marvel waiting for you to stop dosing it with kerosene.",
+    "punchline": "The cigarette keeps sending the same demand. The brain can learn to stop treating it as a standing order.",
     "vocab": {
       "word": "readjustment",
       "phonetic": "/ˌriːəˈdʒʌstmənt/",
@@ -1245,7 +1245,7 @@
     ],
     "hint": "Adjective: lasting only for a short time; impermanent",
     "first_letter": "t",
-    "punchline": "An urge can feel endless while you watch the clock. Try another task and give it time to subside.",
+    "punchline": "The craving claims it will stay forever. Give it another task to interrupt; its contract is usually much shorter.",
     "vocab": {
       "word": "transient",
       "phonetic": "/ˈtrænziənt/",
@@ -1355,7 +1355,7 @@
     ],
     "hint": "Noun: an increase or revival after a period of little activity or dullness",
     "first_letter": "r",
-    "punchline": "The world does not smell like wet ashtrays; you just finally took off the toxic nose-plug you wore for twenty years.",
+    "punchline": "The cigarette sold itself as a pleasure while quietly editing the rest of the world's scents out of the scene.",
     "vocab": {
       "word": "resurgence",
       "phonetic": "/rɪˈsɜːdʒəns/",
@@ -1421,7 +1421,7 @@
     ],
     "hint": "Noun: an automatic, instinctive response to a stimulus without conscious deliberation",
     "first_letter": "r",
-    "punchline": "Pavlov's dog salivated at a bell; a smoker reaches for a lighter after pasta. You are a conscious primate, not a salivating laboratory dog.",
+    "punchline": "Dinner ends; the lighter takes its cue. A habit can learn the schedule, and it can learn to miss a meeting.",
     "vocab": {
       "word": "reflex",
       "phonetic": "/ˈriːfleks/",
@@ -1498,8 +1498,8 @@
   {
     "id": "q69",
     "type": "cloze",
-    "theme": "Brain Blood Flow",
-    "passage": "Nicotine constricts blood vessels, creating a blood-flow ________ rather than the clear-headedness smokers may expect.",
+    "theme": "The Focus Mirage",
+    "passage": "Nicotine withdrawal can create a temporary concentration ________; a cigarette may then seem to restore focus by easing the discomfort it helped create.",
     "blank": "deficit",
     "options": [
       "deficit",
@@ -1509,13 +1509,13 @@
     ],
     "hint": "Noun: a shortage, disadvantage, or impairment in functional capacity",
     "first_letter": "d",
-    "punchline": "A cigarette is a poor tool for clear thinking when it constricts blood vessels.",
+    "punchline": "The cigarette sells focus by briefly lifting the fog its own withdrawal helped create. Even the repair comes with a receipt.",
     "vocab": {
-      "word": "vasoconstriction",
-      "phonetic": "/ˌveɪzəʊkənˈstrɪkʃn/",
-      "meaning": "n. （医学）血管收缩痉挛，血流急剧受阻"
+      "word": "deficit",
+      "phonetic": "/ˈdefɪsɪt/",
+      "meaning": "n. 不足，缺口；注意力暂时不足"
     },
-    "passage_translation": "尼古丁会使血管收缩，减少血流量；这与吸烟能让头脑更清醒的期待并不一致。"
+    "passage_translation": "尼古丁戒断可能造成暂时的注意力缺口；香烟缓解了它参与制造的不适，便让人误以为自己变得更专注。"
   },
   {
     "id": "q70",
@@ -1531,7 +1531,7 @@
     ],
     "hint": "Noun: supreme power, self-governance, or total independence from external control",
     "first_letter": "s",
-    "punchline": "The supreme freedom is not doing whatever an addictive urge demands; it is looking the urge in the eye and calmly telling it to get lost.",
+    "punchline": "The craving has a loud voice and no vote. You still get to decide what happens next.",
     "vocab": {
       "word": "sovereignty",
       "phonetic": "/ˈsɒvrənti/",
@@ -1553,7 +1553,7 @@
     ],
     "hint": "Adjective: not harmful or offensive; harmless",
     "first_letter": "i",
-    "punchline": "Withdrawal isn't physical pain; it's a mosquito whining outside your tent. Don't tear down the tent just to slap the bug.",
+    "punchline": "Withdrawal can be uncomfortable. The cigarette offers to end the noise, then quietly books the next appointment.",
     "vocab": {
       "word": "innocuous",
       "phonetic": "/ɪˈnɒkjuəs/",
@@ -1575,7 +1575,7 @@
     ],
     "hint": "Noun/Adjective: the pure basic form of an amine, highly potent and readily vaporized",
     "first_letter": "f",
-    "punchline": "Tobacco product design has long considered how quickly nicotine reaches the brain; that speed is part of the addiction problem.",
+    "punchline": "The speed of that nicotine hit was no happy accident. Someone worked on the delivery; the craving arrived right on time.",
     "vocab": {
       "word": "freebase",
       "phonetic": "/ˈfriːbeɪs/",
@@ -1597,7 +1597,7 @@
     ],
     "hint": "Noun: the fact or process of losing something; deprivation",
     "first_letter": "l",
-    "punchline": "The golden smoke of cigarettes leaves you with a mouth full of blackened stumps and $10,000 dental implant bills.",
+    "punchline": "Tobacco advertising sells the smile; the product raises the odds of paying a dentist to preserve it.",
     "vocab": {
       "word": "periodontal",
       "phonetic": "/ˌperɪəʊˈdɒntl/",
@@ -1685,7 +1685,7 @@
     ],
     "hint": "Noun: the ability to sustain prolonged physical or mental effort; endurance",
     "first_letter": "s",
-    "punchline": "Climbing three flights of stairs without gasping for air is not a fantasy; it is your natural birthright once you extinguish the smoke.",
+    "punchline": "The cigarette charges interest on every breath. Quitting gives the lungs a chance to renegotiate the terms.",
     "vocab": {
       "word": "stamina",
       "phonetic": "/ˈstæmɪnə/",
@@ -1817,7 +1817,7 @@
     ],
     "hint": "Noun: the practice of restraining oneself from partaking in something damaging",
     "first_letter": "a",
-    "punchline": "The brain can adapt over time. Quitting gives those changes a chance to work in your favour.",
+    "punchline": "The cigarette would prefer you to think the brain never changes. That is a convenient story for a product sold by repetition.",
     "vocab": {
       "word": "abstinence",
       "phonetic": "/ˈæbstɪnəns/",
@@ -1861,7 +1861,7 @@
     ],
     "hint": "Verb: to make an exact copy of, reproduce, or match the perfection of",
     "first_letter": "r",
-    "punchline": "A deep breath of fresh air is free. You can enjoy it without lighting anything first.",
+    "punchline": "Fresh air: no tax stamp, no warning label, no quarterly earnings call.",
     "vocab": {
       "word": "replicate",
       "phonetic": "/ˈreplɪkeɪt/",
@@ -1905,7 +1905,7 @@
     ],
     "hint": "Noun: the state of having a desire or appetite fully satisfied",
     "first_letter": "s",
-    "punchline": "The freedom worth noticing is not having to plan the next cigarette.",
+    "punchline": "The cigarette calls each brief reprieve a reward. Freedom is leaving the whole appointment off your calendar.",
     "vocab": {
       "word": "satiation",
       "phonetic": "/ˌseɪʃiˈeɪʃn/",
@@ -1939,7 +1939,7 @@
     "id": "q89",
     "type": "cloze",
     "theme": "The Courage of Autonomy",
-    "passage": "True psychological maturity begins when an individual ceases seeking comfort from an incinerated cylinder of dry leaves and begins relying on their own internal ________.",
+    "passage": "A craving can sound like an instruction from a cigarette, but choosing another response is an act of inner ________.",
     "blank": "fortitude",
     "options": [
       "fortitude",
@@ -1949,13 +1949,13 @@
     ],
     "hint": "Noun: courage in pain or adversity; mental and emotional strength",
     "first_letter": "f",
-    "punchline": "A cigarette is a pacifier for adults who are terrified of feeling their own unfiltered emotions. Spit out the plastic.",
+    "punchline": "A product that charges you for comfort while helping create the next craving deserves a cancellation notice, not your loyalty.",
     "vocab": {
       "word": "fortitude",
       "phonetic": "/ˈfɔːtɪtjuːd/",
       "meaning": "n. 坚韧刚毅，内在定力，精神韧性"
     },
-    "passage_translation": "真正的心理成熟始于一个人彻底停止向一根燃烧的干枯草叶乞求虚假慰藉，转而开始全然依靠自身内心生生不息的刚毅定力。"
+    "passage_translation": "烟瘾可能听起来像香烟发出的命令，但选择另一种回应，是内在韧性的表现。"
   },
   {
     "id": "q90",
@@ -1993,7 +1993,7 @@
     ],
     "hint": "Noun: comprehensive knowledge, skill, or complete command over a discipline or self",
     "first_letter": "m",
-    "punchline": "Self-control grows through practice. Every time you wait out an urge, the next attempt may feel more manageable.",
+    "punchline": "The craving demands an immediate answer. You are allowed to put it on hold while a better habit learns the route.",
     "vocab": {
       "word": "mastery",
       "phonetic": "/ˈmɑːstəri/",
@@ -2037,7 +2037,7 @@
     ],
     "hint": "Noun: the state of relying on or being controlled by someone or something else",
     "first_letter": "d",
-    "punchline": "Nicotine replacement can make quitting more manageable without the smoke and combustion products of cigarettes.",
+    "punchline": "A patch or gum can help with withdrawal without the smoke. Using a tool to quit is a strategy, not cheating.",
     "vocab": {
       "word": "dependence",
       "phonetic": "/dɪˈpendəns/",
@@ -2059,7 +2059,7 @@
     ],
     "hint": "Noun: the state of relying on a substance to feel normal",
     "first_letter": "d",
-    "punchline": "The craving is not a command; it is merely an echo of an outdated habit dying inside an empty room.",
+    "punchline": "The craving sounds urgent because it is loud, not because it is in charge. Let the old sales pitch expire.",
     "vocab": {
       "word": "dependence",
       "phonetic": "/dɪˈpendəns/",
@@ -2147,7 +2147,7 @@
     ],
     "hint": "Noun: the duration of a person's life",
     "first_letter": "l",
-    "punchline": "The risk reduction grows over time; every smoke-free year is worth keeping.",
+    "punchline": "The cigarette offers a short pause and sends the stroke risk into the future. Quitting stops adding to that bill.",
     "vocab": {
       "word": "lifetime",
       "phonetic": "/ˈlaɪftaɪm/",
