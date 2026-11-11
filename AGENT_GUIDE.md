@@ -181,7 +181,7 @@ SOS 的「换下一题」只替换当前槽位，不改变 `currentIndex`；下�
   "options": ["dissonance", "clarity", "euphoria", "prudence"],
   "hint": "Noun: psychological tension from contradictory beliefs",
   "first_letter": "d",
-  "punchline": "The cigarette sells relief from a craving it helped create, then sends the bill to your future self.",
+  "punchline": "Call a craving a choice, and the tobacco industry's copywriting is done for free.",
   "vocab": {
     "word": "dissonance",
     "phonetic": "/ˈdɪsənəns/",
